@@ -5,6 +5,6 @@
 <a href="https://t.me/nikkeyl" target="_blank">
   <img src="https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white" alt="Telegram Badge"/>
 </a>
-<a href="https://nikkeyl.github.io/nikkeyl">
-  <img src="https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white" alt="Telegram Badge"/>
+<a href="https://nikkeyl.dev@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-red?style=for-the-badge&logo=Gmail&logoColor=white" alt="Gmail Badge"/>
 </a>
