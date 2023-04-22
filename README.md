@@ -1,5 +1,10 @@
 # Yov'za! But seriously, my portfolio site will leak all my data to you :)
-<div id="badges">
+[What's here🤔](https://nikkeyl.github.io/nikkeyl)
+
+## My contacts
+<a href="https://nikkeyl.github.io/nikkeyl" target="_blank">
   <img src="https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white" alt="Telegram Badge"/>
-</div>
-[Pss.. I'm here](https://nikkeyl.github.io/nikkeyl)
+</a>
+<a href="https://nikkeyl.github.io/nikkeyl">
+  <img src="https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white" alt="Telegram Badge"/>
+</a>
