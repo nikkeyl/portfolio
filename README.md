@@ -11,7 +11,6 @@
 
 - 🌿 I'm a minimalist
 - 📑 I'm constantly learning
-- 📬 Reach me by [Telegram](https://t.me/nikkeyl)
 
 ## Languages and tools
 
