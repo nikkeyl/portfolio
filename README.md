@@ -1,15 +1,11 @@
 # [![](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=40&duration=2000&pause=800&color=8800FF&repeat=false&width=800&height=80&lines=Hello+%F0%9F%A4%99%2C+i'm+Nikita+Almanov)](https://git.io/typing-svg)
 
-## Front-end developer from Russia
-
-<a href="https://t.me/nikkeyl">
-  <img src="https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white" alt="Telegram Badge">
-</a>
-
 ## About me
 
-- 🌿 I'm a minimalist
+- 💻 I'm Front-End Developer
 - 📑 I'm constantly learning
+- 📫 How to reach me [![Linkedin Badge](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl)
+- 🌿 I'm a minimalist
 
 ## My developments
 
