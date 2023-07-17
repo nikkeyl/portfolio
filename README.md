@@ -11,7 +11,7 @@
 
 - 🌿 I'm a minimalist
 - 📑 I'm constantly learning
-- 📬 Reach me by [Telegram](https://t.me/nikkeyl) and [E-mail](nikkeyl.code@gmail.com)
+- 📬 Reach me by [Telegram](https://t.me/nikkeyl)
 
 ## Languages and tools
 
