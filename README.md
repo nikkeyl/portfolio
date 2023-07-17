@@ -4,7 +4,7 @@
 
 - 💻 I'm Front-End Developer
 - 📑 I'm constantly learning
-- 📞 How to reach me [![Linkedin Badge](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl)
+- 📞 How to reach me [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl)
 - 🌿 I'm a minimalist
 
 ## 💾 My developments
@@ -28,7 +28,7 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" title="git">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="40" height="40" title="figma">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40" title="vscode">&nbsp;
-<a href="https://nikkeyl.github.io/nikkeyl">more...</a>&nbsp;
+[![](https://img.shields.io/badge/more-80f)](https://nikkeyl.github.io/nikkeyl)&nbsp;
 
 ## 📶 Stats
 
