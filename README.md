@@ -9,10 +9,10 @@
 
 ## 💾 My developments
 
-- 🏭 [Illicit](https://github.com/nikkeyl/Illicit). Build for front-end based on gulp and webpack
-- 📚 [RRC](https://github.com/nikkeyl/RRC). Library of repetitive reusable components
-- 📦 [devpack](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
-- 🌐 [nikkeyl](https://nikkeyl.github.io/nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
+- 🏭 [![](https://img.shields.io/badge/Illicit-80f)](https://github.com/nikkeyl/Illicit). Build for front-end based on gulp and webpack
+- 📚 [![](https://img.shields.io/badge/RRC-orange)](https://github.com/nikkeyl/RRC). Library of repetitive reusable components
+- 📦 [![](https://img.shields.io/badge/devpack-yellow)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
+- 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io.nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
 ## 🛠️ Languages and tools
 
@@ -28,7 +28,7 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" title="git">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="40" height="40" title="figma">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40" title="vscode">&nbsp;
-[![](https://img.shields.io/badge/more-80f)](https://nikkeyl.github.io/nikkeyl)&nbsp;
+[![](https://img.shields.io/badge/more-green)](https://nikkeyl.github.io/nikkeyl)&nbsp;
 
 ## 📶 Stats
 
