@@ -1,5 +1,4 @@
-# Hello 🤙, i'm Nikita Almanov
-
+# [![](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=40&duration=2000&pause=800&color=8800FF&repeat=false&width=800&height=80&lines=Hello+%F0%9F%A4%99%2C+i'm+Nikita+Almanov)](https://git.io/typing-svg)
 
 ## Front-end developer from Russia
 
@@ -11,6 +10,12 @@
 
 - 🌿 I'm a minimalist
 - 📑 I'm constantly learning
+
+## My developments
+
+- 🏭 [Illicit](https://github.com/nikkeyl/Illicit). Build for front-end based on gulp and webpack
+- 📚 [RRC](https://github.com/nikkeyl/RRC). Library of repetitive reusable components
+- 📦 [devpack](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
 
 ## Languages and tools
 
