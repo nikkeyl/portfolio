@@ -4,7 +4,8 @@
 
 - 💻 I'm Front-End Developer
 - 📑 I'm constantly learning
-- 📞 How to reach me [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl)
+- ⏫ I'm currently learning `JS` and `Babel`
+- 📞 How to reach me [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl) and [![](https://img.shields.io/badge/nikkeyl-red?style=flat&logo=Gmail&logoColor=white)](mailto:nikkeyl.dev@gmail.com)
 - 🌿 I'm a minimalist
 
 ## 💾 My developments
@@ -15,7 +16,7 @@
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io.nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
 ### 🕥 Coming soon...
-- ♻️ ![](https://img.shields.io/badge/Boilerplate-code-gray). Code templates storage: .yml, .json, .md, and many more
+- ♻️ [![](https://img.shields.io/badge/Boilerplate-code-green)](https://github.com/nikkeyl/Boilerplate-code). Code templates storage: .yml, .json, .md, and many more
 
 ## 🛠️ Languages and tools
 
