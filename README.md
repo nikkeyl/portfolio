@@ -8,6 +8,7 @@
 - 🧠 I like to automate the routine and concentrate on the main thing
 - 📞 How to reach me [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl) and [![](https://img.shields.io/badge/nikkeyl-red?style=flat&logo=Gmail&logoColor=white)](mailto:nikkeyl.dev@gmail.com)
 - 🌿 I'm a minimalist
+- 👀 Watching anime on weekends
 
 ## 💾 My developments
 
