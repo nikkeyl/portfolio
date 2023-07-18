@@ -14,6 +14,9 @@
 - 📦 [![](https://img.shields.io/badge/devpack-yellow)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io.nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
+### 🕥 Coming soon...
+- ♻️ ![](https://img.shields.io/badge/Boilerplate-code-gray). Duplicate code storage: .yml, .json, .md, and many more
+
 ## 🛠️ Languages and tools
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" width="40" height="40" title="html">&nbsp;
