@@ -15,7 +15,7 @@
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io.nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
 ### 🕥 Coming soon...
-- ♻️ ![](https://img.shields.io/badge/Boilerplate-code-gray). Duplicate code storage: .yml, .json, .md, and many more
+- ♻️ ![](https://img.shields.io/badge/Boilerplate-code-gray). Code templates storage: .yml, .json, .md, and many more
 
 ## 🛠️ Languages and tools
 
