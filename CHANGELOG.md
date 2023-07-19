@@ -4,6 +4,8 @@
 ### Added
  - CHANGELOG.md
  - LICENSE.md
+ - CONTRIBUTING.md
+ - SECURITY.md
 
 ### Changed
  - README.md
