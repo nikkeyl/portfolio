@@ -2,13 +2,14 @@
 
 ## 🚶 About me
 
-- 💻 I'm Front-End Developer
-- 📑 I'm constantly learning
-- ⏫ I'm currently learning `JS` and `Babel`
-- 🧠 I like to automate the routine and concentrate on the main thing
-- 📞 How to reach me [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl) and [![](https://img.shields.io/badge/nikkeyl-red?style=flat&logo=Gmail&logoColor=white)](mailto:nikkeyl.dev@gmail.com)
-- 🌿 I'm a minimalist
-- 👀 Watching anime on weekends
+- 💻 I'm a Front-End Developer
+- 📑 Which is constantly learning
+- ⏫ Now I'm studying `JS` and `Babel`
+- 🧠 I don't like routine, so I automate it and concentrate on the essentials
+- 📞 You can write to me here [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl) or here [![](https://img.shields.io/badge/nikkeyl-red?style=flat&logo=Gmail&logoColor=white)](mailto:nikkeyl.dev@gmail.com)
+- 🌿 The rest of the time I'm improving in minimalism
+- 👀 Watching anime
+- 🚴‍♂️ And Doing Sports
 
 ## 💾 My developments
 
