@@ -14,13 +14,13 @@
 ## 💾 My developments
 
 - 🏭 [![](https://img.shields.io/badge/Illicit-80f)](https://github.com/nikkeyl/Illicit). Build for front-end based on gulp and webpack
-- 🔁 [![](https://img.shields.io/badge/Boilerplate-illicit-purple)](https://github.com/nikkeyl/Boilerplate-illicit). Repository template for quick project creation
+- 🔄 [![](https://img.shields.io/badge/Boilerplate-illicit-purple)](https://github.com/nikkeyl/Boilerplate-illicit). Repository template for quick project creation
 - 📚 [![](https://img.shields.io/badge/RRC-orange)](https://github.com/nikkeyl/RRC). Library of repetitive reusable components
 - 📦 [![](https://img.shields.io/badge/devpack-yellow)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io.nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
-### 🕥 My gists...
-- ♻️ [![](https://img.shields.io/badge/gists-darkgreen)](https://gist.github.com/nikkeyl). Code templates storage: .yml, .json, .md, and many more
+### ♻️ My gists...
+- 🔄 [![](https://img.shields.io/badge/gists-darkgreen)](https://gist.github.com/nikkeyl). Code templates storage: .yml, .json, .md, and many more
 
 ## 🛠️ Languages and tools
 
