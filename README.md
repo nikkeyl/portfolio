@@ -19,7 +19,7 @@
 - 📦 [![](https://img.shields.io/badge/devpack-yellow)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io.nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
-### ♻️ My gists...
+### ♻️ My gists
 - 🔄 [![](https://img.shields.io/badge/gists-darkgreen)](https://gist.github.com/nikkeyl). Code templates storage: .yml, .json, .md, and many more
 
 ## 🛠️ Languages and tools
