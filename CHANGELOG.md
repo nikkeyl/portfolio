@@ -1,16 +1,25 @@
 # CHANGELOG
 
-## Added - For any new features that have been added since the last version was released
+## 19.07.23
+### Added
+ - CHANGELOG.md
+ - LICENSE.md
 
-## Changed - To note any changes to the software's existing functionality
+### Changed
+ - README.md
 
-## Deprecated - To note any features that were once stable but are no longer and have thus been removed
+### Deprecated
+ - tabs
+ - scrollbar
 
-## Fixed - Any bugs or errors that have been fixed should be so noted
+### Fixed
+ -
 
-## Removed - This notes any features that have been deleted and removed from the software
+### Removed
+ -
 
-## Security - This acts as an invitation to users who want to upgrade and avoid any software vulnerabilities
+### Security
+ -
 
 
 
