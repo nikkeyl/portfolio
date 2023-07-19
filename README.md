@@ -13,7 +13,7 @@
 
 ## 💾 My developments
 
-- 🏭 [![](https://img.shields.io/badge/Illicit-80f)](https://github.com/nikkeyl/Illicit). Build for front-end based on gulp and webpack
+- 🏭 [![](https://img.shields.io/badge/Illicit-80f)](https://github.com/nikkeyl/Illicit). Builder for front-end based on gulp and webpack
 - 🔄 [![](https://img.shields.io/badge/Boilerplate-illicit-purple)](https://github.com/nikkeyl/Boilerplate-illicit). Repository template for quick project creation
 - 📚 [![](https://img.shields.io/badge/RRC-orange)](https://github.com/nikkeyl/RRC). Library of repetitive reusable components
 - 📦 [![](https://img.shields.io/badge/devpack-yellow)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
