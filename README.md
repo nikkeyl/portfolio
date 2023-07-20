@@ -37,7 +37,7 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" title="git">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="40" height="40" title="figma">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40" title="vscode">&nbsp;
-[![](https://img.shields.io/badge/more-green)](https://nikkeyl.github.io/nikkeyl)&nbsp;
+[![](https://img.shields.io/badge/more-gold)](https://nikkeyl.github.io/nikkeyl)&nbsp;
 
 ## Contacts
 
