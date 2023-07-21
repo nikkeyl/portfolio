@@ -1,0 +1,24 @@
+@use "@scss/abstracts" as *;
+
+/* Overlay styles */
+body {
+	&::after {
+		@include pseudo("", fixed);
+
+		inset: 0;
+		z-index: 149;
+		background-color: rgb(var(--primary-rgb) / 0.5);
+		opacity: 0;
+		transition:
+			backdrop-filter 0.8s,
+			opacity 0.8s;
+		pointer-events: none;
+		backdrop-filter: blur(rem(5));
+	}
+
+	.overlay-show & {
+		&::after {
+			opacity: 1;
+		}
+	}
+}

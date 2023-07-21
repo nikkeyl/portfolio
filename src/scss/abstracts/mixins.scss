@@ -1,0 +1,228 @@
+@use "sass:math" as *;
+@use "variables" as *;
+@use "functions" as *;
+
+@mixin adaptive-value(
+	$property,
+	$start-size,
+	$min-size,
+	$keep-size: 0,
+	$width-from: $container-width,
+	$width-to: $min-width
+) {
+	@if $start-size == 0 {
+		$start-size: 0.000001;
+	}
+
+	@if $min-size == 0 {
+		$min-size: 0.000001;
+	}
+
+	@if $width-from == $container-width and $max-width-container == 0 {
+		$width-from: $max-width;
+	}
+
+	$slope: div(($start-size - $min-size), ($width-from - $width-to));
+	$y-intersection: -$width-to * $slope + $min-size;
+
+	@if $y-intersection == 0 {
+		$y-intersection: 0.000001;
+	}
+
+	$fly-value: #{rem($y-intersection)}" + "#{$slope * 100}vw;
+	$property-value: #{"clamp(" rem($min-size) "," $fly-value "," rem($start-size) ")"};
+
+	@if $min-size > $start-size {
+		$property-value: #{"clamp("
+			rem($start-size)
+			","
+			$fly-value
+			","
+			rem($min-size)
+			")"};
+	}
+
+	@if $keep-size != 1 and $keep-size != 3 {
+		@include media-min($width-from) {
+			#{$property}: rem($start-size);
+		}
+	}
+
+	@include media-min-max($width-to, $width-from) {
+		#{$property}: $property-value;
+	}
+
+	@if $keep-size != 1 and $keep-size != 2 {
+		@include media-max($width-to) {
+			#{$property}: rem($min-size);
+		}
+	}
+}
+
+@mixin responsive-output(
+	$image-height,
+	$body-width,
+	$breakpoint: $tablet,
+	$reverse: 0
+) {
+	$percent: round(div($body-width, $max-width-container) * 100);
+	$width: $body-width - ($body-width - $percent);
+
+	@if $width <= 10 {
+		$width: 0 + #{$width};
+	}
+
+	&__inner {
+		display: flex;
+		flex: 0 0 100%;
+	}
+
+	&__container {
+		flex: 0 1 100%;
+
+		@if $reverse == 1 {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__body {
+		@include media-min($breakpoint) {
+			width: #{$percent} + "%";
+		}
+	}
+
+	&__image {
+		@include media-min($breakpoint) {
+			position: relative;
+			flex: 0 0
+				calc(
+					((100% - #{rem($container-padding)}) * div(div((100 - $percent), 1), 100)) +
+						(rem($container-padding) / 2)
+				);
+			padding-bottom: round(percent($image-height, $max-width));
+
+			img {
+				position: absolute;
+				inset: 0;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			@if $reverse == 1 {
+				transform: translateX(100%);
+			} @else {
+				transform: translateX(-100%);
+			}
+		}
+
+		@include media-min($container-width) {
+			flex: 0 0 calc(50% - (div($width, 100) - 0.5) * rem($max-width-container));
+		}
+	}
+
+	@include media-min($breakpoint) {
+		display: flex;
+
+		@if $reverse == 1 {
+			flex-direction: row-reverse;
+		}
+	}
+
+	@include media-max($breakpoint) {
+		@if $reverse == 1 {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+}
+
+@mixin slide(
+	$items,
+	$translate,
+	$time,
+	$animation-delay,
+	$direction,
+	$breakpoint: $tablet
+) {
+	$count: $items + 1;
+
+	@include media-min($breakpoint) {
+		opacity: 0;
+		animation: slide-#{$direction} #{$time}s forwards;
+
+		@if $direction == top {
+			transform: translateY(#{$translate} + "%");
+		} @else if $direction == bottom {
+			transform: translateY(0);
+		} @else if $direction == left {
+			transform: translateX(#{$translate} + "%");
+		} @else {
+			transform: translateX(0);
+		}
+
+		@keyframes slide-#{$direction} {
+			100% {
+				opacity: 1;
+
+				@if $direction == top {
+					transform: translateY(0);
+				} @else if $direction == bottom {
+					transform: translateY(#{$translate} + "%");
+				} @else if $direction == left {
+					transform: translateX(0);
+				} @else {
+					transform: translateX(#{$translate} + "%");
+				}
+			}
+		}
+
+		@for $i from 2 through $count {
+			$delay: ($i - 1) * $animation-delay;
+
+			&:nth-child(#{$i}) {
+				animation-delay: #{$delay}s;
+			}
+		}
+	}
+}
+
+@mixin grid($type: fit, $min: rem(290), $max: 1fr, $breakpoint: $phone) {
+	display: grid;
+	@content;
+
+	@include media-min($breakpoint) {
+		grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+	}
+}
+
+@mixin media-min-max($min-width: 320, $max-width: $tablet) {
+	@media (min-width: em($min-width)) and (max-width: em($max-width - 0.02)) {
+		@content;
+	}
+}
+
+@mixin media-min($breakpoint) {
+	@media (min-width: em($breakpoint)) {
+		@content;
+	}
+}
+
+@mixin media-max($breakpoint) {
+	@media (max-width: em($breakpoint - 0.02)) {
+		@content;
+	}
+}
+
+@mixin media-hover($value: hover) {
+	@media (any-hover: $value) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin pseudo($content: "", $position: absolute) {
+	content: $content;
+	position: $position;
+}

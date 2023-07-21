@@ -1,0 +1,20 @@
+header.header
+	.container.header__container
+		.logo.header__logo
+			| Никита Алманов
+		.header__body
+			.socials
+				a.socials__item(href='https://t.me/nikkeyl' data-tippy-content='Телеграм')
+					svg
+						use(href='@img/icons/sprite.svg#telegram')
+				a.socials__item(href='mailto:nikkeyl.dev@gmail.com' data-tippy-content='Gmail')
+					svg
+						use(href='@img/icons/sprite.svg#gmail')
+				a.socials__item(href='tel:89064993787' data-tippy-content='Телефон')
+					svg
+						use(href='@img/icons/sprite.svg#phone')
+				a.socials__item(href='https://github.com/nikkeyl' data-tippy-content='GitHub')
+					svg
+						use(href='@img/icons/sprite.svg#github')
+			a.button(href='#' data-goto='.questions' data-goto-header data-tippy-content='Вопросы о работе')
+				| ?

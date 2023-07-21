@@ -1,0 +1,48 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+
+.button {
+	$font-size: 16;
+
+	display: inline-flex;
+	justify-content: center;
+	border: rem(2) solid var(--accent);
+	border-radius: rem(50);
+	padding: rem(15);
+	box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb) / 0.25);
+	font-size: rem($font-size);
+	line-height: div(18, 18);
+	text-align: center;
+	color: var(--primary);
+	background-color: var(--accent);
+	transition:
+		background-color 0.3s,
+		border-color 0.3s,
+		box-shadow 0.3s,
+		transform 0.3s,
+		color 0.3s;
+
+	&:focus-visible {
+		border-color: var(--inverse);
+		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb) / 0.25);
+		color: var(--secondary);
+		background-color: var(--inverse);
+	}
+
+	&:active {
+		transform: translateY(rem(3));
+	}
+
+	&--fw {
+		@include media-max($phone) {
+			width: 100%;
+		}
+	}
+
+	@include media-hover {
+		border-color: var(--inverse);
+		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb) / 0.25);
+		color: var(--secondary);
+		background-color: var(--inverse);
+	}
+}

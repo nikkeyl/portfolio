@@ -1,0 +1,85 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+@use "@scss/utils/placeholders" as *;
+
+.review {
+	border-radius: rem(10);
+	padding: rem(20);
+	max-width: rem(400);
+	color: var(--secondary);
+	background: var(--primary);
+	transition: box-shadow 0.3s;
+
+	&__head {
+		display: flex;
+		align-items: center;
+		gap: rem(15);
+		border-bottom: rem(2) solid var(--secondary);
+		padding-bottom: rem(25);
+
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+
+	&__image {
+		$font-size: 12;
+
+		flex: 0 0 rem(70);
+		border-radius: 50%;
+		width: rem(70);
+		height: rem(70);
+		font-size: rem($font-size);
+		color: var(--primary);
+		background-color: var(--secondary);
+	}
+
+	&__name {
+		@include adaptive-value("font-size", 24, 20);
+
+		line-height: div(33, 24);
+
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__link {
+		position: relative;
+		font-weight: 500;
+		font-size: rem(15);
+		line-height: div(20, 15);
+		color: var(--accent);
+		transition: color 0.3s;
+
+		&::after {
+			@include pseudo;
+
+			left: 0;
+			bottom: 0;
+			border-radius: rem(2);
+			width: 0;
+			height: rem(2);
+			background-color: var(--accent);
+			transition: width 0.3s;
+		}
+
+		@include media-hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: rem(18);
+		line-height: div(24, 18);
+	}
+
+	.swiper-slide-active & {
+		box-shadow: 0 rem(8) rem(15) rgb(var(--secondary-rgb) / 0.25);
+	}
+
+	@extend %border;
+}

@@ -1,0 +1,21 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+@use "@scss/utils/placeholders" as *;
+
+/* Typography styles */
+.title {
+	@include adaptive-value("font-size", 64, 40);
+
+	line-height: div(87, 64);
+	text-align: center;
+
+	span {
+		color: var(--inverse);
+	}
+
+	&--big {
+		@include adaptive-value("font-size", 96, 47);
+
+		line-height: div(131, 96);
+	}
+}

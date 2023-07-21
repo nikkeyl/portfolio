@@ -1,0 +1,34 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+
+/* Header styles */
+.header {
+	@include adaptive-value("padding-block", 20, 10);
+
+	position: sticky;
+	top: 0;
+	z-index: 90;
+	border-bottom: rem(2) solid var(--secondary);
+	background-color: var(--primary);
+
+	&__container {
+		@include media-min(520) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__body {
+		@include adaptive-value("gap", 20, 8);
+
+		display: flex;
+		justify-content: center;
+	}
+
+	&__logo {
+		@include media-max(520) {
+			display: none;
+		}
+	}
+}

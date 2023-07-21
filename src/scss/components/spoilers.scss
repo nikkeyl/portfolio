@@ -1,0 +1,150 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+@use "@scss/utils/placeholders" as *;
+
+.spoilers {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(20);
+}
+
+.spoiler {
+	flex: 1 1 calc(rem(400) - rem(20));
+	align-self: flex-start;
+	border-radius: rem(5);
+	transition:
+		transform 0.3s,
+		opacity 0.3s;
+
+	&__trigger {
+		$font-size: 16;
+
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: rem(20);
+		padding: rem(10);
+		width: 100%;
+		font-size: rem($font-size);
+		line-height: div(22, 16);
+		text-align: left;
+		cursor: default;
+
+		.spoiler-init & {
+			cursor: pointer;
+
+			span {
+				display: block;
+				flex: 0 0 rem(30);
+				width: rem(30);
+				height: rem(30);
+
+				&::before,
+				&::after {
+					@include pseudo;
+
+					right: rem(10);
+					top: 50%;
+					border-radius: rem(2);
+					width: rem(30);
+					height: rem(2);
+					background-color: var(--secondary);
+					transition: transform 0.3s;
+				}
+
+				&::before {
+					transform: rotate(90deg);
+				}
+			}
+
+			&.spoiler-active {
+				span {
+					&::before {
+						transform: rotate(45deg);
+					}
+
+					&::after {
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+	}
+
+	&__socials {
+		justify-content: center;
+
+		svg {
+			width: rem(40);
+			height: rem(40);
+			fill: var(--primary);
+
+			@include media-hover {
+				fill: var(--inverse);
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(10);
+		margin-inline: auto;
+		width: fit-content;
+
+		svg {
+			width: rem(20);
+			height: rem(20);
+			fill: none;
+			stroke: var(--primary);
+			animation: glow 0.8s 2 forwards 0.3s;
+
+			@keyframes glow {
+				0% {
+					stroke: var(--primary);
+				}
+
+				25% {
+					stroke: var(--secondary);
+				}
+
+				50% {
+					stroke: var(--primary);
+				}
+
+				75% {
+					stroke: var(--secondary);
+				}
+
+				100% {
+					stroke: var(--primary);
+				}
+			}
+		}
+	}
+
+	&__content {
+		border-radius: 0 0 rem(3) rem(3);
+		padding: rem(15);
+		box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb) / 0.25);
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: div(25, 16);
+		color: var(--primary);
+		background-color: var(--accent);
+	}
+
+	&__call-me {
+		$font-size: 16;
+
+		font-size: rem($font-size);
+		line-height: div(25, $font-size);
+
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+
+	@extend %border;
+}

@@ -1,0 +1,28 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+
+.socials {
+	@include adaptive-value("gap", 20, 8);
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		border-radius: 50%;
+
+		svg {
+			width: rem(40);
+			height: rem(40);
+			transition: fill 0.3s;
+
+			@include media-hover {
+				fill: var(--accent);
+			}
+		}
+	}
+}

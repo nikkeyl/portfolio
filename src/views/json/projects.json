@@ -1,0 +1,108 @@
+{
+  "cards": [
+    {
+      "img": "img/projects/brainarti.jpg",
+      "name": "Brainarti",
+      "linkSite": "https://brainbms.ru",
+      "linkCode": "#",
+      "srcCode": "Исходный код",
+      "disabled": true
+    },
+    {
+      "img": "img/projects/aqua-profi.jpg",
+      "name": "Aqua profi",
+      "linkSite": "https://aquaprofi.by",
+      "linkCode": "#",
+      "srcCode": "Исходный код",
+      "disabled": true
+    },
+    {
+      "img": "img/projects/ofdr.jpg",
+      "name": "OFDR",
+      "linkSite": "https://nikkeyl.github.io/ofdr",
+      "linkCode": "https://github.com/nikkeyl/ofdr",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/abc.jpg",
+      "name": "ABC",
+      "linkSite": "https://nikkeyl.github.io/abc",
+      "linkCode": "https://github.com/nikkeyl/abc",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/car-dealership.jpg",
+      "name": "Car dealership",
+      "linkSite": "https://nikkeyl.github.io/Car-dealership",
+      "linkCode": "https://github.com/nikkeyl/Car-dealership",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/deep.jpg",
+      "name": "Deep",
+      "linkSite": "https://nikkeyl.github.io/deep",
+      "linkCode": "https://github.com/nikkeyl/deep",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/agency.jpg",
+      "name": "Agency",
+      "linkSite": "https://nikkeyl.github.io/Agency",
+      "linkCode": "https://github.com/nikkeyl/Agency",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/saimon.jpg",
+      "name": "Saimon",
+      "linkSite": "https://nikkeyl.github.io/saimon",
+      "linkCode": "https://github.com/nikkeyl/saimon",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/pense.jpg",
+      "name": "Pense",
+      "linkSite": "https://nikkeyl.github.io/pense",
+      "linkCode": "https://github.com/nikkeyl/pense",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/noiceland.jpg",
+      "name": "Noiceland",
+      "linkSite": "https://nikkeyl.github.io/noiceland",
+      "linkCode": "https://github.com/nikkeyl/noiceland",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/aster.jpg",
+      "name": "Aster",
+      "linkSite": "https://nikkeyl.github.io/Aster",
+      "linkCode": "https://github.com/nikkeyl/Aster",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/cleaning-services.jpg",
+      "name": "Cleaning",
+      "linkSite": "https://nikkeyl.github.io/Cleaning",
+      "linkCode": "https://github.com/nikkeyl/Cleaning",
+      "srcCode": "Исходный код",
+      "disabled": false
+    },
+    {
+      "img": "img/projects/euroflex.jpg",
+      "name": "Euroflex",
+      "linkSite": "https://nikkeyl.github.io/euroflex",
+      "linkCode": "https://github.com/nikkeyl/euroflex",
+      "srcCode": "Исходный код",
+      "disabled": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+:root {
+	--primary: #fff;
+	--secondary: #000;
+	--accent: #80f;
+	--inverse: #fe0;
+	--disabled: #888;
+
+	// #888
+	--primary-rgb: 136 136 136;
+
+	// #000
+	--secondary-rgb: 0 0 0;
+
+	// #80f
+	--accent-rgb: 136 0 255;
+
+	// #fe0
+	--inverse-rgb: 255 238 0;
+	--background-primary: var(--primary);
+	--text-primary: var(--secondary);
+	--font-family: "NotoSans";
+	--font-size: 1rem;
+	--font-weight: 700;
+}

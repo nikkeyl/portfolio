@@ -1,0 +1,230 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+@use "@scss/utils/placeholders" as *;
+
+/* Home page styles */
+.hero {
+	display: flex;
+	align-items: center;
+
+	&__container {
+		@include adaptive-value("padding-block", 60, 30);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		&:not(:last-child) {
+			@include adaptive-value("margin-bottom", 120, 60);
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(15);
+	}
+
+	&__button {
+		@include slide(2, 50, 1, 0.4, top);
+	}
+}
+
+// ========================================================================================================================================================//
+.about-me {
+	@include responsive-output(540, 800, $tablet, 1);
+
+	&__inner {
+		background-color: var(--accent);
+	}
+
+	&__container {
+		@include media-min($tablet) {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__body {
+		padding-block: rem(30);
+		color: var(--primary);
+
+		@include media-min($tablet) {
+			padding-left: rem(50);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+
+		@include media-min($tablet) {
+			text-align: left;
+		}
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: rem(18);
+		line-height: 150%;
+
+		@include media-min($tablet) {
+			a {
+				position: relative;
+				z-index: 3;
+
+				&::after {
+					@include pseudo;
+
+					left: 0;
+					bottom: 0;
+					z-index: -1;
+					width: 100%;
+					height: rem(2);
+					background-color: var(--inverse);
+					transition: height 0.3s;
+				}
+
+				span {
+					color: var(--inverse);
+					transition: color 0.3s;
+				}
+
+				@media (any-hover: hover) {
+					&:hover {
+						&::after {
+							height: 100%;
+						}
+
+						span {
+							color: var(--secondary);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__image {
+		@include media-min($tablet) {
+			overflow: hidden;
+
+			&::before {
+				@include pseudo;
+
+				right: rem(-100);
+				top: rem(-150);
+				z-index: 4;
+				width: rem(200);
+				height: rem(1000);
+				background-color: var(--accent);
+				transform: rotate(11.5deg);
+				transition: width 0.8s;
+			}
+		}
+	}
+}
+
+// ========================================================================================================================================================//
+.skills {
+	display: flex;
+	padding-block: rem(50) rem(20);
+
+	&__icons {
+		display: flex;
+		gap: rem(20);
+	}
+
+	&__image {
+		flex: 0 0 rem(90);
+		width: rem(90);
+		height: rem(90);
+	}
+}
+
+// ========================================================================================================================================================//
+.portfolio {
+	padding-block: rem(30);
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__cards {
+		@include grid(fit, rem(290), 1fr, $tablet) {
+			justify-items: center;
+			gap: rem(30);
+		}
+	}
+}
+
+// ========================================================================================================================================================//
+.reviews {
+	padding-block: rem(30);
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__slider {
+		margin: rem(-20);
+		padding: rem(20);
+	}
+
+	&__wrapper {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__review {
+		margin-inline: auto;
+	}
+}
+
+.swiper-pagination {
+	display: flex;
+	justify-content: center;
+	gap: rem(5);
+}
+
+.swiper-pagination-bullet {
+	border-radius: rem(30);
+	width: rem(15);
+	height: rem(15);
+	transition:
+		background-color 0.3s,
+		border-color 0.3s,
+		box-shadow 0.3s,
+		width 0.3s;
+	cursor: pointer;
+
+	@extend %border;
+}
+
+.swiper-pagination-bullet-active {
+	border-color: var(--accent);
+	width: rem(30);
+	box-shadow: 0 rem(2) rem(4) rgb(var(--accent-rgb) / 0.25);
+	background-color: var(--accent);
+}
+
+// ========================================================================================================================================================//
+.questions {
+	@include adaptive-value("padding-bottom", 60, 30);
+
+	padding-top: rem(30);
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+}

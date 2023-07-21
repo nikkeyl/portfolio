@@ -1,0 +1,6 @@
+@use "@scss/abstracts" as *;
+
+/* Placeholders styles */
+%border {
+	border: rem(2) solid var(--secondary);
+}

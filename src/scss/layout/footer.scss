@@ -1,0 +1,14 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+
+/* Footer styles */
+.footer {
+	@include adaptive-value("padding-block", 20, 10);
+
+	background-color: var(--secondary);
+
+	&__container {
+		text-align: center;
+		color: var(--primary);
+	}
+}

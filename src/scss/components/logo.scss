@@ -1,0 +1,8 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+
+.logo {
+	@include adaptive-value("font-size", 30, 22);
+
+	line-height: div(40, 30);
+}

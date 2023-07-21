@@ -1,0 +1,33 @@
+- const production = self.htmlWebpackPlugin.options.production
+- const skills = require('/src/views/json/skills.json')
+- const spoilers = require('/src/views/json/spoilers.json')
+- const projects = require('/src/views/json/projects.json')
+- const reviews = require('/src/views/json/reviews.json')
+
+block variables
+	- let pageLang
+	- let pageTitle
+	- let preloader
+	- let popups
+
+doctype html
+html(lang=pageLang)
+	head
+		title=pageTitle
+		meta(charset='UTF-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		meta(name='format-detection' content='telephone=no')
+		if production
+			link(rel='stylesheet' href='css/style.min.css')
+		link(rel='icon' href='favicon.ico')
+	body
+		.wrapper
+			include header
+			main.page
+				block pageContent
+			include footer
+		if preloader
+			include ../components/preloader
+		if popups
+			include ../components/popup
+		script(src='js/app.min.js')

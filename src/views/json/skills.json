@@ -1,0 +1,120 @@
+{
+  "skills": [
+    {
+      "icon": "img/svg/html.svg",
+      "name": "HTML5"
+    },
+    {
+      "icon": "img/svg/pug.svg",
+      "name": "PUG"
+    },
+    {
+      "icon": "img/svg/css.svg",
+      "name": "CSS"
+    },
+    {
+      "icon": "img/svg/scss.svg",
+      "name": "SCSS"
+    },
+    {
+      "icon": "img/svg/js.svg",
+      "name": "JS"
+    },
+    {
+      "icon": "img/svg/ts.svg",
+      "name": "TS"
+    },
+    {
+      "icon": "img/svg/bash.svg",
+      "name": "BASH"
+    },
+    {
+      "icon": "img/svg/markdown.svg",
+      "name": "MARKDOWN"
+    },
+    {
+      "icon": "img/svg/svg.svg",
+      "name": "SVG"
+    },
+    {
+      "icon": "img/svg/bem.svg",
+      "name": "BEM"
+    },
+    {
+      "icon": "img/svg/eslint.svg",
+      "name": "ESLINT"
+    },
+    {
+      "icon": "img/svg/stylelint.svg",
+      "name": "STYLELINT"
+    },
+    {
+      "icon": "img/svg/prettier.svg",
+      "name": "PRETTIER"
+    },
+    {
+      "icon": "img/svg/editor-config.svg",
+      "name": "EDITORCONFIG"
+    },
+    {
+      "icon": "img/svg/remark.svg",
+      "name": "REMARK"
+    },
+    {
+      "icon": "img/svg/github-actions.svg",
+      "name": "GITHUB ACTIONS"
+    },
+    {
+      "icon": "img/svg/w3c.svg",
+      "name": "W3C"
+    },
+    {
+      "icon": "img/svg/semver.svg",
+      "name": "SEMVER"
+    },
+    {
+      "icon": "img/svg/browserslist.svg",
+      "name": "BROWSERSLIST"
+    },
+    {
+      "icon": "img/svg/lighthouse.svg",
+      "name": "LIGHTHOUSE"
+    },
+    {
+      "icon": "img/svg/npm.svg",
+      "name": "NPM"
+    },
+    {
+      "icon": "img/svg/webpack.svg",
+      "name": "WEBPACK"
+    },
+    {
+      "icon": "img/svg/gulp.svg",
+      "name": "GULP"
+    },
+    {
+      "icon": "img/svg/svgo.svg",
+      "name": "SVGO"
+    },
+    {
+      "icon": "img/svg/babel.svg",
+      "name": "BABEL"
+    },
+    {
+      "icon": "img/svg/git.svg",
+      "name": "GIT"
+    },
+    {
+      "icon": "img/svg/figma.svg",
+      "name": "FIGMA"
+    },
+    {
+      "icon": "img/svg/vscode.svg",
+      "name": "VSCODE"
+    },
+    {
+      "icon": "img/svg/github.svg",
+      "name": "GITHUB"
+    }
+  ]
+}

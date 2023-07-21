@@ -1,0 +1,9 @@
+.lock {
+	body {
+		overflow: hidden;
+		touch-action: none;
+
+		/* Prevents chain scrolling */
+		overscroll-behavior: none;
+	}
+}

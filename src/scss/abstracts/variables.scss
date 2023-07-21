@@ -1,0 +1,13 @@
+$container-padding: 30;
+
+// --------------------------------- //
+$max-width-container: 1280;
+$container-width: $max-width-container + $container-padding;
+$max-width: 1920;
+$min-width: 320;
+
+// --------------------------------- //
+$desktop: $container-width;
+$laptop: 992;
+$tablet: 768;
+$phone: 480;

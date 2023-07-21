@@ -1,0 +1,8 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	/* Set [overflow: clip;] for correct operation [position: sticky;] */
+	overflow: clip;
+	min-height: 100vh;
+}

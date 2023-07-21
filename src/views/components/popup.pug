@@ -1,0 +1,11 @@
+//- popups
+.popup#info(aria-hidden='true')
+	.popup__wrapper
+		.popup__content
+			button.popup__close(type='button' data-close)
+			.popup__body
+				.popup__icon
+					svg
+						use(href='@img/icons/sprite.svg#info')
+				.popup__text
+					p #[strong Я отвечаю на звонки и сообщения с #[span 12:00] до #[span 20:00].]
