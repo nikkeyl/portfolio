@@ -12,7 +12,11 @@ block pageContent
 			h1.title.title--big.hero__title
 				| #[span Front-end] разработка
 			.hero__actions
-				a.button.button--fw.hero__button(href='#' data-goto='.portfolio' data-goto-header)
+				a.button.button--fw.hero__button(
+					href='#'
+					data-goto='.portfolio'
+					data-goto-header
+				)
 					| Портфолио
 				a.button.button--fw.hero__button(href='https://t.me/nikkeyl')
 					| Заказать вёрстку
@@ -22,36 +26,74 @@ block pageContent
 				.about-me__body
 					h2.title.about-me__title
 						| Кто я?
-					.about-me__text
+					.text
 						p Я изучаю front-end разработку лишь год, #[strong но уже не уступаю в качестве и скорости моей работы бывалым разработчикам.]
-						p В этом вы сами можете убедиться перейдя в #[a(href='#' data-goto='.portfolio' data-goto-header) #[span портфолио]].
+						p В этом вы сами можете убедиться перейдя в #[a.link(href='#' data-goto='.portfolio' data-goto-header) #[span портфолио]].
 						p Также благодаря моему минимализму я #[strong пишу чистый и понятный код].
-						p Если вы хотите узнать #[strong какими технологиями я владею], то можете спуститься чуть #[a(href='#' data-goto='.skills' data-goto-header) #[span ниже]].
+						p Если вы хотите узнать #[strong какими технологиями я владею], то можете спуститься чуть #[a.link(href='#' data-goto='.skills' data-goto-header) #[span ниже]].
 		.about-me__image
-			img(src='@img/about/nikkeyl.jpg' alt='Никита Алманов' loading='lazy')
-	.skills
-		.container(data-marquee)
-			.skills__icons
-				each skill in skills.skills
-					.skills__image
-						img(src=skill.icon alt=skill.name data-tippy-content=skill.name loading='lazy')
+			img(
+				src='@img/about/nikkeyl.jpg'
+				alt='Никита Алманов'
+				loading='lazy'
+			)
+	.skills(role='marquee')
+		.skills__icons
+			each skill in skills.skills
+				.skills__icon
+					img(
+						src=skill.icon
+						alt=skill.name
+						data-tippy-content=skill.name
+						loading='lazy'
+					)
+	section.developments
+		.container
+			h2.title.developments__title
+				| Мои разработки
+			.grid
+				a(href='https://github.com/nikkeyl/illicit')
+					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=illicit&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='illicit')
+				a(href='https://github.com/nikkeyl/shorter-hex')
+					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=shorter-hex&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='shorter hex')
+				a(href='https://github.com/nikkeyl/quicky-starter')
+					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=quicky-starter&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='quicky starter')
+				a(href='https://github.com/nikkeyl/repetitive-reusable-components')
+					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=repetitive-reusable-components&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='rrc')
+				a(href='https://github.com/nikkeyl/devpack')
+					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=devpack&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='devpack')
+				a(href='https://github.com/nikkeyl/templates-markdown-docs')
+					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=templates-markdown-docs&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='tmd')
 	section.portfolio
 		.container
 			h2.title.portfolio__title
 				| Портфолио
-			.portfolio__cards
+			.grid.portfolio__cards
 				each card in projects.cards
 					article.project-card
-						a.project-card__image.bg-image(href=card.linkSite)
-							img(src=card.img alt=card.name loading='lazy')
+						a.bg-image.project-card__image(href=card.linkSite)
+							img(
+								src=card.img
+								alt=card.name
+								loading='lazy'
+							)
 						.project-card__body
-							h3.project-card__title
+							h3.card-title.project-card__title
 								a(href=card.linkSite)
 									=card.name
 							.project-card__actions
-								a.button.project-card__button(href=card.linkSite data-tippy-content=card.name)
+								a.button.project-card__button(
+									href=card.linkSite
+									data-tippy-content=card.name
+								)
 									| Посмотреть
-								a.project-card__src-code(href=card.linkCode data-tippy-content=card.disabled ? false : card.srcCode disabled=card.disabled)
+								a(
+									class=['project-card__src-code', card.disabled ? 'disabled' : '']
+									href=card.linkCode
+									data-tippy-content=card.disabled ? false : card.srcCode
+									tabindex=card.disabled ? '-1' : false
+								)
+									| #[.sr-only=card.disabled ? [card.srcCode + ' не доступен'] : ['Посмотреть ' + card.srcCode]]
 									svg
 										use(href='@img/icons/sprite.svg#github')
 	section.reviews
@@ -62,48 +104,79 @@ block pageContent
 				.swiper-wrapper.reviews__wrapper
 					.swiper-slide
 						each review in reviews.reviews
-							article(class=['review', review.class])
-								.review__head
-									.review__image.bg-image
-										img(src=review.img alt=review.name title=review.name loading='lazy')
-									div
-										h3.review__name
-											=review.name
-										a.review__link(href=review.link)
-											=review.linkText
-								.review__text
+							article(class=[
+								'review',
+								review.class
+							])
+								.review__info
+									.bg-image.review__image
+										img(
+											src=review.img
+											alt=review.name
+											title=review.name
+											loading='lazy'
+										)
+									h3.review-name.review__name
+										=review.name
+								.text.review__text
 									| !{review.text}
 				.swiper-pagination
 	section.questions
 		.container
 			h2.title.questions__title
 				| Q&A
-			.spoilers(data-spoilers data-one-spoiler)
+				| #[p.sr-only Вопросы и Ответы]
+			.grid(
+				data-spoilers
+				data-one-spoiler
+			)
 				each spoiler in spoilers.spoilers
 					details.spoiler
-						summary.spoiler__trigger(data-spoiler data-spoiler-close)
+						summary.spoiler__trigger(
+							data-spoiler
+							data-spoiler-close
+							tabindex='1'
+						)
 							strong=spoiler.title
+							| #[.sr-only !{spoiler.content}]
 							span
-						.spoiler__content
+						.text.spoiler__content
 							| !{spoiler.content}
 				details.spoiler
-					summary.spoiler__trigger(data-spoiler data-spoiler-close)
+					summary.spoiler__trigger(
+						data-spoiler
+						data-spoiler-close
+					)
 						strong
 							| Остались вопросы?
+							| #[p.sr-only Я отвечаю на звонки и сообщения с 12:00 до 20:00.]
 						span
-					.spoiler__content
+					.text.spoiler__content
 						.spoiler__call-me
-							a.spoiler__info(href='#' data-popup='#info' data-tippy-content='Часы работы')
+							a.spoiler__info(
+								href='#'
+								data-popup='#info'
+								data-tippy-content='Часы работы'
+							)
 								| Свяжитесь со мной
 								svg
 									use(href='@img/icons/sprite.svg#info')
 						.socials.spoiler__socials
-							a.socials__item(href='https://t.me/nikkeyl' data-tippy-content='Телеграм')
+							a.socials__item(
+								href='https://t.me/nikkeyl'
+								data-tippy-content='Телеграм'
+							)
 								svg
 									use(href='@img/icons/sprite.svg#telegram')
-							a.socials__item(href='mailto:nikkeyl.dev@gmail.com' data-tippy-content='Gmail')
+							a.socials__item(
+								href='mailto:nikkeyl.dev@gmail.com'
+								data-tippy-content='Gmail'
+							)
 								svg
 									use(href='@img/icons/sprite.svg#gmail')
-							a.socials__item(href='tel:89064993787' data-tippy-content='Телефон')
+							a.socials__item(
+								href='tel:89064993787'
+								data-tippy-content='Телефон'
+							)
 								svg
 									use(href='@img/icons/sprite.svg#phone')
