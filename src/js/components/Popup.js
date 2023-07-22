@@ -1,5 +1,5 @@
 import { bodyLockStatus, bodyUnlock, bodyLock } from '@js/helpers/bodyLockToggle'
-import { nodeObjects, html } from '@js/helpers/nodeList'
+import { html } from '@js/helpers/nodeList'
 
 class Popup {
 	constructor(options) {
@@ -167,10 +167,6 @@ class Popup {
 				this.previousOpen.element = this.targetOpen.element
 				this.selectorOpen = false
 				this.isOpen = true
-
-				setTimeout(() => {
-					this.focusTrap()
-				}, 50)
 			}
 		}
 	}
@@ -201,10 +197,6 @@ class Popup {
 			this.lastClosed.selector = this.previousOpen.selector
 			this.lastClosed.element = this.previousOpen.element
 		}
-
-		setTimeout(() => {
-			this.focusTrap()
-		}, 50)
 	}
 
 	focusCatch(e) {
@@ -222,14 +214,6 @@ class Popup {
 			e.preventDefault()
 		}
 	}
-
-	focusTrap() {
-		const focusable = this.previousOpen.element.querySelectorAll(this.focusEl)
-
-		!this.isOpen && this.lastFocusEl
-			? this.lastFocusEl.focus()
-			: focusable[0].focus()
-	}
 }
 
-nodeObjects.popup = new Popup({})
+new Popup({})
