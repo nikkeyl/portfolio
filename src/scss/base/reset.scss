@@ -43,6 +43,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+::selection {
+	color: var(--secondary);
+	background-color: rgb(var(--inverse-rgb) / 0.8);
+}
+
 :focus-visible {
 	/* Styles for a contrasting theme */
 	outline-color: transparent;
