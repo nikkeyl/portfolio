@@ -1,5 +1,5 @@
 document.addEventListener('click', e => {
-	if (e.target.closest('[aria-disabled]')) {
+	if (e.target.closest('a.disabled')) {
 		e.preventDefault()
 	}
 })
