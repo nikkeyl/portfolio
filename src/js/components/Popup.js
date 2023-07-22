@@ -32,7 +32,6 @@ class Popup {
 			element: false
 		}
 		this.dataValue = false
-		this.hash = false
 		this.reopen = false
 		this.selectorOpen = false
 		this.lastFocusEl = false

@@ -1,5 +1,4 @@
 import { goToBlock } from '@js/helpers/goToBlock'
-import { getHash } from '@js/helpers/getHash'
 
 function pageNavigation() {
 	document.addEventListener('click', pageNavigationAction)
@@ -19,15 +18,6 @@ function pageNavigation() {
 				e.preventDefault()
 			}
 		}
-	}
-
-	if (getHash()) {
-		let goToHash
-
-		document.querySelector(`#${getHash()}`)
-			? (goToHash = `#${getHash()}`)
-			: (goToHash = `.${getHash()}`)
-		goToHash ? goToBlock(goToHash, true, 20) : null
 	}
 }
 

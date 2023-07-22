@@ -4,9 +4,9 @@
  */
 import Marquee from 'vanilla-marquee'
 
-if (document.querySelector('[data-marquee]')) {
-	const elem = document.querySelector('[data-marquee]')
+const elem = document.querySelector('[role="marquee"]')
 
+if (elem) {
 	new Marquee(elem, {
 		css3easing: 'linear',
 		direction: 'left',
