@@ -12,7 +12,6 @@ import { pageNavigation } from '@js/modules/scroll/pageNavigation'
 // ----------------------------------------------------------------MODULES
 import { addLoadedClass } from '@js/modules/addLoadedClass'
 import { fullScreenFix } from '@js/modules/fullScreenFix'
-// import { colorScheme } from '@js/modules/colorScheme'
 import { webp } from '@js/modules/webp'
 
 // ----------------------------------------------------------------VENDORS
@@ -33,5 +32,4 @@ pageNavigation()
 // ----------------------------------------------------------------MODULES
 addLoadedClass()
 fullScreenFix()
-// colorScheme()
 webp()
