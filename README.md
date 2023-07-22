@@ -1,4 +1,5 @@
 # [![](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=40&duration=2000&pause=800&color=8800FF&repeat=false&width=800&height=80&lines=Hello+%F0%9F%A4%99%2C+i'm+Nikita+Almanov)](https://git.io/typing-svg)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=nikkeyl.nikkeyl)
 
 ## About me
 
