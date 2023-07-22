@@ -13,18 +13,6 @@
 	box-sizing: content-box;
 }
 
-.swiper-vertical {
-	.swiper-wrapper {
-		flex-direction: column;
-	}
-}
-
-.swiper-autoheight {
-	.swiper-wrapper {
-		align-items: flex-start;
-	}
-}
-
 .swiper-initialized {
 	touch-action: pan-y;
 

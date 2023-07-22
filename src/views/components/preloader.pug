@@ -75,87 +75,78 @@
 		function preloader() {
 			const preloaderImages = document.querySelectorAll('img');
 			const preloaderContainer = document.querySelector('#preloader');
-
-			if (preloaderImages.length) {
-				const preloaderTemplate =
-					`
-						<div class="preloader">
-							<div class="preloader__load">
-								<svg id="animated" viewbox="0 0 100 100">
-									<circle cx="50" cy="50" r="45" fill="#fff" />
-									<path fill="#fff" stroke-linecap="round" stroke-width="8" stroke="#80f" d="M50 10 a 40 40 0 0 1 0 80">
-									</path>
-								</svg>
-							</div>
+			const preloaderTemplate =
+				`
+					<div class="preloader">
+						<div class="preloader__load">
+							<svg id="animated" viewbox="0 0 100 100">
+								<circle cx="50" cy="50" r="45" fill="#fff" />
+								<path fill="#fff" stroke-linecap="round" stroke-width="8" stroke="#80f" d="M50 10 a 40 40 0 0 1 0 80">
+								</path>
+							</svg>
 						</div>
-					`;
+					</div>
+				`;
 
-				document.querySelector('html').insertAdjacentHTML(
-					"beforeend",
-					preloaderTemplate
-				);
+			document.querySelector('html').insertAdjacentHTML(
+				"beforeend",
+				preloaderTemplate
+			);
 
-				const preloader = document.querySelector('.preloader');
-				const	showPercentLoad = document.querySelector('.preloader__counter');
-				const	html = document.documentElement;
+			const preloader = document.querySelector('.preloader');
+			const	showPercentLoad = document.querySelector('.preloader__counter');
+			const	html = document.documentElement;
 
-				let imagesLoadedCount = counter = progress = 0;
+			let imagesLoadedCount = counter = progress = 0;
 
-				html.classList.add('loading');
-				html.classList.add('lock');
+			html.classList.add('loading');
+			html.classList.add('lock');
 
-				preloaderImages.forEach(preloaderImage => {
-					const imgClone = document.createElement('img');
+			preloaderImages.forEach(preloaderImage => {
+				const imgClone = document.createElement('img');
 
-					if (imgClone) {
-						imgClone.onload = imageLoaded;
-						imgClone.onerror = imageLoaded;
-						preloaderImage.dataset.src
-							? imgClone.src = preloaderImage.dataset.src
-							: imgClone.src = preloaderImage.src;
-					}
-				});
-
-				function setValueProgress(progress) {
-					showPercentLoad
-						? showPercentLoad.innerText = `${progress}%`
-						: null;
+				if (imgClone) {
+					imgClone.onload = imageLoaded;
+					imgClone.onerror = imageLoaded;
+					imgClone.src = preloaderImage.src;
 				}
+			});
 
+			function setValueProgress(progress) {
 				showPercentLoad
-					? setValueProgress(progress)
+					? showPercentLoad.innerText = `${progress}%`
 					: null;
+			}
 
-				function imageLoaded() {
-					imagesLoadedCount++;
-					progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+			showPercentLoad
+				? setValueProgress(progress)
+				: null;
 
-					const intervalId = setInterval(() => {
-						counter >= progress
-							? clearInterval(intervalId)
-							: setValueProgress(++counter);
-						counter >= 100
-							? addLoadedClass()
-							: null;
-					}, 10);
-				}
+			function imageLoaded() {
+				imagesLoadedCount++;
+				progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
 
-				function addLoadedClass() {
-					html.classList.add('loaded');
-					html.classList.remove('lock');
-					html.classList.remove('loading');
-					setInterval(() => {
-						preloader.classList.add('hide');
-						preloaderContainer.classList.add('hide');
-						setTimeout(() => {
-							preloaderContainer.remove();
-						}, 500);
+				const intervalId = setInterval(() => {
+					counter >= progress
+						? clearInterval(intervalId)
+						: setValueProgress(++counter);
+					counter >= 100
+						? addLoadedClass()
+						: null;
+				}, 10);
+			}
+
+			function addLoadedClass() {
+				html.classList.add('loaded');
+				html.classList.remove('lock');
+				html.classList.remove('loading');
+				setInterval(() => {
+					preloader.classList.add('hide');
+					preloaderContainer.classList.add('hide');
+					setTimeout(() => {
+						preloader.remove();
+						preloaderContainer.remove();
 					}, 500);
-				}
-			} else {
-				preloaderContainer.classList.add('hide');
-				setTimeout(() => {
-					preloaderContainer.remove();
 				}, 500);
 			}
 		}
