@@ -1,0 +1,8 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+
+.grid {
+	@include grid(fit, rem(290), 1fr, $phone) {
+		gap: rem(20);
+	}
+}
