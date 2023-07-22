@@ -3,10 +3,8 @@
 @use "@scss/utils/placeholders" as *;
 
 .review {
-	border-radius: rem(10);
-	padding: rem(20);
+	overflow: hidden;
 	max-width: rem(400);
-	color: var(--secondary);
 	background: var(--primary);
 	transition: box-shadow 0.3s;
 
@@ -15,11 +13,7 @@
 		align-items: center;
 		gap: rem(15);
 		border-bottom: rem(2) solid var(--secondary);
-		padding-bottom: rem(25);
-
-		&:not(:last-child) {
-			margin-bottom: rem(15);
-		}
+		padding: rem(15);
 	}
 
 	&__image {
@@ -29,14 +23,14 @@
 		background-color: var(--accent);
 	}
 
-	&__name {
-		&:not(:last-child) {
-			margin-bottom: rem(10);
-		}
+	&__text {
+		padding: rem(15);
+		color: var(--primary);
+		background: var(--accent);
 	}
 
 	.swiper-slide-active & {
-		box-shadow: 0 rem(8) rem(15) rgb(var(--secondary-rgb) / 0.25);
+		box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb) / 0.25);
 	}
 
 	@extend %border;

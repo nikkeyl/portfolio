@@ -2,6 +2,10 @@
 @use "@scss/abstracts" as *;
 
 /* Tips (Tippy plugin) */
+[data-tippy-root] {
+	z-index: 95 !important;
+}
+
 .tippy-box[data-animation="fade"][data-state="hidden"] {
 	opacity: 0;
 }
@@ -12,6 +16,5 @@
 	box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb) / 25%);
 	font-size: rem(13);
 	line-height: div(22, 13);
-	color: var(--secondary);
 	background-color: var(--inverse);
 }

@@ -14,15 +14,15 @@
 		justify-content: center;
 		overflow: hidden;
 		border-radius: 50%;
+		transition: transform 0.3s;
 
 		svg {
 			width: rem(40);
 			height: rem(40);
-			transition: fill 0.3s;
+		}
 
-			@include media-hover {
-				fill: var(--accent);
-			}
+		@include media-hover {
+			transform: scale(1.05);
 		}
 	}
 }

@@ -1,7 +1,6 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
-/* Header styles */
 .header {
 	@include adaptive-value("padding-block", 20, 10);
 
@@ -30,5 +29,9 @@
 		@include media-max(520) {
 			display: none;
 		}
+	}
+
+	&__button {
+		padding: rem(10) rem(14);
 	}
 }

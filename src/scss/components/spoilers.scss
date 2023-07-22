@@ -4,7 +4,7 @@
 
 .spoiler {
 	align-self: flex-start;
-	border-radius: rem(5);
+	overflow: hidden;
 	transition:
 		transform 0.3s,
 		opacity 0.3s;
@@ -16,15 +16,12 @@
 		gap: rem(20);
 		padding: rem(10);
 		text-align: left;
-		cursor: default;
+		cursor: pointer;
 
 		.spoiler-init & {
-			cursor: pointer;
-
 			span {
 				display: block;
 				flex: 0 0 rem(30);
-				width: rem(30);
 				height: rem(30);
 
 				&::before,
@@ -66,10 +63,6 @@
 			width: rem(40);
 			height: rem(40);
 			fill: var(--primary);
-
-			@include media-hover {
-				fill: var(--inverse);
-			}
 		}
 	}
 
@@ -113,7 +106,6 @@
 	}
 
 	&__content {
-		border-radius: 0 0 rem(3) rem(3);
 		padding: rem(15);
 		box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb) / 0.25);
 		color: var(--primary);
