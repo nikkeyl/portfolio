@@ -14,11 +14,12 @@
 ## My developments
 
 - 🏭 [![](https://img.shields.io/badge/illicit-80f)](https://github.com/nikkeyl/Illicit). Builder for front-end based on gulp and webpack
-- 🔄 [![](https://img.shields.io/badge/quicky-starter-purple)](https://github.com/nikkeyl/Boilerplate-illicit). Repository template for quick project creation
-- 📚 [![](https://img.shields.io/badge/RRC-orange)](https://github.com/nikkeyl/RRC). Library of repetitive reusable components
-- 📖 [![](https://img.shields.io/badge/TMD-blue)](https://github.com/nikkeyl/templates-markdown-docs). Library of templates markdown documents
-- 📦 [![](https://img.shields.io/badge/devpack-brown)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
+- ⏩ [![](https://img.shields.io/badge/shorter-hex-cyan)](https://github.com/nikkeyl/shorter-hex). Convenient and fast reduction of hex colors online
+- 🔄 [![](https://img.shields.io/badge/quicky-starter-purple)](https://github.com/nikkeyl/quicky-starter). Repository template for quick project creation
+- 📚 [![](https://img.shields.io/badge/RRC-orange)](https://github.com/nikkeyl/repetitive-reusable-components). Library of repetitive reusable components
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io/nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
+- 📦 [![](https://img.shields.io/badge/devpack-brown)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
+- 📖 [![](https://img.shields.io/badge/TMD-blue)](https://github.com/nikkeyl/templates-markdown-docs). Library of templates markdown documents
 
 ### My gists
 - ♻️ [![](https://img.shields.io/badge/gists-darkgreen)](https://gist.github.com/nikkeyl). Code templates storage: .yml, .json, .md, and a lot more
