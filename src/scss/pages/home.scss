@@ -17,7 +17,7 @@
 
 	&__title {
 		&:not(:last-child) {
-			@include adaptive-value("margin-bottom", 120, 60);
+			@include adaptive-value("margin-bottom", 100, 50);
 		}
 	}
 
@@ -28,7 +28,7 @@
 	}
 
 	&__button {
-		@include slide(2, 50, 1, 0.4, top);
+		// @include slide(2, 50, 1, 0.4, top);
 	}
 }
 
@@ -66,48 +66,6 @@
 		}
 	}
 
-	&__text {
-		font-weight: 400;
-		font-size: rem(18);
-		line-height: 150%;
-
-		@include media-min($tablet) {
-			a {
-				position: relative;
-				z-index: 3;
-
-				&::after {
-					@include pseudo;
-
-					left: 0;
-					bottom: 0;
-					z-index: -1;
-					width: 100%;
-					height: rem(2);
-					background-color: var(--inverse);
-					transition: height 0.3s;
-				}
-
-				span {
-					color: var(--inverse);
-					transition: color 0.3s;
-				}
-
-				@media (any-hover: hover) {
-					&:hover {
-						&::after {
-							height: 100%;
-						}
-
-						span {
-							color: var(--secondary);
-						}
-					}
-				}
-			}
-		}
-	}
-
 	&__image {
 		@include media-min($tablet) {
 			overflow: hidden;
@@ -115,7 +73,7 @@
 			&::before {
 				@include pseudo;
 
-				right: rem(-100);
+				right: rem(-130);
 				top: rem(-150);
 				z-index: 4;
 				width: rem(200);
@@ -139,8 +97,7 @@
 	}
 
 	&__image {
-		flex: 0 0 rem(90);
-		width: rem(90);
+		flex-basis: rem(90);
 		height: rem(90);
 	}
 }
@@ -156,10 +113,7 @@
 	}
 
 	&__cards {
-		@include grid(fit, rem(290), 1fr, $tablet) {
-			justify-items: center;
-			gap: rem(30);
-		}
+		justify-items: center;
 	}
 }
 
