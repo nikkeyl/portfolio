@@ -16,6 +16,9 @@
       "name": "devpack"
     },
     {
+      "name": "pug-style-guide"
+    },
+    {
       "name": "templates-markdown-docs"
     }
   ]
