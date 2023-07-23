@@ -1,0 +1,24 @@
+{
+  "socials": [
+    {
+      "link": "https://t.me/nikkeyl",
+      "tip": "Телеграм",
+      "icon": "telegram"
+    },
+    {
+      "link": "mailto:nikkeyl.dev@gmail.com",
+      "tip": "Gmail",
+      "icon": "gmail"
+    },
+    {
+      "link": "tel:89064993787",
+      "tip": "Телефон",
+      "icon": "phone"
+    },
+    {
+      "link": "https://github.com/nikkeyl",
+      "tip": "GitHub",
+      "icon": "github"
+    }
+  ]
+}
