@@ -22,9 +22,10 @@
 
 ### When there was inspiration
 
-- 🌐 [![](https://img.shields.io/badge/nikkeyl-blue)](https://nikkeyl.github.io/nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
-- 📦 [![](https://img.shields.io/badge/devpack-brown)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
+- 🌐 [![](https://img.shields.io/badge/nikkeyl-skyblue)](https://nikkeyl.github.io/nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
+- 📦 [![](https://img.shields.io/badge/devpack-orange)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
 - 📖 [![](https://img.shields.io/badge/TMD-blue)](https://github.com/nikkeyl/templates-markdown-docs). Library of templates markdown documents
+- 🐶 [![](https://img.shields.io/badge/SGP-brown)](https://github.com/nikkeyl/pug-style-guide). Style guide for pug
 
 ### My gists
 - ♻️ [![](https://img.shields.io/badge/gists-darkgreen)](https://gist.github.com/nikkeyl). Code templates storage: .yml, .json, .md, and a lot more
