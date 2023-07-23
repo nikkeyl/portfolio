@@ -7,7 +7,6 @@ if (elem) {
 		strings: ['разработка'],
 		typeSpeed: 50,
 		loop: false,
-		fadeOut: true,
-		cursorChar: '_'
+		fadeOut: true
 	})
 }

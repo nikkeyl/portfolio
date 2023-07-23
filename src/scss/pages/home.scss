@@ -17,7 +17,7 @@
 
 	&__title {
 		&:not(:last-child) {
-			@include adaptive-value("margin-bottom", 100, 50);
+			@include adaptive-value("margin-bottom", 80, 30);
 		}
 	}
 
