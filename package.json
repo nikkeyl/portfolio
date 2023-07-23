@@ -50,13 +50,9 @@
     "gulp-zip": "latest",
     "html-webpack-plugin": "latest",
     "husky": "latest",
-    "inputmask": "latest",
     "isotope-layout": "latest",
-    "js-datepicker": "latest",
-    "lightgallery": "latest",
     "lint-staged": "latest",
     "mini-css-extract-plugin": "latest",
-    "nouislider": "latest",
     "pug-loader": "latest",
     "remark-cli": "latest",
     "remark-lint": "latest",
@@ -66,7 +62,6 @@
     "sass": "latest",
     "sass-loader": "latest",
     "simplebar": "latest",
-    "smooth-scroll": "latest",
     "string-replace-loader": "latest",
     "style-loader": "latest",
     "stylelint": "latest",
@@ -83,7 +78,6 @@
     "webpack": "latest",
     "webpack-cli": "latest",
     "webpack-dev-server": "latest",
-    "webpack-stream": "latest",
-    "wnumb": "latest"
+    "webpack-stream": "latest"
   }
 }
