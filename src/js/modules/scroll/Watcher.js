@@ -110,7 +110,6 @@ class ScrollWatcher {
 		targetElement.hasAttribute('data-watch-once') && entry.isIntersecting
 			? this.scrollWatcherOff(targetElement, observer)
 			: null
-		document.dispatchEvent(new CustomEvent('watcherCallback', { detail: entry }))
 	}
 }
 
