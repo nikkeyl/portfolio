@@ -18,6 +18,7 @@ import { webp } from '@js/modules/webp'
 // import '@js/vendors/simpleBar'
 import '@js/vendors/marquee'
 import '@js/vendors/swiper'
+import '@js/vendors/Typed'
 import '@js/vendors/tippy'
 
 // ==========================================================================

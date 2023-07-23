@@ -10,7 +10,9 @@
 	text-align: center;
 
 	span {
-		color: var(--inverse);
+		&:not([data-typed]) {
+			color: var(--inverse);
+		}
 	}
 
 	&--big {
