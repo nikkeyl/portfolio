@@ -2,119 +2,148 @@
   "skills": [
     {
       "icon": "img/svg/html.svg",
-      "name": "HTML5"
+      "name": "HTML5",
+      "a11y": "html"
     },
     {
       "icon": "img/svg/pug.svg",
-      "name": "PUG"
+      "name": "PUG",
+      "a11y": "паг"
     },
     {
       "icon": "img/svg/css.svg",
-      "name": "CSS"
+      "name": "CSS",
+      "a11y": "css"
     },
     {
       "icon": "img/svg/scss.svg",
-      "name": "SCSS"
+      "name": "SCSS",
+      "a11y": "scss"
     },
     {
       "icon": "img/svg/js.svg",
-      "name": "JS"
+      "name": "JS",
+      "a11y": "джаваскрипт"
     },
     {
       "icon": "img/svg/ts.svg",
-      "name": "TS"
+      "name": "TS",
+      "a11y": "тайпскрипт"
     },
     {
       "icon": "img/svg/bash.svg",
-      "name": "BASH"
+      "name": "BASH",
+      "a11y": "бэш"
     },
     {
       "icon": "img/svg/markdown.svg",
-      "name": "MARKDOWN"
+      "name": "MARKDOWN",
+      "a11y": "маркдаун"
     },
     {
       "icon": "img/svg/svg.svg",
-      "name": "SVG"
+      "name": "SVG",
+      "a11y": "svg"
     },
     {
       "icon": "img/svg/bem.svg",
-      "name": "BEM"
+      "name": "BEM",
+      "a11y": "бэм"
     },
     {
       "icon": "img/svg/eslint.svg",
-      "name": "ESLINT"
+      "name": "ESLINT",
+      "a11y": "еэслинт"
     },
     {
       "icon": "img/svg/stylelint.svg",
-      "name": "STYLELINT"
+      "name": "STYLELINT",
+      "a11y": "stylelint"
     },
     {
       "icon": "img/svg/prettier.svg",
-      "name": "PRETTIER"
+      "name": "PRETTIER",
+      "a11y": "prettier"
     },
     {
       "icon": "img/svg/editor-config.svg",
-      "name": "EDITORCONFIG"
+      "name": "EDITORCONFIG",
+      "a11y": "эдитор конфиг"
     },
     {
       "icon": "img/svg/remark.svg",
-      "name": "REMARK"
+      "name": "REMARK",
+      "a11y": "remark"
     },
     {
       "icon": "img/svg/github-actions.svg",
-      "name": "GITHUB ACTIONS"
+      "name": "GITHUB ACTIONS",
+      "a11y": "гитхаб экшионс"
     },
     {
       "icon": "img/svg/w3c.svg",
-      "name": "W3C"
+      "name": "W3C",
+      "a11y": "вэ 3 цэ"
     },
     {
       "icon": "img/svg/semver.svg",
-      "name": "SEMVER"
+      "name": "SEMVER",
+      "a11y": "сэмвер"
     },
     {
       "icon": "img/svg/browserslist.svg",
-      "name": "BROWSERSLIST"
+      "name": "BROWSERSLIST",
+      "a11y": "браузерслист"
     },
     {
       "icon": "img/svg/lighthouse.svg",
-      "name": "LIGHTHOUSE"
+      "name": "LIGHTHOUSE",
+      "a11y": "лайтхаус"
     },
     {
       "icon": "img/svg/npm.svg",
-      "name": "NPM"
+      "name": "NPM",
+      "a11y": "энпиэм"
     },
     {
       "icon": "img/svg/webpack.svg",
-      "name": "WEBPACK"
+      "name": "WEBPACK",
+      "a11y": "вебпак"
     },
     {
       "icon": "img/svg/gulp.svg",
-      "name": "GULP"
+      "name": "GULP",
+      "a11y": "gulp"
     },
     {
       "icon": "img/svg/svgo.svg",
-      "name": "SVGO"
+      "name": "SVGO",
+      "a11y": "эсвиджио"
     },
     {
       "icon": "img/svg/babel.svg",
-      "name": "BABEL"
+      "name": "BABEL",
+      "a11y": "бэйбэл"
     },
     {
       "icon": "img/svg/git.svg",
-      "name": "GIT"
+      "name": "GIT",
+      "a11y": "гит"
     },
     {
       "icon": "img/svg/figma.svg",
-      "name": "FIGMA"
+      "name": "FIGMA",
+      "a11y": "figma"
     },
     {
       "icon": "img/svg/vscode.svg",
-      "name": "VSCODE"
+      "name": "VSCODE",
+      "a11y": "виэскод"
     },
     {
       "icon": "img/svg/github.svg",
-      "name": "GITHUB"
+      "name": "GITHUB",
+      "a11y": "гитхаб"
     }
   ]
 }
