@@ -1,4 +1,5 @@
 const html = document.documentElement
 const body = document.body
+const header = document.querySelector('header.header')
 
-export { html, body }
+export { header, html, body }

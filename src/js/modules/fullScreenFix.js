@@ -1,16 +1,15 @@
 import { addTouchClass } from '@js/helpers/addTouchClass'
+import { header, html } from '@js/helpers/nodeList'
 import { isMobile } from '@js/helpers/isMobile'
-import { html } from '@js/helpers/nodeList'
 
 function fullScreenFix() {
-	const header = document.querySelector('header.header').offsetHeight
 	const fullScreens = document.querySelectorAll('[data-fullscreen]')
 
 	/*! Accounting for floating panel in mobile browsers */
 	function fixHeight() {
 		const vh = window.innerHeight * 0.01
 
-		html.style.setProperty('--vh', `${vh - header / 100}px`)
+		html.style.setProperty('--vh', `${vh - header.offsetHeight / 100}px`)
 	}
 
 	if (fullScreens.length && isMobile.any()) {

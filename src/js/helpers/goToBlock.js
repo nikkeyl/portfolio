@@ -1,5 +1,5 @@
 import { bodyUnlock } from '@js/helpers/bodyLockToggle'
-import { html } from '@js/helpers/nodeList'
+import { header, html } from '@js/helpers/nodeList'
 
 const goToBlock = (targetBlock, offsetTop = 0) => {
 	const targetBlockElement = document.querySelector(targetBlock)
@@ -7,7 +7,7 @@ const goToBlock = (targetBlock, offsetTop = 0) => {
 	if (targetBlockElement) {
 		let headerItemHeight = 0
 
-		headerItemHeight = document.querySelector('header.header').offsetHeight
+		headerItemHeight = header.offsetHeight
 		html.classList.contains('lock') ? bodyUnlock() : null
 
 		let targetBlockElementPosition =
