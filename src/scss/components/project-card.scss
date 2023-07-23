@@ -12,17 +12,17 @@
 		padding-bottom: 90%;
 		background-color: var(--accent);
 
-		&:focus-visible {
-			img {
-				transform: scale(1.03);
-			}
-		}
-
 		img {
 			object-position: top;
 			transition: transform 0.3s;
 
 			@include media-hover {
+				transform: scale(1.03);
+			}
+		}
+
+		&:focus-visible {
+			img {
 				transform: scale(1.03);
 			}
 		}
@@ -65,27 +65,24 @@
 		svg {
 			width: rem(50);
 			height: rem(50);
+			fill: var(--accent);
+			transition: fill 0.3s;
+
+			@include media-hover {
+				fill: var(--inverse);
+			}
+		}
+
+		&:focus-visible {
+			svg {
+				fill: var(--inverse);
+			}
 		}
 
 		&.disabled {
 			svg {
 				fill: rgb(var(--primary-rgb) / 0.5);
 				cursor: not-allowed;
-			}
-		}
-
-		&:not(.disabled) {
-			svg {
-				fill: var(--accent);
-				transition: fill 0.3s;
-
-				@include media-hover {
-					fill: var(--inverse);
-
-					&:focus-visible {
-						fill: var(--inverse);
-					}
-				}
 			}
 		}
 	}
