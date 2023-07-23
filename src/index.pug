@@ -16,8 +16,7 @@ block pageContent
 					href='#'
 					data-goto='.portfolio'
 					data-goto-header
-				)
-					| Портфолио
+				) Портфолио
 				a.button.button--fw.hero__button(href='https://t.me/nikkeyl')
 					| Заказать вёрстку
 	section.about-me
@@ -31,6 +30,8 @@ block pageContent
 						p В этом вы сами можете убедиться перейдя в #[a.link(href='#' data-goto='.portfolio' data-goto-header) #[span портфолио]].
 						p Также благодаря моему минимализму я #[strong пишу чистый и понятный код].
 						p Если вы хотите узнать #[strong какими технологиями я владею], то можете спуститься чуть #[a.link(href='#' data-goto='.skills' data-goto-header) #[span ниже]].
+						each skill in skills.skills
+							p.sr-only=skill.a11y
 		.about-me__image
 			img(
 				src='@img/about/nikkeyl.jpg'
@@ -52,18 +53,10 @@ block pageContent
 			h2.title.developments__title
 				| Мои разработки
 			.grid
-				a(href='https://github.com/nikkeyl/illicit')
-					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=illicit&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='illicit')
-				a(href='https://github.com/nikkeyl/shorter-hex')
-					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=shorter-hex&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='shorter hex')
-				a(href='https://github.com/nikkeyl/quicky-starter')
-					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=quicky-starter&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='quicky starter')
-				a(href='https://github.com/nikkeyl/repetitive-reusable-components')
-					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=repetitive-reusable-components&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='rrc')
-				a(href='https://github.com/nikkeyl/devpack')
-					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=devpack&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='devpack')
-				a(href='https://github.com/nikkeyl/templates-markdown-docs')
-					img(src='https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=templates-markdown-docs&title_color=80f&text_color=000&icon_color=80f&border_color=000&border_radius=10' alt='tmd')
+				each repo in repos.repos
+					a.developments__card(href=`https://github.com/nikkeyl/${repo.name}` aria-label=repo.name)
+						p.sr-only=repo.name
+						img(src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=80f&text_color=000&icon_color=80f` alt='illicit')
 	section.portfolio
 		.container
 			h2.title.portfolio__title
@@ -85,8 +78,7 @@ block pageContent
 								a.button.project-card__button(
 									href=card.linkSite
 									data-tippy-content=card.name
-								)
-									| Посмотреть
+								) Посмотреть
 								a(
 									class=['project-card__src-code', card.disabled ? 'disabled' : '']
 									href=card.linkCode
@@ -157,26 +149,11 @@ block pageContent
 								href='#'
 								data-popup='#info'
 								data-tippy-content='Часы работы'
-							)
-								| Свяжитесь со мной
+							) Свяжитесь со мной
 								svg
 									use(href='@img/icons/sprite.svg#info')
 						.socials.spoiler__socials
-							a.socials__item(
-								href='https://t.me/nikkeyl'
-								data-tippy-content='Телеграм'
-							)
-								svg
-									use(href='@img/icons/sprite.svg#telegram')
-							a.socials__item(
-								href='mailto:nikkeyl.dev@gmail.com'
-								data-tippy-content='Gmail'
-							)
-								svg
-									use(href='@img/icons/sprite.svg#gmail')
-							a.socials__item(
-								href='tel:89064993787'
-								data-tippy-content='Телефон'
-							)
-								svg
-									use(href='@img/icons/sprite.svg#phone')
+							each social in socials.socials
+								a.socials__item(href=social.link data-tippy-content=social.tip)
+									svg
+										use(href=`@img/icons/sprite.svg#${social.icon}`)
