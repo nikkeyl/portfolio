@@ -1,16 +1,17 @@
 extends views/layout/layout
 
 block variables
-	- pageLang = 'ru'
-	- pageTitle = 'Никита Алманов - front-end разработка'
+	- lang = 'ru'
+	- title = 'Никита Алманов - front-end разработка'
 	- preloader = true
 	- popups = true
 
-block pageContent
+block content
 	section.hero(data-fullscreen)
 		.container.hero__container
 			h1.title.title--big.hero__title
-				| #[span Front-end] #[span(data-typed) разработка]
+				span Front-end
+				span(data-typed) разработка
 			.hero__actions
 				a.button.button--fw.hero__button(
 					href='#'
@@ -30,8 +31,10 @@ block pageContent
 						p В этом вы сами можете убедиться перейдя в #[a.link(href='#' data-goto='.portfolio' data-goto-header) #[span портфолио]].
 						p Также благодаря моему минимализму я #[strong пишу чистый и понятный код].
 						p Если вы хотите узнать #[strong какими технологиями я владею], то можете спуститься чуть #[a.link(href='#' data-goto='.skills' data-goto-header) #[span ниже]].
+
 						each skill in skills.skills
 							p.sr-only=skill.a11y
+
 		.about-me__image
 			img(
 				src='@img/about/nikkeyl.jpg'
@@ -47,15 +50,22 @@ block pageContent
 						data-tippy-content=skill.name
 						loading='lazy'
 					)
+
 	section.developments
 		.container
 			h2.title.developments__title
 				| Мои разработки
 			.grid
 				each repo in repos.repos
-					a.developments__card(href=`https://github.com/nikkeyl/${repo.name}` aria-label=repo.name)
-						p.sr-only=repo.name
-						img(src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=80f&text_color=000&icon_color=80f` alt='illicit')
+					a.developments__card(
+						href=`https://github.com/nikkeyl/${repo.name}`
+						aria-label=repo.name
+					) #[p.sr-only=repo.name]
+						img(
+							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=80f&text_color=000&icon_color=80f`
+							alt='illicit'
+						)
+
 	section.portfolio
 		.container
 			h2.title.portfolio__title
@@ -79,14 +89,17 @@ block pageContent
 									data-tippy-content=card.name
 								) Посмотреть
 								a(
-									class=['project-card__src-code', card.disabled ? 'disabled' : '']
+									class=[
+										'project-card__src-code',
+										card.disabled ? 'disabled' : ''
+									]
 									href=card.linkCode
 									data-tippy-content=card.disabled ? false : card.srcCode
 									tabindex=card.disabled ? '-1' : false
-								)
-									| #[.sr-only=card.disabled ? [card.srcCode + ' не доступен'] : ['Посмотреть ' + card.srcCode]]
+								) #[.sr-only=card.disabled ? [card.srcCode + ' не доступен'] : ['Посмотреть ' + card.srcCode]]
 									svg
 										use(href='@img/icons/sprite.svg#github')
+
 	section.reviews
 		.container
 			h2.title.reviews__title
@@ -111,12 +124,13 @@ block pageContent
 										=review.name
 								.text.review__text
 									| !{review.text}
+
 				.swiper-pagination
 	section.questions
 		.container
 			h2.title.questions__title
 				| Q&A
-				| #[p.sr-only Вопросы и Ответы]
+				p.sr-only Вопросы и Ответы
 			.grid(
 				data-spoilers
 				data-one-spoiler
@@ -126,21 +140,18 @@ block pageContent
 						summary.spoiler__trigger(
 							data-spoiler
 							data-spoiler-close
-							tabindex='1'
 						)
 							strong=spoiler.title
 							| #[.sr-only !{spoiler.content}]
 							span
 						.text.spoiler__content
 							| !{spoiler.content}
+
 				details.spoiler
 					summary.spoiler__trigger(
 						data-spoiler
 						data-spoiler-close
-					)
-						strong
-							| Остались вопросы?
-							| #[p.sr-only Я отвечаю на звонки и сообщения с 12:00 до 20:00.]
+					) #[strong Остались вопросы? #[p.sr-only Я отвечаю на звонки и сообщения с 12:00 до 20:00.]]
 						span
 					.text.spoiler__content
 						.spoiler__call-me
@@ -153,6 +164,9 @@ block pageContent
 									use(href='@img/icons/sprite.svg#info')
 						.socials.spoiler__socials
 							each social in socials.socials
-								a.socials__item(href=social.link data-tippy-content=social.tip)
+								a.socials__item(
+									href=social.link
+									data-tippy-content=social.tip
+								)
 									svg
 										use(href=`@img/icons/sprite.svg#${social.icon}`)

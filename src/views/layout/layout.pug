@@ -8,29 +8,47 @@
 - const socials = require('/src/views/json/socials.json')
 
 block variables
-	- let pageLang
-	- let pageTitle
+	- let lang
+	- let title
 	- let preloader
 	- let popups
 
 doctype html
-html(lang=pageLang)
+html(lang=lang)
 	head
-		title=pageTitle
+		title=title
 		meta(charset='UTF-8')
-		meta(name='viewport' content='width=device-width, initial-scale=1')
-		meta(name='format-detection' content='telephone=no')
+		meta(
+			name='viewport'
+			content='width=device-width, initial-scale=1'
+		)
+		meta(
+			name='format-detection'
+			content='telephone=no'
+		)
+
 		if production
-			link(rel='stylesheet' href='css/style.min.css')
-		link(rel='icon' href='favicon.ico')
+			link(
+				rel='stylesheet'
+				href='css/style.min.css'
+			)
+
+		link(
+			rel='icon'
+			href='favicon.ico'
+		)
 	body
 		.wrapper
 			include header
+
 			main.page
-				block pageContent
+				block content
+
 			include footer
+
 		if preloader
 			include ../components/preloader
 		if popups
 			include ../components/popup
+
 		script(src='js/app.min.js')

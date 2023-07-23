@@ -7,8 +7,16 @@ header.header
 		.header__body
 			.socials
 				each social in socials.socials
-					a.socials__item(href=social.link data-tippy-content=social.tip)
+					a.socials__item(
+						href=social.link
+						data-tippy-content=social.tip
+					)
 						svg
 							use(href=`@img/icons/sprite.svg#${social.icon}`)
-			a.button.header__button(href='#' data-goto='.questions' data-goto-header data-tippy-content='Вопросы о работе')
-				| ?
+
+			a.button.header__button(
+				href='#'
+				data-goto='.questions'
+				data-goto-header
+				data-tippy-content='Вопросы о работе'
+			) ?
