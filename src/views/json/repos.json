@@ -1,0 +1,22 @@
+{
+  "repos": [
+    {
+      "name": "illicit"
+    },
+    {
+      "name": "shorter-hex"
+    },
+    {
+      "name": "quicky-starter"
+    },
+    {
+      "name": "repetitive-reusable-components"
+    },
+    {
+      "name": "devpack"
+    },
+    {
+      "name": "templates-markdown-docs"
+    }
+  ]
+}
