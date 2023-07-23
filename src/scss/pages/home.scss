@@ -32,7 +32,7 @@
 	}
 
 	&__button {
-		// @include slide(2, 50, 1, 0.4, top);
+		@include slide(2, 50, 1.5, 0.4, top);
 	}
 }
 
@@ -71,6 +71,8 @@
 	}
 
 	&__image {
+		background-color: var(--inverse);
+
 		@include media-min($tablet) {
 			overflow: hidden;
 

@@ -1,7 +1,9 @@
 import Typed from 'typed.js'
 
-if (document.querySelector('[data-typed]')) {
-	new Typed('[data-typed]', {
+const elem = document.querySelector('[data-typed]')
+
+if (elem) {
+	new Typed(elem, {
 		strings: ['разработка'],
 		typeSpeed: 50,
 		loop: false,
