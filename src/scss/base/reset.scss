@@ -25,22 +25,12 @@ html,
 body {
 	min-width: $min-width + px;
 	min-height: 100vh;
-
-	// Interferes with the normal operation of smoothScroll.js
 	scroll-behavior: smooth;
 }
 
 body {
-	font-family: var(--font-family), sans-serif;
-	font-weight: var(--font-weight);
-	font-size: var(--font-size);
-	line-height: 1;
-	text-rendering: optimizeLegibility;
-	text-size-adjust: 100%;
 	color: var(--text-primary);
 	background-color: var(--background-primary);
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -52,21 +42,16 @@ body {
 	/* Styles for a contrasting theme */
 	outline-color: transparent;
 	outline-offset: rem(2);
-	box-shadow: 0 0 0 rem(2) var(--inverse);
+	box-shadow: 0 0 0 rem(2) var(--accent);
 }
 
 /* Remove markers */
-summary,
-ul,
-ol {
+summary {
 	list-style: none;
 }
 
 /* Make images and inputs easier to work with */
 picture,
-iframe,
-input,
-video,
 img,
 svg {
 	display: block;
@@ -74,39 +59,21 @@ svg {
 }
 
 /* Remove italic */
-address {
-	font-style: normal;
-}
-
-input {
-	appearance: none;
-}
-
-textarea {
-	resize: none;
-}
 
 button {
 	background-color: transparent;
+
+	@media (any-hover: hover) {
+		/* Set the cursor pointer for the button and the label for devices with a mouse */
+		cursor: pointer;
+	}
 }
 
 a {
 	text-decoration: none;
 }
 
-label {
-	user-select: none;
-}
-
 button,
 a {
 	color: inherit;
-}
-
-button,
-label {
-	@media (any-hover: hover) {
-		/* Set the cursor pointer for the button and the label for devices with a mouse */
-		cursor: pointer;
-	}
 }

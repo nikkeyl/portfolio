@@ -3,6 +3,17 @@
 @use "@scss/utils/placeholders" as *;
 
 /* Typography styles */
+body {
+	font-family: var(--font-family), sans-serif;
+	font-weight: var(--font-weight);
+	font-size: var(--font-size);
+	line-height: 1;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
 .title {
 	@include adaptive-value("font-size", 64, 40);
 
@@ -11,7 +22,7 @@
 
 	span {
 		&:not([data-typed]) {
-			color: var(--inverse);
+			color: var(--accent);
 		}
 	}
 
@@ -50,9 +61,7 @@
 // ======================================================================================================================================================== //
 .link {
 	position: relative;
-	font-weight: 500;
-	font-size: rem(15);
-	line-height: div(20, 15);
+	font-weight: 700;
 	color: var(--inverse);
 
 	@include media-min($tablet) {

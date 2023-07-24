@@ -81,7 +81,7 @@
 
 		&.disabled {
 			svg {
-				fill: rgb(var(--primary-rgb) / 0.5);
+				fill: rgb(var(--disabled-rgb) / 0.5);
 				cursor: not-allowed;
 			}
 		}
