@@ -10,9 +10,9 @@ body {
 	line-height: 1;
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
+	color: var(--text-primary);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	color: var(--text-primary);
 }
 
 a {

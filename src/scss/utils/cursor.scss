@@ -1,48 +1,49 @@
 @use "@scss/abstracts" as *;
 
 * {
-	cursor: none !important;
+	cursor: none /* !important */;
 }
 
 .cursor {
+	position: fixed;
+	inset: 0;
 	z-index: 200;
 	width: 100%;
 	height: 100%;
-	position: fixed;
-	inset: 0;
 	pointer-events: none;
 
 	&__pointer {
 		position: fixed;
+		inset: 0;
 		width: rem(10);
 		height: rem(10);
-		inset: 0;
 
 		&::after {
 			@include pseudo;
 
-			width: 100%;
-			height: 100%;
 			inset: 0;
 			border: rem(3) solid #80f;
+			border-radius: 50%;
+			width: 100%;
+			height: 100%;
 			transition:
 				background-color 0.3s,
 				border-color 0.3s,
 				transform 0.3s;
-			border-radius: 50%;
 		}
 	}
 
 	&.active {
 		.cursor__pointer::after {
-			transition: transform 0.25s;
 			transform: scale(0.5);
+			transition: transform 0.25s;
 		}
 	}
+
 	&.hover {
 		.cursor__pointer::after {
-			background-color: #80f;
 			border-color: var(--inverse);
+			background-color: #80f;
 		}
 	}
 }
