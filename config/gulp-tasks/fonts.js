@@ -5,6 +5,25 @@ import fonter from 'gulp-fonter-fix'
 
 function cb() { }
 
+const fontWeights = {
+	thin: 100,
+	hairline: 100,
+	extralight: 200,
+	ultralight: 200,
+	light: 300,
+	regular: 400,
+	medium: 500,
+	semibold: 600,
+	demibold: 600,
+	bold: 700,
+	extrabold: 800,
+	ultrabold: 800,
+	black: 900,
+	heavy: 900,
+	extrablack: 950,
+	ultrablack: 950
+}
+
 const otfToTtf = () =>
 	app.gulp.src(`${app.paths.srcFolder}/fonts/*.otf`)
 		.pipe(app.plugins.catchError('FONTS'))
@@ -27,25 +46,6 @@ const fontsStyles = () => {
 	app.plugins.fs.readdir(app.paths.build.fonts, (error, fontFiles) => {
 		if (fontFiles) {
 			if (!app.plugins.fs.existsSync(fontStylesFile)) {
-				const fontWeights = {
-					thin: 100,
-					hairline: 100,
-					extralight: 200,
-					ultralight: 200,
-					light: 300,
-					regular: 400,
-					medium: 500,
-					semibold: 600,
-					demibold: 600,
-					bold: 700,
-					extrabold: 800,
-					ultrabold: 800,
-					black: 900,
-					heavy: 900,
-					extrablack: 950,
-					ultrablack: 950
-				}
-
 				let newFileOnly
 
 				app.plugins.fs.writeFile(
