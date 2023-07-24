@@ -73,8 +73,6 @@
 		}
 	script.
 		function preloader() {
-			const preloaderImages = document.querySelectorAll('img');
-			const preloaderContainer = document.querySelector('#preloader');
 			const preloaderTemplate =
 				`
 					<div class="preloader">
@@ -92,63 +90,6 @@
 				"beforeend",
 				preloaderTemplate
 			);
-
-			const preloader = document.querySelector('.preloader');
-			const	showPercentLoad = document.querySelector('.preloader__counter');
-			const	html = document.documentElement;
-
-			let imagesLoadedCount = counter = progress = 0;
-
-			html.classList.add('loading');
-			html.classList.add('lock');
-
-			preloaderImages.forEach(preloaderImage => {
-				const imgClone = document.createElement('img');
-
-				if (imgClone) {
-					imgClone.onload = imageLoaded;
-					imgClone.onerror = imageLoaded;
-					imgClone.src = preloaderImage.src;
-				}
-			});
-
-			function setValueProgress(progress) {
-				showPercentLoad
-					? showPercentLoad.innerText = `${progress}%`
-					: null;
-			}
-
-			showPercentLoad
-				? setValueProgress(progress)
-				: null;
-
-			function imageLoaded() {
-				imagesLoadedCount++;
-				progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
-
-				const intervalId = setInterval(() => {
-					counter >= progress
-						? clearInterval(intervalId)
-						: setValueProgress(++counter);
-					counter >= 100
-						? addLoadedClass()
-						: null;
-				}, 10);
-			}
-
-			function addLoadedClass() {
-				html.classList.add('loaded');
-				html.classList.remove('lock');
-				html.classList.remove('loading');
-				setInterval(() => {
-					preloader.classList.add('hide');
-					preloaderContainer.classList.add('hide');
-					setTimeout(() => {
-						preloader.remove();
-						preloaderContainer.remove();
-					}, 250);
-				}, 250);
-			}
 		}
 
 		preloader();

@@ -10,8 +10,8 @@ block content
 	section.hero(data-fullscreen)
 		.container.hero__container
 			h1.title.title--big.hero__title
-				span Front-end
-				span(data-typed) разработка
+				| #[span Front-end]
+				| #[span(data-typed) разработка]
 			.hero__actions
 				a.button.button--fw.hero__button(
 					href='#'
@@ -28,9 +28,9 @@ block content
 						| Кто я?
 					.text
 						p Я изучаю front-end разработку лишь год, #[strong но уже не уступаю в качестве и скорости моей работы бывалым разработчикам.]
-						p В этом вы сами можете убедиться перейдя в #[a.link(href='#' data-goto='.portfolio' data-goto-header) #[span портфолио]].
+						p В этом вы сами можете убедиться перейдя в #[a.link(href='#' data-goto='.developments' data-goto-header) мои разработки] и #[a.link(href='#' data-goto='.portfolio' data-goto-header) портфолио].
 						p Также благодаря моему минимализму я #[strong пишу чистый и понятный код].
-						p Если вы хотите узнать #[strong какими технологиями я владею], то можете спуститься чуть #[a.link(href='#' data-goto='.skills' data-goto-header) #[span ниже]].
+						p Если вы хотите узнать #[strong какими технологиями я владею], то можете спуститься чуть #[a.link(href='#' data-goto='.skills' data-goto-header) ниже].
 
 						each skill in skills.skills
 							p.sr-only=skill.a11y
@@ -39,6 +39,7 @@ block content
 			img(
 				src='@img/about/nikkeyl.jpg'
 				alt='Никита Алманов'
+				loading='lazy'
 			)
 	.skills(role='marquee')
 		.skills__icons
@@ -62,7 +63,7 @@ block content
 						aria-label=repo.name
 					) #[p.sr-only=repo.name]
 						img(
-							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=80f&text_color=000&icon_color=80f`
+							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=0d8&text_color=000&icon_color=0d8`
 							alt='illicit'
 						)
 
