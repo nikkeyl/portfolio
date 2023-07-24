@@ -37,19 +37,17 @@ block content
 
 		.about-me__image
 			img(
-				src='@img/about/nikkeyl.jpg'
+				data-src='@img/about/nikkeyl.jpg'
 				alt='Никита Алманов'
-				loading='lazy'
 			)
 	.skills(role='marquee')
 		.skills__icons
 			each skill in skills.skills
 				.skills__icon
 					img(
-						src=skill.icon
+						data-src=skill.icon
 						alt=skill.name
 						data-tippy-content=skill.name
-						loading='lazy'
 					)
 
 	section.developments
@@ -63,7 +61,7 @@ block content
 						aria-label=repo.name
 					) #[p.sr-only=repo.name]
 						img(
-							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=0d8&text_color=000&icon_color=0d8`
+							data-src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=0d8&text_color=000&icon_color=0d8`
 							alt='illicit'
 						)
 
@@ -76,9 +74,8 @@ block content
 					article.project-card
 						a.bg-image.project-card__image(href=card.linkSite)
 							img(
-								src=card.img
+								data-src=card.img
 								alt=card.name
-								loading='lazy'
 							)
 						.project-card__body
 							h3.card-title.project-card__title
@@ -116,10 +113,9 @@ block content
 								.review__info
 									.bg-image.review__image
 										img(
-											src=review.img
+											data-src=review.img
 											alt=review.name
 											title=review.name
-											loading='lazy'
 										)
 									h3.review-name.review__name
 										=review.name

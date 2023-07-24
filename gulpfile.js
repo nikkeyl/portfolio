@@ -18,15 +18,30 @@ import { jsDev } from './config/gulp-tasks/jsDev.js'
 import { html } from './config/gulp-tasks/html.js'
 import { css } from './config/gulp-tasks/css.js'
 
-const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fontsStyles)
+const fonts = gulp.series(
+	reset,
+	otfToTtf,
+	ttfToWoff,
+	fontsStyles
+)
 const build = gulp.series(
 	fonts,
 	jsDev,
 	jsProd,
-	gulp.parallel(html, css, images),
-	gulp.parallel(validator, zip)
+	gulp.parallel(
+		html,
+		css,
+		images
+	),
+	gulp.parallel(
+		validator,
+		zip
+	)
 )
-const dev = gulp.parallel(fonts, sprite)
+const dev = gulp.parallel(
+	fonts,
+	sprite
+)
 const app = {
 	isNoWebp: !argv.includes('--no-webp'),
 	plugins,

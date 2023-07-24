@@ -12,9 +12,12 @@ import { pageNavigation } from '@js/modules/scroll/pageNavigation'
 // ----------------------------------------------------------------MODULES
 import { addLoadedClass } from '@js/modules/addLoadedClass'
 import { fullScreenFix } from '@js/modules/fullScreenFix'
+// import { customCursor } from './modules/customCursor'
 import { webp } from '@js/modules/webp'
 
 // ----------------------------------------------------------------VENDORS
+import { lazyMedia } from '@js/vendors/LazyLoad'
+
 // import '@js/vendors/simpleBar'
 import '@js/vendors/marquee'
 import '@js/vendors/swiper'
@@ -33,4 +36,8 @@ pageNavigation()
 // ----------------------------------------------------------------MODULES
 addLoadedClass()
 fullScreenFix()
+// customCursor()
 webp()
+
+// ----------------------------------------------------------------VENDORS
+lazyMedia

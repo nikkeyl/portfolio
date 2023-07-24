@@ -26,10 +26,6 @@ body {
 	min-width: $min-width + px;
 	min-height: 100vh;
 	scroll-behavior: smooth;
-}
-
-body {
-	color: var(--text-primary);
 	background-color: var(--background-primary);
 }
 

@@ -1,18 +1,17 @@
 /*! Slider (Swiper plugin) https://swiperjs.com/ */
 import Swiper from 'swiper'
-import { Pagination, A11y } from 'swiper/modules'
+import { Pagination } from 'swiper/modules'
 
 import '@scss/vendors/swiper'
 
 function initSliders() {
 	if (document.querySelector('.reviews__slider')) {
 		new Swiper('.reviews__slider', {
-			modules: [Pagination, A11y],
+			modules: [Pagination],
 			observer: true,
 			observeParents: true,
 			centeredSlides: true,
 			spaceBetween: 20,
-			a11y: true,
 			speed: 800,
 			grabCursor: true,
 			simulateTouch: true,
