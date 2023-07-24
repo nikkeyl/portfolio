@@ -15,6 +15,15 @@ body {
 	color: var(--text-primary);
 }
 
+a {
+	text-decoration: none;
+}
+
+button,
+a {
+	color: inherit;
+}
+
 .title {
 	@include adaptive-value("font-size", 64, 40);
 
