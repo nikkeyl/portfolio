@@ -25,7 +25,7 @@ a {
 }
 
 .title {
-	@include adaptive-value("font-size", 64, 40);
+	@include adaptive-value("font-size", 64, 50);
 
 	line-height: div(87, 64);
 	text-align: center;

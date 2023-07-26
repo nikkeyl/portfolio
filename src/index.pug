@@ -60,6 +60,8 @@ block content
 						href=`https://github.com/nikkeyl/${repo.name}`
 						aria-label=repo.name
 					) #[p.sr-only=repo.name]
+						svg
+							use(href='@img/icons/sprite.svg#github')
 						img(
 							data-src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&title_color=0d8&text_color=000&icon_color=0d8`
 							alt='illicit'
@@ -104,8 +106,8 @@ block content
 				| Отзывы
 			.swiper.reviews__slider
 				.swiper-wrapper.reviews__wrapper
-					.swiper-slide
-						each review in reviews.reviews
+					each review in reviews.reviews
+						.swiper-slide
 							article(class=[
 								'review',
 								review.class
@@ -126,7 +128,7 @@ block content
 	section.questions
 		.container
 			h2.title.questions__title
-				| Q&A
+				| FAQ
 				p.sr-only Вопросы и Ответы
 			.grid(
 				data-spoilers

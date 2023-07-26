@@ -120,8 +120,17 @@
 	}
 
 	&__card {
+		position: relative;
 		overflow: hidden;
 		transition: transform 0.3s;
+
+		svg {
+			position: absolute;
+			inset: auto rem(15) rem(15) auto;
+			width: rem(30);
+			height: rem(30);
+			fill: var(--accent);
+		}
 
 		&:focus-visible {
 			transform: scale(1.05);

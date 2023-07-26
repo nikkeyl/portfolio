@@ -31,7 +31,7 @@
 	&__body {
 		display: grid;
 		gap: rem(10);
-		border-top: rem(2) solid var(--secondary);
+		border-top: rem(1) solid var(--disabled);
 		padding: rem(10);
 	}
 

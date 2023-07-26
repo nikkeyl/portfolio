@@ -1,13 +1,13 @@
 /*! Slider (Swiper plugin) https://swiperjs.com/ */
 import Swiper from 'swiper'
-import { Pagination } from 'swiper/modules'
+import { Pagination, Keyboard } from 'swiper/modules'
 
 import '@scss/vendors/swiper'
 
 function initSliders() {
 	if (document.querySelector('.reviews__slider')) {
 		new Swiper('.reviews__slider', {
-			modules: [Pagination],
+			modules: [Pagination, Keyboard],
 			observer: true,
 			observeParents: true,
 			centeredSlides: true,
@@ -19,6 +19,11 @@ function initSliders() {
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true
+			},
+
+			keyboard: {
+				enabled: true,
+				pageUpDown: true
 			},
 
 			breakpoints: {
