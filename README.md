@@ -16,14 +16,11 @@
 ### Best
 
 - 🏭 [![](https://img.shields.io/badge/illicit-80f)](https://github.com/nikkeyl/Illicit). Builder for front-end based on gulp and webpack
-- ⏩ [![](https://img.shields.io/badge/shorter-hex-cyan)](https://github.com/nikkeyl/shorter-hex). Convenient and fast reduction of hex colors online
-- 📚 [![](https://img.shields.io/badge/RRC-orange)](https://github.com/nikkeyl/repetitive-reusable-components). Library of repetitive reusable components
 
 ### When there was inspiration
 
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-skyblue)](https://nikkeyl.github.io/nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 - 📦 [![](https://img.shields.io/badge/devpack-orange)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
-- 📖 [![](https://img.shields.io/badge/TMD-blue)](https://github.com/nikkeyl/templates-markdown-docs). Library of templates markdown documents
 - 🐶 [![](https://img.shields.io/badge/SGP-brown)](https://github.com/nikkeyl/pug-style-guide). Style guide for pug
 
 ### My gists
