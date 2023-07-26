@@ -22,6 +22,7 @@ const sprite = () =>
 				xmlDeclaration: false,
 				rootAttributes: {
 					style: 'display: none;',
+					role: 'img',
 					'aria-hidden': true
 				}
 			}
