@@ -86,6 +86,11 @@
       "a11y": "вэ 3 цэ"
     },
     {
+      "icon": "img/svg/a11y.svg",
+      "name": "ACCESSIBILITY",
+      "a11y": "Доступность"
+    },
+    {
       "icon": "img/svg/semver.svg",
       "name": "SEMVER",
       "a11y": "сэмвер"
