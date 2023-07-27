@@ -1,13 +1,16 @@
 {
   "repos": [
     {
-      "name": "illicit"
+      "name": "illicit",
+      "a11y": "сборщик сайтов illicit"
     },
     {
-      "name": "devpack"
+      "name": "devpack",
+      "a11y": "дэвпак"
     },
     {
-      "name": "pug-style-guide"
+      "name": "pug-style-guide",
+      "a11y": "паг стайл гайд"
     }
   ]
 }

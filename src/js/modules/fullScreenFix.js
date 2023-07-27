@@ -12,10 +12,12 @@ function fullScreenFix() {
 		html.style.setProperty('--vh', `${vh - header.offsetHeight / 100}px`)
 	}
 
+	addTouchClass()
+
+	fixHeight()
+
 	if (fullScreens.length && isMobile.any()) {
 		window.addEventListener('resize', fixHeight)
-		addTouchClass()
-		fixHeight()
 	}
 }
 

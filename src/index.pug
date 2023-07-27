@@ -58,8 +58,8 @@ block content
 				each repo in repos.repos
 					a.developments__card(
 						href=`https://github.com/nikkeyl/${repo.name}`
-						aria-label=repo.name
-					) #[p.sr-only=repo.name]
+						aria-label=repo.a11y
+					) #[span.sr-only=repo.a11y]
 						svg
 							use(href='@img/icons/sprite.svg#github')
 						img(
@@ -96,7 +96,7 @@ block content
 									href=card.linkCode
 									data-tippy-content=card.disabled ? false : card.srcCode
 									tabindex=card.disabled ? '-1' : false
-								) #[.sr-only=card.disabled ? [card.srcCode + ' не доступен'] : ['Посмотреть ' + card.srcCode]]
+								) #[span.sr-only=card.disabled ? [card.srcCode + ' не доступен'] : ['Посмотреть ' + card.srcCode]]
 									svg
 										use(href='@img/icons/sprite.svg#github')
 
@@ -129,7 +129,7 @@ block content
 		.container
 			h2.title.questions__title
 				| FAQ
-				p.sr-only Вопросы и Ответы
+				span.sr-only Вопросы и Ответы
 			.grid(
 				data-spoilers
 				data-one-spoiler
@@ -141,16 +141,16 @@ block content
 							data-spoiler-close
 						)
 							strong=spoiler.title
-							| #[.sr-only !{spoiler.content}]
 							span
 						.text.spoiler__content
 							| !{spoiler.content}
+						.sr-only !{spoiler.content}
 
 				details.spoiler
 					summary.spoiler__trigger(
 						data-spoiler
 						data-spoiler-close
-					) #[strong Остались вопросы? #[p.sr-only Я отвечаю на звонки и сообщения с 12:00 до 20:00.]]
+					) #[strong Остались вопросы?]
 						span
 					.text.spoiler__content
 						.spoiler__call-me
@@ -170,3 +170,4 @@ block content
 								)
 									svg
 										use(href=`@img/icons/sprite.svg#${social.icon}`)
+					p.sr-only Я отвечаю на звонки и сообщения с 12:00 до 20:00.
