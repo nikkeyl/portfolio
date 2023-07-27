@@ -23,10 +23,6 @@
 - 📦 [![](https://img.shields.io/badge/devpack-orange)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
 - 🐶 [![](https://img.shields.io/badge/SGP-brown)](https://github.com/nikkeyl/pug-style-guide). Style guide for pug
 
-### My gists
-
-- ♻️ [![](https://img.shields.io/badge/gists-darkgreen)](https://gist.github.com/nikkeyl). Code templates storage: .yml, .json, .md, and a lot more
-
 ## Skills
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" width="40" height="40" title="html">&nbsp;
