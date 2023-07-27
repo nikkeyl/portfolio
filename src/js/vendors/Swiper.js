@@ -17,7 +17,7 @@ function initSliders() {
 			simulateTouch: true,
 
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.reviews__pagination',
 				clickable: true
 			},
 

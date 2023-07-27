@@ -135,6 +135,10 @@
 		&:focus-visible {
 			transform: scale(1.05);
 		}
+
+		@include media-hover {
+			transform: scale(1.05);
+		}
 	}
 }
 

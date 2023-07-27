@@ -5,12 +5,13 @@
 	overflow: hidden;
 	border-radius: rem(10);
 	max-width: rem(400);
-	background-color: var(--magnolia);
-	transition: box-shadow 0.3s;
+	filter: grayscale(1);
+	transition: filter 0.3s;
 
 	&__info {
 		display: flex;
 		align-items: center;
+		background-color: var(--magnolia);
 		gap: rem(15);
 		padding: rem(15);
 	}
@@ -29,6 +30,6 @@
 	}
 
 	.swiper-slide-active & {
-		box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb) / 0.25);
+		filter: grayscale(0);
 	}
 }

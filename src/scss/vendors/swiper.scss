@@ -41,18 +41,16 @@
 .swiper-pagination-bullet {
 	border-radius: rem(30);
 	width: rem(15);
-	background-color: var(--magnolia);
+	background-color: var(--disabled);
 	height: rem(15);
 	transition:
 		background-color 0.3s,
-		border-color 0.3s,
 		box-shadow 0.3s,
 		width 0.3s;
 	cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
-	border-color: var(--accent);
 	width: rem(30);
 	box-shadow: 0 rem(2) rem(4) rgb(var(--accent-rgb) / 0.25);
 	background-color: var(--accent);
