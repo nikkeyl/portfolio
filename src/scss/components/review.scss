@@ -11,9 +11,9 @@
 	&__info {
 		display: flex;
 		align-items: center;
-		background-color: var(--magnolia);
 		gap: rem(15);
 		padding: rem(15);
+		background-color: var(--magnolia);
 	}
 
 	&__image {
