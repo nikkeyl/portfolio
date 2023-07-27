@@ -2,7 +2,7 @@
   "skills": [
     {
       "icon": "img/svg/html.svg",
-      "name": "HTML5",
+      "name": "HTML",
       "a11y": "html"
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "icon": "img/svg/js.svg",
-      "name": "JS",
+      "name": "JAVASCRIPT",
       "a11y": "джаваскрипт"
     },
     {
       "icon": "img/svg/ts.svg",
-      "name": "TS",
+      "name": "TYPESCRIPT",
       "a11y": "тайпскрипт"
     },
     {
