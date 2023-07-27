@@ -161,13 +161,14 @@ block content
 							) Свяжитесь со мной
 								svg
 									use(href='@img/icons/sprite.svg#info')
-						.socials.spoiler__socials
+						ul.socials.spoiler__socials
 							each social in socials.socials
-								a.socials__item(
-									href=social.link
-									data-tippy-content=social.tip
-									aria-label=social.tip
-								)
-									svg
-										use(href=`@img/icons/sprite.svg#${social.icon}`)
+								li.socials__item
+									a(
+										href=social.link
+										data-tippy-content=social.tip
+										aria-label=social.tip
+									)
+										svg
+											use(href=`@img/icons/sprite.svg#${social.icon}`)
 					p.sr-only Я отвечаю на звонки и сообщения с 12:00 до 20:00.

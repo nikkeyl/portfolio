@@ -5,15 +5,16 @@ header.header
 		.logo.header__logo
 			| Никита Алманов
 		.header__body
-			.socials
+			ul.socials
 				each social in socials.socials
-					a.socials__item(
-						href=social.link
-						data-tippy-content=social.tip
-						aria-label=social.tip
-					)
-						svg
-							use(href=`@img/icons/sprite.svg#${social.icon}`)
+					li.socials__item
+						a(
+							href=social.link
+							data-tippy-content=social.tip
+							aria-label=social.tip
+						)
+							svg
+								use(href=`@img/icons/sprite.svg#${social.icon}`)
 
 			a.button.header__button(
 				href='#'
