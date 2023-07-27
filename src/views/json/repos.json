@@ -1,8 +1,8 @@
 {
   "repos": [
     {
-      "name": "illicit",
-      "a11y": "сборщик сайтов illicit"
+      "name": "site-builder",
+      "a11y": "сборщик сайтов site-builder"
     },
     {
       "name": "devpack",
