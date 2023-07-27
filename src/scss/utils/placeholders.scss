@@ -1,7 +1,0 @@
-@use "@scss/abstracts" as *;
-
-/* Placeholders styles */
-%border {
-	border: rem(1) solid var(--disabled);
-	border-radius: rem(10);
-}

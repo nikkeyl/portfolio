@@ -1,6 +1,5 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
-@use "@scss/utils/placeholders" as *;
 
 /* Home page styles */
 .hero {
@@ -122,6 +121,8 @@
 	&__card {
 		position: relative;
 		overflow: hidden;
+		border: rem(1) solid var(--disabled);
+		border-radius: rem(10);
 		transition: transform 0.3s;
 
 		svg {
@@ -135,8 +136,6 @@
 		&:focus-visible {
 			transform: scale(1.05);
 		}
-
-		@extend %border;
 	}
 }
 

@@ -1,5 +1,4 @@
 @use "@scss/abstracts" as *;
-@use "@scss/utils/placeholders" as *;
 
 /* Slider styles */
 .swiper {
@@ -42,6 +41,7 @@
 .swiper-pagination-bullet {
 	border-radius: rem(30);
 	width: rem(15);
+	background-color: var(--magnolia);
 	height: rem(15);
 	transition:
 		background-color 0.3s,
@@ -49,8 +49,6 @@
 		box-shadow 0.3s,
 		width 0.3s;
 	cursor: pointer;
-
-	@extend %border;
 }
 
 .swiper-pagination-bullet-active {

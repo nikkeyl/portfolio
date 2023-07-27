@@ -7,8 +7,7 @@
 	position: sticky;
 	top: 0;
 	z-index: 90;
-	border-bottom: rem(1) solid var(--disabled);
-	background-color: var(--primary);
+	background-color: var(--magnolia);
 
 	&__container {
 		@include media-min(520) {

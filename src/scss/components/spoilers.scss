@@ -1,10 +1,11 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
-@use "@scss/utils/placeholders" as *;
 
 .spoiler {
 	align-self: flex-start;
 	overflow: hidden;
+	border-radius: rem(10);
+	background-color: var(--magnolia);
 	transition:
 		transform 0.3s,
 		opacity 0.3s;
@@ -115,6 +116,4 @@
 			margin-bottom: rem(20);
 		}
 	}
-
-	@extend %border;
 }
