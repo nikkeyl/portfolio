@@ -57,12 +57,13 @@ const fontsStyles = () => {
 					const fileName = file.split('.')[0]
 
 					if (newFileOnly !== fileName) {
+						const italic = /italic/gi
 						const [
 							fontName,
 							fontWeight = 'regular'
 						] = fileName.split('-')
-						const fontWeightValue = fontWeights[fontWeight.toLowerCase()]
-						const fontStyle = fileName.match(/italic/gi) ? 'italic' : 'normal'
+						const fontWeightValue = fontWeights[fontWeight.toLowerCase().replace(italic, '')]
+						const fontStyle = fileName.match(italic) ? 'italic' : 'normal'
 
 						app.plugins.fs.appendFile(
 							fontStylesFile,
