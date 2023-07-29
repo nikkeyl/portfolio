@@ -1,8 +1,8 @@
 extends views/layout/layout
 
 block variables
-	- lang = 'ru'
-	- title = 'Никита Алманов - front-end разработка'
+	- lang = 'en'
+	- title = 'Nikita Almanov - Front-End Development'
 	- preloader = true
 	- popups = true
 
@@ -11,26 +11,26 @@ block content
 		.container.hero__container
 			h1.title.title--big.hero__title
 				| #[span Front-end]
-				| #[span(data-typed) разработка]
+				| #[span(data-typed) development]
 			.hero__actions
 				a.button.button--fw.hero__button(
 					href='#'
 					data-goto='.portfolio'
 					data-goto-header
-				) Портфолио
+				) Portfolio
 				a.button.button--fw.hero__button(href='https://t.me/nikkeyl')
-					| Заказать вёрстку
+					| Order a website
 	section.about-me
 		.about-me__inner
 			.container.about-me__container
 				.about-me__body
 					h2.title.about-me__title
-						| Кто я?
+						| Who am I?
 					.text
-						p Я изучаю front-end разработку лишь год, #[strong но уже не уступаю в качестве и скорости моей работы бывалым разработчикам.]
-						p В этом вы сами можете убедиться перейдя в #[a.link(href='#' data-goto='.developments' data-goto-header) мои разработки] и #[a.link(href='#' data-goto='.portfolio' data-goto-header) портфолио].
-						p Также благодаря моему минимализму я #[strong пишу чистый и понятный код].
-						p Если вы хотите узнать #[strong какими технологиями я владею], то можете спуститься чуть #[a.link(href='#' data-goto='.skills' data-goto-header) ниже].
+						p I have been studying front-end development for only a year, #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
+						p You can see for yourself by going to #[a.link(href='#' data-goto='.developments' data-goto-header) my developments] and #[a.link(href='#' data-goto='.portfolio' data-goto-header) portfolio].
+						p Also, thanks to my minimalism, I #[strong write clean and understandable code.].
+						p If you want to know #[strong what technologies I own], you can go down a little #[a.link(href='#' data-goto='.skills' data-goto-header) lower].
 
 						each skill in skills.skills
 							p.sr-only=skill.a11y
@@ -38,7 +38,7 @@ block content
 		.about-me__image
 			img(
 				data-src='@img/about/nikkeyl.jpg'
-				alt='Никита Алманов'
+				alt='Nikita Almanov'
 			)
 	.skills(role='marquee')
 		.skills__icons
@@ -53,7 +53,7 @@ block content
 	section.developments
 		.container
 			h2.title.developments__title
-				| Мои разработки
+				| My developments
 			.grid
 				each repo in repos.repos
 					a.developments__card(
@@ -70,7 +70,7 @@ block content
 	section.portfolio
 		.container
 			h2.title.portfolio__title
-				| Портфолио
+				| Portfolio
 			.grid.portfolio__cards
 				each card in projects.cards
 					article.project-card
@@ -87,7 +87,7 @@ block content
 								a.button.project-card__button(
 									href=card.linkSite
 									data-tippy-content=card.name
-								) Посмотреть
+								) View
 								a(
 									class=[
 										'project-card__src-code',
@@ -96,14 +96,14 @@ block content
 									href=card.linkCode
 									data-tippy-content=card.disabled ? false : card.srcCode
 									tabindex=card.disabled ? '-1' : false
-								) #[span.sr-only=card.disabled ? [card.srcCode + ' не доступен'] : ['Посмотреть ' + card.srcCode]]
+								) #[span.sr-only=card.disabled ? ['The ' + card.srcCode + ' is not available'] : ['View ' + card.srcCode]]
 									svg
 										use(href='@img/icons/sprite.svg#github')
 
 	section.reviews
 		.container
 			h2.title.reviews__title
-				| Отзывы
+				| Reviews
 			.swiper.reviews__slider
 				.swiper-wrapper.reviews__wrapper
 					each review in reviews.reviews
@@ -129,7 +129,7 @@ block content
 		.container
 			h2.title.questions__title
 				| FAQ
-				span.sr-only Вопросы и Ответы
+				span.sr-only Questions and answers
 			.grid(
 				data-spoilers
 				data-one-spoiler
@@ -150,15 +150,15 @@ block content
 					summary.spoiler__trigger(
 						data-spoiler
 						data-spoiler-close
-					) #[strong Остались вопросы?]
+					) #[strong Questions left?]
 						span
 					.text.spoiler__content
 						.spoiler__call-me
 							a.spoiler__info(
 								href='#'
 								data-popup='#info'
-								data-tippy-content='Часы работы'
-							) Свяжитесь со мной
+								data-tippy-content='Working hours'
+							) Contact me
 								svg
 									use(href='@img/icons/sprite.svg#info')
 						ul.socials.spoiler__socials
@@ -171,4 +171,4 @@ block content
 									)
 										svg
 											use(href=`@img/icons/sprite.svg#${social.icon}`)
-					p.sr-only Я отвечаю на звонки и сообщения с 12:00 до 20:00.
+					p.sr-only I answer calls and messages from 12:00 to 20:00.

@@ -3,10 +3,10 @@
     {
       "class": "reviews__review",
       "img": "img/reviews/aleksey-mozgunov.jpg",
-      "name": "Алексей Мозгунов",
+      "name": "Aleksey Mozgunov",
       "link": "https://brainbms.ru",
       "linkText": "brainbms.ru",
-      "text": "<p>Благодарю Никиту за оперативную вёрстку сайта.</p> <p>Задача выполнена в оговоренные сроки.</p> <p>Вёрстка получилась лёгкая и качественная согласно современным тенденциям и требованиям, что важно для сео-продвижения сайта.</p>"
+      "text": "<p>Thanks to Nikita for the prompt creation of the site.</p><p>The task was completed within the agreed time frame.</p><p>The site turned out to be light and high-quality according to modern trends and requirements, which is important for its SEO promotion.</p>"
     }
   ]
 }

@@ -6,6 +6,6 @@ const lazyMedia = new LazyLoad({
 	use_native: true
 })
 
-// lazyMedia.update(); /* Только при ajax подгрузке контента */
+// lazyMedia.update(); /* Only with ajax content loading */
 
 export { lazyMedia }

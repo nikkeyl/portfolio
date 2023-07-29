@@ -2,15 +2,15 @@
   "repos": [
     {
       "name": "site-builder",
-      "a11y": "сборщик сайтов - site-builder"
+      "a11y": "site builder"
     },
     {
       "name": "devpack",
-      "a11y": "дэвпак - Быстрое развертывание программ и средств для разработки с помощью дэвпак"
+      "a11y": "devpack - Rapid deployment of the environment with devpack"
     },
     {
       "name": "pug-style-guide",
-      "a11y": "стиль кода для паг"
+      "a11y": "Code style for pug"
     }
   ]
 }

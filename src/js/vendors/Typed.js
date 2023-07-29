@@ -4,7 +4,7 @@ const elem = document.querySelector('[data-typed]')
 
 if (elem) {
 	new Typed(elem, {
-		strings: ['разработка'],
+		strings: ['development'],
 		typeSpeed: 50,
 		loop: false,
 		fadeOut: true

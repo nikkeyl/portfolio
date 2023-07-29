@@ -1,44 +1,44 @@
 {
   "spoilers": [
     {
-      "title": "Какие гарантии?",
-      "content": "<p>После сдачи проекта, я в течение 1 недели обязуюсь исправить (если есть) ошибки, допущенные во время разработки.</p>"
+      "title": "What are the guarantees?",
+      "content": "<p>After the delivery of the project, I undertake to correct the mistakes made during the development within 1 week.</p>"
     },
     {
-      "title": "Что со сроками?",
-      "content": "<p>Я выполняю работу в оговоренные сроки.</p>"
+      "title": "What about the deadlines?",
+      "content": "<p>I do the work within the agreed time frame.</p>"
     },
     {
-      "title": "Как и когда производится оплата?",
-      "content": "<p>Я работаю по предоплате в 30% от суммы заказа.</p>"
+      "title": "How and when is the payment made?",
+      "content": "<p>I work on a prepayment of 30% of the order amount.</p>"
     },
     {
-      "title": "Когда начинается работа?",
-      "content": "<p>После уточнения всех деталей проекта и получения предоплаты.</p>"
+      "title": "When does work start?",
+      "content": "<p>After clarifying all the details of the project and receiving an advance payment.</p>"
     },
     {
-      "title": "Какое качество у вёрстки?",
-      "content": "<p>Самое высокое!</p> <p>Я стараюсь тщательно тестировать каждую работу.</p> <p>Также моя вёрстка получается валидной, адаптивной, доступной, кроссбраузерной, семантичной.</p>"
+      "title": "What is the quality of my work?",
+      "content": "<p>The best!</p><p>I try to test each work thoroughly.</p><p>Your site will be valid, responsive, accessible, cross-browser, semantic.</p>"
     },
     {
-      "title": "Забыли указать что-то в ТЗ?",
-      "content": "<p>То что не было указано в ТЗ, а также правки (кроме ошибок допущенных мной) я делаю за отдельную плату.</p>"
+      "title": "Forgot to specify something in the TR?",
+      "content": "<p>What was not specified in the TR, as well as edits (except for mistakes made by me), I do for a fee.</p>"
     },
     {
-      "title": "У вас макет только для ПК?",
-      "content": "<p>В таком случае я бесплатно разработаю адаптивную вёрстку для мобильных устройств на основе макета для ПК.</p>"
+      "title": "Do you have a PC-only layout?",
+      "content": "<p>In this case, I will develop a responsive design for mobile devices based on the layout for PC for free.</p>"
     },
     {
-      "title": "Консультация?",
-      "content": "<p>Даю консультацию по удобству пользования.</p>"
+      "title": "Consultation?",
+      "content": "<p>I give advice on ease of use.</p>"
     },
     {
-      "title": "Скидка?",
-      "content": "<p>На второй заказ скидка 15%</p>"
+      "title": "Discount?",
+      "content": "<p>For the second order, a 15% discount.</p>"
     },
     {
-      "title": "Старые браузеры?",
-      "content": "<p>Я не поддерживаю старые браузеры, а также Internet Explorer.</p>"
+      "title": "Old browsers?",
+      "content": "<p>I don't support older browsers, as well as Internet Explorer.</p>"
     }
   ]
 }
