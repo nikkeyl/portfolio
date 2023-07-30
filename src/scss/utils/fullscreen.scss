@@ -1,7 +1,5 @@
 .fullscreen {
-	display: flex;
-	align-items: flex-end;
-	min-height: 100dvh;
+	min-height: calc(100dvh - var(--header-height, 4rem));
 
 	.touch & {
 		transition: min-height 0.2s;
