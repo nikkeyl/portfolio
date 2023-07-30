@@ -29,20 +29,20 @@
 			transition:
 				background-color 0.3s,
 				border-color 0.3s,
-				transform 0.3s;
+				scale 0.3s;
 		}
 	}
 
 	&.active {
 		.cursor__pointer::after {
-			transform: scale(0.5);
-			transition: transform 0.25s;
+			transition: scale 0.25s;
+			scale: 0.5;
 		}
 	}
 
 	&.hover {
 		.cursor__pointer::after {
-			border-color: var(--inverse);
+			border-color: var(--inverse, #fe0);
 			background-color: #80f;
 		}
 	}

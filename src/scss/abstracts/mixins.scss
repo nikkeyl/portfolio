@@ -110,9 +110,9 @@
 			}
 
 			@if $reverse == 1 {
-				transform: translateX(100%);
+				translate: 100% 0;
 			} @else {
-				transform: translateX(-100%);
+				translate: -100% 0;
 			}
 		}
 
@@ -152,13 +152,13 @@
 		animation: slide-#{$direction} #{$time}s forwards;
 
 		@if $direction == top {
-			transform: translateY(#{$translate} + "%");
+			translate: 0 #{$translate} + "%";
 		} @else if $direction == bottom {
-			transform: translateY(0);
+			translate: 0 0;
 		} @else if $direction == left {
-			transform: translateX(#{$translate} + "%");
+			translate: #{$translate} + "%" 0;
 		} @else {
-			transform: translateX(0);
+			translate: 0 0;
 		}
 
 		@keyframes slide-#{$direction} {
@@ -166,13 +166,13 @@
 				opacity: 1;
 
 				@if $direction == top {
-					transform: translateY(0);
+					translate: 0 0;
 				} @else if $direction == bottom {
-					transform: translateY(#{$translate} + "%");
+					translate: 0 #{$translate} + "%";
 				} @else if $direction == left {
-					transform: translateX(0);
+					translate: 0 0;
 				} @else {
-					transform: translateX(#{$translate} + "%");
+					translate: #{$translate} + "%" 0;
 				}
 			}
 		}

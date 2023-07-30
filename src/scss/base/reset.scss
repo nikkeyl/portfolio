@@ -25,20 +25,20 @@ html,
 body {
 	min-width: $min-width + px;
 	min-height: 100vh;
-	background-color: var(--background-primary);
+	background-color: var(--background-primary, #fff);
 	scroll-behavior: smooth;
 }
 
 ::selection {
-	color: var(--secondary);
-	background-color: rgb(var(--inverse-rgb) / 0.8);
+	color: var(--secondary, #222);
+	background-color: rgb(var(--inverse-rgb, 255 238 0) / 0.8);
 }
 
 :focus-visible {
 	/* Styles for a contrasting theme */
 	outline-color: transparent;
 	outline-offset: rem(2);
-	box-shadow: 0 0 0 rem(2) var(--accent);
+	box-shadow: 0 0 0 rem(2) var(--accent, #0d8);
 }
 
 /* Remove markers */

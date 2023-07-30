@@ -11,7 +11,7 @@ import { pageNavigation } from '@js/modules/scroll/pageNavigation'
 
 // ----------------------------------------------------------------MODULES
 import { addLoadedClass } from '@js/modules/addLoadedClass'
-import { fullScreenFix } from '@js/modules/fullScreenFix'
+import { addTouchClass } from '@js/modules/addTouchClass'
 // import { customCursor } from './modules/customCursor'
 import { webp } from '@js/modules/webp'
 // import '@js/modules/FullPage'
@@ -36,7 +36,7 @@ pageNavigation()
 
 // ----------------------------------------------------------------MODULES
 addLoadedClass()
-fullScreenFix()
+addTouchClass()
 // customCursor()
 webp()
 

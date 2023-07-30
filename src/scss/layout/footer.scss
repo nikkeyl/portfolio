@@ -4,12 +4,12 @@
 /* Footer styles */
 .footer {
 	padding-block: rem(10);
-	background-color: var(--secondary);
+	background-color: var(--secondary, #222);
 
 	&__container {
 		font-weight: 500;
 		text-align: center;
-		color: var(--primary);
+		color: var(--primary, #fff);
 
 		> .logo {
 			$font-size: 20;

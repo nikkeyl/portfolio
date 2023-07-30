@@ -10,20 +10,20 @@
 
 	&__image {
 		padding-bottom: 90%;
-		background-color: var(--accent);
+		background-color: var(--accent, #0d8);
 
 		img {
 			object-position: top;
-			transition: transform 0.3s;
+			transition: scale 0.3s;
 
 			@include media-hover {
-				transform: scale(1.03);
+				scale: 1.03;
 			}
 		}
 
 		&:focus-visible {
 			img {
-				transform: scale(1.03);
+				scale: 1.03;
 			}
 		}
 	}
@@ -32,7 +32,7 @@
 		display: grid;
 		gap: rem(10);
 		padding: rem(10);
-		background-color: var(--magnolia);
+		background-color: var(--magnolia, #f8f4ff);
 	}
 
 	&__title {
@@ -44,11 +44,11 @@
 			transition: color 0.3s;
 
 			&:focus-visible {
-				color: var(--accent);
+				color: var(--accent, #0d8);
 			}
 
 			@include media-hover {
-				color: var(--accent);
+				color: var(--accent, #0d8);
 			}
 		}
 	}
@@ -69,24 +69,24 @@
 
 		&:focus-visible {
 			svg {
-				fill: var(--inverse);
+				fill: var(--inverse, #fe0);
 			}
 		}
 
 		&.disabled {
 			svg {
-				fill: rgb(var(--disabled-rgb) / 0.5);
+				fill: rgb(var(--disabled-rgb, 136 136 136) / 0.5);
 				cursor: not-allowed;
 			}
 		}
 
 		&:not(.disabled) {
 			svg {
-				fill: var(--accent);
+				fill: var(--accent, #0d8);
 				transition: fill 0.3s;
 
 				@include media-hover {
-					fill: var(--inverse);
+					fill: var(--inverse, #fe0);
 				}
 			}
 		}

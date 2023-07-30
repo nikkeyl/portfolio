@@ -4,30 +4,30 @@
 .button {
 	display: inline-flex;
 	justify-content: center;
-	border: rem(2) solid var(--accent);
+	border: rem(2) solid var(--accent, #0d8);
 	border-radius: rem(50);
 	padding: rem(15);
-	box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb) / 0.25);
+	box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
 	line-height: div(18, 16);
 	text-align: center;
-	color: var(--primary);
-	background-color: var(--accent);
+	color: var(--primary, #fff);
+	background-color: var(--accent, #0d8);
 	transition:
 		background-color 0.3s,
 		border-color 0.3s,
 		box-shadow 0.3s,
-		transform 0.3s,
+		translate 0.3s,
 		color 0.3s;
 
 	&:focus-visible {
-		border-color: var(--inverse);
-		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb) / 0.25);
-		color: var(--secondary);
-		background-color: var(--inverse);
+		border-color: var(--inverse, #fe0);
+		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
+		color: var(--secondary, #222);
+		background-color: var(--inverse, #fe0);
 	}
 
 	&:active {
-		transform: translateY(rem(3));
+		translate: 0 rem(3);
 	}
 
 	&--fw {
@@ -37,9 +37,9 @@
 	}
 
 	@include media-hover {
-		border-color: var(--inverse);
-		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb) / 0.25);
-		color: var(--secondary);
-		background-color: var(--inverse);
+		border-color: var(--inverse, #fe0);
+		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
+		color: var(--secondary, #222);
+		background-color: var(--inverse, #fe0);
 	}
 }

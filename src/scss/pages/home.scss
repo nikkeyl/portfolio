@@ -40,7 +40,7 @@
 	@include responsive-output(540, 800, $tablet, 1);
 
 	&__inner {
-		background-color: var(--accent);
+		background-color: var(--accent, #0d8);
 	}
 
 	&__container {
@@ -52,7 +52,7 @@
 
 	&__body {
 		padding-block: rem(30);
-		color: var(--primary);
+		color: var(--primary, #fff);
 
 		@include media-min($tablet) {
 			padding-left: rem(50);
@@ -70,7 +70,7 @@
 	}
 
 	&__image {
-		background-color: var(--inverse);
+		background-color: var(--inverse, #fe0);
 
 		@include media-min($tablet) {
 			overflow: hidden;
@@ -83,9 +83,9 @@
 				z-index: 4;
 				width: rem(200);
 				height: rem(1000);
-				background-color: var(--accent);
-				transform: rotate(11.5deg);
+				background-color: var(--accent, #0d8);
 				transition: width 0.8s;
+				rotate: 11.5deg;
 			}
 		}
 	}
@@ -122,22 +122,22 @@
 		position: relative;
 		overflow: hidden;
 		border-radius: rem(10);
-		transition: transform 0.3s;
+		transition: scale 0.3s;
 
 		svg {
 			position: absolute;
 			inset: auto rem(15) rem(15) auto;
 			width: rem(30);
 			height: rem(30);
-			fill: var(--accent);
+			fill: var(--accent, #0d8);
 		}
 
 		&:focus-visible {
-			transform: scale(1.05);
+			scale: 1.05;
 		}
 
 		@include media-hover {
-			transform: scale(1.05);
+			scale: 1.05;
 		}
 	}
 }

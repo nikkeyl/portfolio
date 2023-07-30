@@ -2,18 +2,19 @@
 @use "@scss/abstracts" as *;
 
 .header {
-	@include adaptive-value("padding-block", 20, 10);
-
 	position: sticky;
 	top: 0;
 	z-index: 90;
-	background-color: var(--magnolia);
+	display: flex;
+	align-items: center;
+	min-height: var(--header-height, 4rem);
+	background-color: var(--magnolia, #f8f4ff);
 
 	&__container {
 		@include media-min(520) {
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			width: 100%;
 		}
 	}
 
@@ -25,13 +26,14 @@
 	}
 
 	&__logo {
+		flex: 1;
+
 		@include media-max(520) {
 			display: none;
 		}
 	}
 
 	&__button {
-		flex: 1 0 rem(20);
 		padding: rem(10) rem(14);
 	}
 }

@@ -14,16 +14,16 @@
 		justify-content: center;
 		overflow: hidden;
 		border-radius: 50%;
-		transition: transform 0.3s;
+		transition: scale 0.3s;
 
 		svg {
 			width: rem(40);
 			height: rem(40);
-			fill: var(--secondary);
+			fill: var(--secondary, #222);
 		}
 
 		@include media-hover {
-			transform: scale(1.05);
+			scale: 1.05;
 		}
 	}
 }

@@ -14,9 +14,12 @@
 
 	// #fe0
 	--inverse-rgb: 255 238 0;
-	--background-primary: var(--primary);
-	--text-primary: var(--secondary);
+	--background-primary: var(--primary, #fff);
+	--text-primary: var(--secondary, #222);
+	--fallback-font: system-ui, "Segoe UI", roboto, helvetica, arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--font-family: "Roboto";
 	--font-size: 1rem;
 	--font-weight: 700;
+	--header-height: 4rem;
 }

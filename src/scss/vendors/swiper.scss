@@ -24,7 +24,7 @@
 .swiper-android {
 	.swiper-slide,
 	.swiper-wrapper {
-		transform: translate3d(0, 0, 0);
+		translate: 0, 0, 0;
 	}
 }
 
@@ -41,7 +41,7 @@
 .swiper-pagination-bullet {
 	border-radius: rem(30);
 	width: rem(15);
-	background-color: var(--disabled);
+	background-color: var(--disabled, #888);
 	height: rem(15);
 	transition:
 		background-color 0.3s,
@@ -52,6 +52,6 @@
 
 .swiper-pagination-bullet-active {
 	width: rem(30);
-	box-shadow: 0 rem(2) rem(4) rgb(var(--accent-rgb) / 0.25);
-	background-color: var(--accent);
+	box-shadow: 0 rem(2) rem(4) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+	background-color: var(--accent, #0d8);
 }

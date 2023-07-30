@@ -13,8 +13,8 @@
 .tippy-content {
 	border-radius: rem(7);
 	padding: rem(3) rem(10);
-	box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb) / 25%);
+	box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb, 255 238 0) / 25%);
 	font-size: rem(13);
 	line-height: div(22, 13);
-	background-color: var(--inverse);
+	background-color: var(--inverse, #fe0);
 }

@@ -5,10 +5,7 @@
 	align-self: flex-start;
 	overflow: hidden;
 	border-radius: rem(10);
-	background-color: var(--magnolia);
-	transition:
-		transform 0.3s,
-		opacity 0.3s;
+	background-color: var(--magnolia, #f8f4ff);
 
 	&__trigger {
 		position: relative;
@@ -34,23 +31,23 @@
 					border-radius: rem(2);
 					width: rem(20);
 					height: rem(2);
-					background-color: var(--secondary);
-					transition: transform 0.3s;
+					background-color: var(--secondary, #222);
+					transition: rotate 0.3s;
 				}
 
 				&::before {
-					transform: rotate(90deg);
+					rotate: 90deg;
 				}
 			}
 
 			&.spoiler-active {
 				span {
 					&::before {
-						transform: rotate(45deg);
+						rotate: 45deg;
 					}
 
 					&::after {
-						transform: rotate(-45deg);
+						rotate: -45deg;
 					}
 				}
 			}
@@ -61,7 +58,7 @@
 		justify-content: center;
 
 		svg {
-			fill: var(--primary);
+			fill: var(--primary, #fff);
 		}
 	}
 
@@ -77,28 +74,28 @@
 			width: rem(20);
 			height: rem(20);
 			fill: none;
-			stroke: var(--primary);
+			stroke: var(--primary, #fff);
 			animation: glow 0.8s 2 forwards 0.3s;
 
 			@keyframes glow {
 				0% {
-					stroke: var(--primary);
+					stroke: var(--primary, #fff);
 				}
 
 				25% {
-					stroke: var(--secondary);
+					stroke: var(--secondary, #222);
 				}
 
 				50% {
-					stroke: var(--primary);
+					stroke: var(--primary, #fff);
 				}
 
 				75% {
-					stroke: var(--secondary);
+					stroke: var(--secondary, #222);
 				}
 
 				100% {
-					stroke: var(--primary);
+					stroke: var(--primary, #fff);
 				}
 			}
 		}
@@ -106,9 +103,9 @@
 
 	&__content {
 		padding: rem(15);
-		box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb) / 0.25);
-		color: var(--primary);
-		background-color: var(--accent);
+		box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+		color: var(--primary, #fff);
+		background-color: var(--accent, #0d8);
 	}
 
 	&__call-me {
