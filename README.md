@@ -15,13 +15,13 @@
 
 ### Best
 
-- 🏭 [![](https://img.shields.io/badge/site-builder-80f)](https://github.com/nikkeyl/site-builder). Builder for front-end based on gulp and webpack
-- 🌐 [![](https://img.shields.io/badge/nikkeyl-skyblue)](https://nikkeyl.github.io/nikkeyl). This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
+- 🏭 [![](https://img.shields.io/badge/site-builder-80f)](https://github.com/nikkeyl/site-builder) Builder for front-end based on gulp and webpack
+- 🌐 [![](https://img.shields.io/badge/nikkeyl-skyblue)](https://nikkeyl.github.io/nikkeyl) This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
 ### When there was inspiration
 
-- 📦 [![](https://img.shields.io/badge/devpack-orange)](https://github.com/nikkeyl/devpack). Rapid deployment of the environment
-- 🐶 [![](https://img.shields.io/badge/SGP-brown)](https://github.com/nikkeyl/pug-style-guide). Style guide for pug
+- 📦 [![](https://img.shields.io/badge/devpack-orange)](https://github.com/nikkeyl/devpack) Rapid deployment of the environment
+- 🐶 [![](https://img.shields.io/badge/SGP-brown)](https://github.com/nikkeyl/pug-style-guide) Style guide for pug
 
 ## Skills
 
