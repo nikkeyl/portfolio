@@ -14,7 +14,6 @@ import { addLoadedClass } from '@js/modules/addLoadedClass'
 import { addTouchClass } from '@js/modules/addTouchClass'
 // import { customCursor } from './modules/customCursor'
 import { webp } from '@js/modules/webp'
-// import '@js/modules/FullPage'
 
 // ----------------------------------------------------------------VENDORS
 import { lazyMedia } from '@js/vendors/LazyLoad'

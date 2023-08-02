@@ -126,6 +126,11 @@
       "a11y": "svgo"
     },
     {
+      "icon": "img/svg/postcss.svg",
+      "name": "POSTCSS",
+      "a11y": "postcss"
+    },
+    {
       "icon": "img/svg/babel.svg",
       "name": "BABEL",
       "a11y": "babel"
