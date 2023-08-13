@@ -6,7 +6,7 @@ import { replaceLoaderOptions } from './plugins/replaceLoaderOptions.js'
 import { cssLoaderOptions } from './plugins/cssLoaderOptions.js'
 import { output } from './plugins/webPackOutputFile.js'
 import { pugPages } from './plugins/pugPages.js'
-import { linters } from '../utils/linters.js'
+import { linters } from '../utilities/linters.js'
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
@@ -74,7 +74,7 @@ const config = {
 		...pugPages.map(pugPage => new plugins.HtmlWebpackPlugin({
 			minify: false,
 			inject: false,
-			template: `${paths.srcFolder}/${pugPage}`,
+			template: `${paths.srcFolder}/views/${pugPage}`,
 			filename: `../${pugPage.replace(/\.pug$/, '.html')}`,
 			production: true
 		})),
@@ -88,7 +88,7 @@ const config = {
 					to: '../static',
 					noErrorOnMissing: true
 				}, {
-					from: `${paths.srcFolder}/favicon.ico`,
+					from: paths.src.favicon,
 					to: '../',
 					noErrorOnMissing: true
 				}

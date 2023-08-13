@@ -1,4 +1,4 @@
-import { app } from '../../gulpfile.js'
+import gulp from 'gulp'
 
 import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
@@ -30,11 +30,14 @@ webPackConfigBeautify.optimization = {
 webPackConfigBeautify.output = output('app.js')
 
 const jsDev = () =>
-	app.gulp.src(paths.src.js)
+	gulp
+		.src(paths.src.js)
 		.pipe(plugins.catchError('JS'))
-		.pipe(plugins.webpack({
-			config: webPackConfigBeautify
-		}))
-		.pipe(app.gulp.dest(paths.build.js))
+		.pipe(
+			plugins.webpack({
+				config: webPackConfigBeautify
+			})
+		)
+		.pipe(gulp.dest(paths.build.js))
 
 export { jsDev }

@@ -55,16 +55,16 @@
 
 	&__actions {
 		display: flex;
+		gap: rem(10);
 		align-items: center;
-		gap: rem(5);
 	}
 
 	&__src-code {
 		border-radius: 50%;
 
 		svg {
-			width: rem(50);
 			height: rem(50);
+			width: rem(50);
 		}
 
 		&:focus-visible {

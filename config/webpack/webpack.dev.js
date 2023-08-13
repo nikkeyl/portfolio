@@ -75,7 +75,7 @@ const config = {
 		...pugPages.map(pugPage => new plugins.HtmlWebpackPlugin({
 			minify: false,
 			inject: false,
-			template: `${paths.srcFolder}/${pugPage}`,
+			template: `${paths.srcFolder}/views/${pugPage}`,
 			filename: pugPage.replace(/\.pug$/, '.html'),
 			production: false
 		})),
@@ -92,7 +92,7 @@ const config = {
 					noErrorOnMissing: true,
 					force: true
 				}, {
-					from: `${paths.srcFolder}/favicon.ico`,
+					from: paths.src.favicon,
 					to: './',
 					noErrorOnMissing: true
 				}

@@ -2,7 +2,9 @@
 	"Exclude": [
 		"stylelintrc.json",
 		"src/scss/vendors",
-		"Select.js",
+		"spoilers.js",
+		"mixins.scss",
+		"Popup.js",
 		"fonts.js",
 		"webp.js"
 	]

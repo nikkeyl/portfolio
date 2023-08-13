@@ -1,34 +1,36 @@
-import { app } from '../../gulpfile.js'
+import gulp from 'gulp'
+
+import { plugins } from '../settings/plugins.js'
+import { paths } from '../settings/paths.js'
 
 import webpHtmlNoSvg from 'gulp-webp-html-nosvg'
 import versionNumber from 'gulp-version-number'
 import htmlMin from 'gulp-htmlmin'
 
-const html = () =>
-	app.gulp.src(`${app.paths.build.html}*.html`)
-		.pipe(app.plugins.catchError('HTML'))
-		.pipe(app.plugins.if(
-			app.isNoWebp,
-			webpHtmlNoSvg()
-		))
-		.pipe(versionNumber({
-			'value': '%DT%',
-			'append': {
-				'key': 'v',
-				'cover': 0,
-				'to': [
-					'css',
-					'js'
-				]
-			},
-			'output': {
-				'file': `${app.paths.binFolder}/version.json`
-			}
-		}))
-		.pipe(htmlMin({
-			removeRedundantAttributes: true,
-			removeEmptyAttributes: true
-		}))
-		.pipe(app.gulp.dest(app.paths.build.html))
+const html = noWebp =>
+	gulp
+		.src(`${paths.build.html}*.html`)
+		.pipe(plugins.catchError('HTML'))
+		.pipe(plugins.if(noWebp, webpHtmlNoSvg()))
+		.pipe(
+			versionNumber({
+				value: '%DT%',
+				append: {
+					key: 'v',
+					cover: 0,
+					to: ['css', 'js']
+				},
+				output: {
+					file: `${paths.binFolder}/version.json`
+				}
+			})
+		)
+		.pipe(
+			htmlMin({
+				removeRedundantAttributes: true,
+				removeEmptyAttributes: true
+			})
+		)
+		.pipe(gulp.dest(paths.build.html))
 
 export { html }

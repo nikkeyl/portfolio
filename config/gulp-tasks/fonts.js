@@ -1,9 +1,12 @@
-import { app } from '../../gulpfile.js'
+import gulp from 'gulp'
+
+import { plugins } from '../settings/plugins.js'
+import { paths } from '../settings/paths.js'
 
 import ttf2woff2 from 'gulp-ttf2woff2'
 import fonter from 'gulp-fonter-fix'
 
-function cb() { }
+const cb = () => { }
 
 const fontWeights = {
 	thin: 100,
@@ -25,75 +28,72 @@ const fontWeights = {
 }
 
 const otfToTtf = () =>
-	app.gulp.src(`${app.paths.srcFolder}/fonts/*.otf`)
-		.pipe(app.plugins.catchError('FONTS'))
-		.pipe(fonter({
-			formats: ['ttf']
-		}))
-		.pipe(app.gulp.dest(`${app.paths.srcFolder}/fonts/`))
+	gulp
+		.src(`${paths.srcFolder}/fonts/*.otf`)
+		.pipe(plugins.catchError('FONTS'))
+		.pipe(
+			fonter({
+				formats: ['ttf']
+			})
+		)
+		.pipe(gulp.dest(`${paths.srcFolder}/fonts/`))
 
 const ttfToWoff = () =>
-	app.gulp.src(`${app.paths.srcFolder}/fonts/*.ttf`)
-		.pipe(app.plugins.catchError('FONTS'))
+	gulp
+		.src(`${paths.srcFolder}/fonts/*.ttf`)
+		.pipe(plugins.catchError('FONTS'))
 		.pipe(ttf2woff2())
-		.pipe(app.gulp.dest(app.paths.build.fonts))
-		.pipe(app.gulp.src(`${app.paths.srcFolder}/fonts/*.woff2`))
-		.pipe(app.gulp.dest(app.paths.build.fonts))
+		.pipe(gulp.dest(paths.build.fonts))
+		.pipe(gulp.src(`${paths.srcFolder}/fonts/*.woff2`))
+		.pipe(gulp.dest(paths.build.fonts))
 
 const fontsStyles = () => {
-	const fontStylesFile = `${app.paths.srcFolder}/scss/base/font-face.scss`
-
-	app.plugins.fs.readdir(app.paths.build.fonts, (error, fontFiles) => {
+	plugins.fs.readdir(paths.build.fonts, (error, fontFiles) => {
 		if (fontFiles) {
-			if (!app.plugins.fs.existsSync(fontStylesFile)) {
+			if (!plugins.fs.existsSync(paths.fontStylesFile)) {
 				let newFileOnly
 
-				app.plugins.fs.writeFile(
-					fontStylesFile,
-					'',
-					cb
-				)
+				plugins.fs.writeFile(paths.fontStylesFile, '', cb)
 				fontFiles.forEach(file => {
 					const fileName = file.split('.')[0]
 
 					if (newFileOnly !== fileName) {
-						const italic = /italic/gi
-						const [
-							fontName,
-							fontWeight = 'regular'
-						] = fileName.split('-')
-						const fontWeightValue = fontWeights[fontWeight.toLowerCase().replace(italic, '')]
+						const italic = (/italic/gi)
+						const variableFont = (/var/gi)
+						const [fontName, fontWeight = 'regular'] = fileName.split('-')
+						const fontWeightValue
+							= fontWeights[fontWeight.toLowerCase().replace(italic, '')]
 						const fontStyle = fileName.match(italic) ? 'italic' : 'normal'
 
-						app.plugins.fs.appendFile(
-							fontStylesFile,
-							`@font-face {\n\tsrc: url("../fonts/${fileName}.woff2") format("woff2");\n\tfont-family: "${fontName}";\n\tfont-weight: ${fontWeightValue};\n\tfont-style: ${fontStyle};\n\tfont-display: swap;\n}\n\n`,
-							cb
-						)
+						if (fileName.match(variableFont)) {
+							plugins.fs.appendFile(
+								paths.fontStylesFile,
+								`@font-face {\n\tsrc: url("../fonts/${fileName}.woff2") format("woff2-variations");\n\tfont-family: "${fontName}";\n\tfont-weight: 100 1000;\n\tfont-display: swap;\n}\n\n`,
+								cb
+							)
+						} else {
+							plugins.fs.appendFile(
+								paths.fontStylesFile,
+								`@font-face {\n\tsrc: url("../fonts/${fileName}.woff2") format("woff2");\n\tfont-family: "${fontName}";\n\tfont-weight: ${fontWeightValue};\n\tfont-style: ${fontStyle};\n\tfont-display: swap;\n}\n\n`,
+								cb
+							)
+						}
+
 						newFileOnly = fileName
 					}
 				})
-				console.log(app.plugins.chalk.green.bold(
-					'(font-face.scss) successfully written'
-				))
+				console.log(
+					plugins.chalk.green.bold('(font-face.scss) successfully written')
+				)
 			} else {
-				console.log(app.plugins.chalk.yellow.bold(
-					`(font-face.scss) already exists`
-				))
+				console.log(plugins.chalk.yellow.bold(`(font-face.scss) already exists`))
 			}
 		} else {
-			console.log(
-				app.plugins.chalk.red.bold('No font file in fonts directory\n'),
-				error
-			)
+			console.log(plugins.chalk.red.bold('No font file in fonts directory\n'), error)
 		}
 	})
 
-	return app.gulp.src(app.paths.srcFolder)
+	return gulp.src(paths.srcFolder)
 }
 
-export {
-	fontsStyles,
-	ttfToWoff,
-	otfToTtf
-}
+export { fontsStyles, ttfToWoff, otfToTtf }

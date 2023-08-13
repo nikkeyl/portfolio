@@ -1,32 +1,40 @@
-import { app } from '../../gulpfile.js'
+import gulp from 'gulp'
+
+import { plugins } from '../settings/plugins.js'
+import { paths } from '../settings/paths.js'
 
 import { svgoConfig } from '../../svgo.config.js'
 
 import svgSprite from 'gulp-svg-sprite'
 
 const sprite = () =>
-	app.gulp.src(app.paths.src.svgSprites)
-		.pipe(app.plugins.catchError('SPRITE'))
-		.pipe(svgSprite({
-			mode: {
-				symbol: {
-					sprite: '../img/icons/sprite.svg'
+	gulp
+		.src(paths.src.svgSprites)
+		.pipe(plugins.catchError('SPRITE'))
+		.pipe(
+			svgSprite({
+				mode: {
+					symbol: {
+						sprite: paths.spriteFile
+					}
+				},
+				shape: {
+					transform: [
+						{
+							svgo: svgoConfig
+						}
+					]
+				},
+				svg: {
+					xmlDeclaration: false,
+					rootAttributes: {
+						style: 'display: none;',
+						role: 'img',
+						'aria-hidden': true
+					}
 				}
-			},
-			shape: {
-				transform: [{
-					svgo: svgoConfig
-				}]
-			},
-			svg: {
-				xmlDeclaration: false,
-				rootAttributes: {
-					style: 'display: none;',
-					role: 'img',
-					'aria-hidden': true
-				}
-			}
-		}))
-		.pipe(app.gulp.dest(app.paths.srcFolder))
+			})
+		)
+		.pipe(gulp.dest(paths.srcFolder))
 
 export { sprite }
