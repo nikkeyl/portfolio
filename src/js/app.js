@@ -6,7 +6,6 @@ import { spoilers } from '@js/components/spoilers'
 import '@js/components/popup'
 
 // ----------------------------------------------------------------SCROLL
-import { pageNavigation } from '@js/modules/scroll/pageNavigation'
 // import { ScrollWatcher } from '@js/modules/scroll/watcher'
 
 // ----------------------------------------------------------------MODULES
@@ -31,7 +30,6 @@ spoilers()
 
 // ----------------------------------------------------------------SCROLL
 // new ScrollWatcher()
-pageNavigation()
 
 // ----------------------------------------------------------------MODULES
 addLoadedClass()

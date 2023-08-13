@@ -1,4 +1,5 @@
 :root {
+	/* Colors */
 	--primary: #fff;
 	--magnolia: #f8f4ff;
 	--secondary: #222;
@@ -6,6 +7,7 @@
 	--inverse: #fe0;
 	--disabled: #888;
 
+	/* Colors RGB */
 	// #888
 	--disabled-rgb: 136 136 136;
 
@@ -14,12 +16,15 @@
 
 	// #fe0
 	--inverse-rgb: 255 238 0;
+
+	/* Fonts */
 	--background-primary: var(--primary, #fff);
 	--text-primary: var(--secondary, #222);
-	--fallback-font: system-ui, "Segoe UI", roboto, helvetica, arial, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--system-ui: system-ui;
 	--font-family: "Roboto";
 	--font-size: 1rem;
 	--font-weight: 700;
+
+	/* Header */
 	--header-height: 4rem;
 }

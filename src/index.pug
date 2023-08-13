@@ -14,9 +14,7 @@ block content
 				| #[span(data-typed) development]
 			.hero__actions
 				a.button.button--fw.hero__button(
-					href='#'
-					data-goto='.portfolio'
-					data-goto-header
+					href='#portfolio'
 				) Portfolio
 				a.button.button--fw.hero__button(href='https://t.me/nikkeyl')
 					| Order a website
@@ -28,9 +26,9 @@ block content
 						| Who am I?
 					.text
 						p I have been studying front-end development for only a year, #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
-						p You can see for yourself by going to #[a.link(href='#' data-goto='.developments' data-goto-header) my developments] and #[a.link(href='#' data-goto='.portfolio' data-goto-header) portfolio].
+						p You can see for yourself by going to #[a.link(href='#developments') my developments] and #[a.link(href='#portfolio') portfolio].
 						p Also, thanks to my minimalism, I #[strong write clean and understandable code.].
-						p If you want to know #[strong what technologies I own], you can go down a little #[a.link(href='#' data-goto='.skills' data-goto-header) lower].
+						p If you want to know #[strong what technologies I own], you can go down a little #[a.link(href='#skills') lower].
 
 						each skill in skills.skills
 							p.sr-only=skill.a11y
@@ -40,7 +38,7 @@ block content
 				data-src='@img/about/nikkeyl.jpg'
 				alt='Nikita Almanov'
 			)
-	.skills(role='marquee')
+	.skills#skills(role='marquee')
 		.skills__icons
 			each skill in skills.skills
 				.skills__icon
@@ -50,7 +48,7 @@ block content
 						data-tippy-content=skill.name
 					)
 
-	section.developments
+	section.developments#developments
 		.container
 			h2.title.developments__title
 				| My developments
@@ -67,7 +65,7 @@ block content
 							alt=repo.name
 						)
 
-	section.portfolio
+	section.portfolio#portfolio
 		.container
 			h2.title.portfolio__title
 				| Portfolio
@@ -89,10 +87,7 @@ block content
 									data-tippy-content=card.name
 								) View
 								a(
-									class=[
-										'project-card__src-code',
-										card.disabled ? 'disabled' : ''
-									]
+									class='project-card__src-code'
 									href=card.linkCode
 									data-tippy-content=card.disabled ? false : card.srcCode
 									tabindex=card.disabled ? '-1' : false
@@ -125,7 +120,7 @@ block content
 									| !{review.text}
 
 				.swiper-pagination.reviews__pagination
-	section.questions
+	section.questions#questions
 		.container
 			h2.title.questions__title
 				| FAQ

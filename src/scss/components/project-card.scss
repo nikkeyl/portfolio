@@ -73,14 +73,14 @@
 			}
 		}
 
-		&.disabled {
+		&[tabindex="-1"] {
 			svg {
 				fill: rgb(var(--disabled-rgb, 136 136 136) / 0.5);
 				cursor: not-allowed;
 			}
 		}
 
-		&:not(.disabled) {
+		&:not([tabindex="-1"]) {
 			svg {
 				fill: var(--accent, #0d8);
 				transition: fill 0.3s;

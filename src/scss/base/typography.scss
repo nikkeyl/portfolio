@@ -3,15 +3,11 @@
 
 /* Typography styles */
 body {
-	font-family: var(--font-family, var(--fallback-font, sans-serif));
+	font-family: var(--font-family, var(--system-ui, sans-serif));
 	font-weight: var(--font-weight, 700);
 	font-size: var(--font-size, 1rem);
 	line-height: 1;
-	text-rendering: optimizeLegibility;
-	text-size-adjust: 100%;
 	color: var(--text-primary, #222);
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
 }
 
 a {

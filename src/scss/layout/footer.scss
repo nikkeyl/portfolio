@@ -1,7 +1,6 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
-/* Footer styles */
 .footer {
 	padding-block: rem(10);
 	background-color: var(--secondary, #222);

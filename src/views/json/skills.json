@@ -36,6 +36,16 @@
       "a11y": "bash"
     },
     {
+      "icon": "img/svg/json.svg",
+      "name": "JSON",
+      "a11y": "json"
+    },
+    {
+      "icon": "img/svg/yaml.svg",
+      "name": "YAML",
+      "a11y": "yaml"
+    },
+    {
       "icon": "img/svg/markdown.svg",
       "name": "MARKDOWN",
       "a11y": "markdown"

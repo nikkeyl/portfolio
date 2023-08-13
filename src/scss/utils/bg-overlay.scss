@@ -1,6 +1,5 @@
 @use "@scss/abstracts" as *;
 
-/* Overlay styles for popups */
 body {
 	&::after {
 		@include pseudo("", fixed);
