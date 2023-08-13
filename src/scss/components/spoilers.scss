@@ -10,8 +10,8 @@
 	&__trigger {
 		position: relative;
 		display: flex;
-		align-items: center;
 		gap: rem(20);
+		align-items: center;
 		padding: rem(10);
 		text-align: left;
 		cursor: pointer;
@@ -26,11 +26,11 @@
 				&::after {
 					@include pseudo;
 
-					right: rem(10);
 					top: 50%;
+					right: rem(10);
 					border-radius: rem(2);
-					width: rem(20);
 					height: rem(2);
+					width: rem(20);
 					background-color: var(--secondary, #222);
 					transition: rotate 0.3s;
 				}
@@ -64,15 +64,15 @@
 
 	&__info {
 		display: flex;
-		align-items: center;
-		justify-content: center;
 		gap: rem(10);
+		justify-content: center;
+		align-items: center;
 		margin-inline: auto;
 		width: fit-content;
 
 		svg {
-			width: rem(20);
 			height: rem(20);
+			width: rem(20);
 			fill: none;
 			stroke: var(--primary, #fff);
 			animation: glow 0.8s 2 forwards 0.3s;
@@ -102,8 +102,8 @@
 	}
 
 	&__content {
-		padding: rem(15);
 		box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+		padding: rem(15);
 		color: var(--primary, #fff);
 		background-color: var(--accent, #0d8);
 	}

@@ -10,15 +10,15 @@
 
 	&__item {
 		display: inline-flex;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
 		overflow: hidden;
 		border-radius: 50%;
 		transition: scale 0.3s;
 
 		svg {
-			width: rem(40);
 			height: rem(40);
+			width: rem(40);
 			fill: var(--secondary, #222);
 		}
 

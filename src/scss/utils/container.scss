@@ -3,6 +3,6 @@
 
 .container {
 	margin-inline: auto;
-	padding-inline: rem(div($container-padding, 2));
 	max-width: rem($max-width-container);
+	padding-inline: rem(div($container-padding, 2));
 }

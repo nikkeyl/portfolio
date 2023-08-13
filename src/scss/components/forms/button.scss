@@ -5,8 +5,8 @@
 	display: inline-flex;
 	justify-content: center;
 	border-radius: rem(50);
-	padding: rem(15);
 	box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+	padding: rem(15);
 	line-height: div(18, 16);
 	text-align: center;
 	color: var(--primary, #fff);
