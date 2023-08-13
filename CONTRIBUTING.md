@@ -5,7 +5,7 @@ please first discuss the change you wish to make via issue,
 [email](mailto:nikkeyl.dev@gmail.com), or any other method with the owners
 of this repository before making a change.
 
-Please note we have a [Code of Conduct](../CODE_OF_CONDUCT.md),
+Please note we have a [Code of Conduct](CODE_OF_CONDUCT.md),
 please follow it in all your interactions with the project.
 
 ## Pull Request Process
@@ -16,10 +16,6 @@ please follow it in all your interactions with the project.
     Branches MUST have descriptive names that start with either
     the `fix/`, `feature/` or `refactor` prefixes. Good examples are:
     `fix/paths`, `feature/postcss` or `refactor/gulpfile`.
-
-    > **Important**<br>
-    > New branches must be created from one of these branches:
-    > `feature`, `fix` or `refactor`.
   <!--  -->
   - You have a descriptive commit message with a short title (first line).
   <!--  -->
