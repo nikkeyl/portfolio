@@ -11,18 +11,6 @@
 - 👀 Watching anime
 - 🚴‍♂️ And Doing Sports
 
-## My developments
-
-### Best
-
-- 🏭 [![](https://img.shields.io/badge/site-builder-80f)](https://github.com/nikkeyl/site-builder) Builder for front-end based on gulp and webpack
-- 🌐 [![](https://img.shields.io/badge/nikkeyl-skyblue)](https://nikkeyl.github.io/nikkeyl) This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
-
-### When there was inspiration
-
-- 📦 [![](https://img.shields.io/badge/devpack-orange)](https://github.com/nikkeyl/devpack) Rapid deployment of the environment
-- 🐶 [![](https://img.shields.io/badge/SGP-brown)](https://github.com/nikkeyl/pug-style-guide) Style guide for pug
-
 ## Skills
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" width="40" height="40" title="html">&nbsp;
@@ -39,6 +27,11 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="40" height="40" title="figma">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40" title="vscode">&nbsp;
 [![](https://img.shields.io/badge/more-gold)](https://nikkeyl.github.io/nikkeyl)&nbsp;
+
+## My developments
+
+- 🏭 [![](https://img.shields.io/badge/site-builder-80f)](https://github.com/nikkeyl/site-builder) Builder for front-end based on gulp and webpack
+- 🌐 [![](https://img.shields.io/badge/nikkeyl-skyblue)](https://nikkeyl.github.io/nikkeyl) This is not just a portfolio site, it is a collection of best practices from the world of Front-End development.
 
 ## Contacts
 
