@@ -15,8 +15,6 @@ import { addTouchClass } from '@js/modules/addTouchClass'
 import { webp } from '@js/modules/webp'
 
 // ----------------------------------------------------------------VENDORS
-import { lazyMedia } from '@js/vendors/LazyLoad'
-
 // import '@js/vendors/SimpleBar'
 import '@js/vendors/Marquee'
 import '@js/vendors/Swiper'
@@ -36,6 +34,3 @@ addLoadedClass()
 addTouchClass()
 // customCursor()
 webp()
-
-// ----------------------------------------------------------------VENDORS
-lazyMedia

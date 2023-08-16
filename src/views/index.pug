@@ -35,7 +35,7 @@ block content
 
 		.about-me__image
 			img(
-				data-src='@img/about/nikkeyl.jpg'
+				src='@img/about/nikkeyl.jpg'
 				alt='Nikita Almanov'
 			)
 	.skills#skills(role='marquee')
@@ -43,7 +43,7 @@ block content
 			each skill in skills.skills
 				.skills__icon
 					img(
-						data-src=skill.icon
+						src=skill.icon
 						alt=skill.name
 						data-tippy-content=skill.name
 					)
@@ -61,7 +61,7 @@ block content
 						svg
 							use(href='@img/icons/sprite.svg#github')
 						img(
-							data-src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
+							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
 							alt=repo.name
 						)
 
@@ -74,7 +74,7 @@ block content
 					article.project-card
 						a.bg-image.project-card__image(href=card.linkSite)
 							img(
-								data-src=card.img
+								src=card.img
 								alt=card.name
 							)
 						.project-card__body
@@ -110,7 +110,7 @@ block content
 								.review__info
 									.bg-image.review__image
 										img(
-											data-src=review.img
+											src=review.img
 											alt=review.name
 											title=review.name
 										)

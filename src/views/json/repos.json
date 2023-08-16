@@ -3,14 +3,6 @@
     {
       "name": "site-builder",
       "a11y": "site builder"
-    },
-    {
-      "name": "devpack",
-      "a11y": "devpack - Rapid deployment of the environment with devpack"
-    },
-    {
-      "name": "pug-style-guide",
-      "a11y": "Code style for pug"
     }
   ]
 }

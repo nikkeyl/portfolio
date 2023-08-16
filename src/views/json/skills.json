@@ -31,11 +31,6 @@
       "a11y": "typescript"
     },
     {
-      "icon": "img/svg/bash.svg",
-      "name": "BASH",
-      "a11y": "bash"
-    },
-    {
       "icon": "img/svg/json.svg",
       "name": "JSON",
       "a11y": "json"

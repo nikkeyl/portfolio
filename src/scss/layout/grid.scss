@@ -2,7 +2,7 @@
 @use "@scss/abstracts" as *;
 
 .grid {
-	@include grid(fit, rem(290), 1fr, $phone) {
+	@include grid(fill, rem(290), 1fr, $phone) {
 		gap: rem(20);
 	}
 }
