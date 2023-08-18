@@ -3,28 +3,28 @@
 
 .review {
 	overflow: hidden;
-	border-radius: rem(10);
-	max-width: rem(400);
+	border-radius: to-rem(10);
+	max-width: to-rem(400);
 	filter: grayscale(1);
 	transition: filter 0.3s;
 
 	&__info {
 		display: flex;
-		gap: rem(15);
+		gap: to-rem(15);
 		align-items: center;
-		padding: rem(15);
+		padding: to-rem(15);
 		background-color: var(--magnolia, #f8f4ff);
 	}
 
 	&__image {
-		flex: 0 0 rem(70);
+		flex: 0 0 to-rem(70);
 		border-radius: 50%;
-		height: rem(70);
+		height: to-rem(70);
 		background-color: var(--accent, #0d8);
 	}
 
 	&__text {
-		padding: rem(15);
+		padding: to-rem(15);
 		color: var(--primary, #fff);
 		background: var(--accent, #0d8);
 	}

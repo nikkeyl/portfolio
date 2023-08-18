@@ -2,7 +2,7 @@
 @use "@scss/abstracts" as *;
 
 .footer {
-	padding-block: rem(10);
+	padding-block: to-rem(10);
 	background-color: var(--secondary, #222);
 
 	&__container {
@@ -13,7 +13,7 @@
 		> .logo {
 			$font-size: 20;
 
-			font-size: rem($font-size);
+			font-size: to-rem($font-size);
 		}
 	}
 }

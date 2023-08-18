@@ -40,7 +40,7 @@ a {
 
 // ======================================================================================================================================================== //
 .card-title {
-	font-size: rem(30);
+	font-size: to-rem(30);
 	line-height: div(40, 30);
 }
 
@@ -51,7 +51,7 @@ a {
 
 	p {
 		&:not(:last-child) {
-			margin-bottom: em(3);
+			margin-bottom: to-em(3);
 		}
 	}
 }
@@ -75,8 +75,8 @@ a {
 
 			bottom: 0;
 			left: 0;
-			border-radius: rem(2);
-			height: rem(2);
+			border-radius: to-rem(2);
+			height: to-rem(2);
 			width: 0;
 			background-color: var(--inverse, #fe0);
 			transition: width 0.3s;

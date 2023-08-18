@@ -32,11 +32,11 @@ body {
 }
 
 :focus-visible {
-	outline-offset: rem(2);
+	outline-offset: to-rem(2);
 
 	/* Styles for a contrasting theme */
 	outline-color: transparent;
-	box-shadow: 0 0 0 rem(2) var(--accent, #0d8);
+	box-shadow: 0 0 0 to-rem(2) var(--accent, #0d8);
 }
 
 summary {

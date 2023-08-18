@@ -17,8 +17,8 @@
 		transition: scale 0.3s;
 
 		svg {
-			height: rem(40);
-			width: rem(40);
+			height: to-rem(40);
+			width: to-rem(40);
 			fill: var(--secondary, #222);
 		}
 

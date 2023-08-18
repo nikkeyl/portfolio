@@ -35,14 +35,14 @@
 .swiper-pagination {
 	display: flex;
 	justify-content: center;
-	gap: rem(5);
+	gap: to-rem(5);
 }
 
 .swiper-pagination-bullet {
-	border-radius: rem(30);
-	width: rem(15);
+	border-radius: to-rem(30);
+	width: to-rem(15);
 	background-color: var(--disabled, #888);
-	height: rem(15);
+	height: to-rem(15);
 	transition:
 		background-color 0.3s,
 		box-shadow 0.3s,
@@ -51,7 +51,7 @@
 }
 
 .swiper-pagination-bullet-active {
-	width: rem(30);
-	box-shadow: 0 rem(2) rem(4) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+	width: to-rem(30);
+	box-shadow: 0 to-rem(2) to-rem(4) rgb(var(--accent-rgb, 4 219 137) / 0.25);
 	background-color: var(--accent, #0d8);
 }

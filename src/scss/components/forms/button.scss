@@ -4,9 +4,9 @@
 .button {
 	display: inline-flex;
 	justify-content: center;
-	border-radius: rem(50);
-	box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
-	padding: rem(15);
+	border-radius: to-rem(50);
+	box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+	padding: to-rem(15);
 	line-height: div(18, 16);
 	text-align: center;
 	color: var(--primary, #fff);
@@ -18,13 +18,13 @@
 		color 0.3s;
 
 	&:focus-visible {
-		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
+		box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
 		color: var(--secondary, #222);
 		background-color: var(--inverse, #fe0);
 	}
 
 	&:active {
-		translate: 0 rem(3);
+		translate: 0 to-rem(3);
 	}
 
 	&--fw {
@@ -34,7 +34,7 @@
 	}
 
 	@include media-hover {
-		box-shadow: 0 rem(8) rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
+		box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
 		color: var(--secondary, #222);
 		background-color: var(--inverse, #fe0);
 	}

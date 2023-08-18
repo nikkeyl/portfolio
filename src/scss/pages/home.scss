@@ -22,7 +22,7 @@
 	&__actions {
 		display: flex;
 		flex-wrap: wrap;
-		gap: rem(15);
+		gap: to-rem(15);
 
 		@include media-max($phone) {
 			width: 100%;
@@ -36,7 +36,7 @@
 
 // ========================================================================================================================================================//
 .about-me {
-	@include responsive-output(540, 800, $tablet, 1);
+	@include responsive-output(800, $tablet, 1);
 
 	&__inner {
 		background-color: var(--accent, #0d8);
@@ -50,17 +50,17 @@
 	}
 
 	&__body {
-		padding-block: rem(30);
+		padding-block: to-rem(30);
 		color: var(--primary, #fff);
 
 		@include media-min($tablet) {
-			padding-left: rem(50);
+			padding-left: to-rem(50);
 		}
 	}
 
 	&__title {
 		&:not(:last-child) {
-			margin-bottom: rem(20);
+			margin-bottom: to-rem(20);
 		}
 
 		@include media-min($tablet) {
@@ -77,11 +77,11 @@
 			&::before {
 				@include pseudo;
 
-				top: rem(-150);
-				right: rem(-130);
+				top: to-rem(-150);
+				right: to-rem(-130);
 				z-index: 4;
-				height: rem(1000);
-				width: rem(200);
+				height: to-rem(1000);
+				width: to-rem(200);
 				background-color: var(--accent, #0d8);
 				rotate: 11.5deg;
 				transition: width 0.8s;
@@ -93,41 +93,41 @@
 // ========================================================================================================================================================//
 .skills {
 	display: grid;
-	padding-block: rem(50) rem(20);
+	padding-block: to-rem(50) to-rem(20);
 
 	&__icons {
 		display: flex;
-		gap: rem(20);
+		gap: to-rem(20);
 	}
 
 	&__icon {
-		flex: 0 0 rem(90);
-		height: rem(90);
-		width: rem(90);
+		flex: 0 0 to-rem(90);
+		height: to-rem(90);
+		width: to-rem(90);
 	}
 }
 
 // ======================================================================================================================================================== //
 .developments {
-	padding-block: rem(30);
+	padding-block: to-rem(30);
 
 	&__title {
 		&:not(:last-child) {
-			margin-bottom: rem(30);
+			margin-bottom: to-rem(30);
 		}
 	}
 
 	&__card {
 		position: relative;
 		overflow: hidden;
-		border-radius: rem(10);
+		border-radius: to-rem(10);
 		transition: scale 0.3s;
 
 		svg {
 			position: absolute;
-			inset: auto rem(15) rem(15) auto;
-			height: rem(30);
-			width: rem(30);
+			inset: auto to-rem(15) to-rem(15) auto;
+			height: to-rem(30);
+			width: to-rem(30);
 			fill: var(--accent, #0d8);
 		}
 
@@ -143,11 +143,11 @@
 
 // ========================================================================================================================================================//
 .portfolio {
-	padding-block: rem(30);
+	padding-block: to-rem(30);
 
 	&__title {
 		&:not(:last-child) {
-			margin-bottom: rem(30);
+			margin-bottom: to-rem(30);
 		}
 	}
 
@@ -158,22 +158,22 @@
 
 // ========================================================================================================================================================//
 .reviews {
-	padding-block: rem(30);
+	padding-block: to-rem(30);
 
 	&__title {
 		&:not(:last-child) {
-			margin-bottom: rem(30);
+			margin-bottom: to-rem(30);
 		}
 	}
 
 	&__slider {
-		margin: rem(-20);
-		padding: rem(20);
+		margin: to-rem(-20);
+		padding: to-rem(20);
 	}
 
 	&__wrapper {
 		&:not(:last-child) {
-			margin-bottom: rem(30);
+			margin-bottom: to-rem(30);
 		}
 	}
 
@@ -186,11 +186,11 @@
 .questions {
 	@include adaptive-value("padding-bottom", 60, 30);
 
-	padding-top: rem(30);
+	padding-top: to-rem(30);
 
 	&__title {
 		&:not(:last-child) {
-			margin-bottom: rem(30);
+			margin-bottom: to-rem(30);
 		}
 	}
 }

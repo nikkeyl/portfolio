@@ -1,0 +1,514 @@
+{
+	"Extend Templates": {
+		"prefix": "ex",
+		"body": "@extend %$0"
+	},
+	"Mixin Gradient For Text": {
+		"prefix": "gt",
+		"body": "@include text-gradient($0);"
+	},
+	"Mixin Truncate": {
+		"prefix": "trun",
+		"body": "@include truncate(${1:400}, ${2:text}, ${3:3}, ${4:1});"
+	},
+	"Mixin Slide": {
+		"prefix": "slide",
+		"body": "@include slide(${1:5}, ${2:100}, ${3:1}, 0.${4:2}, ${5:top});"
+	},
+	"Mixin Responsive Output": {
+		"prefix": "ro",
+		"body": "@include responsive-output(${2:400}, \\$${3:tablet}, ${4:0});"
+	},
+	"Mixin Pseudo": {
+		"prefix": "pseudo",
+		"body": "@include pseudo($0);"
+	},
+	"Mixin Currency": {
+		"prefix": "cur",
+		"body": "@include currency(\"${0:₽}\");"
+	},
+	"Mixin Grid Cards": {
+		"prefix": "gc",
+		"body": "@include grid(${1:fill}, rem(${2:290}), ${3:1fr}, ${4:\\$phone}) {\n\tgap: rem(${5:30});\n\tjustify-items: center;\n}"
+	},
+	"Triangle": {
+		"prefix": "triangle",
+		"body": "@include triangle(var(--$1), ${2:bottom}, ${3:10}, ${4:10}, ${5:10}, ${6:10}, ${7:absolute});"
+	},
+	"Adaptive Value": {
+		"prefix": "av",
+		"body": "@include adaptive-value(\"$1\", $2, $3, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Font Value": {
+		"prefix": "avf",
+		"body": "@include adaptive-value(\"font-size\", ${1:\\$font-size}, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Gap Value": {
+		"prefix": "avg",
+		"body": "@include adaptive-value(\"gap\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Padding Value": {
+		"prefix": "avp",
+		"body": "@include adaptive-value(\"padding\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Padding Top Value": {
+		"prefix": "avpt",
+		"body": "@include adaptive-value(\"padding-top\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Padding Bottom Value": {
+		"prefix": "avpb",
+		"body": "@include adaptive-value(\"padding-bottom\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Padding Right Value": {
+		"prefix": "avpr",
+		"body": "@include adaptive-value(\"padding-right\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Padding Left Value": {
+		"prefix": "avpl",
+		"body": "@include adaptive-value(\"padding-left\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Margin Value": {
+		"prefix": "avm",
+		"body": "@include adaptive-value(\"margin\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Margin Top Value": {
+		"prefix": "avmt",
+		"body": "@include adaptive-value(\"margin-top\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Margin Bottom Value": {
+		"prefix": "avmb",
+		"body": "@include adaptive-value(\"margin-bottom\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Margin Right Value": {
+		"prefix": "avmr",
+		"body": "@include adaptive-value(\"margin-right\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Margin Left Value": {
+		"prefix": "avml",
+		"body": "@include adaptive-value(\"margin-left\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Height Value": {
+		"prefix": "avh",
+		"body": "@include adaptive-value(\"height\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"Adaptive Width Value": {
+		"prefix": "avw",
+		"body": "@include adaptive-value(\"width\", $1, $2, 3, \\$max-width, \\$min-width);"
+	},
+	"@media max": {
+		"prefix": "md",
+		"body": "@include media-max($1) {\n\t$2\n}"
+	},
+	"@media min": {
+		"prefix": "mmd",
+		"body": "@include media-min($1) {\n\t$2\n}"
+	},
+	"@media Max Width And Min Width": {
+		"prefix": "mmmd",
+		"body": "@include media-min-max($1, $2) {\n\t$3\n}"
+	},
+	"@media Max Width Desktop": {
+		"prefix": "md1",
+		"body": "@include media-max(\\$desktop) {\n\t$0\n}"
+	},
+	"@media Min Width Desktop": {
+		"prefix": "mmd1",
+		"body": "@include media-min(\\$desktop) {\n\t$0\n}"
+	},
+	"@media Max Width Laptop": {
+		"prefix": "md2",
+		"body": "@include media-max(\\$laptop) {\n\t$0\n}"
+	},
+	"@media Min Width Laptop": {
+		"prefix": "mmd2",
+		"body": "@include media-min(\\$laptop) {\n\t$0\n}"
+	},
+	"@media Max Width Tablet": {
+		"prefix": "md3",
+		"body": "@include media-max(\\$tablet) {\n\t$0\n}"
+	},
+	"@media Min Width Tablet": {
+		"prefix": "mmd3",
+		"body": "@include media-min(\\$tablet) {\n\t$0\n}"
+	},
+	"@media Max Width Phone": {
+		"prefix": "md4",
+		"body": "@include media-max(\\$phone) {\n\t$0\n}"
+	},
+	"@media Min Width Phone": {
+		"prefix": "mmd4",
+		"body": "@include media-min(\\$phone) {\n\t$0\n}"
+	},
+	"Transition And Hover": {
+		"prefix": "hhv",
+		"body": "transition: ${1:all} 0.${2:3}s;\n\n@include media-hover {\n\t$4\n}"
+	},
+	"Hover Decoration Underline": {
+		"prefix": "hvu",
+		"body": "@include media-hover {\n\ttext-decoration: underline;\n}"
+	},
+	"Hover Decoration None": {
+		"prefix": "hvn",
+		"body": "@include media-hover {\n\ttext-decoration: none;\n}"
+	},
+	"%Responsive Video": {
+		"prefix": "erv",
+		"body": "@extend %video-background;"
+	},
+	"Extend List Counter": {
+		"prefix": "elc",
+		"body": "@extend %list-counter;"
+	},
+	"Extend Gray Filter": {
+		"prefix": "egf",
+		"body": "@extend %gray-filter;"
+	},
+	"Extend Hide Scroll": {
+		"prefix": "ehs",
+		"body": "@extend %hide-scroll;"
+	},
+	"Extend User Select": {
+		"prefix": "eus",
+		"body": "@extend %select-none;"
+	},
+	"Extend Mirror": {
+		"prefix": "emir",
+		"body": "@extend %mirror;"
+	},
+	"Extend Touch": {
+		"prefix": "etouch",
+		"body": "@extend %touch;"
+	},
+	"Em": {
+		"prefix": "em",
+		"body": "em(${1:$2, $3})"
+	},
+	"Rem": {
+		"prefix": "rem",
+		"body": "rem($0)"
+	},
+	"Percent": {
+		"prefix": "prc",
+		"body": "percent($1, $2)"
+	},
+	"Aspect Ratio": {
+		"prefix": "asr",
+		"body": "aspect-ratio: 16 / 9;"
+	},
+	"Dark Theme": {
+		"prefix": "dt",
+		"body": ".dark & {\n\t$0\n}"
+	},
+	"Light Theme": {
+		"prefix": "lt",
+		"body": ".ligth & {\n\t$0\n}"
+	},
+	"Font Family": {
+		"prefix": "ff",
+		"body": "font-family: var(--font-$0), sans-serif;"
+	},
+	"Letter Spacing With Em": {
+		"prefix": "lte",
+		"body": "letter-spacing: to-em($1, ${2:\\$font-size});"
+	},
+	"Font Size In Rem": {
+		"prefix": "fz",
+		"body": "\\$font-size: ${0:18};\n\nfont-size: rem(\\$font-size);"
+	},
+	"Gap With Rem ": {
+		"prefix": "gap",
+		"body": "gap: rem($0);"
+	},
+	"Flex Centering": {
+		"prefix": "cf",
+		"body": "display: flex;\nflex-direction: column;\nalign-items: center;"
+	},
+	"Isolation": {
+		"prefix": "iso",
+		"body": "isolation: isolate;"
+	},
+	"Color Alpha": {
+		"prefix": "ca",
+		"body": "rgba(#${1:000}, 0.${2:5})"
+	},
+	"Divide": {
+		"prefix": "di",
+		"body": "div($1, $2)"
+	},
+	"Width In Rem": {
+		"prefix": "w",
+		"body": "width: rem($0);"
+	},
+	"Height In Rem": {
+		"prefix": "h",
+		"body": "height: rem($0);"
+	},
+	"Margin Bottom In Em": {
+		"prefix": "mbe",
+		"body": "margin-bottom: to-em($1, $2);"
+	},
+	"Margin Bottom Not Last-Child": {
+		"prefix": "mbl",
+		"body": "&:not(:last-child) {\n\tmargin-bottom: rem($0);\n}"
+	},
+	"Margin Bottom Not Last-Child In Em": {
+		"prefix": "mble",
+		"body": "&:not(:last-child) {\n\tmargin-bottom: to-em($1, ${2:\\$font-size});\n}"
+	},
+	"Not Last-Child": {
+		"prefix": "nlc",
+		"body": "&:not(:last-child) {\n\t$0\n}"
+	},
+	"Background Blur": {
+		"prefix": "br",
+		"body": "backdrop-filter: blur(rem($0));"
+	},
+	"Opacity": {
+		"prefix": "op",
+		"body": "opacity: ${0:0};"
+	},
+	"Line Height": {
+		"prefix": "lh",
+		"body": "line-height: div($1, ${2:\\$font-size});"
+	},
+	"Max Width": {
+		"prefix": "mw",
+		"body": "max-width: rem($0);"
+	},
+	"Flex Basis In Percent": {
+		"prefix": "fbpp",
+		"body": "flex: 0 0 percent($1, $2);"
+	},
+	"Filter": {
+		"prefix": "bfil",
+		"body": "position: relative;\n\n&::before {\n\t@include pseudo;\n\tinset: 0;\n\tbackground-color: rgba(#000, 0.3);\n}"
+	},
+	"Padding In Rem": {
+		"prefix": "pp",
+		"body": "padding: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0});"
+	},
+	"Padding Rigth And Left In Rem": {
+		"prefix": "ppp",
+		"body": "padding: 0 rem($0);"
+	},
+	"Padding Top In Rem": {
+		"prefix": "ppt",
+		"body": "padding-top: rem($0);"
+	},
+	"Padding Bottom In Rem": {
+		"prefix": "ppb",
+		"body": "padding-bottom: rem($0);"
+	},
+	"Padding Left In Rem": {
+		"prefix": "ppl",
+		"body": "padding-left: rem($0);"
+	},
+	"Padding Right In Rem": {
+		"prefix": "ppr",
+		"body": "padding-right: rem($0);"
+	},
+	"Margin In Rem": {
+		"prefix": "mm",
+		"body": "margin: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0});"
+	},
+	"Margin Left Auto": {
+		"prefix": "mr",
+		"body": "margin: 0 0 0 auto;"
+	},
+	"Margin Left And Right In Rem": {
+		"prefix": "mmm",
+		"body": "margin: 0 rem($0);"
+	},
+	"Margin Top In Rem": {
+		"prefix": "mmt",
+		"body": "margin-top: rem($0);"
+	},
+	"Margin Bottom In Rem": {
+		"prefix": "mmb",
+		"body": "margin-bottom: rem($0);"
+	},
+	"Margin Left In Rem": {
+		"prefix": "mml",
+		"body": "margin-left: rem($0);"
+	},
+	"Margin Right In Rem": {
+		"prefix": "mmr",
+		"body": "margin-right: rem($0);"
+	},
+	"Margin Left And Right Auto": {
+		"prefix": "mu",
+		"body": "margin-inline: auto;"
+	},
+	"Margin Auto": {
+		"prefix": "ma",
+		"body": "margin: auto;"
+	},
+	"Max Width None": {
+		"prefix": "mwn",
+		"body": "max-width: none;"
+	},
+	"Position": {
+		"prefix": "ps",
+		"body": "position: ${absolute};\ninset: 0;"
+	},
+	"Direction": {
+		"prefix": "drt",
+		"body": "direction: rtl;"
+	},
+	"Border Radius 50%": {
+		"prefix": "br5",
+		"body": "border-radius: 50%;"
+	},
+	"Box Shadow": {
+		"prefix": "bs",
+		"body": "box-shadow: ${1:0} ${2:0} rem(${3:0}) rgba(#000, 0.${4:3});"
+	},
+	"Width Auto": {
+		"prefix": "wa",
+		"body": "width: auto;"
+	},
+	"Height Auto": {
+		"prefix": "ha",
+		"body": "height: auto;"
+	},
+	"Animation": {
+		"prefix": "an",
+		"body": "animation: ${1:name} ${2:1}s ${3:infinite} ${4:linear};"
+	},
+	"Transition": {
+		"prefix": "aa",
+		"body": "transition: ${1:all} 0.${2:3}s;"
+	},
+	"Transform Rotate": {
+		"prefix": "ar",
+		"body": "transform: rotate(-${0:180}deg);"
+	},
+	"Transform Scale": {
+		"prefix": "as",
+		"body": "transform: scale(${0:1});"
+	},
+	"Transform Translate": {
+		"prefix": "at",
+		"body": "transform: translate(-50%, -50%);"
+	},
+	"Transform All": {
+		"prefix": "att",
+		"body": "transform: translate(-50%, -50%) rotate(${3:0}deg) scale(${4:1}) skew(${5:0}, ${6:0});"
+	},
+	"Last Child": {
+		"prefix": "lc",
+		"body": "&:last-child {\n\t$0\n}"
+	},
+	"First Child": {
+		"prefix": "fc",
+		"body": "&:first-child {\n\t$0\n}"
+	},
+	"Nth Child": {
+		"prefix": "nc",
+		"body": "&:nth-child($1) {\n\t$2\n}"
+	},
+	"Before And after": {
+		"prefix": "ba",
+		"body": "position: relative;\n\n&::before,\n&::after {\n\t@include pseudo;\n\t$0\n}"
+	},
+	"After": {
+		"prefix": "a",
+		"body": "position: relative;\n\n&::after {\n\t@include pseudo;\n\t$0\n}"
+	},
+	"Before": {
+		"prefix": "b",
+		"body": "position: relative;\n\n&::before {\n\t@include pseudo;\n\t$0\n}"
+	},
+	"Pseudo Class Active": {
+		"prefix": "acc",
+		"body": "&:active {\n\t$0\n}"
+	},
+	"Pseudo Class Focus": {
+		"prefix": "foc",
+		"body": "&:focus-visible {\n\t$0\n}"
+	},
+	"Pseudo Element Placeholder": {
+		"prefix": "pl",
+		"body": "&::placeholder {\n\t$0\n}"
+	},
+	"Active Class": {
+		"prefix": "ac",
+		"body": "&.active {\n\t$0\n}"
+	},
+	"Background": {
+		"prefix": "bg+",
+		"body": "background: url(\"@img$0\") 0 0 no-repeat;"
+	},
+	"Justify Content": {
+		"prefix": "fbs",
+		"body": "justify-content: space-${0:between};"
+	},
+	"Align items": {
+		"prefix": "aic",
+		"body": "align-items: center;"
+	},
+	"Flex Row": {
+		"prefix": "dfr",
+		"body": "display: flex;\nflex-wrap: wrap;\nalign-items: center;"
+	},
+	"Flex Column": {
+		"prefix": "dfc",
+		"body": "display: flex;\nflex-direction: column;\nalign-items: center;"
+	},
+	"Flex wrap": {
+		"prefix": "fbw",
+		"body": "flex-wrap: ${no}wrap;"
+	},
+	"Flex Direction Column": {
+		"prefix": "fbd",
+		"body": "flex-direction: column;"
+	},
+	"Flex Basis 100%": {
+		"prefix": "fbg",
+		"body": "flex: 1;"
+	},
+	"Flex Basis 50%": {
+		"prefix": "fbgh",
+		"body": "flex: 0 1 50%;"
+	},
+	"Flex Basis 33%": {
+		"prefix": "fbgt",
+		"body": "flex: 0 1 33%;"
+	},
+	"Flex Basis 25%": {
+		"prefix": "fbgq",
+		"body": "flex: 0 1 25%;"
+	},
+	"Flex Basis With Rem": {
+		"prefix": "fbr",
+		"body": "flex-basis: rem($0);"
+	},
+	"Flex": {
+		"prefix": "fb",
+		"body": "flex: 0 0 $0;"
+	},
+	"Flex Center": {
+		"prefix": "fbc",
+		"body": "justify-content: center;\nalign-items: center;"
+	},
+	"Last Child Margin": {
+		"prefix": "lcm",
+		"body": "&:last-child {\n\tmargin: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0});\n}"
+	},
+	"Hover": {
+		"prefix": "hh",
+		"body": "@media (any-hover: hover) {\n\t$1\n}"
+	},
+	"Key Frames": {
+		"prefix": "kf",
+		"body": "@keyframes ${1:name} {\n\t0% {\n\t\t$2\n\t}\n\t100% {\n\t\t$3\n\t}\n}"
+	},
+	"White Space": {
+		"prefix": "wsnw",
+		"body": "white-space: ${no}wrap;"
+	},
+	"Separating Comment": {
+		"prefix": "sp",
+		"body": "// ======================================================================================================================================================== //"
+	}
+}

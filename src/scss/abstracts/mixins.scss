@@ -29,22 +29,23 @@
 		$y-intersection: 0.000001;
 	}
 
-	$fly-value: #{rem($y-intersection)}" + "#{$slope * 100}vw;
-	$property-value: #{"clamp(" rem($min-size) "," $fly-value "," rem($start-size) ")"};
+	$fly-value: #{to-rem($y-intersection)}" + " #{$slope * 100}vw;
+	$property-value: #{"clamp(" to-rem($min-size) "," $fly-value ","
+		to-rem($start-size) ")"};
 
 	@if $min-size > $start-size {
 		$property-value: #{"clamp("
-			rem($start-size)
+			to-rem($start-size)
 			","
 			$fly-value
 			","
-			rem($min-size)
+			to-rem($min-size)
 			")"};
 	}
 
 	@if $keep-size != 1 and $keep-size != 3 {
 		@include media-min($width-from) {
-			#{$property}: rem($start-size);
+			#{$property}: to-rem($start-size);
 		}
 	}
 
@@ -54,17 +55,12 @@
 
 	@if $keep-size != 1 and $keep-size != 2 {
 		@include media-max($width-to) {
-			#{$property}: rem($min-size);
+			#{$property}: to-rem($min-size);
 		}
 	}
 }
 
-@mixin responsive-output(
-	$image-height,
-	$body-width,
-	$breakpoint: $tablet,
-	$reverse: 0
-) {
+@mixin responsive-output($body-width, $breakpoint: $tablet, $reverse: 0) {
 	$percent: round(div($body-width, $max-width-container) * 100);
 	$width: $body-width - ($body-width - $percent);
 
@@ -97,10 +93,12 @@
 			position: relative;
 			flex: 0 0
 				calc(
-					((100% - #{rem($container-padding)}) * div(div((100 - $percent), 1), 100)) +
-						(rem($container-padding) / 2)
+					(
+							(100% - #{to-rem($container-padding)}) *
+								div(div((100 - $percent), 1), 100)
+						) + (to-rem($container-padding) / 2)
 				);
-			padding-bottom: round(percent($image-height, $max-width));
+			aspect-ratio: 4 / 3;
 
 			img {
 				position: absolute;
@@ -117,7 +115,7 @@
 		}
 
 		@include media-min($container-width) {
-			flex: 0 0 calc(50% - (div($width, 100) - 0.5) * rem($max-width-container));
+			flex: 0 0 calc(50% - (div($width, 100) - 0.5) * to-rem($max-width-container));
 		}
 	}
 
@@ -187,7 +185,7 @@
 	}
 }
 
-@mixin grid($type: fit, $min: rem(290), $max: 1fr, $breakpoint: $phone) {
+@mixin grid($type: fit, $min: to-rem(290), $max: 1fr, $breakpoint: $phone) {
 	display: grid;
 	@content;
 
@@ -197,19 +195,19 @@
 }
 
 @mixin media-min-max($min-width: 320, $max-width: $tablet) {
-	@media (min-width: em($min-width)) and (max-width: em($max-width - 0.02)) {
+	@media (min-width: to-em($min-width)) and (max-width: to-em($max-width - 0.02)) {
 		@content;
 	}
 }
 
 @mixin media-min($breakpoint) {
-	@media (min-width: em($breakpoint)) {
+	@media (min-width: to-em($breakpoint)) {
 		@content;
 	}
 }
 
 @mixin media-max($breakpoint) {
-	@media (max-width: em($breakpoint - 0.02)) {
+	@media (max-width: to-em($breakpoint - 0.02)) {
 		@content;
 	}
 }

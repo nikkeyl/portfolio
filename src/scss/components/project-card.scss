@@ -4,9 +4,9 @@
 .project-card {
 	display: grid;
 	overflow: hidden;
-	border-radius: rem(10);
+	border-radius: to-rem(10);
 	width: 100%;
-	max-width: rem(400);
+	max-width: to-rem(400);
 
 	&__image {
 		padding-bottom: 90%;
@@ -30,8 +30,8 @@
 
 	&__body {
 		display: grid;
-		gap: rem(10);
-		padding: rem(10);
+		gap: to-rem(10);
+		padding: to-rem(10);
 		background-color: var(--magnolia, #f8f4ff);
 	}
 
@@ -55,7 +55,7 @@
 
 	&__actions {
 		display: flex;
-		gap: rem(10);
+		gap: to-rem(10);
 		align-items: center;
 	}
 
@@ -63,8 +63,8 @@
 		border-radius: 50%;
 
 		svg {
-			height: rem(50);
-			width: rem(50);
+			height: to-rem(50);
+			width: to-rem(50);
 		}
 
 		&:focus-visible {

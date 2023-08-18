@@ -4,7 +4,7 @@
 .popup {
 	position: fixed;
 	inset: 0;
-	padding: rem(30) rem(div($container-padding, 2));
+	padding: to-rem(30) to-rem(div($container-padding, 2));
 	visibility: hidden;
 	transition: visibility 0.8s;
 	pointer-events: none;
@@ -21,10 +21,10 @@
 
 	&__content {
 		position: relative;
-		border-radius: rem(10);
+		border-radius: to-rem(10);
 		width: 100%;
-		max-width: rem(400);
-		padding: rem(50) rem(20);
+		max-width: to-rem(400);
+		padding: to-rem(50) to-rem(20);
 		background-color: var(--magnolia, #f8f4ff);
 		visibility: hidden;
 		scale: 0;
@@ -48,15 +48,15 @@
 
 		svg {
 			border-radius: 50%;
-			height: rem(150);
-			width: rem(150);
-			box-shadow: 0 rem(8) rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+			height: to-rem(150);
+			width: to-rem(150);
+			box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
 			fill: none;
 			stroke: var(--accent, #0d8);
 		}
 
 		&:not(:last-child) {
-			margin-bottom: rem(25);
+			margin-bottom: to-rem(25);
 		}
 
 		@keyframes drag {
@@ -77,8 +77,8 @@
 	&__text {
 		$font-size: 18;
 
-		max-width: rem(210);
-		font-size: rem($font-size);
+		max-width: to-rem(210);
+		font-size: to-rem($font-size);
 		line-height: div(25, $font-size);
 		text-align: center;
 
@@ -89,12 +89,12 @@
 
 	&__close {
 		position: absolute;
-		top: rem(20);
-		right: rem(15);
+		top: to-rem(20);
+		right: to-rem(15);
 		z-index: 5;
 		display: block;
-		height: rem(18);
-		width: rem(30);
+		height: to-rem(18);
+		width: to-rem(30);
 		cursor: pointer;
 
 		&::before,
@@ -102,19 +102,19 @@
 			@include pseudo;
 
 			right: 0;
-			border-radius: rem(2);
-			height: rem(2);
+			border-radius: to-rem(2);
+			height: to-rem(2);
 			width: 100%;
 			background-color: var(--secondary, #222);
 		}
 
 		&::before {
-			top: calc(50% - rem(1));
+			top: calc(50% - to-rem(1));
 			rotate: -45deg;
 		}
 
 		&::after {
-			bottom: calc(50% - rem(1));
+			bottom: calc(50% - to-rem(1));
 			rotate: 45deg;
 		}
 	}

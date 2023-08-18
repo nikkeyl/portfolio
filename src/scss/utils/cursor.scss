@@ -15,14 +15,14 @@
 	&__pointer {
 		position: fixed;
 		inset: 0;
-		height: rem(10);
-		width: rem(10);
+		height: to-rem(10);
+		width: to-rem(10);
 
 		&::after {
 			@include pseudo;
 
 			inset: 0;
-			border: rem(3) solid #80f;
+			border: to-rem(3) solid #80f;
 			border-radius: 50%;
 			height: 100%;
 			width: 100%;

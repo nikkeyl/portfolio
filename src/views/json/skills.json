@@ -26,11 +26,6 @@
       "a11y": "javascript"
     },
     {
-      "icon": "img/svg/ts.svg",
-      "name": "TYPESCRIPT",
-      "a11y": "typescript"
-    },
-    {
       "icon": "img/svg/json.svg",
       "name": "JSON",
       "a11y": "json"
@@ -129,16 +124,6 @@
       "icon": "img/svg/svgo.svg",
       "name": "SVGO",
       "a11y": "svgo"
-    },
-    {
-      "icon": "img/svg/postcss.svg",
-      "name": "POSTCSS",
-      "a11y": "postcss"
-    },
-    {
-      "icon": "img/svg/babel.svg",
-      "name": "BABEL",
-      "a11y": "babel"
     },
     {
       "icon": "img/svg/git.svg",

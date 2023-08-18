@@ -6,8 +6,10 @@ import { paths } from '../settings/paths.js'
 import ttf2woff2 from 'gulp-ttf2woff2'
 import fonter from 'gulp-fonter-fix'
 
-const cb = () => { }
-
+const fontFacesFile = paths.fontStylesFile
+const italicRegex = /italic/i
+const variableFont = /(?:_|__|-|\s)?(var)/i
+const italicStyle = /(?:_|__|-|\s)?(italic)/i
 const fontWeights = {
 	thin: 100,
 	hairline: 100,
@@ -27,73 +29,97 @@ const fontWeights = {
 	ultrablack: 950
 }
 
-const otfToTtf = () =>
-	gulp
-		.src(`${paths.srcFolder}/fonts/*.otf`)
-		.pipe(plugins.catchError('FONTS'))
+const fontFaceTemplate = (
+	fontName,
+	fileName,
+	fontWeight,
+	fontStyle,
+	variableFont
+) => {
+	if (variableFont) {
+		return `@font-face {\n\tsrc: url("../fonts/${fileName}.woff2") format("woff2-variations");\n\tfont-family: "${fontName}";\n\tfont-weight: 100 1000;\n\tfont-display: swap;\n}\n\n`
+	} else {
+		return `@font-face {\n\tsrc: url("../fonts/${fileName}.woff2") format("woff2");\n\tfont-family: "${fontName}";\n\tfont-weight: ${fontWeight};\n\tfont-style: ${fontStyle};\n\tfont-display: swap;\n}\n\n`
+	}
+}
+
+const otfToTtf = () => {
+	return gulp
+		.src(`${paths.src.fonts}*.otf`)
+		.pipe(plugins.catchError('FONTS [otfToTtf]'))
 		.pipe(
 			fonter({
 				formats: ['ttf']
 			})
 		)
-		.pipe(gulp.dest(`${paths.srcFolder}/fonts/`))
-
-const ttfToWoff = () =>
-	gulp
-		.src(`${paths.srcFolder}/fonts/*.ttf`)
-		.pipe(plugins.catchError('FONTS'))
-		.pipe(ttf2woff2())
-		.pipe(gulp.dest(paths.build.fonts))
-		.pipe(gulp.src(`${paths.srcFolder}/fonts/*.woff2`))
-		.pipe(gulp.dest(paths.build.fonts))
-
-const fontsStyles = () => {
-	plugins.fs.readdir(paths.build.fonts, (error, fontFiles) => {
-		if (fontFiles) {
-			if (!plugins.fs.existsSync(paths.fontStylesFile)) {
-				let newFileOnly
-
-				plugins.fs.writeFile(paths.fontStylesFile, '', cb)
-				fontFiles.forEach(file => {
-					const fileName = file.split('.')[0]
-
-					if (newFileOnly !== fileName) {
-						const italic = (/italic/gi)
-						const variableFont = (/var/gi)
-						const [fontName, fontWeight = 'regular'] = fileName.split('-')
-						const fontWeightValue
-							= fontWeights[fontWeight.toLowerCase().replace(italic, '')]
-						const fontStyle = fileName.match(italic) ? 'italic' : 'normal'
-
-						if (fileName.match(variableFont)) {
-							plugins.fs.appendFile(
-								paths.fontStylesFile,
-								`@font-face {\n\tsrc: url("../fonts/${fileName}.woff2") format("woff2-variations");\n\tfont-family: "${fontName}";\n\tfont-weight: 100 1000;\n\tfont-display: swap;\n}\n\n`,
-								cb
-							)
-						} else {
-							plugins.fs.appendFile(
-								paths.fontStylesFile,
-								`@font-face {\n\tsrc: url("../fonts/${fileName}.woff2") format("woff2");\n\tfont-family: "${fontName}";\n\tfont-weight: ${fontWeightValue};\n\tfont-style: ${fontStyle};\n\tfont-display: swap;\n}\n\n`,
-								cb
-							)
-						}
-
-						newFileOnly = fileName
-					}
-				})
-				console.log(
-					plugins.chalk.green.bold('(font-face.scss) successfully written')
-				)
-			} else {
-				console.log(plugins.chalk.yellow.bold(`(font-face.scss) already exists`))
-			}
-		} else {
-			console.log(plugins.chalk.red.bold('No font file in fonts directory\n'), error)
-		}
-	})
-
-	return gulp.src(paths.srcFolder)
+		.pipe(gulp.dest(paths.src.fonts))
 }
 
-export { fontsStyles, ttfToWoff, otfToTtf }
+const ttfToWoff = () => {
+	if (plugins.fs.existsSync(fontFacesFile)) {
+		return gulp
+			.src(`${paths.src.fonts}*.woff2`)
+			.pipe(plugins.catchError('FONTS [ttfToWoff]'))
+			.pipe(gulp.dest(paths.build.fonts))
+	}
+
+	return gulp
+		.src(`${paths.src.fonts}*.ttf`)
+		.pipe(plugins.catchError('FONTS [ttfToWoff]'))
+		.pipe(ttf2woff2())
+		.pipe(gulp.dest(paths.src.fonts))
+		.pipe(gulp.src(`${paths.src.fonts}*.woff2`))
+		.pipe(gulp.dest(paths.build.fonts))
+}
+
+const fontsStyles = async () => {
+	try {
+		if (plugins.fs.existsSync(fontFacesFile)) {
+			console.log(plugins.chalk.bgYellow.white.bold('(font-face.scss) already exists'))
+
+			return
+		}
+
+		const fontFiles = await plugins.fs.promises.readdir(paths.build.fonts)
+
+		if (!fontFiles) {
+			console.log(plugins.chalk.bgRed.white.bold('No fonts files'))
+
+			return
+		}
+
+		await plugins.fs.promises.writeFile(fontFacesFile, '')
+
+		let newFileOnly
+
+		for (const file of fontFiles) {
+			const [fileName] = file.split('.')
+
+			if (newFileOnly !== fileName) {
+				const [fontName, fontWeight = 'regular'] = fileName.split('-')
+				const fontWeightValue =
+					fontWeights[fontWeight.replace(italicStyle, '').toLowerCase()]
+				const fontStyle = italicRegex.test(fileName) ? 'italic' : 'normal'
+
+				await plugins.fs.promises.appendFile(
+					fontFacesFile,
+					fontFaceTemplate(
+						fontName,
+						fileName,
+						fontWeightValue,
+						fontStyle,
+						variableFont.test(fileName)
+					)
+				)
+
+				newFileOnly = fileName
+			}
+		}
+
+		console.log(plugins.chalk.bgGreen.white.bold('(font-face.scss) successfully written'))
+	} catch (error) {
+		console.log(plugins.chalk.bgRed.white.bold('Error processing fonts\n'), error)
+	}
+}
+
+export { otfToTtf, ttfToWoff, fontsStyles }

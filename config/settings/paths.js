@@ -19,7 +19,7 @@ const paths = {
 		scss: `${srcFolder}/scss/style.scss`,
 		static: `${srcFolder}/static/**/*.*`,
 		favicon: `${srcFolder}/favicon.ico`,
-		fonts: `${srcFolder}/fonts/*.*`,
+		fonts: `${srcFolder}/fonts/`,
 		pug: `${srcFolder}/views/*.pug`,
 		js: `${srcFolder}/js/app.js`,
 		html: `${srcFolder}/*.html`

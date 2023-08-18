@@ -1,0 +1,110 @@
+{
+  // window settings
+  "window.menuBarVisibility": "compact",
+  // security settings
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+  // update settings
+  "update.showReleaseNotes": false,
+  // workbench settings
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.tips.enabled": false,
+  // explorer settings
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // editor settings
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.detectIndentation": false,
+  "editor.folding": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.glyphMargin": false,
+  "editor.hover.above": false,
+  "editor.hover.enabled": false,
+  "editor.hover.sticky": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.insertSpaces": false,
+  "editor.lightbulb.enabled": false,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.parameterHints.cycle": false,
+  "editor.parameterHints.enabled": false,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
+  // other settings
+  "breadcrumbs.enabled": false,
+  // files settings
+  "files.autoSave": "afterDelay",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  // terminal settings
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  // git settings
+  "git.autofetch": true,
+  "git.autofetchPeriod": 30,
+  "git.confirmSync": false,
+  "git.ignoreLimitWarning": true,
+  // npm settings
+  "npm.fetchOnlinePackageInfo": false,
+  // extensions settings
+  "extensions.ignoreRecommendations": true,
+  // javascript and typescript settings
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[javascript,typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  // scss settings
+  "scss.format.enable": false,
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "scss.lint.duplicateProperties": "error",
+  "scss.showErrors": true,
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "scssFormatter.printWidth": 85,
+  "scssFormatter.trailingComma": "none",
+  // css settings
+  "css.lint.duplicateProperties": "error",
+  // pug settings
+  "pugFormatter.removeDiv": true,
+  // path-intellisense settings
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.autoTriggerNextSuggestion": true,
+  "path-intellisense.ignoreTsConfigBaseUrl": true,
+  "path-intellisense.mappings": {
+    "@scss": "${workspaceRoot}/src/scss",
+    "@img": "${workspaceRoot}/src/img",
+    "@js": "${workspaceRoot}/src/js"
+  }
+}

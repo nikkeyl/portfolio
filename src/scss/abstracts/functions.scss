@@ -4,14 +4,10 @@
 	@return div(round($number * 10000), 10000);
 }
 
-@function em($px, $default: 16) {
+@function to-em($px, $default: 16) {
 	@return rounding(div($px, $default)) + em;
 }
 
-@function percent($px, $from) {
-	@return rounding(div($px, $from)) * 100%;
-}
-
-@function rem($px) {
+@function to-rem($px) {
 	@return rounding(div($px, 16)) + rem;
 }
