@@ -1,4 +1,4 @@
-/*! Tips (Tippy plugin) https://atomiks.github.io/tippyjs/ */
+// Tips (Tippy plugin) https://atomiks.github.io/tippyjs
 import tippy from 'tippy.js'
 
 import '@scss/vendors/tippy'

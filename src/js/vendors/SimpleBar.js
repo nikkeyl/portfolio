@@ -1,7 +1,4 @@
-/*!
-	Custom scrollbar (SimpleBar plugin)
-	https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
-*/
+// https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
 import SimpleBar from 'simplebar'
 
 import '@scss/vendors/simplebar'

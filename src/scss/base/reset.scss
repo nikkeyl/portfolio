@@ -10,10 +10,9 @@
 	padding: 0;
 	font: inherit;
 
-	@media (prefers-reduced-motion: reduce) {
+	@media only screen and (prefers-reduced-motion: reduce) {
 		transition: none;
 		animation: none;
-		scroll-behavior: auto;
 	}
 }
 
@@ -22,8 +21,12 @@ body {
 	min-height: 100vh;
 	min-width: $min-width + px;
 	background-color: var(--background-primary, #fff);
-	scroll-behavior: smooth;
 	scroll-padding-top: var(--header-height, 4rem);
+	scrollbar-gutter: stable;
+
+	@media only screen and (prefers-reduced-motion: no-preferences) {
+		scroll-behavior: smooth;
+	}
 }
 
 ::selection {

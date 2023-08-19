@@ -700,7 +700,7 @@
     "scss/double-slash-comment-inline": "never",
     "scss/map-keys-quotes": "always",
     "scss/no-duplicate-dollar-variables": true,
-    "scss/no-global-function-names": true,
+    "scss/no-global-function-names": null,
     "scss/partial-no-import": true,
     "scss/selector-no-redundant-nesting-selector": true
   }

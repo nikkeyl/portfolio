@@ -7,9 +7,8 @@ import ttf2woff2 from 'gulp-ttf2woff2'
 import fonter from 'gulp-fonter-fix'
 
 const fontFacesFile = paths.fontStylesFile
-const italicRegex = /italic/i
 const variableFont = /(?:_|__|-|\s)?(var)/i
-const italicStyle = /(?:_|__|-|\s)?(italic)/i
+const italicRegex = /(?:_|__|-|\s)?(italic)/i
 const fontWeights = {
 	thin: 100,
 	hairline: 100,
@@ -98,7 +97,7 @@ const fontsStyles = async () => {
 			if (newFileOnly !== fileName) {
 				const [fontName, fontWeight = 'regular'] = fileName.split('-')
 				const fontWeightValue =
-					fontWeights[fontWeight.replace(italicStyle, '').toLowerCase()]
+					fontWeights[fontWeight.replace(italicRegex, '').toLowerCase()]
 				const fontStyle = italicRegex.test(fileName) ? 'italic' : 'normal'
 
 				await plugins.fs.promises.appendFile(

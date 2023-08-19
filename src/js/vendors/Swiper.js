@@ -1,4 +1,4 @@
-/*! Slider (Swiper plugin) https://swiperjs.com/ */
+// Slider (Swiper plugin) https://swiperjs.com
 import Swiper from 'swiper'
 import { Pagination, Keyboard, A11y } from 'swiper/modules'
 

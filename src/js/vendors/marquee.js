@@ -1,7 +1,4 @@
-/*!
- * Creeping line (Marquee plugin)
- * https://mattiacoll.github.io/vanilla-marquee-site/
- */
+// https://mattiacoll.github.io/vanilla-marquee-site
 import Marquee from 'vanilla-marquee'
 
 const elem = document.querySelector('[role="marquee"]')

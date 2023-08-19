@@ -195,19 +195,19 @@
 }
 
 @mixin media-min-max($min-width: 320, $max-width: $tablet) {
-	@media (min-width: to-em($min-width)) and (max-width: to-em($max-width - 0.02)) {
+	@media only screen and (min-width: to-em($min-width)) and (max-width: to-em($max-width - 0.02)) {
 		@content;
 	}
 }
 
 @mixin media-min($breakpoint) {
-	@media (min-width: to-em($breakpoint)) {
+	@media only screen and (min-width: to-em($breakpoint)) {
 		@content;
 	}
 }
 
 @mixin media-max($breakpoint) {
-	@media (max-width: to-em($breakpoint - 0.02)) {
+	@media only screen and (max-width: to-em($breakpoint - 0.02)) {
 		@content;
 	}
 }

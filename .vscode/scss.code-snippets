@@ -29,7 +29,7 @@
 	},
 	"Mixin Grid Cards": {
 		"prefix": "gc",
-		"body": "@include grid(${1:fill}, rem(${2:290}), ${3:1fr}, ${4:\\$phone}) {\n\tgap: rem(${5:30});\n\tjustify-items: center;\n}"
+		"body": "@include grid(${1:fill}, to-rem(${2:290}), ${3:1fr}, ${4:\\$phone}) {\n\tgap: to-rem(${5:30});\n\tjustify-items: center;\n}"
 	},
 	"Triangle": {
 		"prefix": "triangle",
@@ -183,9 +183,9 @@
 		"prefix": "em",
 		"body": "em(${1:$2, $3})"
 	},
-	"Rem": {
-		"prefix": "rem",
-		"body": "rem($0)"
+	"to-rem": {
+		"prefix": "to-rem",
+		"body": "to-rem($0)"
 	},
 	"Percent": {
 		"prefix": "prc",
@@ -211,13 +211,13 @@
 		"prefix": "lte",
 		"body": "letter-spacing: to-em($1, ${2:\\$font-size});"
 	},
-	"Font Size In Rem": {
+	"Font Size In to-rem": {
 		"prefix": "fz",
-		"body": "\\$font-size: ${0:18};\n\nfont-size: rem(\\$font-size);"
+		"body": "\\$font-size: ${0:18};\n\nfont-size: to-rem(\\$font-size);"
 	},
-	"Gap With Rem ": {
+	"Gap With to-rem ": {
 		"prefix": "gap",
-		"body": "gap: rem($0);"
+		"body": "gap: to-rem($0);"
 	},
 	"Flex Centering": {
 		"prefix": "cf",
@@ -235,13 +235,13 @@
 		"prefix": "di",
 		"body": "div($1, $2)"
 	},
-	"Width In Rem": {
+	"Width In to-rem": {
 		"prefix": "w",
-		"body": "width: rem($0);"
+		"body": "width: to-rem($0);"
 	},
-	"Height In Rem": {
+	"Height In to-rem": {
 		"prefix": "h",
-		"body": "height: rem($0);"
+		"body": "height: to-rem($0);"
 	},
 	"Margin Bottom In Em": {
 		"prefix": "mbe",
@@ -249,7 +249,7 @@
 	},
 	"Margin Bottom Not Last-Child": {
 		"prefix": "mbl",
-		"body": "&:not(:last-child) {\n\tmargin-bottom: rem($0);\n}"
+		"body": "&:not(:last-child) {\n\tmargin-bottom: to-rem($0);\n}"
 	},
 	"Margin Bottom Not Last-Child In Em": {
 		"prefix": "mble",
@@ -261,7 +261,7 @@
 	},
 	"Background Blur": {
 		"prefix": "br",
-		"body": "backdrop-filter: blur(rem($0));"
+		"body": "backdrop-filter: blur(to-rem($0));"
 	},
 	"Opacity": {
 		"prefix": "op",
@@ -273,7 +273,7 @@
 	},
 	"Max Width": {
 		"prefix": "mw",
-		"body": "max-width: rem($0);"
+		"body": "max-width: to-rem($0);"
 	},
 	"Flex Basis In Percent": {
 		"prefix": "fbpp",
@@ -283,57 +283,57 @@
 		"prefix": "bfil",
 		"body": "position: relative;\n\n&::before {\n\t@include pseudo;\n\tinset: 0;\n\tbackground-color: rgba(#000, 0.3);\n}"
 	},
-	"Padding In Rem": {
+	"Padding In to-rem": {
 		"prefix": "pp",
-		"body": "padding: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0});"
+		"body": "padding: to-rem(${1:0}) to-rem(${2:0}) to-rem(${3:0}) to-rem(${4:0});"
 	},
-	"Padding Rigth And Left In Rem": {
+	"Padding Rigth And Left In to-rem": {
 		"prefix": "ppp",
-		"body": "padding: 0 rem($0);"
+		"body": "padding: 0 to-rem($0);"
 	},
-	"Padding Top In Rem": {
+	"Padding Top In to-rem": {
 		"prefix": "ppt",
-		"body": "padding-top: rem($0);"
+		"body": "padding-top: to-rem($0);"
 	},
-	"Padding Bottom In Rem": {
+	"Padding Bottom In to-rem": {
 		"prefix": "ppb",
-		"body": "padding-bottom: rem($0);"
+		"body": "padding-bottom: to-rem($0);"
 	},
-	"Padding Left In Rem": {
+	"Padding Left In to-rem": {
 		"prefix": "ppl",
-		"body": "padding-left: rem($0);"
+		"body": "padding-left: to-rem($0);"
 	},
-	"Padding Right In Rem": {
+	"Padding Right In to-rem": {
 		"prefix": "ppr",
-		"body": "padding-right: rem($0);"
+		"body": "padding-right: to-rem($0);"
 	},
-	"Margin In Rem": {
+	"Margin In to-rem": {
 		"prefix": "mm",
-		"body": "margin: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0});"
+		"body": "margin: to-rem(${1:0}) to-rem(${2:0}) to-rem(${3:0}) to-rem(${4:0});"
 	},
 	"Margin Left Auto": {
 		"prefix": "mr",
 		"body": "margin: 0 0 0 auto;"
 	},
-	"Margin Left And Right In Rem": {
+	"Margin Left And Right In to-rem": {
 		"prefix": "mmm",
-		"body": "margin: 0 rem($0);"
+		"body": "margin: 0 to-rem($0);"
 	},
-	"Margin Top In Rem": {
+	"Margin Top In to-rem": {
 		"prefix": "mmt",
-		"body": "margin-top: rem($0);"
+		"body": "margin-top: to-rem($0);"
 	},
-	"Margin Bottom In Rem": {
+	"Margin Bottom In to-rem": {
 		"prefix": "mmb",
-		"body": "margin-bottom: rem($0);"
+		"body": "margin-bottom: to-rem($0);"
 	},
-	"Margin Left In Rem": {
+	"Margin Left In to-rem": {
 		"prefix": "mml",
-		"body": "margin-left: rem($0);"
+		"body": "margin-left: to-rem($0);"
 	},
-	"Margin Right In Rem": {
+	"Margin Right In to-rem": {
 		"prefix": "mmr",
-		"body": "margin-right: rem($0);"
+		"body": "margin-right: to-rem($0);"
 	},
 	"Margin Left And Right Auto": {
 		"prefix": "mu",
@@ -361,7 +361,7 @@
 	},
 	"Box Shadow": {
 		"prefix": "bs",
-		"body": "box-shadow: ${1:0} ${2:0} rem(${3:0}) rgba(#000, 0.${4:3});"
+		"body": "box-shadow: ${1:0} ${2:0} to-rem(${3:0}) rgba(#000, 0.${4:3});"
 	},
 	"Width Auto": {
 		"prefix": "wa",
@@ -479,9 +479,9 @@
 		"prefix": "fbgq",
 		"body": "flex: 0 1 25%;"
 	},
-	"Flex Basis With Rem": {
+	"Flex Basis With to-rem": {
 		"prefix": "fbr",
-		"body": "flex-basis: rem($0);"
+		"body": "flex-basis: to-rem($0);"
 	},
 	"Flex": {
 		"prefix": "fb",
@@ -493,7 +493,7 @@
 	},
 	"Last Child Margin": {
 		"prefix": "lcm",
-		"body": "&:last-child {\n\tmargin: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0});\n}"
+		"body": "&:last-child {\n\tmargin: to-rem(${1:0}) to-rem(${2:0}) to-rem(${3:0}) to-rem(${4:0});\n}"
 	},
 	"Hover": {
 		"prefix": "hh",

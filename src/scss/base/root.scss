@@ -1,3 +1,5 @@
+@use "@scss/abstracts" as *;
+
 :root {
 	/* Colors */
 	--primary: #fff;
@@ -22,9 +24,9 @@
 	--text-primary: var(--secondary, #222);
 	--system-ui: system-ui;
 	--font-family: "Roboto";
-	--font-size: 1rem;
+	--font-size: #{to-rem(16)};
 	--font-weight: 700;
 
 	/* Header */
-	--header-height: 4rem;
+	--header-height: #{to-rem(64)};
 }

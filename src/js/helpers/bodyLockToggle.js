@@ -1,8 +1,8 @@
-import { html, body } from '@js/helpers/nodeList'
+import { html } from '@js/helpers/nodeList'
 
 let bodyLockStatus = true
 
-function delayToggle(delay = 500) {
+const delayToggle = (delay = 500) => {
 	bodyLockStatus = false
 	setTimeout(() => {
 		bodyLockStatus = true
@@ -11,21 +11,18 @@ function delayToggle(delay = 500) {
 
 const bodyUnlock = delay => {
 	if (bodyLockStatus) {
-		body.style.paddingRight = 0
 		html.classList.remove('lock')
 		delayToggle(delay)
 	}
 }
 const bodyLock = delay => {
 	if (bodyLockStatus) {
-		body.style.paddingRight =
-			window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px'
 		html.classList.add('lock')
 		delayToggle(delay)
 	}
 }
 
-/*! Blocks page scrolling  */
+// Blocks page scrolling
 const bodyLockToggle = delay => {
 	html.classList.contains('lock') ? bodyUnlock(delay) : bodyLock(delay)
 }
