@@ -1,11 +1,10 @@
-import gulp from 'gulp'
-
 import { plugins } from '../settings/plugins.js'
-import { paths } from '../settings/paths.js'
 
 import webPackConfig from '../webpack/webpack.prod.js'
 
 import { output } from '../webpack/plugins/webPackOutputFile.js'
+
+import { jsFormatConfig } from '../utilities/jsFormatConfig.js'
 
 const webPackConfigBeautify = Object.assign({}, webPackConfig)
 
@@ -18,7 +17,9 @@ webPackConfigBeautify.optimization = {
 					defaults: false,
 					unused: true
 				},
-				format: { beautify: true },
+				format: {
+					beautify: true
+				},
 				keep_classnames: true,
 				keep_fnames: true,
 				mangle: false
@@ -29,15 +30,6 @@ webPackConfigBeautify.optimization = {
 
 webPackConfigBeautify.output = output('app.js')
 
-const jsDev = () =>
-	gulp
-		.src(paths.src.js)
-		.pipe(plugins.catchError('JS'))
-		.pipe(
-			plugins.webpack({
-				config: webPackConfigBeautify
-			})
-		)
-		.pipe(gulp.dest(paths.build.js))
+const jsDev = () => jsFormatConfig(webPackConfigBeautify, 'Dev')
 
 export { jsDev }

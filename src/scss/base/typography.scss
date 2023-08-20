@@ -1,7 +1,6 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
-/* Typography styles */
 body {
 	font-family: var(--font-family, var(--system-ui, sans-serif));
 	font-size: var(--font-size, 1rem);

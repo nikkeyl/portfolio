@@ -10,7 +10,7 @@ import webp from 'gulp-webp'
 const images = noWebp =>
 	gulp
 		.src(paths.src.images)
-		.pipe(plugins.catchError('IMAGES'))
+		.pipe(plugins.logger.catchErrors('IMAGES'))
 		.pipe(newer(paths.build.images))
 		.pipe(plugins.if(noWebp, webp()))
 		.pipe(plugins.if(noWebp, gulp.dest(paths.build.images)))

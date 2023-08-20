@@ -655,6 +655,7 @@
     ],
     "selector-max-combinators": 4,
     "selector-max-compound-selectors": 4,
+    "no-descending-specificity": null,
     "selector-max-id": 1,
     "selector-max-universal": 1,
     "time-min-milliseconds": 10,

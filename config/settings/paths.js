@@ -3,9 +3,10 @@ import { basename, resolve } from 'path'
 const rootDirectory = basename(resolve())
 const buildFolder = resolve('dist')
 const srcFolder = resolve('src')
+const binFolder = 'bin'
 const paths = {
 	build: {
-		static: `${buildFolder}/static/`,
+		// static: `${buildFolder}/static/`,
 		fonts: `${buildFolder}/fonts/`,
 		images: `${buildFolder}/img/`,
 		css: `${buildFolder}/css/`,
@@ -14,23 +15,25 @@ const paths = {
 	},
 	src: {
 		svg: [`${srcFolder}/img/**/*.svg`, `!${srcFolder}/img/sprites/*.svg`],
-		images: `${srcFolder}/img/**/*.{jpg,png,webp}`,
-		svgSprites: `${srcFolder}/img/sprites/*.svg`,
-		scss: `${srcFolder}/scss/style.scss`,
-		static: `${srcFolder}/static/**/*.*`,
+		sprite: `${srcFolder}/img/sprite/*.svg`,
+		json: `${srcFolder}/views/**/*.json`,
+		// scss: `${srcFolder}/scss/style.scss`,
 		favicon: `${srcFolder}/favicon.ico`,
+		pug: `${srcFolder}/views/**/*.pug`,
+		images: `${srcFolder}/img/**/*.*`,
+		static: `${srcFolder}/static/`,
 		fonts: `${srcFolder}/fonts/`,
-		pug: `${srcFolder}/views/*.pug`,
 		js: `${srcFolder}/js/app.js`,
-		html: `${srcFolder}/*.html`
+		// html: `${srcFolder}/*.html`
 	},
 	repository: `https://github.com/nikkeyl/${rootDirectory}.git`,
-	fontStylesFile: `${srcFolder}/scss/base/font-face.scss`,
+	fontFacesFile: `${srcFolder}/scss/base/font-face.scss`,
+	versionFile: `${binFolder}/version.json`,
 	spriteFile: '../img/icons/sprite.svg',
-	gitKeeps: '**/.gitkeep',
-	binFolder: 'bin',
+	gitKeepFiles: '**/.gitkeep',
 	rootDirectory,
 	buildFolder,
+	binFolder,
 	srcFolder
 }
 

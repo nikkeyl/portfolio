@@ -9,8 +9,8 @@ import svgSprite from 'gulp-svg-sprite'
 
 const sprite = () =>
 	gulp
-		.src(paths.src.svgSprites)
-		.pipe(plugins.catchError('SPRITE'))
+		.src(paths.src.sprite)
+		.pipe(plugins.logger.catchErrors('SPRITE'))
 		.pipe(
 			svgSprite({
 				mode: {
@@ -35,6 +35,6 @@ const sprite = () =>
 				}
 			})
 		)
-		.pipe(gulp.dest(paths.srcFolder))
+		.pipe(gulp.dest(paths.srcFolder)) // ???
 
 export { sprite }

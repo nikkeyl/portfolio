@@ -8,11 +8,12 @@ import autoPrefixer from 'gulp-autoprefixer'
 import cleanCss from 'gulp-clean-css'
 import webpCss from 'gulp-webpcss'
 import cssComb from 'gulp-csscomb'
+import rename from 'gulp-rename'
 
 const css = () =>
 	gulp
 		.src(`${paths.build.css}style.css`)
-		.pipe(plugins.catchError('CSS'))
+		.pipe(plugins.logger.catchErrors('CSS'))
 		.pipe(groupCssMediaQueries())
 		.pipe(
 			webpCss({
@@ -29,7 +30,7 @@ const css = () =>
 			})
 		)
 		.pipe(
-			plugins.rename({
+			rename({
 				suffix: '.min'
 			})
 		)

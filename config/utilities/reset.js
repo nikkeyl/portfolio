@@ -2,6 +2,7 @@ import { paths } from '../settings/paths.js'
 
 import { deleteAsync } from 'del'
 
-const reset = () => deleteAsync([paths.buildFolder, paths.binFolder, paths.gitKeeps])
+const reset = () =>
+	deleteAsync([paths.buildFolder, paths.binFolder, paths.gitKeepFiles])
 
 export { reset }

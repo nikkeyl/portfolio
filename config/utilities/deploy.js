@@ -1,16 +1,18 @@
 import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
 
-import ghPages from 'gh-pages'
+import { publish } from 'gh-pages'
 
 const deploy = () =>
-	ghPages.publish(
+	publish(
 		paths.buildFolder,
 		{
 			repo: paths.repository
 		},
 		error => {
-			error ? console.log(error) : console.log(plugins.chalk.green.bold('Published'))
+			error
+				? plugins.logger.error('Something went wrong', error)
+				: plugins.logger.success('Published')
 		}
 	)
 

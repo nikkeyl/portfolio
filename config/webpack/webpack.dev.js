@@ -14,7 +14,7 @@ const config = {
 	optimization: {
 		minimize: false
 	},
-	entry: `${paths.srcFolder}/js/app.js`,
+	entry: paths.src.js,
 	output: output('js/app.min.js'),
 	devServer: {
 		static: paths.buildFolder,
@@ -24,9 +24,9 @@ const config = {
 		open: true,
 
 		watchFiles: [
-			`${paths.srcFolder}/img/**/*.*`,
-			`${paths.srcFolder}/**/*.json`,
-			`${paths.srcFolder}/**/*.pug`
+			paths.src.images,
+			paths.src.json,
+			paths.src.pug
 		]
 	},
 	module: {
@@ -39,7 +39,7 @@ const config = {
 				}
 			}, {
 				test: /\.scss$/,
-				exclude: `${paths.srcFolder}/fonts`,
+				exclude: paths.src.fonts,
 				use: [
 					'style-loader',
 					{
@@ -87,7 +87,7 @@ const config = {
 					noErrorOnMissing: true,
 					force: true
 				}, {
-					from: `${paths.srcFolder}/static`,
+					from: paths.src.static,
 					to: 'static',
 					noErrorOnMissing: true,
 					force: true

@@ -10,7 +10,7 @@ import htmlMin from 'gulp-htmlmin'
 const html = noWebp =>
 	gulp
 		.src(`${paths.build.html}*.html`)
-		.pipe(plugins.catchError('HTML'))
+		.pipe(plugins.logger.catchErrors('HTML'))
 		.pipe(plugins.if(noWebp, webpHtmlNoSvg()))
 		.pipe(
 			versionNumber({
@@ -21,7 +21,7 @@ const html = noWebp =>
 					to: ['css', 'js']
 				},
 				output: {
-					file: `${paths.binFolder}/version.json`
+					file: paths.versionFile
 				}
 			})
 		)

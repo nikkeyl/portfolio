@@ -1,6 +1,5 @@
 @use "@scss/abstracts" as *;
 
-/* Reset styles */
 *,
 *::before,
 *::after {
@@ -36,13 +35,11 @@ body {
 
 :focus-visible {
 	outline-offset: to-rem(2);
-
-	/* Styles for a contrasting theme */
-	outline-color: transparent;
-	box-shadow: 0 0 0 to-rem(2) var(--accent, #0d8);
+	outline-color: var(--accent, #0d8);
 }
 
-summary {
+summary,
+ul {
 	list-style: none;
 }
 

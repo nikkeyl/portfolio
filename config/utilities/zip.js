@@ -8,7 +8,7 @@ import zipPlugin from 'gulp-zip'
 const zip = () =>
 	gulp
 		.src(`${paths.buildFolder}/**/*.*`)
-		.pipe(plugins.catchError('ZIP'))
+		.pipe(plugins.logger.catchErrors('ZIP'))
 		.pipe(zipPlugin(`${paths.rootDirectory}.zip`))
 		.pipe(gulp.dest(paths.binFolder))
 

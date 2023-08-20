@@ -6,7 +6,7 @@ import { replaceLoaderOptions } from './plugins/replaceLoaderOptions.js'
 import { cssLoaderOptions } from './plugins/cssLoaderOptions.js'
 import { output } from './plugins/webPackOutputFile.js'
 import { pugPages } from './plugins/pugPages.js'
-import { linters } from '../utilities/linters.js'
+import { linters } from './plugins/linters.js'
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
@@ -84,7 +84,7 @@ const config = {
 		new plugins.CopyPlugin({
 			patterns: [
 				{
-					from: `${paths.srcFolder}/static`,
+					from: paths.src.static,
 					to: '../static',
 					noErrorOnMissing: true
 				}, {

@@ -67,16 +67,16 @@
 			width: to-rem(50);
 		}
 
-		&:focus-visible {
-			svg {
-				fill: var(--inverse, #fe0);
-			}
-		}
-
 		&[tabindex="-1"] {
 			svg {
 				fill: rgb(var(--disabled-rgb, 136 136 136) / 0.5);
 				cursor: not-allowed;
+			}
+		}
+
+		&:not([tabindex="-1"]):focus-visible {
+			svg {
+				fill: var(--inverse, #fe0);
 			}
 		}
 
