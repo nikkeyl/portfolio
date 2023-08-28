@@ -4,7 +4,7 @@
 
 - 💻 I'm a Front-End Developer
 - 📑 Which is constantly learning
-- ⏫ Now I'm studying `JS` and `Babel`
+- ⏫ Now I'm studying `JS`
 - 👥 I can work in a team
 - 🧠 I also don't like routine, so I automate it and concentrate on the essentials
 - 🌿 The rest of the time I'm improving in minimalism

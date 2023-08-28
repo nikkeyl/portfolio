@@ -212,11 +212,17 @@
 	}
 }
 
-@mixin media-hover($value: hover) {
-	@media (any-hover: $value) {
+@mixin media-hover() {
+	@media (any-hover: hover) {
 		&:hover {
 			@content;
 		}
+	}
+}
+
+@mixin media-motion($motion-type) {
+	@media only screen and (prefers-reduced-motion: $motion-type) {
+		@content;
 	}
 }
 

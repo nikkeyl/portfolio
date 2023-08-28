@@ -1,9 +1,10 @@
-import { logger } from '../utilities/Logger.js'
+import { notifier } from '../helpers/Notifier.js'
 
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 import ifPlugin from 'gulp-if'
+import gulp from 'gulp'
 import fs from 'fs'
 
 const plugins = {
@@ -11,7 +12,8 @@ const plugins = {
 	if: ifPlugin,
 	TerserPlugin,
 	CopyPlugin,
-	logger,
+	notifier,
+	gulp,
 	fs
 }
 

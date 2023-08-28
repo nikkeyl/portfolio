@@ -5,11 +5,11 @@ function spoilers() {
 	const spoilersArray = document.querySelectorAll('[data-spoilers]')
 
 	document.addEventListener('click', setSpoilerAction)
-	const spoilersRegular = Array.from(spoilersArray).filter(
+	const spoilers = Array.from(spoilersArray).filter(
 		item => !item.dataset.spoilers.split(',')[0]
 	)
 
-	spoilersRegular.length ? initSpoilers(spoilersRegular) : null
+	initSpoilers(spoilers)
 
 	function initSpoilers(spoilersArray, matchMedia = false) {
 		spoilersArray.forEach(spoilersBlock => {

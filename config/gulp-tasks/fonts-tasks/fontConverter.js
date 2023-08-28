@@ -1,36 +1,35 @@
-import gulp from 'gulp'
-
 import { plugins } from '../../settings/plugins.js'
 import { paths } from '../../settings/paths.js'
 
 import ttf2woff2 from 'gulp-ttf2woff2'
 import fonter from 'gulp-fonter-fix'
 
-const fontFacesFile = paths.fontFacesFile
+const {
+	src: { fonts: fontsSrc },
+	build: { fonts: fontsDest },
+	fontFacesFile
+} = paths
+const { gulp, notifier, fs } = plugins
 
-const fontConverter = ({ taskName, fontExt }) => {
-	const message = plugins.logger.catchErrors(`FONTS [${taskName}]`)
+const fontConverter = ({ taskName, fileExt }) => {
+	const message = notifier.errorHandler(`FONTS [${taskName}]`)
+	const woff2 = `${fontsSrc}*.woff2`
+	const usePlugin = fileExt === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2()
 
-	if (plugins.fs.existsSync(fontFacesFile)) {
+	if (fs.existsSync(fontFacesFile)) {
 		return gulp
-			.src(`${paths.src.fonts}*.woff2`)
+			.src(woff2)
 			.pipe(message)
-			.pipe(gulp.dest(paths.build.fonts))
+			.pipe(gulp.dest(fontsDest))
 	}
 
 	return gulp
-		.src(`${paths.src.fonts}*.${fontExt}`)
+		.src(`${fontsSrc}*.${fileExt}`)
 		.pipe(message)
-		.pipe(
-			fontExt === 'otf'
-				? fonter({
-					formats: ['ttf']
-				})
-				: ttf2woff2()
-		)
-		.pipe(gulp.dest(paths.src.fonts))
-		.pipe(gulp.src(`${paths.src.fonts}*.woff2`))
-		.pipe(gulp.dest(paths.build.fonts))
+		.pipe(usePlugin)
+		.pipe(gulp.dest(fontsSrc))
+		.pipe(gulp.src(woff2))
+		.pipe(gulp.dest(fontsDest))
 }
 
 export { fontConverter }

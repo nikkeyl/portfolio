@@ -1,8 +1,10 @@
 import { paths } from '../../settings/paths.js'
 
-const output = fileName => ({
+const { buildFolder } = paths
+
+const output = (fileName) => ({
 	filename: fileName,
-	path: paths.buildFolder,
+	path: buildFolder,
 	publicPath: '/'
 })
 

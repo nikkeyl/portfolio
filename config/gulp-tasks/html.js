@@ -1,5 +1,3 @@
-import gulp from 'gulp'
-
 import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
 
@@ -7,11 +5,17 @@ import webpHtmlNoSvg from 'gulp-webp-html-nosvg'
 import versionNumber from 'gulp-version-number'
 import htmlMin from 'gulp-htmlmin'
 
-const html = noWebp =>
+const {
+	build: { html: htmlDest },
+	versionFile
+} = paths
+const { gulp, notifier, if: cond } = plugins
+
+const html = (isWebp) =>
 	gulp
-		.src(`${paths.build.html}*.html`)
-		.pipe(plugins.logger.catchErrors('HTML'))
-		.pipe(plugins.if(noWebp, webpHtmlNoSvg()))
+		.src(`${htmlDest}*.html`)
+		.pipe(notifier.errorHandler('HTML'))
+		.pipe(cond(isWebp, webpHtmlNoSvg()))
 		.pipe(
 			versionNumber({
 				value: '%DT%',
@@ -21,16 +25,19 @@ const html = noWebp =>
 					to: ['css', 'js']
 				},
 				output: {
-					file: paths.versionFile
+					file: versionFile
 				}
 			})
 		)
 		.pipe(
 			htmlMin({
+				collapseBooleanAttributes: true,
 				removeRedundantAttributes: true,
-				removeEmptyAttributes: true
+				removeEmptyAttributes: true,
+				minifyCSS: true,
+				minifyJS: true
 			})
 		)
-		.pipe(gulp.dest(paths.build.html))
+		.pipe(gulp.dest(htmlDest))
 
 export { html }

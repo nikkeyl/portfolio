@@ -22,7 +22,6 @@ const bodyLock = delay => {
 	}
 }
 
-// Blocks page scrolling
 const bodyLockToggle = delay => {
 	html.classList.contains('lock') ? bodyUnlock(delay) : bodyLock(delay)
 }

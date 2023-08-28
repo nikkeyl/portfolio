@@ -3,7 +3,9 @@ import { paths } from '../../settings/paths.js'
 
 import { fontFaceTemplate } from './fontFaceTemplate.js'
 
-const fontFacesFile = paths.fontFacesFile
+const { fontFacesFile } = paths
+const { notifier, fs } = plugins
+
 const findItalic = /(?:_|__|-|\s)?(italic)/i
 const fontWeights = {
 	thin: 100,
@@ -26,17 +28,13 @@ const fontWeights = {
 
 const fontsStyles = async () => {
 	try {
-		if (plugins.fs.existsSync(fontFacesFile)) {
-			return plugins.logger.warning('File (font-face.scss) already exists')
+		if (fs.existsSync(fontFacesFile)) {
+			return notifier.warning('File (font-face.scss) already exists')
 		}
 
-		const fontsFolder = await plugins.fs.promises.readdir(paths.build.fonts)
+		const fontsFolder = await fs.promises.readdir(paths.build.fonts)
 
-		if (!fontsFolder) {
-			return plugins.logger.error('No fonts files or [fonts/] folder')
-		}
-
-		await plugins.fs.promises.writeFile(fontFacesFile, '')
+		await fs.promises.writeFile(fontFacesFile, '')
 
 		let newFileOnly
 
@@ -44,23 +42,23 @@ const fontsStyles = async () => {
 			const [fileName] = fontFile.split('.')
 
 			if (newFileOnly !== fileName) {
-				const [fontFamily, fontWeight = 'regular'] = fileName.split('-')
-				const fontWeightValue =
-					fontWeights[fontWeight.replace(findItalic, '').toLowerCase()]
+				const [fontFamily, fontWeightValue = 'regular'] = fileName.split('-')
+				const fontWeight =
+					fontWeights[fontWeightValue.replace(findItalic, '').toLowerCase()]
 				const fontStyle = findItalic.test(fileName) ? 'italic' : 'normal'
 
-				await plugins.fs.promises.appendFile(
+				await fs.promises.appendFile(
 					fontFacesFile,
-					fontFaceTemplate(fileName, fontFamily, fontWeightValue, fontStyle)
+					fontFaceTemplate(fileName, fontFamily, fontWeight, fontStyle)
 				)
 
 				newFileOnly = fileName
 			}
 		}
 
-		plugins.logger.success('File (font-face.scss) written')
+		notifier.success('File (font-face.scss) written')
 	} catch (error) {
-		plugins.logger.error('Processing fonts', error)
+		notifier.error(error)
 	}
 }
 

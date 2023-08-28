@@ -1,4 +1,3 @@
-// Slider (Swiper plugin) https://swiperjs.com
 import Swiper from 'swiper'
 import { Pagination, Keyboard, A11y } from 'swiper/modules'
 
@@ -22,7 +21,6 @@ function initSliders() {
 			},
 
 			keyboard: {
-				enabled: true,
 				pageUpDown: true
 			},
 
@@ -44,4 +42,4 @@ function initSliders() {
 	}
 }
 
-window.addEventListener('load', initSliders)
+export { initSliders }

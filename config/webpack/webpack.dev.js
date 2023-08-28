@@ -1,11 +1,28 @@
 import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
 
-import { extensionsAndAliases } from './plugins/extensionsAndAliases.js'
-import { replaceLoaderOptions } from './plugins/replaceLoaderOptions.js'
-import { cssLoaderOptions } from './plugins/cssLoaderOptions.js'
-import { output } from './plugins/webPackOutputFile.js'
+import { extensionsAndAliases } from './modules/extensionsAndAliases.js'
+import { output } from './modules/webPackOutputFile.js'
+
+import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
+import { cssLoaderConfig } from './loaders/cssLoaderConfig.js'
+
 import { pugPages } from './plugins/pugPages.js'
+
+const {
+	src: {
+		favicon: faviconSrc,
+		static: staticSrc,
+		images: imagesSrc,
+		fonts: fontsSrc,
+		json: jsonSrc,
+		pug: pugSrc,
+		js: jsSrc
+	},
+	srcFolder,
+	buildFolder
+} = paths
+const { HtmlWebpackPlugin, CopyPlugin } = plugins
 
 const config = {
 	mode: 'development',
@@ -14,20 +31,16 @@ const config = {
 	optimization: {
 		minimize: false
 	},
-	entry: paths.src.js,
+	entry: jsSrc,
 	output: output('js/app.min.js'),
 	devServer: {
-		static: paths.buildFolder,
+		static: buildFolder,
 		historyApiFallback: true,
 		compress: true,
 		port: 3000,
 		open: true,
 
-		watchFiles: [
-			paths.src.images,
-			paths.src.json,
-			paths.src.pug
-		]
+		watchFiles: [imagesSrc, jsonSrc, pugSrc]
 	},
 	module: {
 		rules: [
@@ -37,25 +50,29 @@ const config = {
 				resolve: {
 					fullySpecified: false
 				}
-			}, {
+			},
+			{
 				test: /\.scss$/,
-				exclude: paths.src.fonts,
+				exclude: fontsSrc,
 				use: [
 					'style-loader',
 					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderOptions('../')
-					}, {
+						options: replaceLoaderConfig('../')
+					},
+					{
 						loader: 'css-loader',
-						options: cssLoaderOptions(1, true, '/')
-					}, {
+						options: cssLoaderConfig(1, true, '/')
+					},
+					{
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true
 						}
 					}
 				]
-			}, {
+			},
+			{
 				test: /\.pug$/,
 				use: [
 					{
@@ -63,36 +80,42 @@ const config = {
 						options: {
 							self: true
 						}
-					}, {
+					},
+					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderOptions('')
+						options: replaceLoaderConfig('')
 					}
 				]
 			}
 		]
 	},
 	plugins: [
-		...pugPages.map(pugPage => new plugins.HtmlWebpackPlugin({
-			minify: false,
-			inject: false,
-			template: `${paths.srcFolder}/views/${pugPage}`,
-			filename: pugPage.replace(/\.pug$/, '.html'),
-			production: false
-		})),
-		new plugins.CopyPlugin({
+		...pugPages.map(
+			(pugPage) =>
+				new HtmlWebpackPlugin({
+					minify: false,
+					inject: false,
+					template: `${srcFolder}/views/${pugPage}`,
+					filename: pugPage.replace(/\.pug$/, '.html'),
+					production: false
+				})
+		),
+		new CopyPlugin({
 			patterns: [
 				{
-					from: `${paths.srcFolder}/img`,
+					from: `${srcFolder}/img`,
 					to: 'img',
 					noErrorOnMissing: true,
 					force: true
-				}, {
-					from: paths.src.static,
+				},
+				{
+					from: staticSrc,
 					to: 'static',
 					noErrorOnMissing: true,
 					force: true
-				}, {
-					from: paths.src.favicon,
+				},
+				{
+					from: faviconSrc,
 					to: './',
 					noErrorOnMissing: true
 				}

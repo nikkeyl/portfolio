@@ -3,16 +3,19 @@ import { paths } from '../settings/paths.js'
 
 import { publish } from 'gh-pages'
 
+const { buildFolder, repository } = paths
+const { notifier } = plugins
+
 const deploy = () =>
 	publish(
-		paths.buildFolder,
+		buildFolder,
 		{
-			repo: paths.repository
+			repo: repository
 		},
-		error => {
+		(error) => {
 			error
-				? plugins.logger.error('Something went wrong', error)
-				: plugins.logger.success('Published')
+				? notifier.error()
+				: notifier.success('Published')
 		}
 	)
 

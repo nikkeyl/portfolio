@@ -1,23 +1,30 @@
-import gulp from 'gulp'
-
 import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
 
-import imagemin from 'gulp-imagemin'
+import imageMin from 'gulp-imagemin'
 import newer from 'gulp-newer'
 import webp from 'gulp-webp'
 
-const images = noWebp =>
+const {
+	src: {
+		images: imagesSrc,
+		svg: svgSrc
+	},
+	build: { images: imagesDest }
+} = paths
+const { gulp, notifier, if: cond } = plugins
+
+const images = (isWebp) =>
 	gulp
-		.src(paths.src.images)
-		.pipe(plugins.logger.catchErrors('IMAGES'))
-		.pipe(newer(paths.build.images))
-		.pipe(plugins.if(noWebp, webp()))
-		.pipe(plugins.if(noWebp, gulp.dest(paths.build.images)))
-		.pipe(plugins.if(noWebp, gulp.src(paths.src.images)))
-		.pipe(plugins.if(noWebp, newer(paths.build.images)))
+		.src(imagesSrc)
+		.pipe(notifier.errorHandler('IMAGES'))
+		.pipe(newer(imagesDest))
+		.pipe(cond(isWebp, webp()))
+		.pipe(cond(isWebp, gulp.dest(imagesDest)))
+		.pipe(cond(isWebp, gulp.src(imagesSrc)))
+		.pipe(cond(isWebp, newer(imagesDest)))
 		.pipe(
-			imagemin({
+			imageMin({
 				svgoPlugins: [
 					{
 						removeViewBox: false
@@ -26,8 +33,8 @@ const images = noWebp =>
 				interlaced: true
 			})
 		)
-		.pipe(gulp.dest(paths.build.images))
-		.pipe(gulp.src(paths.src.svg))
-		.pipe(gulp.dest(paths.build.images))
+		.pipe(gulp.dest(imagesDest))
+		.pipe(gulp.src(svgSrc))
+		.pipe(gulp.dest(imagesDest))
 
 export { images }

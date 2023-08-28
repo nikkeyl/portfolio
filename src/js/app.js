@@ -3,7 +3,7 @@ import '@js/script'
 
 // ----------------------------------------------------------------COMPONENTS
 import { spoilers } from '@js/components/spoilers'
-import '@js/components/popup'
+import { Popup } from '@js/components/Popup'
 
 // ----------------------------------------------------------------SCROLL
 // import { ScrollWatcher } from '@js/modules/scroll/watcher'
@@ -15,9 +15,10 @@ import { addTouchClass } from '@js/modules/addTouchClass'
 import { webp } from '@js/modules/webp'
 
 // ----------------------------------------------------------------VENDORS
+import { initSliders } from '@js/vendors/Swiper'
+
 // import '@js/vendors/SimpleBar'
 import '@js/vendors/Marquee'
-import '@js/vendors/Swiper'
 import '@js/vendors/Typed'
 import '@js/vendors/tippy'
 
@@ -25,12 +26,12 @@ import '@js/vendors/tippy'
 
 // ----------------------------------------------------------------COMPONENTS
 spoilers()
-
-// ----------------------------------------------------------------SCROLL
-// new ScrollWatcher()
+new Popup()
 
 // ----------------------------------------------------------------MODULES
 addLoadedClass()
 addTouchClass()
-// customCursor()
 webp()
+
+// ----------------------------------------------------------------VENDORS
+initSliders()

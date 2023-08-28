@@ -1,5 +1,3 @@
-import gulp from 'gulp'
-
 import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
 
@@ -10,10 +8,15 @@ import webpCss from 'gulp-webpcss'
 import cssComb from 'gulp-csscomb'
 import rename from 'gulp-rename'
 
+const {
+	build: { css: cssDest }
+} = paths
+const { gulp, notifier } = plugins
+
 const css = () =>
 	gulp
-		.src(`${paths.build.css}style.css`)
-		.pipe(plugins.logger.catchErrors('CSS'))
+		.src(`${cssDest}style.css`)
+		.pipe(notifier.errorHandler('CSS'))
 		.pipe(groupCssMediaQueries())
 		.pipe(
 			webpCss({
@@ -23,17 +26,9 @@ const css = () =>
 		)
 		.pipe(cssComb())
 		.pipe(autoPrefixer())
-		.pipe(gulp.dest(paths.build.css))
-		.pipe(
-			cleanCss({
-				level: 2
-			})
-		)
-		.pipe(
-			rename({
-				suffix: '.min'
-			})
-		)
-		.pipe(gulp.dest(paths.build.css))
+		.pipe(gulp.dest(cssDest))
+		.pipe(cleanCss({ level: 2 }))
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest(cssDest))
 
 export { css }

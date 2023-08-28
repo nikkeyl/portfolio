@@ -2,7 +2,7 @@ import { bodyLockStatus, bodyUnlock, bodyLock } from '@js/helpers/bodyLockToggle
 import { html } from '@js/helpers/nodeList'
 
 class Popup {
-	constructor(options) {
+	constructor() {
 		const config = {
 			init: true,
 			attributeOpenButton: 'data-popup',
@@ -38,18 +38,15 @@ class Popup {
 		this.focusEl = ['a[href]']
 		this.options = {
 			...config,
-			...options,
 			classes: {
-				...config.classes,
-				...options?.classes
+				...config.classes
 			},
 			on: {
-				...config.on,
-				...options?.on
+				...config.on
 			}
 		}
 		this.bodyLock = false
-		this.options.init ? this.initPopups() : null
+		this.initPopups()
 	}
 
 	initPopups() {
@@ -72,7 +69,7 @@ class Popup {
 							this.lastFocusEl = buttonOpen
 						}
 
-						this.targetOpen.selector = `${this.dataValue}`
+						this.targetOpen.selector = this.dataValue
 						this.selectorOpen = true
 						this.open()
 
@@ -124,7 +121,7 @@ class Popup {
 
 	open(selectorValue) {
 		if (bodyLockStatus) {
-			this.bodyLock = html.classList.contains('lock') && !this.isOpen ? true : false
+			this.bodyLock = html.classList.contains('lock') && !this.isOpen
 
 			if (
 				selectorValue &&
@@ -215,4 +212,4 @@ class Popup {
 	}
 }
 
-new Popup({})
+export { Popup }

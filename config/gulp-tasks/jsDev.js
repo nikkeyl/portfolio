@@ -2,15 +2,17 @@ import { plugins } from '../settings/plugins.js'
 
 import webPackConfig from '../webpack/webpack.prod.js'
 
-import { output } from '../webpack/plugins/webPackOutputFile.js'
+import { output } from '../webpack/modules/webPackOutputFile.js'
 
 import { jsFormatConfig } from '../utilities/jsFormatConfig.js'
+
+const { TerserPlugin } = plugins
 
 const webPackConfigBeautify = Object.assign({}, webPackConfig)
 
 webPackConfigBeautify.optimization = {
 	minimizer: [
-		new plugins.TerserPlugin({
+		new TerserPlugin({
 			extractComments: false,
 			terserOptions: {
 				compress: {

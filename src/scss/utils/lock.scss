@@ -1,7 +1,5 @@
-body {
-	overscroll-behavior: none;
-
-	.lock & {
+.lock {
+	body {
 		overflow: hidden;
 		touch-action: none;
 	}

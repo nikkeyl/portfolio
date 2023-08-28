@@ -1,5 +1,3 @@
-import gulp from 'gulp'
-
 import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
 
@@ -7,15 +5,22 @@ import { svgoConfig } from '../../svgo.config.js'
 
 import svgSprite from 'gulp-svg-sprite'
 
+const {
+	src: { sprite: spriteSrc },
+	spriteFile,
+	srcFolder
+} = paths
+const { gulp, notifier } = plugins
+
 const sprite = () =>
 	gulp
-		.src(paths.src.sprite)
-		.pipe(plugins.logger.catchErrors('SPRITE'))
+		.src(spriteSrc)
+		.pipe(notifier.errorHandler('SPRITE'))
 		.pipe(
 			svgSprite({
 				mode: {
 					symbol: {
-						sprite: paths.spriteFile
+						sprite: spriteFile
 					}
 				},
 				shape: {
@@ -35,6 +40,5 @@ const sprite = () =>
 				}
 			})
 		)
-		.pipe(gulp.dest(paths.srcFolder)) // ???
-
+		.pipe(gulp.dest(srcFolder)) // ???
 export { sprite }
