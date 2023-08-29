@@ -6,13 +6,13 @@ function spoilers() {
 
 	document.addEventListener('click', setSpoilerAction)
 	const spoilers = Array.from(spoilersArray).filter(
-		item => !item.dataset.spoilers.split(',')[0]
+		(item) => !item.dataset.spoilers.split(',')[0]
 	)
 
 	initSpoilers(spoilers)
 
 	function initSpoilers(spoilersArray, matchMedia = false) {
-		spoilersArray.forEach(spoilersBlock => {
+		spoilersArray.forEach((spoilersBlock) => {
 			spoilersBlock = matchMedia ? spoilersBlock.item : spoilersBlock
 
 			if (matchMedia.matches || !matchMedia) {
@@ -29,9 +29,9 @@ function spoilers() {
 		let spoilerItems = spoilersBlock.querySelectorAll('details')
 
 		spoilerItems = Array.from(spoilerItems).filter(
-			item => item.closest('[data-spoilers]') === spoilersBlock
+			(item) => item.closest('[data-spoilers]') === spoilersBlock
 		)
-		spoilerItems.forEach(spoilerItem => {
+		spoilerItems.forEach((spoilerItem) => {
 			const spoilerTrigger = spoilerItem.querySelector('summary')
 
 			if (hideSpoilerBody) {
@@ -84,7 +84,7 @@ function spoilers() {
 		if (!el.closest('[data-spoilers]')) {
 			const spoilersClose = document.querySelectorAll('[data-spoiler-close]')
 
-			spoilersClose.forEach(spoilerClose => {
+			spoilersClose.forEach((spoilerClose) => {
 				const spoilersBlock = spoilerClose.closest('[data-spoilers]')
 				const spoilerCloseBlock = spoilerClose.parentNode
 

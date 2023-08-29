@@ -212,7 +212,7 @@
 	}
 }
 
-@mixin media-hover() {
+@mixin media-hover {
 	@media (any-hover: hover) {
 		&:hover {
 			@content;

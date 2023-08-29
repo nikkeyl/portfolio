@@ -1,11 +1,9 @@
 {
 	"Exclude": [
+		"fontFacesTemplate.js",
 		"stylelintrc.json",
-		"src/scss/vendors",
 		"spoilers.js",
 		"mixins.scss",
-		"Popup.js",
-		"fonts.js",
 		"webp.js"
 	]
 }

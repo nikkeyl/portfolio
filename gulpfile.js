@@ -5,7 +5,6 @@ import { argv } from 'node:process'
 import { validator } from './config/utilities/validators.js'
 import { deploy } from './config/utilities/deploy.js'
 import { reset } from './config/utilities/reset.js'
-import { zip } from './config/utilities/zip.js'
 
 import { otfToTtf } from './config/gulp-tasks/fonts-tasks/otfToTtf.js'
 import { ttfToWoff2 } from './config/gulp-tasks/fonts-tasks/ttfToWoff2.js'
@@ -24,7 +23,7 @@ const build = gulp.series(
 	jsDev,
 	jsProd,
 	gulp.parallel(images.bind(null, isWebp), html.bind(null, isWebp), css),
-	gulp.parallel(validator, zip)
+	validator
 )
 const dev = gulp.parallel(fonts, sprite)
 

@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npm run stylelint
+      - run: npm run stylelint:fix

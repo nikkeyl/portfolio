@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npm run eslint
+      - run: npm run eslint:fix

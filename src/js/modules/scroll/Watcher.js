@@ -19,21 +19,21 @@ class ScrollWatcher {
 	scrollWatcherConstructor(items) {
 		const uniqParams = uniqArray(
 			Array.from(items).map(
-				item =>
+				(item) =>
 					`${item.dataset.watchRoot || null}|${item.dataset.watchMargin || '0px'}|${
 						item.dataset.watchThreshold || 0
 					}`
 			)
 		)
 
-		uniqParams.forEach(uniqParam => {
+		uniqParams.forEach((uniqParam) => {
 			const uniqParamArray = uniqParam.split('|')
 			const paramsWatch = {
 				root: uniqParamArray[0],
 				margin: uniqParamArray[1],
 				threshold: uniqParamArray[2]
 			}
-			const groupItems = Array.from(items).filter(item => {
+			const groupItems = Array.from(items).filter((item) => {
 				const watchRoot = item.dataset.watchRoot || null
 				const watchMargin = item.dataset.watchMargin || '0px'
 				const watchThreshold = item.dataset.watchThreshold || 0
@@ -78,13 +78,13 @@ class ScrollWatcher {
 
 	scrollWatcherCreate(configWatcher) {
 		this.observer = new IntersectionObserver((entries, observer) => {
-			entries.forEach(entry => this.scrollWatcherCallback(entry, observer))
+			entries.forEach((entry) => this.scrollWatcherCallback(entry, observer))
 		}, configWatcher)
 	}
 
 	scrollWatcherInit(items, configWatcher) {
 		this.scrollWatcherCreate(configWatcher)
-		items.forEach(item => this.observer.observe(item))
+		items.forEach((item) => this.observer.observe(item))
 	}
 
 	scrollWatcherIntersecting(entry, targetElement) {

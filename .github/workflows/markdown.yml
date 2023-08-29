@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npm run markdown
+      - run: npm run markdown:lint

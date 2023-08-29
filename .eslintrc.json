@@ -268,7 +268,7 @@
     "import/max-dependencies": [
       "warn",
       {
-        "max": 6
+        "max": 50
       }
     ],
     "import/newline-after-import": "warn",

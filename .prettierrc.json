@@ -4,7 +4,6 @@
     {
       "files": "*.js",
       "options": {
-        "arrowParens": "avoid",
         "singleQuote": true,
         "semi": false
       }

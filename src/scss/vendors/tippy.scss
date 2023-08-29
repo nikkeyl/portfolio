@@ -1,19 +1,14 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
-/* Tips (Tippy plugin) */
-[data-tippy-root] {
-	z-index: 95 !important;
-}
-
 .tippy-box[data-animation="fade"][data-state="hidden"] {
 	opacity: 0;
 }
 
 .tippy-content {
 	border-radius: to-rem(7);
+	box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
 	padding: to-rem(3) to-rem(10);
-	box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 25%);
 	font-size: to-rem(13);
 	line-height: div(22, 13);
 	background-color: var(--inverse, #fe0);

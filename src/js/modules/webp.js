@@ -9,7 +9,7 @@ function webp() {
 			'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA'
 	}
 
-	testWebp(support => html.classList.add(support === true ? 'webp' : 'no-webp'))
+	testWebp((support) => html.classList.add(support === true ? 'webp' : 'no-webp'))
 }
 
 export { webp }
