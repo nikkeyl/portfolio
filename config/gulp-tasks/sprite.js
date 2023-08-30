@@ -40,5 +40,5 @@ const sprite = () =>
 				}
 			})
 		)
-		.pipe(gulp.dest(srcFolder)) // ???
+		.pipe(gulp.dest(srcFolder))
 export { sprite }

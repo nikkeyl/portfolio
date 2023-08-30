@@ -34,6 +34,7 @@ const html = (isWebp) =>
 				collapseBooleanAttributes: true,
 				removeRedundantAttributes: true,
 				removeEmptyAttributes: true,
+				collapseWhitespace: true,
 				minifyCSS: true,
 				minifyJS: true
 			})

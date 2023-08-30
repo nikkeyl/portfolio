@@ -24,7 +24,7 @@ body {
 	scroll-padding-top: var(--header-height, 4rem);
 	scrollbar-gutter: stable;
 
-	@include media-motion(no-preferences) {
+	@include media-motion(no-preference) {
 		scroll-behavior: smooth;
 	}
 }

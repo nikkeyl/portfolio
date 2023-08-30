@@ -65,7 +65,7 @@
 	$width: $body-width - ($body-width - $percent);
 
 	@if $width <= 10 {
-		$width: 0 + #{$width};
+		$width: 0 + $width;
 	}
 
 	&__inner {
@@ -84,7 +84,7 @@
 
 	&__body {
 		@include media-min($breakpoint) {
-			width: #{$percent} + "%";
+			width: $percent + 0%;
 		}
 	}
 
@@ -94,7 +94,7 @@
 			flex: 0 0
 				calc(
 					(
-							(100% - #{to-rem($container-padding)}) *
+							(100% - to-rem($container-padding)) *
 								div(div((100 - $percent), 1), 100)
 						) + (to-rem($container-padding) / 2)
 				);

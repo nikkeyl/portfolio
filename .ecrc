@@ -1,6 +1,6 @@
 {
 	"Exclude": [
-		"fontFacesTemplate.js",
+		"fontFaceTemplate.js",
 		"stylelintrc.json",
 		"spoilers.js",
 		"mixins.scss",
