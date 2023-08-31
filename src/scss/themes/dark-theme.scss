@@ -1,0 +1,9 @@
+.dark {
+	--primary: #222;
+	--magnolia: #444;
+	--secondary: #f8f4ff;
+	--background-primary: var(--primary, #333);
+	--text-primary: var(--secondary, #f8f4ff);
+
+	color-scheme: dark;
+}

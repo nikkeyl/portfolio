@@ -21,21 +21,33 @@
 		box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
 		color: var(--secondary, #222);
 		background-color: var(--inverse, #fe0);
+
+		.dark & {
+			color: var(--primary, #222);
+		}
 	}
 
 	&:active {
 		translate: 0 to-rem(3);
 	}
 
-	&--fw {
+	&--full {
 		@include media-max($phone) {
 			width: 100%;
 		}
+	}
+
+	.dark & {
+		color: var(--secondary, #fff);
 	}
 
 	@include media-hover {
 		box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
 		color: var(--secondary, #222);
 		background-color: var(--inverse, #fe0);
+
+		.dark & {
+			color: var(--primary, #222);
+		}
 	}
 }

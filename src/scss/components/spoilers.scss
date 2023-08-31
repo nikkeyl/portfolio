@@ -4,14 +4,10 @@
 .spoiler {
 	align-self: flex-start;
 	overflow: hidden;
-	border-radius: to-rem(10);
 	background-color: var(--magnolia, #f8f4ff);
 
 	&__trigger {
 		position: relative;
-		display: flex;
-		gap: to-rem(20);
-		align-items: center;
 		padding: to-rem(10);
 		text-align: left;
 		cursor: pointer;
@@ -59,14 +55,16 @@
 
 		svg {
 			fill: var(--primary, #fff);
+
+			.dark & {
+				fill: var(--secondary, #fff);
+			}
 		}
 	}
 
 	&__info {
-		display: flex;
 		gap: to-rem(10);
 		justify-content: center;
-		align-items: center;
 		margin-inline: auto;
 		width: fit-content;
 
@@ -106,6 +104,10 @@
 		padding: to-rem(15);
 		color: var(--primary, #fff);
 		background-color: var(--accent, #0d8);
+
+		.dark & {
+			color: var(--secondary, #fff);
+		}
 	}
 
 	&__call-me {

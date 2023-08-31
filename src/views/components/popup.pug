@@ -1,12 +1,11 @@
-//- popups
 .popup#info(aria-hidden='true')
-	.popup__wrapper
-		.popup__content
+	.popup__wrapper.flex-align-center
+		.popup__content.border-radius
 			button.popup__close(
 				type='button'
 				data-close
 			)
-			.popup__body
+			.popup__body.flex-align-center
 				.popup__icon
 					svg
 						use(href='@img/icons/sprite.svg#info')

@@ -7,22 +7,22 @@ block variables
 	- popups = true
 
 block content
-	section.hero.fullscreen
-		.container.hero__container
+	section.hero.fullscreen.flex-align-center
+		.container.hero__container.flex-align-center
 			h1.title.title--big.hero__title
 				| #[span Front-end]
 				| #[span(data-typed) development]
 			.hero__actions
-				a.button.button--fw.hero__button(
+				a.button.button--full.hero__button(
 					href='#portfolio'
 				) Portfolio
-				a.button.button--fw.hero__button(href='https://t.me/nikkeyl')
+				a.button.button--full.hero__button(href='https://t.me/nikkeyl')
 					| Order a website
 	section.about-me
 		.about-me__inner
 			.container.about-me__container
-				.about-me__body
-					h2.title.about-me__title
+				.about-me__body.padding-y
+					h2.title.margin-bottom.about-me__title
 						| Who am I?
 					.text
 						p I have been studying front-end development for only a year, #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
@@ -38,8 +38,8 @@ block content
 				src='@img/about/nikkeyl.jpg'
 				alt='Nikita Almanov'
 			)
-	.skills#skills(role='marquee')
-		.skills__icons
+	.skills.padding-y#skills(role='marquee')
+		.skills__icons.gap
 			each skill in skills.skills
 				.skills__icon
 					img(
@@ -48,30 +48,28 @@ block content
 						data-tippy-content=skill.name
 					)
 
-	section.developments#developments
+	section.developments.padding-y#developments
 		.container
-			h2.title.developments__title
+			h2.title.margin-bottom
 				| My developments
-			.grid
+			.grid.gap
 				each repo in repos.repos
-					a.developments__card(
+					a.developments__card.border-radius(
 						href=`https://github.com/nikkeyl/${repo.name}`
 						aria-label=repo.a11y
 					) #[span.sr-only=repo.a11y]
-						svg
-							use(href='@img/icons/sprite.svg#github')
 						img(
 							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
 							alt=repo.name
 						)
 
-	section.portfolio#portfolio
+	section.portfolio.padding-y#portfolio
 		.container
-			h2.title.portfolio__title
+			h2.title.margin-bottom
 				| Portfolio
-			.grid.portfolio__cards
+			.grid.portfolio__cards.gap
 				each card in projects.cards
-					article.project-card
+					article.project-card.border-radius
 						a.bg-image.project-card__image(href=card.linkSite)
 							img(
 								src=card.img
@@ -81,7 +79,7 @@ block content
 							h3.card-title.project-card__title
 								a(href=card.linkSite)
 									=card.name
-							.project-card__actions
+							.project-card__actions.flex-align-center
 								a.button.project-card__button(
 									href=card.linkSite
 									data-tippy-content=card.name
@@ -91,23 +89,24 @@ block content
 									href=card.linkCode
 									data-tippy-content=card.disabled ? false : card.srcCode
 									tabindex=card.disabled ? '-1' : false
-								) #[span.sr-only=card.disabled ? ['The ' + card.srcCode + ' is not available'] : ['View ' + card.srcCode]]
+								) #[span.sr-only=card.disabled ? [`The ${card.srcCode} is not available`] : [`View ${card.srcCode}`]]
 									svg
 										use(href='@img/icons/sprite.svg#github')
 
-	section.reviews
+	section.reviews.padding-y
 		.container
-			h2.title.reviews__title
+			h2.title.margin-bottom
 				| Reviews
 			.swiper.reviews__slider
-				.swiper-wrapper.reviews__wrapper
+				.swiper-wrapper.margin-bottom
 					each review in reviews.reviews
 						.swiper-slide
 							article(class=[
 								'review',
-								review.class
+								review.class,
+								'border-radius'
 							])
-								.review__info
+								.review__info.flex-align-center
 									.bg-image.review__image
 										img(
 											src=review.img
@@ -119,18 +118,18 @@ block content
 									| !{review.text}
 
 				.swiper-pagination.reviews__pagination
-	section.questions#questions
+	section.padding-y#questions
 		.container
-			h2.title.questions__title
+			h2.title.margin-bottom
 				| FAQ
 				span.sr-only Questions and answers
-			.grid(
+			.grid.gap(
 				data-spoilers
 				data-one-spoiler
 			)
 				each spoiler in spoilers.spoilers
-					details.spoiler
-						summary.spoiler__trigger(
+					details.spoiler.border-radius
+						summary.spoiler__trigger.gap.flex-align-center(
 							data-spoiler
 							data-spoiler-close
 						)
@@ -140,22 +139,22 @@ block content
 							| !{spoiler.content}
 						.sr-only !{spoiler.content}
 
-				details.spoiler
-					summary.spoiler__trigger(
+				details.spoiler.border-radius
+					summary.spoiler__trigger.gap.flex-align-center(
 						data-spoiler
 						data-spoiler-close
 					) #[strong Questions left?]
 						span
 					.text.spoiler__content
 						.spoiler__call-me
-							a.spoiler__info(
+							a.spoiler__info.flex-align-center(
 								href='#'
 								data-popup='#info'
 								data-tippy-content='Working hours'
 							) Contact me
 								svg
 									use(href='@img/icons/sprite.svg#info')
-						ul.socials.spoiler__socials
+						ul.socials.spoiler__socials.flex-align-center
 							each social in socials.socials
 								li.socials__item
 									a(

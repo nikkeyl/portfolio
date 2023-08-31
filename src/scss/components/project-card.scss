@@ -4,7 +4,6 @@
 .project-card {
 	display: grid;
 	overflow: hidden;
-	border-radius: to-rem(10);
 	width: 100%;
 	max-width: to-rem(400);
 
@@ -54,9 +53,7 @@
 	}
 
 	&__actions {
-		display: flex;
 		gap: to-rem(10);
-		align-items: center;
 	}
 
 	&__src-code {

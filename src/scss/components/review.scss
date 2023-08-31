@@ -3,15 +3,12 @@
 
 .review {
 	overflow: hidden;
-	border-radius: to-rem(10);
 	max-width: to-rem(400);
 	filter: grayscale(1);
 	transition: filter 0.3s;
 
 	&__info {
-		display: flex;
 		gap: to-rem(15);
-		align-items: center;
 		padding: to-rem(15);
 		background-color: var(--magnolia, #f8f4ff);
 	}
@@ -27,6 +24,10 @@
 		padding: to-rem(15);
 		color: var(--primary, #fff);
 		background: var(--accent, #0d8);
+
+		.dark & {
+			color: var(--text-primary, #fff);
+		}
 	}
 
 	.swiper-slide-active & {

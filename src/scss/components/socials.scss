@@ -4,9 +4,7 @@
 .socials {
 	@include adaptive-value("gap", 20, 8);
 
-	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
 
 	&__item {
 		transition: scale 0.3s;

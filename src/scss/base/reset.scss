@@ -20,8 +20,8 @@ body {
 	min-height: 100vh;
 	min-width: $min-width + px;
 	background-color: var(--background-primary, #fff);
-	overscroll-behavior-y: none;
-	scroll-padding-top: var(--header-height, 4rem);
+	overscroll-behavior: none;
+	scroll-padding-top: calc(var(--header-height, #{to-rem(94)}) + to-rem(15));
 	scrollbar-gutter: stable;
 
 	@include media-motion(no-preference) {

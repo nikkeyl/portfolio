@@ -26,8 +26,12 @@ const fontWeights = {
 	ultrablack: 950
 }
 
-const fontsStyles = async () => {
+const fontsStyles = async (isBuild) => {
 	try {
+		if (isBuild) {
+			await	fs.promises.unlink(fontFacesFile)
+		}
+
 		if (fs.existsSync(fontFacesFile)) {
 			return notifier.warning('File (font-face.scss) already exists')
 		}
@@ -49,7 +53,7 @@ const fontsStyles = async () => {
 
 				await fs.promises.appendFile(
 					fontFacesFile,
-					fontFaceTemplate(fileName, fontFamily, fontWeight, fontStyle)
+					fontFaceTemplate(fileName, fontFamily, fontWeight, fontStyle, isBuild)
 				)
 
 				newFileOnly = fileName

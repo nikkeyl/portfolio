@@ -1,4 +1,26 @@
 #preloader
+	script.
+		function preloader() {
+			const preloaderTemplate =
+				`
+					<div class="preloader">
+						<div class="preloader__load">
+							<svg viewbox="0 0 100 100">
+								<circle cx="50" cy="50" r="45" fill="transparent" />
+								<path fill="transparent" stroke-linecap="round" stroke-width="8" stroke="#0d8" d="M50 10 a 40 40 0 0 1 0 80">
+								</path>
+							</svg>
+						</div>
+					</div>
+				`;
+
+			document.querySelector('html').insertAdjacentHTML(
+				"beforeend",
+				preloaderTemplate
+			);
+		}
+
+		preloader();
 	style.
 		*,
 		*::before,
@@ -37,6 +59,10 @@
 			visibility: visible;
 		}
 
+		.dark .preloader {
+			background-color: #333;
+		}
+
 		.preloader__load {
 			width: 100px;
 			height: 100px;
@@ -64,25 +90,3 @@
 				visibility 0.3s,
 				opacity 0.3s;
 		}
-	script.
-		function preloader() {
-			const preloaderTemplate =
-				`
-					<div class="preloader">
-						<div class="preloader__load">
-							<svg viewbox="0 0 100 100">
-								<circle cx="50" cy="50" r="45" fill="#fff" />
-								<path fill="#fff" stroke-linecap="round" stroke-width="8" stroke="#0d8" d="M50 10 a 40 40 0 0 1 0 80">
-								</path>
-							</svg>
-						</div>
-					</div>
-				`;
-
-			document.querySelector('html').insertAdjacentHTML(
-				"beforeend",
-				preloaderTemplate
-			);
-		}
-
-		preloader();

@@ -1,6 +1,10 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
+[data-tippy-root] {
+	z-index: 95 !important;
+}
+
 .tippy-box[data-animation="fade"][data-state="hidden"] {
 	opacity: 0;
 }
@@ -12,4 +16,8 @@
 	font-size: to-rem(13);
 	line-height: div(22, 13);
 	background-color: var(--inverse, #fe0);
+
+	.dark & {
+		color: var(--primary, #222);
+	}
 }

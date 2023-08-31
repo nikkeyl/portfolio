@@ -1,28 +1,29 @@
-import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
+import { plugins } from '../settings/plugins.js'
 
 import { extensionsAndAliases } from './modules/extensionsAndAliases.js'
 import { output } from './modules/webPackOutputFile.js'
 
-import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
 import { cssLoaderConfig } from './loaders/cssLoaderConfig.js'
+import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
 
 import { pugPages } from './plugins/pugPages.js'
 
 const {
 	src: {
 		favicon: faviconSrc,
-		static: staticSrc,
-		images: imagesSrc,
 		fonts: fontsSrc,
+		images: imagesSrc,
+		js: jsSrc,
 		json: jsonSrc,
 		pug: pugSrc,
-		js: jsSrc
+		static: staticSrc
 	},
-	srcFolder,
-	buildFolder
+	assetsFolder,
+	buildFolder,
+	srcFolder
 } = paths
-const { HtmlWebpackPlugin, CopyPlugin } = plugins
+const { CopyPlugin, HtmlWebpackPlugin } = plugins
 
 const config = {
 	mode: 'development',
@@ -32,14 +33,13 @@ const config = {
 		minimize: false
 	},
 	entry: jsSrc,
-	output: output('js/app.min.js'),
+	output: output(`${assetsFolder}/js/app.min.js`),
 	devServer: {
-		static: buildFolder,
-		historyApiFallback: true,
 		compress: true,
-		port: 3000,
+		historyApiFallback: true,
 		open: true,
-
+		port: 3000,
+		static: buildFolder,
 		watchFiles: [imagesSrc, jsonSrc, pugSrc]
 	},
 	module: {
@@ -83,7 +83,7 @@ const config = {
 					},
 					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderConfig('')
+						options: replaceLoaderConfig(`${assetsFolder}/`)
 					}
 				]
 			}
@@ -93,24 +93,24 @@ const config = {
 		...pugPages.map(
 			(pugPage) =>
 				new HtmlWebpackPlugin({
-					minify: false,
-					inject: false,
-					template: `${srcFolder}/views/${pugPage}`,
 					filename: pugPage.replace(/\.pug$/, '.html'),
-					production: false
+					inject: false,
+					minify: false,
+					production: false,
+					template: `${srcFolder}/views/${pugPage}`
 				})
 		),
 		new CopyPlugin({
 			patterns: [
 				{
 					from: `${srcFolder}/img`,
-					to: 'img',
+					to: `${assetsFolder}/img`,
 					noErrorOnMissing: true,
 					force: true
 				},
 				{
 					from: staticSrc,
-					to: 'static',
+					to: `${assetsFolder}/static`,
 					noErrorOnMissing: true,
 					force: true
 				},

@@ -11,6 +11,7 @@ import { Popup } from '@js/components/Popup'
 // ----------------------------------------------------------------MODULES
 import { addLoadedClass } from '@js/modules/addLoadedClass'
 import { addTouchClass } from '@js/modules/addTouchClass'
+import { colorScheme } from '@js/modules/colorScheme'
 
 // import { customCursor } from './modules/customCursor'
 import { webp } from '@js/modules/webp'
@@ -32,6 +33,7 @@ new Popup()
 // ----------------------------------------------------------------MODULES
 addLoadedClass()
 addTouchClass()
+colorScheme()
 webp()
 
 // ----------------------------------------------------------------VENDORS

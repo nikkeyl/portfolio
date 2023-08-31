@@ -17,7 +17,8 @@ import { html } from './config/gulp-tasks/html.js'
 import { css } from './config/gulp-tasks/css.js'
 
 const isWebp = argv.includes('--webp')
-const fonts = gulp.series(reset, otfToTtf, ttfToWoff2, fontsStyles)
+const isBuild = argv.includes('--build')
+const fonts = gulp.series(reset, otfToTtf, ttfToWoff2, fontsStyles.bind(null, isBuild))
 const build = gulp.series(
 	fonts,
 	jsDev,

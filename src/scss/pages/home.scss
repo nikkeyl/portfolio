@@ -1,16 +1,34 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
-.hero {
+.padding-y {
+	padding-block: to-rem(30);
+}
+
+.margin-bottom {
+	&:not(:last-child) {
+		margin-bottom: to-rem(30);
+	}
+}
+
+.border-radius {
+	border-radius: to-rem(10);
+}
+
+.gap {
+	gap: to-rem(20);
+}
+
+.flex-align-center {
 	display: flex;
 	align-items: center;
+}
 
+.hero {
 	&__container {
 		@include adaptive-value("padding-block", 60, 30);
 
-		display: flex;
 		flex-direction: column;
-		align-items: center;
 	}
 
 	&__title {
@@ -50,8 +68,11 @@
 	}
 
 	&__body {
-		padding-block: to-rem(30);
 		color: var(--primary, #fff);
+
+		.dark & {
+			color: var(--text-primary, #fff);
+		}
 
 		@include media-min($tablet) {
 			padding-left: to-rem(50);
@@ -59,10 +80,6 @@
 	}
 
 	&__title {
-		&:not(:last-child) {
-			margin-bottom: to-rem(20);
-		}
-
 		@include media-min($tablet) {
 			text-align: left;
 		}
@@ -93,11 +110,10 @@
 // ========================================================================================================================================================//
 .skills {
 	display: grid;
-	padding-block: to-rem(50) to-rem(20);
+	background-color: var(--magnolia, #f8f4ff);
 
 	&__icons {
 		display: flex;
-		gap: to-rem(20);
 	}
 
 	&__icon {
@@ -109,27 +125,10 @@
 
 // ======================================================================================================================================================== //
 .developments {
-	padding-block: to-rem(30);
-
-	&__title {
-		&:not(:last-child) {
-			margin-bottom: to-rem(30);
-		}
-	}
-
 	&__card {
 		position: relative;
 		overflow: hidden;
-		border-radius: to-rem(10);
 		transition: scale 0.3s;
-
-		svg {
-			position: absolute;
-			inset: auto to-rem(15) to-rem(15) auto;
-			height: to-rem(30);
-			width: to-rem(30);
-			fill: var(--accent, #0d8);
-		}
 
 		&:focus-visible {
 			scale: 1.03;
@@ -143,14 +142,6 @@
 
 // ========================================================================================================================================================//
 .portfolio {
-	padding-block: to-rem(30);
-
-	&__title {
-		&:not(:last-child) {
-			margin-bottom: to-rem(30);
-		}
-	}
-
 	&__cards {
 		justify-items: center;
 	}
@@ -158,39 +149,7 @@
 
 // ========================================================================================================================================================//
 .reviews {
-	padding-block: to-rem(30);
-
-	&__title {
-		&:not(:last-child) {
-			margin-bottom: to-rem(30);
-		}
-	}
-
-	&__slider {
-		margin: to-rem(-20);
-		padding: to-rem(20);
-	}
-
-	&__wrapper {
-		&:not(:last-child) {
-			margin-bottom: to-rem(30);
-		}
-	}
-
 	&__review {
 		margin-inline: auto;
-	}
-}
-
-// ========================================================================================================================================================//
-.questions {
-	@include adaptive-value("padding-bottom", 60, 30);
-
-	padding-top: to-rem(30);
-
-	&__title {
-		&:not(:last-child) {
-			margin-bottom: to-rem(30);
-		}
 	}
 }

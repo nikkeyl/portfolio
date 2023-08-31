@@ -1,0 +1,46 @@
+@use "@scss/abstracts" as *;
+
+// text
+// button
+// colorScheme.js
+// preloader
+// transition
+// icon popup (i)
+// 320 and 400 phone header
+// optimize
+
+// page speed
+// line-height чуть больше в spoilers triggers
+// padding-block in header__container
+// accessibility report
+// github issues
+
+.theme-switch {
+	position: relative;
+	flex: 0 0 to-rem(24);
+	border-radius: to-rem(30);
+	height: to-rem(40);
+	width: to-rem(24);
+	background-color: var(--disabled);
+
+	&::before {
+		@include pseudo;
+
+		top: to-rem(2);
+		left: to-rem(2);
+		border-radius: 50%;
+		height: to-rem(20);
+		width: to-rem(20);
+		background-color: var(--magnolia, #888);
+		transition:
+			background-color 0.3s,
+			box-shadow 0.3s 0.2s,
+			top 0.3s;
+
+		.dark & {
+			top: to-rem(18);
+			box-shadow: 0 0 to-rem(20) rgb(var(--inverse-rgb, 255 238 0) / 0.5);
+			background-color: var(--inverse, #fe0);
+		}
+	}
+}

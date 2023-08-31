@@ -1,28 +1,29 @@
-import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
+import { plugins } from '../settings/plugins.js'
 
 import { extensionsAndAliases } from './modules/extensionsAndAliases.js'
 import { output } from './modules/webPackOutputFile.js'
 
-import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
 import { cssLoaderConfig } from './loaders/cssLoaderConfig.js'
+import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
 
-import { pugPages } from './plugins/pugPages.js'
 import { linters } from './plugins/linters.js'
+import { pugPages } from './plugins/pugPages.js'
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const {
 	src: {
-		htaccess: htaccessSrc,
 		favicon: faviconSrc,
-		static: staticSrc,
-		robots: robotsSrc
+		htaccess: htaccessSrc,
+		robots: robotsSrc,
+		static: staticSrc
 	},
+	assetsFolder,
 	srcFolder
 } = paths
-const { TerserPlugin, HtmlWebpackPlugin, CopyPlugin } = plugins
-const { styleLint, esLint } = linters
+const { CopyPlugin, TerserPlugin, HtmlWebpackPlugin } = plugins
+const { esLint, styleLint } = linters
 
 const config = {
 	mode: 'production',
@@ -80,7 +81,7 @@ const config = {
 					},
 					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderConfig('')
+						options: replaceLoaderConfig(`${assetsFolder}/`)
 					}
 				]
 			}
@@ -93,11 +94,11 @@ const config = {
 		...pugPages.map(
 			(pugPage) =>
 				new HtmlWebpackPlugin({
-					minify: false,
+					filename: `../../${pugPage.replace(/\.pug$/, '.html')}`,
 					inject: false,
-					template: `${srcFolder}/views/${pugPage}`,
-					filename: `../${pugPage.replace(/\.pug$/, '.html')}`,
-					production: true
+					minify: false,
+					production: true,
+					template: `${srcFolder}/views/${pugPage}`
 				})
 		),
 		new MiniCssExtractPlugin({
@@ -112,17 +113,17 @@ const config = {
 				},
 				{
 					from: faviconSrc,
-					to: '../',
+					to: '../../',
 					noErrorOnMissing: true
 				},
 				{
 					from: robotsSrc,
-					to: '../',
+					to: '../../',
 					noErrorOnMissing: true
 				},
 				{
 					from: htaccessSrc,
-					to: '../',
+					to: '../../',
 					noErrorOnMissing: true
 				}
 			]

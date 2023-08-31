@@ -10,18 +10,15 @@
 	pointer-events: none;
 
 	&__wrapper {
-		display: flex;
 		flex: 1 1 auto;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
 		width: 100%;
 		min-height: 100%;
 	}
 
 	&__content {
 		position: relative;
-		border-radius: to-rem(10);
 		width: 100%;
 		max-width: to-rem(400);
 		padding: to-rem(50) to-rem(20);
@@ -38,9 +35,7 @@
 	}
 
 	&__body {
-		display: flex;
 		flex-direction: column;
-		align-items: center;
 	}
 
 	&__icon {

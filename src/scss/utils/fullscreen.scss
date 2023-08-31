@@ -1,7 +1,7 @@
 @use "@scss/abstracts" as *;
 
 .fullscreen {
-	min-height: calc(100dvh - var(--header-height, #{to-rem(64)}));
+	min-height: calc(100dvh - calc(var(--header-height, #{to-rem(64)}) + to-rem(15)));
 
 	.touch & {
 		transition: min-height 0.2s;

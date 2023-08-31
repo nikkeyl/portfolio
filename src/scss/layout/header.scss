@@ -5,17 +5,12 @@
 	position: sticky;
 	top: 0;
 	z-index: 90;
-	display: flex;
-	align-items: center;
-	min-height: var(--header-height, 4rem);
-	background-color: var(--magnolia, #f8f4ff);
+	padding: to-rem(15) to-rem(15) 0;
 
 	&__container {
-		@include media-min(520) {
-			display: flex;
-			align-items: center;
-			width: 100%;
-		}
+		min-height: var(--header-height, #{to-rem(64)});
+		background-color: var(--magnolia, #f8f4ff);
+		backdrop-filter: blur(to-rem(50));
 	}
 
 	&__body {
@@ -23,17 +18,32 @@
 
 		display: flex;
 		justify-content: center;
+
+		@include media-max(540) {
+			justify-content: space-between;
+			width: 100%;
+		}
 	}
 
 	&__logo {
 		flex: 1;
 
-		@include media-max(520) {
-			display: none;
+		@include media-max(540) {
+			@supports (content-visibility: hidden) {
+				content-visibility: hidden;
+			}
+
+			@supports not (content-visibility: hidden) {
+				display: none;
+			}
 		}
 	}
 
 	&__button {
 		padding: to-rem(10) to-rem(14);
+
+		@include media-max(540) {
+			flex: 1;
+		}
 	}
 }
