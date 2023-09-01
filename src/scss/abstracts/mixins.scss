@@ -18,7 +18,7 @@
 		$min-size: 0.000001;
 	}
 
-	@if $width-from == $container-width and $max-width-container == 0 {
+	@if $width-from == $container-width and $container-max-width == 0 {
 		$width-from: $max-width;
 	}
 
@@ -61,7 +61,7 @@
 }
 
 @mixin responsive-output($body-width, $breakpoint: $tablet, $reverse: 0) {
-	$percent: round(div($body-width, $max-width-container) * 100);
+	$percent: round(div($body-width, $container-max-width) * 100);
 	$width: $body-width - ($body-width - $percent);
 
 	@if $width <= 10 {
@@ -94,9 +94,9 @@
 			flex: 0 0
 				calc(
 					(
-							(100% - to-rem($container-padding)) *
+							(100% - to-rem($container-padding-inline)) *
 								div(div((100 - $percent), 1), 100)
-						) + (to-rem($container-padding) / 2)
+						) + (to-rem($container-padding-inline) / 2)
 				);
 			aspect-ratio: 4 / 3;
 
@@ -115,7 +115,7 @@
 		}
 
 		@include media-min($container-width) {
-			flex: 0 0 calc(50% - (div($width, 100) - 0.5) * to-rem($max-width-container));
+			flex: 0 0 calc(50% - (div($width, 100) - 0.5) * to-rem($container-max-width));
 		}
 	}
 

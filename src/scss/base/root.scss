@@ -25,5 +25,13 @@
 	--font-family: "Roboto";
 	--font-size: #{to-rem(16)};
 	--font-weight: 700;
+
+	// Header
 	--header-height: #{to-rem(64)};
+
+	// Paddings
+	--container-padding-inline: #{to-rem($container-padding-inline)};
+
+	// Widths
+	--container-width: #{to-rem($container-width)};
 }

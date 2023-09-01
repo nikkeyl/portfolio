@@ -28,6 +28,7 @@
 	&__container {
 		@include adaptive-value("padding-block", 60, 30);
 
+		display: flex;
 		flex-direction: column;
 	}
 
@@ -42,8 +43,8 @@
 		flex-wrap: wrap;
 		gap: to-rem(15);
 
-		@include media-max($phone) {
-			width: 100%;
+		@include media-min($phone) {
+			align-self: center;
 		}
 	}
 
@@ -117,9 +118,9 @@
 	}
 
 	&__icon {
-		flex: 0 0 to-rem(90);
-		height: to-rem(90);
-		width: to-rem(90);
+		flex: 0 0 to-rem(70);
+		height: to-rem(70);
+		width: to-rem(70);
 	}
 }
 

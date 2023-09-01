@@ -1,9 +1,17 @@
 @use "@scss/abstracts" as *;
 
 .fullscreen {
-	min-height: calc(100dvh - calc(var(--header-height, #{to-rem(64)}) + to-rem(15)));
-
 	.touch & {
 		transition: min-height 0.2s;
+	}
+
+	@include media-min(350) {
+		min-height: calc(
+			100dvh - calc(var(--header-height, #{to-rem(64)}) + to-rem(15))
+		);
+	}
+
+	@include media-max(350) {
+		min-height: calc(100dvh - var(--header-height, #{to-rem(64)}));
 	}
 }

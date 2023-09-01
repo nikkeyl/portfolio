@@ -1,12 +1,12 @@
-$container-padding: 30;
+$container-padding-inline: 15;
 
-// --------------------------------- //
-$max-width-container: 1280;
-$container-width: $max-width-container + $container-padding;
+// ============================================================================== //
+$container-max-width: 1280;
+$container-width: $container-max-width + ($container-padding-inline * 2);
 $max-width: 1920;
 $min-width: 320;
 
-// --------------------------------- //
+// ============================================================================== //
 $desktop: $container-width;
 $laptop: 992;
 $tablet: 768;

@@ -5,46 +5,43 @@
 	position: sticky;
 	top: 0;
 	z-index: 90;
-	padding: to-rem(15) to-rem(15) 0;
 
 	&__container {
 		min-height: var(--header-height, #{to-rem(64)});
 		padding-block: to-rem(12);
 		background-color: var(--magnolia, #f8f4ff);
 		backdrop-filter: blur(to-rem(50));
+
+		@include media-min(350) {
+			border-radius: to-rem(10);
+		}
+
+		@include media-max(540) {
+			justify-content: center;
+		}
 	}
 
 	&__body {
 		@include adaptive-value("gap", 20, 8);
 
 		display: flex;
-		justify-content: center;
-
-		@include media-max(540) {
-			justify-content: space-between;
-			width: 100%;
-		}
 	}
 
 	&__logo {
-		flex: 1;
+		@include media-min(540) {
+			flex: 1;
+		}
 
 		@include media-max(540) {
-			@supports (content-visibility: hidden) {
-				content-visibility: hidden;
-			}
-
-			@supports not (content-visibility: hidden) {
-				display: none;
-			}
+			display: none;
 		}
 	}
 
 	&__button {
 		padding: to-rem(10) to-rem(14);
+	}
 
-		@include media-max(540) {
-			flex: 1;
-		}
+	@include media-min(350) {
+		padding: to-rem(15) to-rem(15) 0;
 	}
 }
