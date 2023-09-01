@@ -2,8 +2,12 @@
 	"Exclude": [
 		"fontFaceTemplate.js",
 		"stylelintrc.json",
+		"customCursor.js",
+		"reviews.json",
 		"spoilers.js",
 		"mixins.scss",
+		"README.md",
+		"index.pug",
 		"webp.js"
 	]
 }

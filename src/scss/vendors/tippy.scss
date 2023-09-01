@@ -5,7 +5,8 @@
 	z-index: 95 !important;
 }
 
-.tippy-box[data-animation="fade"][data-state="hidden"] {
+.tippy-box[data-animation="rise"][data-state="hidden"] {
+	translate: 0 to-rem(10);
 	opacity: 0;
 }
 

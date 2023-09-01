@@ -1,11 +1,11 @@
 - const socials = require('/src/views/data/socials.json')
 
 header.header
-	.container.header__container.border-radius.gap.flex-align-center
+	.container.header__container.border-radius.flex-align-center
 		.logo.header__logo
 			| Nikita Almanov
 		.header__body
-			ul.socials.flex-align-center
+			ul.socials.flex-align-center(aria-label='Socials')
 				each social in socials.socials
 					li.socials__item
 						a(
@@ -20,4 +20,4 @@ header.header
 				href='#questions'
 				data-tippy-content='Questions about work'
 			) FAQ
-			button.theme-switch
+			button.theme-switch(data-tippy-content='Change theme' aria-label='Theme switch')

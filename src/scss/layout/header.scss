@@ -9,6 +9,7 @@
 
 	&__container {
 		min-height: var(--header-height, #{to-rem(64)});
+		padding-block: to-rem(12);
 		background-color: var(--magnolia, #f8f4ff);
 		backdrop-filter: blur(to-rem(50));
 	}

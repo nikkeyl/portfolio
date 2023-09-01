@@ -19,6 +19,10 @@
 			fill: var(--secondary, #222);
 		}
 
+		&:focus-visible {
+			scale: 1.05;
+		}
+
 		@include media-hover {
 			scale: 1.05;
 		}
