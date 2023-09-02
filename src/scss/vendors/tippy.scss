@@ -12,7 +12,7 @@
 
 .tippy-content {
 	border-radius: to-rem(7);
-	box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
+	box-shadow: 0 to-rem(3) to-rem(15) rgb(var(--inverse-rgb, 255 238 0) / 0.25);
 	padding: to-rem(3) to-rem(10);
 	font-size: to-rem(13);
 	line-height: div(22, 13);

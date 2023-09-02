@@ -19,7 +19,7 @@
 			fill: var(--secondary, #222);
 		}
 
-		&:focus-visible {
+		&:focus-within {
 			scale: 1.05;
 		}
 

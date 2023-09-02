@@ -2,148 +2,119 @@
   "skills": [
     {
       "icon": "assets/img/svg/html.svg",
-      "name": "HTML",
-      "a11y": "html"
+      "name": "html"
     },
     {
       "icon": "assets/img/svg/pug.svg",
-      "name": "PUG",
-      "a11y": "pug"
+      "name": "pug"
     },
     {
       "icon": "assets/img/svg/css.svg",
-      "name": "CSS",
-      "a11y": "css"
+      "name": "css"
     },
     {
       "icon": "assets/img/svg/scss.svg",
-      "name": "SCSS",
-      "a11y": "scss"
+      "name": "scss"
     },
     {
       "icon": "assets/img/svg/js.svg",
-      "name": "JAVASCRIPT",
-      "a11y": "javascript"
+      "name": "javascript"
     },
     {
       "icon": "assets/img/svg/json.svg",
-      "name": "JSON",
-      "a11y": "json"
+      "name": "json"
     },
     {
       "icon": "assets/img/svg/yaml.svg",
-      "name": "YAML",
-      "a11y": "yaml"
+      "name": "yaml"
     },
     {
       "icon": "assets/img/svg/markdown.svg",
-      "name": "MARKDOWN",
-      "a11y": "markdown"
+      "name": "markdown"
     },
     {
       "icon": "assets/img/svg/svg.svg",
-      "name": "SVG",
-      "a11y": "svg"
+      "name": "svg"
     },
     {
       "icon": "assets/img/svg/bem.svg",
-      "name": "BEM",
-      "a11y": "bem"
+      "name": "bem"
     },
     {
       "icon": "assets/img/svg/eslint.svg",
-      "name": "ESLINT",
-      "a11y": "eslint"
+      "name": "eslint"
     },
     {
       "icon": "assets/img/svg/stylelint.svg",
-      "name": "STYLELINT",
-      "a11y": "stylelint"
+      "name": "stylelint"
     },
     {
       "icon": "assets/img/svg/prettier.svg",
-      "name": "PRETTIER",
-      "a11y": "prettier"
+      "name": "prettier"
     },
     {
       "icon": "assets/img/svg/editor-config.svg",
-      "name": "EDITORCONFIG",
-      "a11y": "editorconfig"
+      "name": "editorconfig"
     },
     {
       "icon": "assets/img/svg/remark.svg",
-      "name": "REMARK",
-      "a11y": "remark"
+      "name": "remark"
     },
     {
       "icon": "assets/img/svg/github-actions.svg",
-      "name": "GITHUB ACTIONS",
-      "a11y": "github actions"
+      "name": "github actions"
     },
     {
       "icon": "assets/img/svg/w3c.svg",
-      "name": "W3C",
-      "a11y": "w3c"
+      "name": "w3c"
     },
     {
       "icon": "assets/img/svg/a11y.svg",
-      "name": "ACCESSIBILITY",
-      "a11y": "accessibility"
+      "name": "accessibility"
     },
     {
       "icon": "assets/img/svg/semver.svg",
-      "name": "SEMVER",
-      "a11y": "semver"
+      "name": "semver"
     },
     {
       "icon": "assets/img/svg/browserslist.svg",
-      "name": "BROWSERSLIST",
-      "a11y": "browserslist"
+      "name": "browserslist"
     },
     {
       "icon": "assets/img/svg/lighthouse.svg",
-      "name": "LIGHTHOUSE",
-      "a11y": "lighthouse"
+      "name": "lighthouse"
     },
     {
       "icon": "assets/img/svg/npm.svg",
-      "name": "NPM",
-      "a11y": "npm"
+      "name": "npm"
     },
     {
       "icon": "assets/img/svg/webpack.svg",
-      "name": "WEBPACK",
-      "a11y": "webpack"
+      "name": "webpack"
     },
     {
       "icon": "assets/img/svg/gulp.svg",
-      "name": "GULP",
-      "a11y": "gulp"
+      "name": "gulp"
     },
     {
       "icon": "assets/img/svg/svgo.svg",
-      "name": "SVGO",
-      "a11y": "svgo"
+      "name": "svgo"
     },
     {
       "icon": "assets/img/svg/git.svg",
-      "name": "GIT",
-      "a11y": "git"
+      "name": "git"
     },
     {
       "icon": "assets/img/svg/figma.svg",
-      "name": "FIGMA",
-      "a11y": "figma"
+      "name": "figma"
     },
     {
       "icon": "assets/img/svg/vscode.svg",
-      "name": "VSCODE",
-      "a11y": "visual studio code"
+      "name": "visual studio code"
     },
     {
       "icon": "assets/img/svg/github.svg",
-      "name": "GITHUB",
-      "a11y": "github"
+      "name": "github"
     }
   ]
 }

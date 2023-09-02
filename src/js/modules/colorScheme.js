@@ -1,6 +1,6 @@
 import { html } from '@js/helpers/nodeList'
 
-function colorScheme() {
+const colorScheme = () => {
 	const saveUserTheme = localStorage.getItem('user-theme')
 
 	let userTheme
@@ -9,6 +9,17 @@ function colorScheme() {
 		userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
 			? 'dark'
 			: 'light'
+	}
+
+	const changeTheme = (saveTheme = false) => {
+		const currentTheme = html.classList.contains('light') ? 'light' : 'dark'
+
+		let newTheme
+
+		currentTheme === 'light' ? (newTheme = 'dark') : (newTheme = 'light')
+		html.classList.remove(currentTheme)
+		html.classList.add(newTheme)
+		saveTheme ? localStorage.setItem('user-theme', newTheme) : null
 	}
 
 	window
@@ -25,26 +36,11 @@ function colorScheme() {
 		})
 	}
 
-	function setThemeClass() {
-		if (saveUserTheme) {
-			html.classList.add(saveUserTheme)
-		} else {
-			html.classList.add(userTheme)
-		}
+	const setThemeClass = () => {
+		saveUserTheme ? html.classList.add(saveUserTheme) : html.classList.add(userTheme)
 	}
 
 	setThemeClass()
-
-	function changeTheme(saveTheme = false) {
-		const currentTheme = html.classList.contains('light') ? 'light' : 'dark'
-
-		let newTheme
-
-		currentTheme === 'light' ? (newTheme = 'dark') : (newTheme = 'light')
-		html.classList.remove(currentTheme)
-		html.classList.add(newTheme)
-		saveTheme ? localStorage.setItem('user-theme', newTheme) : null
-	}
 }
 
 export { colorScheme }

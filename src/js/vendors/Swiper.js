@@ -3,7 +3,7 @@ import { Pagination, Keyboard, A11y } from 'swiper/modules'
 
 import '@scss/vendors/swiper'
 
-function initSliders() {
+const initSliders = () => {
 	if (document.querySelector('.reviews__slider')) {
 		new Swiper('.reviews__slider', {
 			modules: [Pagination, Keyboard, A11y],

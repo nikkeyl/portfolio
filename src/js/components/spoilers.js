@@ -1,10 +1,11 @@
 import { slideToggle } from '@js/helpers/slideToggle'
 import { slideUp } from '@js/helpers/slideUp'
 
-function spoilers() {
+const spoilers = () => {
 	const spoilersArray = document.querySelectorAll('[data-spoilers]')
 
 	document.addEventListener('click', setSpoilerAction)
+
 	const spoilers = Array.from(spoilersArray).filter(
 		(item) => !item.dataset.spoilers.split(',')[0]
 	)

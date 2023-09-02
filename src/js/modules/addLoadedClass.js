@@ -1,6 +1,6 @@
 import { html } from '@js/helpers/nodeList'
 
-function addLoadedClass() {
+const addLoadedClass = () => {
 	window.addEventListener('load', html.classList.add('loaded'))
 
 	const preloader = document.querySelector('.preloader')

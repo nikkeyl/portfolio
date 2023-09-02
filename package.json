@@ -54,6 +54,7 @@
     "inputmask": "*",
     "isotope-layout": "*",
     "js-datepicker": "*",
+    "jstransformer-markdown-it": "^3.0.0",
     "lightgallery": "*",
     "lint-staged": "*",
     "mini-css-extract-plugin": "*",

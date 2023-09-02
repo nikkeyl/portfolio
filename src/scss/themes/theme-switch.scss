@@ -1,17 +1,12 @@
 @use "@scss/abstracts" as *;
 
-// text
-// button
 // colorScheme.js
 // preloader
-// transition
-// icon popup (i)
-// tip on theme switch button
-// more space in skills section
-// more padding-top in developments section
+
 // repo card theme
+// icons in skills section
+
 // spoilers
-// focus in socials icons
 // optimize
 
 // page speed
@@ -24,7 +19,7 @@
 	border-radius: to-rem(30);
 	height: to-rem(40);
 	width: to-rem(24);
-	background-color: var(--disabled);
+	background-color: var(--disabled, #888);
 
 	&::before {
 		@include pseudo;

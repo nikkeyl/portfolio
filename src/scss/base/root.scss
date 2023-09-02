@@ -8,19 +8,23 @@
 	--inverse: #fe0;
 	--disabled: #888;
 
+	// #f8f4ff
+	--magnolia-rgb: 248 244 255;
+
 	// #0d8
 	--accent-rgb: 4 219 137;
 
 	// #fe0
 	--inverse-rgb: 255 238 0;
 
-	// #f8f4ff
-	--magnolia-rgb: 248 244 255;
-
 	// #888
 	--disabled-rgb: 136 136 136;
+
+	// Main colors
 	--background-primary: var(--primary, #fff);
 	--text-primary: var(--secondary, #222);
+
+	// Fonts
 	--system-ui: system-ui;
 	--font-family: "Roboto";
 	--font-size: #{to-rem(16)};

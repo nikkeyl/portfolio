@@ -26,12 +26,12 @@ block content
 						| Who am I?
 					.text
 						p I have been studying front-end development for only a year, #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
-						p You can see for yourself by going to #[a.link(href='#developments') my developments] and #[a.link(href='#portfolio') portfolio].
+						p You can see for yourself by going to #[a.link(href='#portfolio') portfolio] and #[a.link(href='#developments') my developments].
 						p Also, thanks to my minimalism, I #[strong write clean and understandable code].
 						p If you want to know #[strong what technologies I own], you can go down a little #[a.link(href='#skills') lower].
 
 						each skill in skills.skills
-							p.sr-only=skill.a11y
+							p.sr-only=skill.name
 
 		.about-me__image
 			img(
@@ -45,23 +45,8 @@ block content
 					img(
 						src=skill.icon
 						alt=skill.name
-						data-tippy-content=skill.name
+						data-tippy-content=skill.name.toUpperCase()
 					)
-
-	section.developments.padding-y#developments
-		.container
-			h2.title.margin-bottom
-				| My developments
-			.grid.gap
-				each repo in repos.repos
-					a.developments__card.border-radius(
-						href=`https://github.com/nikkeyl/${repo.name}`
-						aria-label=repo.a11y
-					) #[span.sr-only=repo.a11y]
-						img(
-							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
-							alt=repo.name
-						)
 
 	section.portfolio.padding-y#portfolio
 		.container
@@ -92,6 +77,21 @@ block content
 								) #[span.sr-only=card.disabled ? [`The ${card.srcCode} is not available`] : [`View ${card.srcCode}`]]
 									svg
 										use(href='@img/icons/sprite.svg#github')
+
+	section.developments.padding-y#developments
+		.container
+			h2.title.margin-bottom
+				| My developments
+			.grid.gap
+				each repo in repos.repos
+					a.developments__card.border-radius(
+						href=`https://github.com/nikkeyl/${repo.name}`
+						aria-label=repo.a11y
+					) #[span.sr-only=repo.a11y]
+						img(
+							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
+							alt=repo.name
+						)
 
 	section.reviews.padding-y
 		.container

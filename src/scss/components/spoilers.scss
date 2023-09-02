@@ -73,35 +73,11 @@
 			height: to-rem(20);
 			width: to-rem(20);
 			fill: none;
-			stroke: var(--primary, #fff);
-			animation: glow 0.8s 2 forwards 0.3s;
-
-			@keyframes glow {
-				0% {
-					stroke: var(--primary, #fff);
-				}
-
-				25% {
-					stroke: var(--secondary, #222);
-				}
-
-				50% {
-					stroke: var(--primary, #fff);
-				}
-
-				75% {
-					stroke: var(--secondary, #222);
-				}
-
-				100% {
-					stroke: var(--primary, #fff);
-				}
-			}
+			stroke: #fff;
 		}
 	}
 
 	&__content {
-		box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
 		padding: to-rem(15);
 		color: var(--primary, #fff);
 		background-color: var(--accent, #0d8);

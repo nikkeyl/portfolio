@@ -1,7 +1,7 @@
 import { html } from '@js/helpers/nodeList'
 
-function webp() {
-	function testWebp(callback) {
+const webp = () => {
+	const testWebp = (callback) => {
 		const webp = new Image()
 
 		webp.onload = webp.onerror = () => callback(webp.height === 2)
