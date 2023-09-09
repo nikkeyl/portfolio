@@ -25,16 +25,12 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" title="git">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="40" height="40" title="figma">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40" title="vscode">&nbsp;
-
 [![](https://img.shields.io/badge/more-0d8)](https://nikkeyl.github.io/nikkeyl)&nbsp;
 
 ## My developments
 
-- 🏭 [![](https://img.shields.io/badge/site-builder-0d8)](https://github.com/nikkeyl/site-builder)
-  > Builder for front-end based on gulp and webpack
-- 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
-  > This is not just a portfolio site, it is a collection of best practices
-  > from the world of Front-End development.
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=site-builder&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top">&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=nikkeyl&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top">&nbsp;
 
 ## Contacts
 
