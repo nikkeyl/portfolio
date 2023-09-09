@@ -38,9 +38,9 @@
 }
 
 .swiper-pagination-bullet {
-	border-radius: to-rem(30);
 	height: to-rem(15);
 	width: to-rem(15);
+	border-radius: to-rem(30);
 	background-color: var(--disabled, #888);
 	transition:
 		background-color 0.3s,

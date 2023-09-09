@@ -1,5 +1,4 @@
 import '@scss/style'
-import '@js/script'
 
 // ----------------------------------------------------------------COMPONENTS
 import { spoilers } from '@js/components/spoilers'

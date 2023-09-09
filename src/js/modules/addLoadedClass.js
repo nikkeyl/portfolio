@@ -5,16 +5,19 @@ const addLoadedClass = () => {
 
 	const preloader = document.querySelector('.preloader')
 	const preloaderContainer = document.querySelector('#preloader')
+	const timeout = 300
+	const interval = 300
 
 	if (html.classList.contains('loaded')) {
 		setInterval(() => {
 			preloader.classList.add('hide')
 			preloaderContainer.classList.add('hide')
+
 			setTimeout(() => {
 				preloader.remove()
 				preloaderContainer.remove()
-			}, 300)
-		}, 300)
+			}, timeout)
+		}, interval)
 	}
 }
 

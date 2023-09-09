@@ -51,45 +51,4 @@
 			}
 		}
 	}
-
-	&__actions {
-		gap: to-rem(10);
-	}
-
-	&__src-code {
-		border-radius: 50%;
-
-		svg {
-			height: to-rem(50);
-			width: to-rem(50);
-		}
-
-		&[tabindex="-1"] {
-			svg {
-				fill: rgb(var(--disabled-rgb, 136 136 136) / 0.5);
-				cursor: not-allowed;
-			}
-		}
-
-		&:not([tabindex="-1"]):focus-visible {
-			svg {
-				fill: var(--inverse, #fe0);
-			}
-		}
-
-		&:not([tabindex="-1"]) {
-			svg {
-				fill: var(--accent, #0d8);
-				transition: fill 0.3s;
-
-				@include media-hover {
-					fill: var(--inverse, #fe0);
-				}
-			}
-		}
-	}
-
-	&__button {
-		flex: 1;
-	}
 }

@@ -1,42 +1,59 @@
-import { plugins } from '../../settings/plugins.js'
 import { paths } from '../../settings/paths.js'
+import { plugins } from '../../settings/plugins.js'
+
+import { italicRegex } from '../../helpers/regExpList.js'
 
 import { fontFaceTemplate } from './fontFaceTemplate.js'
 
-const { fontFacesFile } = paths
-const { notifier, fs } = plugins
+const {
+	fontFacesFile,
+	build: { fonts: fontsSrc }
+} = paths
+const {
+	notifier,
+	fs: {
+		existsSync,
+		promises: { appendFile, readdir, writeFile }
+	}
+} = plugins
 
-const findItalic = /(?:_|__|-|\s)?(italic)/i
-const fontWeights = {
-	thin: 100,
-	hairline: 100,
-	extralight: 200,
-	ultralight: 200,
-	light: 300,
-	regular: 400,
-	medium: 500,
-	semibold: 600,
-	demibold: 600,
-	bold: 700,
-	extrabold: 800,
-	ultrabold: 800,
-	black: 900,
-	heavy: 900,
-	extrablack: 950,
-	ultrablack: 950
-}
+const fontsStyles = async (update) => {
+	const taskName = 'fontsStyles'
 
-const fontsStyles = async () => {
+	if (existsSync(fontFacesFile) && !update) {
+		return notifier.warning(taskName, {
+			path: fontFacesFile,
+			// слишком длинное сообщение
+			info: "The (font-face.scss) file already exists, to update it, run 'npm run fonts --update'"
+		})
+	}
+
+	const fontWeights = {
+		thin: 100,
+		hairline: 100,
+		extralight: 200,
+		ultralight: 200,
+		light: 300,
+		regular: 400,
+		medium: 500,
+		semibold: 600,
+		demibold: 600,
+		bold: 700,
+		extrabold: 800,
+		ultrabold: 800,
+		black: 900,
+		heavy: 900,
+		extrablack: 950,
+		ultrablack: 950
+	}
+
 	try {
-		if (fs.existsSync(fontFacesFile)) {
-			return notifier.warning('File (font-face.scss) already exists')
-		}
-
-		const fontsFolder = await fs.promises.readdir(paths.build.fonts)
-
-		await fs.promises.writeFile(fontFacesFile, '')
+		const updateFlag = update ? 'Update' : 'Added'
+		const fontsFolder = await readdir(fontsSrc)
 
 		let newFileOnly
+
+		await writeFile(fontFacesFile, '')
 
 		for (const fontFile of fontsFolder) {
 			const [fileName] = fontFile.split('.')
@@ -44,11 +61,13 @@ const fontsStyles = async () => {
 			if (newFileOnly !== fileName) {
 				const [fontFamily, fontWeightValue = 'regular'] = fileName.split('-')
 				const fontWeight =
-					fontWeights[fontWeightValue.replace(findItalic, '').toLowerCase()]
-				const fontStyle = findItalic.test(fileName) ? 'italic' : 'normal'
+					fontWeights[fontWeightValue.replace(italicRegex, '').toLowerCase()]
+				const fontStyle = italicRegex.test(fileName) ? 'italic' : 'normal'
 
-				await fs.promises.appendFile(
+				// await-in-loop: FIX
+				await appendFile(
 					fontFacesFile,
+					// очень много аргументов
 					fontFaceTemplate(fileName, fontFamily, fontWeight, fontStyle)
 				)
 
@@ -56,9 +75,15 @@ const fontsStyles = async () => {
 			}
 		}
 
-		notifier.success('File (font-face.scss) written')
+		return notifier.success(taskName, {
+			path: fontFacesFile,
+			info: updateFlag
+		})
 	} catch (error) {
-		notifier.error(error)
+		return notifier.error(taskName, {
+			path: fontFacesFile,
+			info: error
+		})
 	}
 }
 

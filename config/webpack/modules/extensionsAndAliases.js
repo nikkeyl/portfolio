@@ -3,14 +3,14 @@ import { paths } from '../../settings/paths.js'
 const { srcFolder } = paths
 
 const extensionsAndAliases = {
-	extensions: [
-		'.scss',
-		'.js'
-	],
 	alias: {
-		'@scss': `${srcFolder}/scss`,
-		'@js': `${srcFolder}/js`
-	}
+		'@js': `${srcFolder}/js`,
+		'@scss': `${srcFolder}/scss`
+	},
+	extensions: [
+		'.js',
+		'.scss'
+	]
 }
 
 export { extensionsAndAliases }

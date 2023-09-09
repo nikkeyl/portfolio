@@ -2,7 +2,10 @@ const slideDown = (target, duration = 500, showMore = 0) => {
 	if (!target.classList.contains('slide')) {
 		target.classList.add('slide')
 		target.hidden = target.hidden ? false : null
-		showMore ? target.style.removeProperty('height') : null
+
+		if (showMore) {
+			target.style.removeProperty('height')
+		}
 
 		const height = target.offsetHeight
 
@@ -14,8 +17,8 @@ const slideDown = (target, duration = 500, showMore = 0) => {
 		target.style.marginBottom = 0
 		target.offsetHeight
 		target.style.transitionProperty = 'height, margin, padding'
-		target.style.transitionDuration = duration + 'ms'
-		target.style.height = height + 'px'
+		target.style.transitionDuration = `${duration}ms`
+		target.style.height = `${height}px`
 		target.style.removeProperty('padding-top')
 		target.style.removeProperty('padding-bottom')
 		target.style.removeProperty('margin-top')

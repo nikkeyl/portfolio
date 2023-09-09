@@ -1,44 +1,32 @@
-import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
+import { plugins } from '../settings/plugins.js'
 
-import webpHtmlNoSvg from 'gulp-webp-html-nosvg'
-import versionNumber from 'gulp-version-number'
+import { htmlMinConfig } from '../../htmlMin.config.js'
+import { typografConfig } from '../../typograf.config.js'
+import { versionNumberConfig } from '../../versionNumber.config.js'
+
 import htmlMin from 'gulp-htmlmin'
+import versionNumber from 'gulp-version-number'
+import webpHtmlNoSvg from 'gulp-webp-html-nosvg'
+import typograf from 'gulp-typograf'
 
 const {
-	build: { html: htmlDest },
-	versionFile
+	build: { html: htmlDest }
 } = paths
-const { gulp, notifier, if: cond } = plugins
+const {
+	notifier,
+	gulp: { dest, src },
+	if: cond
+} = plugins
 
-const html = (isWebp) =>
-	gulp
-		.src(`${htmlDest}*.html`)
-		.pipe(notifier.errorHandler('HTML'))
+const html = (isWebp) => {
+	return src(`${htmlDest}*.html`)
+		.pipe(notifier.errorHandler('html'))
 		.pipe(cond(isWebp, webpHtmlNoSvg()))
-		.pipe(
-			versionNumber({
-				value: '%DT%',
-				append: {
-					key: 'v',
-					cover: 0,
-					to: ['css', 'js']
-				},
-				output: {
-					file: versionFile
-				}
-			})
-		)
-		.pipe(
-			htmlMin({
-				collapseBooleanAttributes: true,
-				removeRedundantAttributes: true,
-				removeEmptyAttributes: true,
-				collapseWhitespace: true,
-				minifyCSS: true,
-				minifyJS: true
-			})
-		)
-		.pipe(gulp.dest(htmlDest))
+		.pipe(versionNumber(versionNumberConfig))
+		.pipe(typograf(typografConfig))
+		.pipe(htmlMin(htmlMinConfig))
+		.pipe(dest(htmlDest))
+}
 
 export { html }

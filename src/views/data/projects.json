@@ -4,105 +4,79 @@
       "img": "assets/img/projects/brainarti.jpg",
       "name": "Brainarti",
       "linkSite": "https://brainbms.ru",
-      "linkCode": "#",
-      "srcCode": "Source code",
-      "disabled": true
+      "linkCode": "#"
     },
     {
       "img": "assets/img/projects/aqua-profi.jpg",
       "name": "Aqua profi",
       "linkSite": "https://aquaprofi.by",
-      "linkCode": "#",
-      "srcCode": "Source code",
-      "disabled": true
+      "linkCode": "#"
     },
     {
       "img": "assets/img/projects/ofdr.jpg",
       "name": "OFDR",
       "linkSite": "https://nikkeyl.github.io/ofdr",
-      "linkCode": "https://github.com/nikkeyl/ofdr",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/ofdr"
     },
     {
       "img": "assets/img/projects/abc.jpg",
       "name": "ABC",
       "linkSite": "https://nikkeyl.github.io/abc",
-      "linkCode": "https://github.com/nikkeyl/abc",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/abc"
     },
     {
       "img": "assets/img/projects/car-dealership.jpg",
       "name": "Car dealership",
       "linkSite": "https://nikkeyl.github.io/Car-dealership",
-      "linkCode": "https://github.com/nikkeyl/Car-dealership",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/Car-dealership"
     },
     {
       "img": "assets/img/projects/deep.jpg",
       "name": "Deep",
       "linkSite": "https://nikkeyl.github.io/deep",
-      "linkCode": "https://github.com/nikkeyl/deep",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/deep"
     },
     {
       "img": "assets/img/projects/agency.jpg",
       "name": "Agency",
       "linkSite": "https://nikkeyl.github.io/Agency",
-      "linkCode": "https://github.com/nikkeyl/Agency",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/Agency"
     },
     {
       "img": "assets/img/projects/saimon.jpg",
       "name": "Saimon",
       "linkSite": "https://nikkeyl.github.io/saimon",
-      "linkCode": "https://github.com/nikkeyl/saimon",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/saimon"
     },
     {
       "img": "assets/img/projects/pense.jpg",
       "name": "Pense",
       "linkSite": "https://nikkeyl.github.io/pense",
-      "linkCode": "https://github.com/nikkeyl/pense",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/pense"
     },
     {
       "img": "assets/img/projects/noiceland.jpg",
       "name": "Noiceland",
       "linkSite": "https://nikkeyl.github.io/noiceland",
-      "linkCode": "https://github.com/nikkeyl/noiceland",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/noiceland"
     },
     {
       "img": "assets/img/projects/aster.jpg",
       "name": "Aster",
       "linkSite": "https://nikkeyl.github.io/Aster",
-      "linkCode": "https://github.com/nikkeyl/Aster",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/Aster"
     },
     {
       "img": "assets/img/projects/cleaning-services.jpg",
       "name": "Cleaning",
       "linkSite": "https://nikkeyl.github.io/Cleaning",
-      "linkCode": "https://github.com/nikkeyl/Cleaning",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/Cleaning"
     },
     {
       "img": "assets/img/projects/euroflex.jpg",
       "name": "Euroflex",
       "linkSite": "https://nikkeyl.github.io/euroflex",
-      "linkCode": "https://github.com/nikkeyl/euroflex",
-      "srcCode": "Source code",
-      "disabled": false
+      "linkCode": "https://github.com/nikkeyl/euroflex"
     }
   ]
 }

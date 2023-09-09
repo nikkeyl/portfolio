@@ -22,10 +22,10 @@
 			@include pseudo;
 
 			inset: 0;
-			border: to-rem(3) solid #80f;
-			border-radius: 50%;
 			height: 100%;
 			width: 100%;
+			border: to-rem(3) solid #80f;
+			border-radius: 50%;
 			transition:
 				background-color 0.3s,
 				border-color 0.3s,

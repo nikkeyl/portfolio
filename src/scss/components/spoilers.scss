@@ -25,9 +25,9 @@
 
 					top: 50%;
 					right: to-rem(10);
-					border-radius: to-rem(2);
 					height: to-rem(2);
 					width: to-rem(20);
+					border-radius: to-rem(2);
 					background-color: var(--secondary, #222);
 					transition: rotate 0.3s;
 				}
@@ -51,18 +51,6 @@
 		}
 	}
 
-	&__socials {
-		justify-content: center;
-
-		svg {
-			fill: var(--primary, #fff);
-
-			.dark & {
-				fill: var(--secondary, #fff);
-			}
-		}
-	}
-
 	&__info {
 		gap: to-rem(10);
 		justify-content: center;
@@ -74,6 +62,18 @@
 			width: to-rem(20);
 			fill: none;
 			stroke: #fff;
+		}
+	}
+
+	&__socials {
+		justify-content: center;
+
+		svg {
+			fill: var(--primary, #fff);
+
+			.dark & {
+				fill: var(--secondary, #fff);
+			}
 		}
 	}
 

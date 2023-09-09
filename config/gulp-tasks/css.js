@@ -1,5 +1,7 @@
-import { plugins } from '../settings/plugins.js'
 import { paths } from '../settings/paths.js'
+import { plugins } from '../settings/plugins.js'
+
+import { webpCssConfig } from '../../webpCss.config.js'
 
 import autoPrefixer from 'gulp-autoprefixer'
 import cleanCss from 'gulp-clean-css'
@@ -12,25 +14,23 @@ import webpCss from 'gulp-webpcss'
 const {
 	build: { css: cssDest }
 } = paths
-const { gulp, notifier } = plugins
+const {
+	notifier,
+	gulp: { dest, src }
+} = plugins
 
-const css = () =>
-	gulp
-		.src(`${cssDest}style.css`)
-		.pipe(notifier.errorHandler('CSS'))
+const css = () => {
+	return src(`${cssDest}style.css`)
+		.pipe(notifier.errorHandler('css'))
 		.pipe(groupCssMediaQueries())
-		.pipe(
-			webpCss({
-				noWebpClass: '.no-webp',
-				webpClass: '.webp'
-			})
-		)
+		.pipe(webpCss(webpCssConfig))
 		.pipe(cssComb())
 		.pipe(autoPrefixer())
-		.pipe(gulp.dest(cssDest))
+		.pipe(dest(cssDest))
 		.pipe(shorthand())
 		.pipe(cleanCss({ level: 2 }))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(gulp.dest(cssDest))
+		.pipe(dest(cssDest))
+}
 
 export { css }

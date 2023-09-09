@@ -1,32 +1,47 @@
-import gulp from 'gulp'
+import { plugins } from './config/settings/plugins.js'
+
+import { deploy } from './config/utilities/deploy.js'
+import { reset } from './config/utilities/reset.js'
+import { validator } from './config/utilities/validators.js'
+import { zip } from './config/utilities/zip.js'
+
+import { fontsStyles } from './config/gulp-tasks/fonts-tasks/fontsStyles.js'
+import { otfToTtf } from './config/gulp-tasks/fonts-tasks/otfToTtf.js'
+import { ttfToWoff2 } from './config/gulp-tasks/fonts-tasks/ttfToWoff2.js'
+
+import { jsDev } from './config/gulp-tasks/js-tasks/jsDev.js'
+import { jsProd } from './config/gulp-tasks/js-tasks/jsProd.js'
+
+import { images } from './config/gulp-tasks/images-tasks/images.js'
+import { sprite } from './config/gulp-tasks/images-tasks/sprite.js'
+
+import { css } from './config/gulp-tasks/css.js'
+import { html } from './config/gulp-tasks/html.js'
 
 import { argv } from 'node:process'
 
-import { validator } from './config/utilities/validators.js'
-import { deploy } from './config/utilities/deploy.js'
-import { reset } from './config/utilities/reset.js'
+const {
+	gulp: { parallel, series }
+} = plugins
 
-import { otfToTtf } from './config/gulp-tasks/fonts-tasks/otfToTtf.js'
-import { ttfToWoff2 } from './config/gulp-tasks/fonts-tasks/ttfToWoff2.js'
-import { fontsStyles } from './config/gulp-tasks/fonts-tasks/fontsStyles.js'
-import { images } from './config/gulp-tasks/images.js'
-import { sprite } from './config/gulp-tasks/sprite.js'
-import { jsProd } from './config/gulp-tasks/jsProd.js'
-import { jsDev } from './config/gulp-tasks/jsDev.js'
-import { html } from './config/gulp-tasks/html.js'
-import { css } from './config/gulp-tasks/css.js'
+const webpFlag = argv.includes('--webp')
+const updateFlag = argv.includes('--update')
 
-const isWebp = argv.includes('--webp')
-const fonts = gulp.series(reset, otfToTtf, ttfToWoff2, fontsStyles)
-const build = gulp.series(
+const fonts = series(
+	reset,
+	otfToTtf,
+	ttfToWoff2,
+	fontsStyles.bind(null, updateFlag)
+)
+const build = series(
 	fonts,
 	jsDev,
 	jsProd,
-	gulp.parallel(images.bind(null, isWebp), html.bind(null, isWebp), css),
-	validator
+	parallel(images.bind(null, webpFlag), html.bind(null, webpFlag), css),
+	parallel(validator, zip)
 )
-const dev = gulp.parallel(fonts, sprite)
+const dev = parallel(fonts, sprite.bind(null, updateFlag))
 
-export { sprite, deploy, build, fonts }
+export { build, deploy, fonts, sprite }
 
 export default dev

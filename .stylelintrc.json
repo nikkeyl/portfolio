@@ -273,6 +273,19 @@
         "outline-width",
         "outline-style",
         "outline-color",
+        "aspect-ratio",
+        "height",
+        "width",
+        "min-height",
+        "min-width",
+        "max-height",
+        "max-width",
+        "block-size",
+        "max-block-size",
+        "min-block-size",
+        "inline-size",
+        "max-inline-size",
+        "min-inline-size",
         "border",
         "border-radius",
         "border-start-start-radius",
@@ -334,19 +347,6 @@
         "border-image-source",
         "border-image-slice",
         "border-image-repeat",
-        "aspect-ratio",
-        "height",
-        "width",
-        "min-height",
-        "min-width",
-        "max-height",
-        "max-width",
-        "block-size",
-        "max-block-size",
-        "min-block-size",
-        "inline-size",
-        "max-inline-size",
-        "min-inline-size",
         "box-decoration-break",
         "box-shadow",
         "box-sizing",
@@ -564,18 +564,19 @@
         "unspecified": "bottomAlphabetical"
       }
     ],
-    "block-no-empty": [
-      true,
-      {
-        "severity": "warning"
-      }
-    ],
     "no-empty-source": [
       true,
       {
         "severity": "warning"
       }
     ],
+    "block-no-empty": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "comment-no-empty": null,
     "annotation-no-unknown": true,
     "no-unknown-animations": true,
     "declaration-no-important": true,
@@ -655,7 +656,6 @@
     ],
     "selector-max-combinators": 4,
     "selector-max-compound-selectors": 4,
-    "no-descending-specificity": null,
     "selector-max-id": 1,
     "selector-max-universal": 1,
     "time-min-milliseconds": 10,
@@ -669,6 +669,12 @@
     "scss/at-function-named-arguments": "never",
     "scss/at-mixin-named-arguments": "never",
     "scss/at-rule-conditional-no-parentheses": true,
+    "scss/comment-no-empty": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
     "scss/declaration-nested-properties": "never",
     "scss/dimension-no-non-numeric-values": true,
     "scss/dollar-variable-colon-newline-after": "always-multi-line",
@@ -701,7 +707,7 @@
     "scss/double-slash-comment-inline": "never",
     "scss/map-keys-quotes": "always",
     "scss/no-duplicate-dollar-variables": true,
-    "scss/no-global-function-names": null,
+    "scss/no-global-function-names": true,
     "scss/partial-no-import": true,
     "scss/selector-no-redundant-nesting-selector": true
   }

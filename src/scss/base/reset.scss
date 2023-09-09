@@ -32,6 +32,10 @@ body {
 ::selection {
 	color: var(--secondary, #222);
 	background-color: rgb(var(--inverse-rgb, 255 238 0) / 0.8);
+
+	.dark & {
+		color: var(--primary, #222);
+	}
 }
 
 :focus-visible {

@@ -42,9 +42,9 @@
 		animation: drag 1s infinite;
 
 		svg {
-			border-radius: 50%;
 			height: to-rem(150);
 			width: to-rem(150);
+			border-radius: 50%;
 			box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
 			fill: none;
 			stroke: var(--accent, #0d8);
@@ -97,9 +97,9 @@
 			@include pseudo;
 
 			right: 0;
-			border-radius: to-rem(2);
 			height: to-rem(2);
 			width: 100%;
+			border-radius: to-rem(2);
 			background-color: var(--secondary, #222);
 		}
 

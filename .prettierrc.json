@@ -1,17 +1,11 @@
 {
-  "trailingComma": "none",
   "overrides": [
     {
       "files": "*.js",
       "options": {
+        "semi": false,
         "singleQuote": true,
-        "semi": false
-      }
-    },
-    {
-      "files": "*.scss",
-      "options": {
-        "singleQuote": false
+        "trailingComma": "none"
       }
     }
   ]

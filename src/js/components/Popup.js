@@ -13,7 +13,6 @@ class Popup {
 				popupActive: 'popup--show',
 				overlayShow: 'overlay-show'
 			},
-			focusCatch: true,
 			closeEsc: true,
 			bodyLock: true
 		}
@@ -35,7 +34,7 @@ class Popup {
 		this.reopen = false
 		this.selectorOpen = false
 		this.lastFocusEl = false
-		this.focusEl = ['a[href]']
+		this.focusEl = '.popup'
 		this.options = {
 			...config,
 			classes: {
@@ -54,69 +53,60 @@ class Popup {
 	}
 
 	eventsPopup() {
-		document.addEventListener(
-			'click',
-			function (e) {
-				const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`)
+		const escapeKey = 9
 
-				if (buttonOpen) {
-					e.preventDefault()
-					this.dataValue =
-						buttonOpen?.getAttribute(this.options.attributeOpenButton) || 'error'
+		document.addEventListener('click', (event) => {
+			const buttonOpen = event.target.closest(
+				`[${this.options.attributeOpenButton}]`
+			)
 
-					if (this.dataValue !== 'error') {
-						if (!this.isOpen) {
-							this.lastFocusEl = buttonOpen
-						}
+			if (buttonOpen) {
+				event.preventDefault()
+				this.dataValue =
+					buttonOpen?.getAttribute(this.options.attributeOpenButton) || 'error'
 
-						this.targetOpen.selector = this.dataValue
-						this.selectorOpen = true
-						this.open()
-
-						return
+				if (this.dataValue !== 'error') {
+					if (!this.isOpen) {
+						this.lastFocusEl = buttonOpen
 					}
 
-					return
-				}
-
-				const buttonClose = e.target.closest(
-					`[${this.options.attributeCloseButton}]`
-				)
-
-				if (
-					buttonClose ||
-					(!e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen)
-				) {
-					e.preventDefault()
-					this.close()
-
-					return
-				}
-			}.bind(this)
-		)
-
-		document.addEventListener(
-			'keydown',
-			function (e) {
-				if (
-					this.options.closeEsc &&
-					e.which === 27 &&
-					e.code === 'Escape' &&
-					this.isOpen
-				) {
-					e.preventDefault()
-					this.close()
+					this.targetOpen.selector = this.dataValue
+					this.selectorOpen = true
+					this.open()
 
 					return
 				}
 
-				if (this.options.focusCatch && e.which === 9 && this.isOpen) {
-					this.focusCatch(e)
+				return
+			}
 
-					return
-				}
-			}.bind(this)
-		)
+			const buttonClose = event.target.closest(
+				`[${this.options.attributeCloseButton}]`
+			)
+
+			if (
+				buttonClose ||
+				(!event.target.closest(`.${this.options.classes.popupContent}`) &&
+					this.isOpen)
+			) {
+				event.preventDefault()
+
+				return this.close()
+			}
+		})
+
+		document.addEventListener('keydown', (event) => {
+			if (
+				this.options.closeEsc &&
+				event.key === escapeKey &&
+				event.code === 'Escape' &&
+				this.isOpen
+			) {
+				event.preventDefault()
+
+				return this.close()
+			}
+		})
 	}
 
 	open(selectorValue) {
@@ -192,22 +182,6 @@ class Popup {
 		if (this.selectorOpen) {
 			this.lastClosed.selector = this.previousOpen.selector
 			this.lastClosed.element = this.previousOpen.element
-		}
-	}
-
-	focusCatch(e) {
-		const focusable = this.targetOpen.element.querySelectorAll(this.focusEl)
-		const focusArray = Array.prototype.slice.call(focusable)
-		const focusedIndex = focusArray.indexOf(document.activeElement)
-
-		if (e.shiftKey && focusedIndex === 0) {
-			focusArray[focusArray.length - 1].focus()
-			e.preventDefault()
-		}
-
-		if (!e.shiftKey && focusedIndex === focusArray.length - 1) {
-			focusArray[0].focus()
-			e.preventDefault()
 		}
 	}
 }

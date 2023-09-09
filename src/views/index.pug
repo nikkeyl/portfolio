@@ -5,18 +5,19 @@ block variables
 	- title = 'Nikita Almanov - Front-End Development'
 	- preloader = true
 	- popups = true
+	- alias = 'nikkeyl'
 
 block content
 	section.hero.fullscreen.flex-align-center
 		.container.hero__container
 			h1.title.title--big.hero__title
-				| #[span Front-end]
-				| #[span(data-typed) development]
+				| #[span Front-End]
+				| #[span(data-typed) Development]
 			.hero__actions
 				a.button.button--full.hero__button(
 					href='#portfolio'
 				) Portfolio
-				a.button.button--full.hero__button(href='https://t.me/nikkeyl')
+				a.button.button--full.hero__button(href=`https://t.me/${alias}`)
 					| Order a website
 	section.about-me
 		.about-me__inner
@@ -35,7 +36,7 @@ block content
 
 		.about-me__image
 			img(
-				src='@img/about/nikkeyl.jpg'
+				src=`@img/about/${alias}.jpg`
 				alt='Nikita Almanov'
 			)
 	.skills.padding-y#skills(role='marquee')
@@ -45,7 +46,7 @@ block content
 					img(
 						src=skill.icon
 						alt=skill.name
-						data-tippy-content=skill.name.toUpperCase()
+						data-tippy-content=skill.name
 					)
 
 	section.portfolio.padding-y#portfolio
@@ -64,19 +65,10 @@ block content
 							h3.card-title.project-card__title
 								a(href=card.linkSite)
 									=card.name
-							.project-card__actions.flex-align-center
-								a.button.project-card__button(
-									href=card.linkSite
-									data-tippy-content=card.name
-								) View
-								a(
-									class='project-card__src-code'
-									href=card.linkCode
-									data-tippy-content=card.disabled ? false : card.srcCode
-									tabindex=card.disabled ? '-1' : false
-								) #[span.sr-only=card.disabled ? [`The ${card.srcCode} is not available`] : [`View ${card.srcCode}`]]
-									svg
-										use(href='@img/icons/sprite.svg#github')
+							a.button.project-card__button(
+								href=card.linkSite
+								data-tippy-content=card.name
+							) View
 
 	section.developments.padding-y#developments
 		.container
@@ -85,11 +77,11 @@ block content
 			.grid.gap
 				each repo in repos.repos
 					a.developments__card.border-radius(
-						href=`https://github.com/nikkeyl/${repo.name}`
+						href=`https://github.com/${alias}/${repo.name}`
 						aria-label=repo.a11y
 					) #[span.sr-only=repo.a11y]
 						img(
-							src=`https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
+							src=`https://github-readme-stats.vercel.app/api/pin/?username=${alias}&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
 							alt=repo.name
 						)
 

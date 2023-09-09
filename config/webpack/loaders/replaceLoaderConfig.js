@@ -1,7 +1,11 @@
-const replaceLoaderConfig = (startPath) => ({
-	search: '@img',
-	replace: `${startPath}img`,
-	flags: 'g'
-})
+const replaceLoaderConfig = (options = {}) => {
+	const { startPath } = options
+
+	return {
+		flags: 'g',
+		replace: `${startPath}img`,
+		search: '@img'
+	}
+}
 
 export { replaceLoaderConfig }

@@ -1,10 +1,10 @@
-import { plugins } from '../settings/plugins.js'
+import { plugins } from '../../settings/plugins.js'
 
-import webPackConfig from '../webpack/webpack.prod.js'
+import { jsFormatter } from './jsFormatter.js'
 
-import { output } from '../webpack/modules/webPackOutputFile.js'
+import { output } from '../../webpack/modules/webPackOutputFile.js'
 
-import { jsFormatConfig } from '../utilities/jsFormatConfig.js'
+import webPackConfig from '../../webpack/webpack.prod.js'
 
 const { TerserPlugin } = plugins
 
@@ -29,9 +29,10 @@ webPackConfigBeautify.optimization = {
 		})
 	]
 }
-
 webPackConfigBeautify.output = output('app.js')
 
-const jsDev = () => jsFormatConfig(webPackConfigBeautify, 'Dev')
+const jsDev = () => {
+	return jsFormatter(webPackConfigBeautify, 'Dev')
+}
 
 export { jsDev }

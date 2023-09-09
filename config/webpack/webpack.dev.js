@@ -10,6 +10,9 @@ import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
 import { pugPages } from './plugins/pugPages.js'
 
 const {
+	assetsFolder,
+	buildFolder,
+	srcFolder,
 	src: {
 		favicon: faviconSrc,
 		fonts: fontsSrc,
@@ -18,10 +21,7 @@ const {
 		json: jsonSrc,
 		pug: pugSrc,
 		static: staticSrc
-	},
-	assetsFolder,
-	buildFolder,
-	srcFolder
+	}
 } = paths
 const { CopyPlugin, HtmlWebpackPlugin } = plugins
 
@@ -58,11 +58,17 @@ const config = {
 					'style-loader',
 					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderConfig('../')
+						options: replaceLoaderConfig({
+							startPath: '../'
+						})
 					},
 					{
 						loader: 'css-loader',
-						options: cssLoaderConfig(1, true, '/')
+						options: cssLoaderConfig({
+							importLoaders: 1,
+							sourceMap: true,
+							endPath: '/'
+						})
 					},
 					{
 						loader: 'sass-loader',
@@ -83,7 +89,9 @@ const config = {
 					},
 					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderConfig(`${assetsFolder}/`)
+						options: replaceLoaderConfig({
+							startPath: `${assetsFolder}/`
+						})
 					}
 				]
 			}

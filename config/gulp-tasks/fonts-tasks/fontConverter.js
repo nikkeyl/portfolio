@@ -1,35 +1,50 @@
-import { plugins } from '../../settings/plugins.js'
 import { paths } from '../../settings/paths.js'
+import { plugins } from '../../settings/plugins.js'
 
-import ttf2woff2 from 'gulp-ttf2woff2'
 import fonter from 'gulp-fonter-fix'
+import ttf2woff2 from 'gulp-ttf2woff2'
+
+// eslint
+// assets folder
+// sort alphabetical
+// entity naming
+// responsive-output mixin
 
 const {
-	src: { fonts: fontsSrc },
+	fontFacesFile,
 	build: { fonts: fontsDest },
-	fontFacesFile
+	src: { fonts: fontsSrc }
 } = paths
-const { gulp, notifier, fs } = plugins
+const {
+	notifier,
+	gulp: { dest, src },
+	fs: { existsSync }
+} = plugins
 
 const fontConverter = ({ taskName, fileExt }) => {
-	const message = notifier.errorHandler(`FONTS [${taskName}]`)
-	const woff2 = `${fontsSrc}*.woff2`
-	const usePlugin = fileExt === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2()
+	const message = notifier.errorHandler(taskName)
 
-	if (fs.existsSync(fontFacesFile)) {
-		return gulp
-			.src(woff2)
+	// https://github.com/nikkeyl/site-builder/issues/101
+	const woff2 = `${fontsSrc}*.woff2`
+	// --------------------------------
+
+	const selectPlugin = fileExt === 'otf'
+		? fonter({ formats: ['ttf'] })
+		: ttf2woff2()
+
+	// Если будет fontFacesFile и woff2 тогда новые файлы .otf или .ttf не будут сконвертированы
+	if (existsSync(fontFacesFile) && existsSync(woff2)) {
+		return src(woff2)
 			.pipe(message)
-			.pipe(gulp.dest(fontsDest))
+			.pipe(dest(fontsDest))
 	}
 
-	return gulp
-		.src(`${fontsSrc}*.${fileExt}`)
+	return src(`${fontsSrc}*.${fileExt}`)
 		.pipe(message)
-		.pipe(usePlugin)
-		.pipe(gulp.dest(fontsSrc))
-		.pipe(gulp.src(woff2))
-		.pipe(gulp.dest(fontsDest))
+		.pipe(selectPlugin)
+		.pipe(dest(fontsSrc))
+		.pipe(src(woff2))
+		.pipe(dest(fontsDest))
 }
 
 export { fontConverter }

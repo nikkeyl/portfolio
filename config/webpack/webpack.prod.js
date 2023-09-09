@@ -13,14 +13,14 @@ import { pugPages } from './plugins/pugPages.js'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const {
+	assetsFolder,
+	srcFolder,
 	src: {
 		favicon: faviconSrc,
 		htaccess: htaccessSrc,
 		robots: robotsSrc,
 		static: staticSrc
-	},
-	assetsFolder,
-	srcFolder
+	}
 } = paths
 const { CopyPlugin, TerserPlugin, HtmlWebpackPlugin } = plugins
 const { esLint, styleLint } = linters
@@ -53,7 +53,9 @@ const config = {
 					MiniCssExtractPlugin.loader,
 					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderConfig('../')
+						options: replaceLoaderConfig({
+							startPath: '../'
+						})
 					},
 					{
 						loader: 'css-loader',
@@ -81,15 +83,17 @@ const config = {
 					},
 					{
 						loader: 'string-replace-loader',
-						options: replaceLoaderConfig(`${assetsFolder}/`)
+						options: replaceLoaderConfig({
+							startPath: `${assetsFolder}/`
+						})
 					}
 				]
 			}
 		]
 	},
 	plugins: [
-		styleLint,
-		esLint,
+		// styleLint,
+		// esLint,
 
 		...pugPages.map(
 			(pugPage) =>
@@ -105,6 +109,7 @@ const config = {
 			filename: '../css/style.css'
 		}),
 		new CopyPlugin({
+			// Paths ???
 			patterns: [
 				{
 					from: staticSrc,

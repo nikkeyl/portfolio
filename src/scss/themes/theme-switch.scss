@@ -2,9 +2,15 @@
 
 // colorScheme.js
 // preloader
+// add link to reviews section
+// tips
 
+// при загрузке появляется секция about-me а потом прокручивается до hero
 // repo card theme
+// popup.js to-do так что-бы при открытии попапа все элменеты были не доступны для TAB
 // icons in skills section
+
+// focus-visible not working
 
 // spoilers
 // optimize
@@ -16,9 +22,9 @@
 .theme-switch {
 	position: relative;
 	flex: 0 0 to-rem(24);
-	border-radius: to-rem(30);
 	height: to-rem(40);
 	width: to-rem(24);
+	border-radius: to-rem(30);
 	background-color: var(--disabled, #888);
 
 	&::before {
@@ -26,9 +32,9 @@
 
 		top: to-rem(2);
 		left: to-rem(2);
-		border-radius: 50%;
 		height: to-rem(20);
 		width: to-rem(20);
+		border-radius: 50%;
 		background-color: var(--magnolia, #888);
 		transition:
 			background-color 0.3s,
