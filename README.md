@@ -29,8 +29,8 @@
 
 ## My developments
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=site-builder&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top">&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=nikkeyl&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top">&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=site-builder&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top" width="49%">&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=nikkeyl&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top" width="49%">&nbsp;
 
 ## Contacts
 
