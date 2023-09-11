@@ -29,8 +29,12 @@
 
 ## My developments
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=site-builder&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top" width="49%">&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=nikkeyl&repo=nikkeyl&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8" align="top" width="49%">&nbsp;
+- 🏭 [![](https://img.shields.io/badge/site-builder-0d8)](https://github.com/nikkeyl/site-builder)
+  > Builder for front-end based on gulp and webpack
+
+- 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
+  > This is not just a portfolio site, it is a collection of
+  > best practices from the world of Front-End development.
 
 ## Contacts
 
@@ -38,6 +42,6 @@
 
 ## Stats
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nikkeyl&theme=2077)
-![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nikkeyl&theme=2077)
-![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=nikkeyl&theme=2077)
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nikkeyl&theme=github_dark)
+![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nikkeyl&theme=github_dark)
+![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=nikkeyl&theme=github_dark)
