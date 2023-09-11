@@ -30,7 +30,7 @@
 ## My developments
 
 - 🏭 [![](https://img.shields.io/badge/site-builder-0d8)](https://github.com/nikkeyl/site-builder)
-  > Builder for front-end based on gulp and webpack
+  > Builder for front-end based on gulp and webpack.
 
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
   > This is not just a portfolio site, it is a collection of
