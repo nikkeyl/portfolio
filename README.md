@@ -28,7 +28,7 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40" title="vscode">&nbsp;
 [![](https://img.shields.io/badge/more-0d8)](https://nikkeyl.github.io/nikkeyl)&nbsp;
 
-## My developments
+## Developments
 
 - 🏭 [![](https://img.shields.io/badge/site-builder-0d8)](https://github.com/nikkeyl/site-builder)
   > Builder for front-end based on gulp and webpack.
