@@ -31,11 +31,11 @@
 ## Developments
 
 - 🏭 [![](https://img.shields.io/badge/site-builder-0d8)](https://github.com/nikkeyl/site-builder)
-  > Builder for front-end based on gulp and webpack.
+  > Builder for Front-End based on Gulp and Webpack.
 
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
   > This is not just a portfolio site, it's a collection of
-  > best practices from the world of Front-End development.
+  > best practices from the world of Front-End Development.
 
 ## Contacts
 
