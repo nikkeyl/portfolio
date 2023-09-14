@@ -34,7 +34,7 @@
   > Builder for front-end based on gulp and webpack.
 
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
-  > This is not just a portfolio site, it is a collection of
+  > This is not just a portfolio site, it's a collection of
   > best practices from the world of Front-End development.
 
 ## Contacts
