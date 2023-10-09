@@ -1,11 +1,10 @@
 extends layout/layout
 
 block variables
-	- lang = 'en'
 	- title = 'Nikita Almanov - Front-End Development'
 	- preloader = true
 	- popups = true
-	- alias = 'nikkeyl'
+	- userName = 'nikkeyl'
 
 block content
 	section.hero.fullscreen.flex-align-center
@@ -17,14 +16,14 @@ block content
 				a.button.button--full.hero__button(
 					href='#portfolio'
 				) Portfolio
-				a.button.button--full.hero__button(href=`https://t.me/${alias}`)
-					| Order a website
+				a.button.button--full.hero__button(href=`https://t.me/${userName}`)
+					| Order a Website
 	section.about-me
 		.about-me__inner
 			.container.about-me__container
 				.about-me__body.padding-y
 					h2.title.margin-bottom.about-me__title
-						| Who am I?
+						| Who Am I?
 					.text
 						p I have been studying front-end development for only a year, #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
 						p You can see for yourself by going to #[a.link(href='#portfolio') portfolio] and #[a.link(href='#developments') my developments].
@@ -36,7 +35,7 @@ block content
 
 		.about-me__image
 			img(
-				src=`@img/about/${alias}.jpg`
+				src=`@img/about/${userName}.jpg`
 				alt='Nikita Almanov'
 			)
 	.skills.padding-y#skills(role='marquee')
@@ -69,21 +68,6 @@ block content
 								href=card.linkSite
 								data-tippy-content=card.name
 							) View
-
-	section.developments.padding-y#developments
-		.container
-			h2.title.margin-bottom
-				| My developments
-			.grid.gap
-				each repo in repos.repos
-					a.developments__card.border-radius(
-						href=`https://github.com/${alias}/${repo.name}`
-						aria-label=repo.a11y
-					) #[span.sr-only=repo.a11y]
-						img(
-							src=`https://github-readme-stats.vercel.app/api/pin/?username=${alias}&repo=${repo.name}&hide_border=true&bg_color=f8f4ff&title_color=222&text_color=000&icon_color=0d8`
-							alt=repo.name
-						)
 
 	section.reviews.padding-y
 		.container
@@ -135,7 +119,7 @@ block content
 					summary.spoiler__trigger.gap.flex-align-center(
 						data-spoiler
 						data-spoiler-close
-					) #[strong Questions left?]
+					) #[strong Questions Left?]
 						span
 					.text.spoiler__content
 						.spoiler__call-me
@@ -143,7 +127,7 @@ block content
 								href='#'
 								data-popup='#info'
 								data-tippy-content='Working hours'
-							) Contact me
+							) Contact Me
 								svg
 									use(href='@img/icons/sprite.svg#info')
 						ul.socials.spoiler__socials.flex-align-center

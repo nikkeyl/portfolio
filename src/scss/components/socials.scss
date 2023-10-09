@@ -14,8 +14,8 @@
 		}
 
 		svg {
-			height: to-rem(40);
-			width: to-rem(40);
+			block-size: to-rem(40);
+			inline-size: to-rem(40);
 			fill: var(--secondary, #222);
 		}
 

@@ -22,27 +22,27 @@
 .theme-switch {
 	position: relative;
 	flex: 0 0 to-rem(24);
-	height: to-rem(40);
-	width: to-rem(24);
 	border-radius: to-rem(30);
+	block-size: to-rem(40);
+	inline-size: to-rem(24);
 	background-color: var(--disabled, #888);
 
 	&::before {
 		@include pseudo;
 
-		top: to-rem(2);
-		left: to-rem(2);
-		height: to-rem(20);
-		width: to-rem(20);
+		inset-block-start: to-rem(2);
+		inset-inline-start: to-rem(2);
 		border-radius: 50%;
+		block-size: to-rem(20);
+		inline-size: to-rem(20);
 		background-color: var(--magnolia, #888);
 		transition:
 			background-color 0.3s,
 			box-shadow 0.3s 0.2s,
-			top 0.3s;
+			inset-block-start 0.3s;
 
 		.dark & {
-			top: to-rem(18);
+			inset-block-start: to-rem(18);
 			box-shadow: 0 0 to-rem(20) rgb(var(--inverse-rgb, 255 238 0) / 0.5);
 			background-color: var(--inverse, #fe0);
 		}

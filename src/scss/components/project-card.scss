@@ -4,11 +4,11 @@
 .project-card {
 	display: grid;
 	overflow: hidden;
-	width: 100%;
-	max-width: to-rem(400);
+	inline-size: 100%;
+	max-inline-size: to-rem(400);
 
 	&__image {
-		padding-bottom: 90%;
+		padding-block-end: 90%;
 		background-color: var(--accent, #0d8);
 
 		img {
@@ -39,7 +39,7 @@
 
 		a {
 			display: block;
-			width: 100%;
+			inline-size: 100%;
 			transition: color 0.3s;
 
 			&:focus-visible {

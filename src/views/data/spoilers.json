@@ -1,31 +1,31 @@
 {
   "spoilers": [
     {
-      "title": "What are the guarantees?",
+      "title": "What Are the Guarantees?",
       "content": "<p>After the delivery of the project, I undertake to correct the mistakes made during the development within 1 week.</p>"
     },
     {
-      "title": "What about the deadlines?",
+      "title": "What About the Deadlines?",
       "content": "<p>I do the work within the agreed time frame.</p>"
     },
     {
-      "title": "How and when is the payment made?",
+      "title": "How and When Is the Payment Made?",
       "content": "<p>I work on a prepayment of 30% of the order amount.</p>"
     },
     {
-      "title": "When does work start?",
+      "title": "When Does Work Start?",
       "content": "<p>After clarifying all the details of the project and receiving an advance payment.</p>"
     },
     {
-      "title": "What is the quality of my work?",
+      "title": "What Is the Quality of My Work?",
       "content": "<p>The best!</p><p>I try to test each work thoroughly.</p><p>Your site will be valid, responsive, accessible, cross-browser, semantic.</p>"
     },
     {
-      "title": "Forgot to specify something in the TR?",
+      "title": "Forgot To Specify Something in the TR?",
       "content": "<p>What was not specified in the TR, as well as edits (except for mistakes made by me), I do for a fee.</p>"
     },
     {
-      "title": "Do you have a PC-only layout?",
+      "title": "Do You Have a PC-Only Layout?",
       "content": "<p>In this case, I will develop a responsive design for mobile devices based on the layout for PC for free.</p>"
     },
     {
@@ -37,7 +37,7 @@
       "content": "<p>For the second order, a 15% discount.</p>"
     },
     {
-      "title": "Old browsers?",
+      "title": "Old Browsers?",
       "content": "<p>I don't support older browsers, as well as Internet Explorer.</p>"
     }
   ]

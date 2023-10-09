@@ -8,7 +8,7 @@
     },
     {
       "img": "assets/img/projects/aqua-profi.jpg",
-      "name": "Aqua profi",
+      "name": "Aqua Profi",
       "linkSite": "https://aquaprofi.by",
       "linkCode": "#"
     },
@@ -26,7 +26,7 @@
     },
     {
       "img": "assets/img/projects/car-dealership.jpg",
-      "name": "Car dealership",
+      "name": "Car Dealership",
       "linkSite": "https://nikkeyl.github.io/Car-dealership",
       "linkCode": "https://github.com/nikkeyl/Car-dealership"
     },

@@ -7,7 +7,7 @@
 
 .margin-bottom {
 	&:not(:last-child) {
-		margin-bottom: to-rem(30);
+		margin-block-end: to-rem(30);
 	}
 }
 
@@ -76,13 +76,13 @@
 		}
 
 		@include media-min($tablet) {
-			padding-left: to-rem(50);
+			padding-inline-start: to-rem(50);
 		}
 	}
 
 	&__title {
 		@include media-min($tablet) {
-			text-align: left;
+			text-align: start;
 		}
 	}
 
@@ -95,14 +95,14 @@
 			&::before {
 				@include pseudo;
 
-				top: to-rem(-150);
-				right: to-rem(-130);
+				inset-block-start: to-rem(-150);
+				inset-inline-end: to-rem(-130);
 				z-index: 4;
-				height: to-rem(1000);
-				width: to-rem(200);
+				block-size: to-rem(1000);
+				inline-size: to-rem(200);
 				background-color: var(--accent, #0d8);
 				rotate: 11.5deg;
-				transition: width 0.8s;
+				transition: inline-size 0.8s;
 			}
 		}
 	}
@@ -118,8 +118,8 @@
 
 	&__icon {
 		flex: 0 0 to-rem(70);
-		height: to-rem(70);
-		width: to-rem(70);
+		block-size: to-rem(70);
+		inline-size: to-rem(70);
 	}
 }
 

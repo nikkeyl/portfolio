@@ -7,8 +7,8 @@
 .swiper-wrapper {
 	position: relative;
 	display: flex;
-	height: 100%;
-	width: 100%;
+	block-size: 100%;
+	inline-size: 100%;
 	box-sizing: content-box;
 }
 
@@ -38,19 +38,19 @@
 }
 
 .swiper-pagination-bullet {
-	height: to-rem(15);
-	width: to-rem(15);
 	border-radius: to-rem(30);
+	block-size: to-rem(15);
+	inline-size: to-rem(15);
 	background-color: var(--disabled, #888);
 	transition:
 		background-color 0.3s,
 		box-shadow 0.3s,
-		width 0.3s;
+		inline-size 0.3s;
 	cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
-	width: to-rem(30);
+	inline-size: to-rem(30);
 	box-shadow: 0 to-rem(2) to-rem(4) rgb(var(--accent-rgb, 4 219 137) / 0.25);
 	background-color: var(--accent, #0d8);
 }

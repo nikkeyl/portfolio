@@ -9,25 +9,25 @@
 	&__trigger {
 		position: relative;
 		padding: to-rem(10);
+		text-align: start;
 		line-height: div(20, 16);
-		text-align: left;
 		cursor: pointer;
 
 		.spoiler-init & {
 			span {
 				display: block;
 				flex: 0 0 to-rem(30);
-				height: to-rem(30);
+				block-size: to-rem(30);
 
 				&::before,
 				&::after {
 					@include pseudo;
 
-					top: 50%;
-					right: to-rem(10);
-					height: to-rem(2);
-					width: to-rem(20);
+					inset-block-start: 50%;
+					inset-inline-end: to-rem(10);
 					border-radius: to-rem(2);
+					block-size: to-rem(2);
+					inline-size: to-rem(20);
 					background-color: var(--secondary, #222);
 					transition: rotate 0.3s;
 				}
@@ -55,11 +55,11 @@
 		gap: to-rem(10);
 		justify-content: center;
 		margin-inline: auto;
-		width: fit-content;
+		inline-size: fit-content;
 
 		svg {
-			height: to-rem(20);
-			width: to-rem(20);
+			block-size: to-rem(20);
+			inline-size: to-rem(20);
 			fill: none;
 			stroke: #fff;
 		}
@@ -89,7 +89,7 @@
 
 	&__call-me {
 		&:not(:last-child) {
-			margin-bottom: to-rem(20);
+			margin-block-end: to-rem(20);
 		}
 	}
 }

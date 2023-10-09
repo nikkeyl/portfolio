@@ -3,9 +3,9 @@
 
 .review {
 	overflow: hidden;
-	max-width: to-rem(400);
+	max-inline-size: to-rem(400);
 	filter: grayscale(1);
-	transition: filter 0.3s;
+	transition: filter 0.8s;
 
 	&__info {
 		gap: to-rem(15);
@@ -15,8 +15,8 @@
 
 	&__image {
 		flex: 0 0 to-rem(70);
-		height: to-rem(70);
 		border-radius: 50%;
+		block-size: to-rem(70);
 		background-color: var(--accent, #0d8);
 	}
 

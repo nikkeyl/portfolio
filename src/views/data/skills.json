@@ -25,6 +25,10 @@
       "name": "TypeScript"
     },
     {
+      "icon": "assets/img/svg/mocha.svg",
+      "name": "Mocha"
+    },
+    {
       "icon": "assets/img/svg/json.svg",
       "name": "JSON"
     },

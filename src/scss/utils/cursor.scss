@@ -8,24 +8,24 @@
 	position: fixed;
 	inset: 0;
 	z-index: 200;
-	height: 100%;
-	width: 100%;
+	block-size: 100%;
+	inline-size: 100%;
 	pointer-events: none;
 
 	&__pointer {
 		position: fixed;
 		inset: 0;
-		height: to-rem(10);
-		width: to-rem(10);
+		block-size: to-rem(10);
+		inline-size: to-rem(10);
 
 		&::after {
 			@include pseudo;
 
 			inset: 0;
-			height: 100%;
-			width: 100%;
 			border: to-rem(3) solid #80f;
 			border-radius: 50%;
+			block-size: 100%;
+			inline-size: 100%;
 			transition:
 				background-color 0.3s,
 				border-color 0.3s,

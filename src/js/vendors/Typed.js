@@ -1,8 +1,12 @@
 import Typed from 'typed.js'
 
-new Typed(document.querySelector('[data-typed]'), {
-	strings: ['development'],
-	typeSpeed: 50,
-	loop: false,
-	fadeOut: true
-})
+const elem = document.querySelector('[data-typed]')
+
+if (elem) {
+	new Typed(elem, {
+		strings: ['Development'],
+		typeSpeed: 50,
+		loop: false,
+		fadeOut: true
+	})
+}

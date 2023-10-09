@@ -21,8 +21,8 @@ a {
 .title {
 	@include adaptive-value("font-size", 64, 40);
 
-	line-height: div(87, 64);
 	text-align: center;
+	line-height: div(87, 64);
 
 	span {
 		&:not([data-typed]) {
@@ -50,7 +50,7 @@ a {
 
 	p {
 		&:not(:last-child) {
-			margin-bottom: to-em(3);
+			margin-block-end: to-em(3);
 		}
 	}
 }
@@ -72,24 +72,24 @@ a {
 		&::after {
 			@include pseudo;
 
-			bottom: 0;
-			left: 0;
-			height: to-rem(2);
-			width: 0;
+			inset-block-end: 0;
+			inset-inline-start: 0;
 			border-radius: to-rem(2);
+			block-size: to-rem(2);
+			inline-size: 0;
 			background-color: var(--inverse, #fe0);
-			transition: width 0.3s;
+			transition: inline-size 0.3s;
 		}
 
 		&:focus-visible {
 			&::after {
-				width: 100%;
+				inline-size: 100%;
 			}
 		}
 
 		@include media-hover {
 			&::after {
-				width: 100%;
+				inline-size: 100%;
 			}
 		}
 	}

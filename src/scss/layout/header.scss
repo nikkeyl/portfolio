@@ -3,11 +3,11 @@
 
 .header {
 	position: sticky;
-	top: 0;
+	inset-block-start: 0;
 	z-index: 90;
 
 	&__container {
-		min-height: var(--header-height, #{to-rem(64)});
+		min-block-size: var(--header-height, #{to-rem(64)});
 		padding-block: to-rem(12);
 		background-color: var(--magnolia, #f8f4ff);
 		backdrop-filter: blur(to-rem(50));

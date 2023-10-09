@@ -1,18 +1,18 @@
-- const production = self.htmlWebpackPlugin.options.production
+- const PRODUCTION = self.htmlWebpackPlugin.options.production
+
+- const projectConfig = require('/project.config.js')
+- let { lang } = projectConfig
 
 - const skills = require('/src/views/data/skills.json')
 - const spoilers = require('/src/views/data/spoilers.json')
 - const projects = require('/src/views/data/projects.json')
 - const reviews = require('/src/views/data/reviews.json')
-- const repos = require('/src/views/data/repos.json')
 - const socials = require('/src/views/data/socials.json')
 
 block variables
-	- let lang
 	- let title
 	- let preloader
 	- let popups
-	- let alias
 
 doctype html
 html(lang=lang)
@@ -28,7 +28,7 @@ html(lang=lang)
 			content='telephone=no'
 		)
 
-		if production
+		if PRODUCTION
 			link(
 				rel='stylesheet'
 				href='assets/css/style.min.css'

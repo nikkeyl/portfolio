@@ -17,11 +17,11 @@
 
 html,
 body {
-	min-height: 100vh;
-	min-width: $min-width + px;
+	min-block-size: 100vb;
+	min-inline-size: $min-width + px;
 	background-color: var(--background-primary, #fff);
 	overscroll-behavior: none;
-	scroll-padding-top: calc(var(--header-height, #{to-rem(94)}) + to-rem(15));
+	scroll-padding-block-start: calc(var(--header-height, #{to-rem(94)}) + to-rem(15));
 	scrollbar-gutter: stable;
 
 	@include media-motion(no-preference) {
@@ -52,7 +52,7 @@ picture,
 img,
 svg {
 	display: block;
-	width: 100%;
+	inline-size: 100%;
 }
 
 button {

@@ -13,14 +13,14 @@
 		flex: 1 1 auto;
 		flex-direction: column;
 		justify-content: center;
-		width: 100%;
-		min-height: 100%;
+		min-block-size: 100%;
+		inline-size: 100%;
 	}
 
 	&__content {
 		position: relative;
-		width: 100%;
-		max-width: to-rem(400);
+		inline-size: 100%;
+		max-inline-size: to-rem(400);
 		padding: to-rem(50) to-rem(20);
 		background-color: var(--magnolia, #f8f4ff);
 		visibility: hidden;
@@ -42,16 +42,16 @@
 		animation: drag 1s infinite;
 
 		svg {
-			height: to-rem(150);
-			width: to-rem(150);
 			border-radius: 50%;
+			block-size: to-rem(150);
+			inline-size: to-rem(150);
 			box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
 			fill: none;
 			stroke: var(--accent, #0d8);
 		}
 
 		&:not(:last-child) {
-			margin-bottom: to-rem(25);
+			margin-block-end: to-rem(25);
 		}
 
 		@keyframes drag {
@@ -72,10 +72,10 @@
 	&__text {
 		$font-size: 18;
 
-		max-width: to-rem(210);
+		max-inline-size: to-rem(210);
 		font-size: to-rem($font-size);
-		line-height: div(25, $font-size);
 		text-align: center;
+		line-height: div(25, $font-size);
 
 		span {
 			color: var(--accent, #0d8);
@@ -84,32 +84,32 @@
 
 	&__close {
 		position: absolute;
-		top: to-rem(20);
-		right: to-rem(15);
+		inset-block-start: to-rem(20);
+		inset-inline-end: to-rem(15);
 		z-index: 5;
 		display: block;
-		height: to-rem(18);
-		width: to-rem(30);
+		block-size: to-rem(18);
+		inline-size: to-rem(30);
 		cursor: pointer;
 
 		&::before,
 		&::after {
 			@include pseudo;
 
-			right: 0;
-			height: to-rem(2);
-			width: 100%;
+			inset-inline-end: 0;
 			border-radius: to-rem(2);
+			block-size: to-rem(2);
+			inline-size: 100%;
 			background-color: var(--secondary, #222);
 		}
 
 		&::before {
-			top: calc(50% - to-rem(1));
+			inset-block-start: calc(50% - to-rem(1));
 			rotate: -45deg;
 		}
 
 		&::after {
-			bottom: calc(50% - to-rem(1));
+			inset-block-end: calc(50% - to-rem(1));
 			rotate: 45deg;
 		}
 	}
