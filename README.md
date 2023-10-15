@@ -29,7 +29,7 @@
 
 ## Projects
 
-- 🏭 [![](https://img.shields.io/badge/site-builder-0d8)](https://github.com/nikkeyl/site-builder)
+- 🏭 [![](https://img.shields.io/badge/conqueror-0d8)](https://github.com/nikkeyl/conqueror)
   > Builder for Front-End based on Gulp and Webpack.
 
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
