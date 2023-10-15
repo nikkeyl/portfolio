@@ -7,9 +7,9 @@
 	z-index: 90;
 
 	&__container {
-		min-block-size: var(--header-height, #{to-rem(64)});
+		min-block-size: var(--header-block-size, #{to-rem(64)});
 		padding-block: to-rem(12);
-		background-color: var(--magnolia, #f8f4ff);
+		background-color: var(--color-pale, #f8f4ff);
 		backdrop-filter: blur(to-rem(50));
 
 		@include media-min(350) {
@@ -38,10 +38,13 @@
 	}
 
 	&__button {
-		padding: to-rem(10) to-rem(14);
+		padding-block: to-rem(10);
+		padding-inline: to-rem(14);
 	}
 
 	@include media-min(350) {
-		padding: to-rem(15) to-rem(15) 0;
+		padding-block-start: to-rem(15);
+		padding-block-end: 0;
+		padding-inline: to-rem(15);
 	}
 }

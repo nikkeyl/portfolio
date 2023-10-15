@@ -10,23 +10,25 @@
 	&__info {
 		gap: to-rem(15);
 		padding: to-rem(15);
-		background-color: var(--magnolia, #f8f4ff);
+		background-color: var(--color-pale, #f8f4ff);
 	}
 
 	&__image {
-		flex: 0 0 to-rem(70);
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: to-rem(70);
 		border-radius: 50%;
 		block-size: to-rem(70);
-		background-color: var(--accent, #0d8);
+		background-color: var(--color-accent, #0d8);
 	}
 
 	&__text {
 		padding: to-rem(15);
-		color: var(--primary, #fff);
-		background: var(--accent, #0d8);
+		color: var(--color-primary, #fff);
+		background: var(--color-accent, #0d8);
 
 		.dark & {
-			color: var(--text-primary, #fff);
+			color: var(--color-text-primary, #fff);
 		}
 	}
 

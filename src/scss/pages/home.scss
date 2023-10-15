@@ -34,7 +34,7 @@
 
 	&__title {
 		&:not(:last-child) {
-			@include adaptive-value("margin-bottom", 80, 30);
+			@include adaptive-value("margin-block-end", 80, 30);
 		}
 	}
 
@@ -58,7 +58,7 @@
 	@include responsive-output(800, $tablet, 1);
 
 	&__inner {
-		background-color: var(--accent, #0d8);
+		background-color: var(--color-accent, #0d8);
 	}
 
 	&__container {
@@ -69,10 +69,10 @@
 	}
 
 	&__body {
-		color: var(--primary, #fff);
+		color: var(--color-primary, #fff);
 
 		.dark & {
-			color: var(--text-primary, #fff);
+			color: var(--color-text-primary, #fff);
 		}
 
 		@include media-min($tablet) {
@@ -87,7 +87,7 @@
 	}
 
 	&__image {
-		background-color: var(--inverse, #fe0);
+		background-color: var(--color-inverse, #fe0);
 
 		@include media-min($tablet) {
 			overflow: hidden;
@@ -100,9 +100,10 @@
 				z-index: 4;
 				block-size: to-rem(1000);
 				inline-size: to-rem(200);
-				background-color: var(--accent, #0d8);
+				background-color: var(--color-accent, #0d8);
 				rotate: 11.5deg;
-				transition: inline-size 0.8s;
+
+				// transition: inline-size 0.8s;
 			}
 		}
 	}
@@ -117,7 +118,9 @@
 	}
 
 	&__icon {
-		flex: 0 0 to-rem(70);
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: to-rem(70);
 		block-size: to-rem(70);
 		inline-size: to-rem(70);
 	}

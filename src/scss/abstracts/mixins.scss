@@ -7,8 +7,8 @@
 	$start-size,
 	$min-size,
 	$keep-size: 0,
-	$width-from: $container-width,
-	$width-to: $min-width
+	$inline-size-from: $container-inline-size,
+	$inline-size-to: $min-inline-size
 ) {
 	@if $start-size == 0 {
 		$start-size: 0.000001;
@@ -18,12 +18,12 @@
 		$min-size: 0.000001;
 	}
 
-	@if $width-from == $container-width and $container-max-width == 0 {
-		$width-from: $max-width;
+	@if $inline-size-from == $container-inline-size and $container-max-inline-size == 0 {
+		$inline-size-from: $max-inline-size;
 	}
 
-	$slope: div(($start-size - $min-size), ($width-from - $width-to));
-	$y-intersection: -$width-to * $slope + $min-size;
+	$slope: div-rounding(($start-size - $min-size), ($inline-size-from - $inline-size-to));
+	$y-intersection: -$inline-size-to * $slope + $min-size;
 
 	@if $y-intersection == 0 {
 		$y-intersection: 0.000001;
@@ -44,37 +44,39 @@
 	}
 
 	@if $keep-size != 1 and $keep-size != 3 {
-		@include media-min($width-from) {
+		@include media-min($inline-size-from) {
 			#{$property}: to-rem($start-size);
 		}
 	}
 
-	@include media-min-max($width-to, $width-from) {
+	@include media-min-max($inline-size-to, $inline-size-from) {
 		#{$property}: $property-value;
 	}
 
 	@if $keep-size != 1 and $keep-size != 2 {
-		@include media-max($width-to) {
+		@include media-max($inline-size-to) {
 			#{$property}: to-rem($min-size);
 		}
 	}
 }
 
-@mixin responsive-output($body-width, $breakpoint: $tablet, $reverse: 0) {
-	$percent: round(div($body-width, $container-max-width) * 100);
-	$width: $body-width - ($body-width - $percent);
+@mixin responsive-output($body-inline-size, $breakpoint: $tablet, $reverse: 0) {
+	$percent: round(div($body-inline-size, $container-max-inline-size) * 100);
+	$inline-size: $body-inline-size - ($body-inline-size - $percent);
 
-	@if $width <= 10 {
-		$width: 0 + $width;
+	@if $inline-size <= 10 {
+		$inline-size: 0 + $inline-size;
 	}
 
 	&__inner {
 		display: flex;
-		flex: 0 0 100%;
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: 100%;
 	}
 
 	&__container {
-		flex: 0 1 100%;
+		flex-basis: 100%;
 
 		@if $reverse == 1 {
 			display: flex;
@@ -84,38 +86,43 @@
 
 	&__body {
 		@include media-min($breakpoint) {
-			width: $percent + 0%;
+			inline-size: $percent + 0%;
 		}
 	}
 
 	&__image {
 		@include media-min($breakpoint) {
 			position: relative;
-			flex: 0 0
-				calc(
-					(
-							(100% - to-rem($container-padding-inline)) *
-								div(div((100 - $percent), 1), 100)
-						) + (to-rem($container-padding-inline) / 2)
-				);
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: calc(
+				(
+						(100% - to-rem($container-padding-inline)) *
+							div(div((100 - $percent), 1), 100)
+					) + (to-rem($container-padding-inline) / 2)
+			);
 			aspect-ratio: 4 / 3;
 
 			img {
 				position: absolute;
 				inset: 0;
-				height: 100%;
+				block-size: 100%;
 				object-fit: cover;
 			}
 
 			@if $reverse == 1 {
-				translate: 100% 0;
+				transform: translateX(100%);
 			} @else {
-				translate: -100% 0;
+				transform: translateX(-100%);
 			}
 		}
 
-		@include media-min($container-width) {
-			flex: 0 0 calc(50% - (div($width, 100) - 0.5) * to-rem($container-max-width));
+		@include media-min($container-inline-size) {
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: calc(
+				50% - (div($inline-size, 100) - 0.5) * to-rem($container-max-inline-size)
+			);
 		}
 	}
 
@@ -194,8 +201,8 @@
 	}
 }
 
-@mixin media-min-max($min-width: 320, $max-width: $tablet) {
-	@media only screen and (min-width: to-em($min-width)) and (max-width: to-em($max-width - 0.02)) {
+@mixin media-min-max($min-inline-size: 320, $max-inline-size: $tablet) {
+	@media only screen and (min-width: to-em($min-inline-size)) and (max-width: to-em($max-inline-size - 0.02)) {
 		@content;
 	}
 }

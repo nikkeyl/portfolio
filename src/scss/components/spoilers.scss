@@ -4,19 +4,21 @@
 .spoiler {
 	align-self: flex-start;
 	overflow: hidden;
-	background-color: var(--magnolia, #f8f4ff);
+	background-color: var(--color-pale, #f8f4ff);
 
 	&__trigger {
 		position: relative;
 		padding: to-rem(10);
 		text-align: start;
-		line-height: div(20, 16);
+		line-height: div-rounding(20, 16);
 		cursor: pointer;
 
 		.spoiler-init & {
 			span {
 				display: block;
-				flex: 0 0 to-rem(30);
+				flex-grow: 0;
+				flex-shrink: 0;
+				flex-basis: to-rem(30);
 				block-size: to-rem(30);
 
 				&::before,
@@ -28,7 +30,7 @@
 					border-radius: to-rem(2);
 					block-size: to-rem(2);
 					inline-size: to-rem(20);
-					background-color: var(--secondary, #222);
+					background-color: var(--color-secondary, #222);
 					transition: rotate 0.3s;
 				}
 
@@ -69,21 +71,21 @@
 		justify-content: center;
 
 		svg {
-			fill: var(--primary, #fff);
+			fill: var(--color-primary, #fff);
 
 			.dark & {
-				fill: var(--secondary, #fff);
+				fill: var(--color-secondary, #fff);
 			}
 		}
 	}
 
 	&__content {
 		padding: to-rem(15);
-		color: var(--primary, #fff);
-		background-color: var(--accent, #0d8);
+		color: var(--color-primary, #fff);
+		background-color: var(--color-accent, #0d8);
 
 		.dark & {
-			color: var(--secondary, #fff);
+			color: var(--color-secondary, #fff);
 		}
 	}
 

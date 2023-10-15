@@ -22,8 +22,10 @@
 			@include pseudo;
 
 			inset: 0;
-			border: to-rem(3) solid #80f;
 			border-radius: 50%;
+			border-width: to-rem(3);
+			border-style: solid;
+			border-color: #80f;
 			block-size: 100%;
 			inline-size: 100%;
 			transition:
@@ -42,7 +44,7 @@
 
 	&.hover {
 		.cursor__pointer::after {
-			border-color: var(--inverse, #fe0);
+			border-color: var(--color-inverse, #fe0);
 			background-color: #80f;
 		}
 	}

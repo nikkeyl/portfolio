@@ -9,7 +9,7 @@
 
 	&__image {
 		padding-block-end: 90%;
-		background-color: var(--accent, #0d8);
+		background-color: var(--color-accent, #0d8);
 
 		img {
 			object-position: top;
@@ -31,7 +31,7 @@
 		display: grid;
 		gap: to-rem(10);
 		padding: to-rem(10);
-		background-color: var(--magnolia, #f8f4ff);
+		background-color: var(--color-pale, #f8f4ff);
 	}
 
 	&__title {
@@ -43,11 +43,11 @@
 			transition: color 0.3s;
 
 			&:focus-visible {
-				color: var(--accent, #0d8);
+				color: var(--color-accent, #0d8);
 			}
 
 			@include media-hover {
-				color: var(--accent, #0d8);
+				color: var(--color-accent, #0d8);
 			}
 		}
 	}

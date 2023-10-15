@@ -16,7 +16,7 @@
 		svg {
 			block-size: to-rem(40);
 			inline-size: to-rem(40);
-			fill: var(--secondary, #222);
+			fill: var(--color-secondary, #222);
 		}
 
 		&:focus-within {

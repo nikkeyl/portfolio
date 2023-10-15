@@ -21,11 +21,13 @@
 
 .theme-switch {
 	position: relative;
-	flex: 0 0 to-rem(24);
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: to-rem(24);
 	border-radius: to-rem(30);
 	block-size: to-rem(40);
 	inline-size: to-rem(24);
-	background-color: var(--disabled, #888);
+	background-color: var(--color-disabled, #888);
 
 	&::before {
 		@include pseudo;
@@ -35,7 +37,7 @@
 		border-radius: 50%;
 		block-size: to-rem(20);
 		inline-size: to-rem(20);
-		background-color: var(--magnolia, #888);
+		background-color: var(--color-pale, #888);
 		transition:
 			background-color 0.3s,
 			box-shadow 0.3s 0.2s,
@@ -43,8 +45,8 @@
 
 		.dark & {
 			inset-block-start: to-rem(18);
-			box-shadow: 0 0 to-rem(20) rgb(var(--inverse-rgb, 255 238 0) / 0.5);
-			background-color: var(--inverse, #fe0);
+			box-shadow: 0 0 to-rem(20) rgb(var(--color-inverse-rgb, 255 238 0) / 0.5);
+			background-color: var(--color-inverse, #fe0);
 		}
 	}
 }

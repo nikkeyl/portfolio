@@ -4,13 +4,16 @@
 .popup {
 	position: fixed;
 	inset: 0;
-	padding: to-rem(30) to-rem($container-padding-inline);
-	visibility: hidden;
-	transition: visibility 0.8s;
+	padding-block-start: to-rem(30);
+	padding-inline: to-rem($container-padding-inline);
+	opacity: 0;
+	transition: opacity 0.5s;
 	pointer-events: none;
 
 	&__wrapper {
-		flex: 1 1 auto;
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: auto;
 		flex-direction: column;
 		justify-content: center;
 		min-block-size: 100%;
@@ -21,16 +24,17 @@
 		position: relative;
 		inline-size: 100%;
 		max-inline-size: to-rem(400);
-		padding: to-rem(50) to-rem(20);
-		background-color: var(--magnolia, #f8f4ff);
-		visibility: hidden;
+		padding-block: to-rem(50);
+		padding-inline: to-rem(20);
+		background-color: var(--color-pale, #f8f4ff);
+		opacity: 0;
 		scale: 0;
 		transition:
-			visibility 0.3s,
+			opacity 0.3s,
 			scale 0.3s;
 
 		.lock & {
-			visibility: visible;
+			opacity: 1;
 		}
 	}
 
@@ -45,9 +49,10 @@
 			border-radius: 50%;
 			block-size: to-rem(150);
 			inline-size: to-rem(150);
-			box-shadow: 0 to-rem(8) to-rem(15) rgb(var(--accent-rgb, 4 219 137) / 0.25);
+			box-shadow: 0 to-rem(8) to-rem(15)
+				rgb(var(--color-accent-rgb, 4 219 137) / 0.25);
 			fill: none;
-			stroke: var(--accent, #0d8);
+			stroke: var(--color-accent, #0d8);
 		}
 
 		&:not(:last-child) {
@@ -75,10 +80,10 @@
 		max-inline-size: to-rem(210);
 		font-size: to-rem($font-size);
 		text-align: center;
-		line-height: div(25, $font-size);
+		line-height: div-rounding(25, $font-size);
 
 		span {
-			color: var(--accent, #0d8);
+			color: var(--color-accent, #0d8);
 		}
 	}
 
@@ -100,7 +105,7 @@
 			border-radius: to-rem(2);
 			block-size: to-rem(2);
 			inline-size: 100%;
-			background-color: var(--secondary, #222);
+			background-color: var(--color-secondary, #222);
 		}
 
 		&::before {
@@ -117,11 +122,12 @@
 	&--show {
 		z-index: 150;
 		overflow: auto;
-		visibility: visible;
+		opacity: 1;
 		pointer-events: auto;
+		overscroll-behavior-inline: none;
 
 		.popup__content {
-			visibility: visible;
+			opacity: 1;
 			scale: 1;
 		}
 	}

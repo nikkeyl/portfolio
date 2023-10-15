@@ -6,9 +6,9 @@
 
 	&__container {
 		padding-block: to-rem(10);
-		font-weight: 500;
+		font-weight: var(--font-weight-500, 500);
 		text-align: center;
-		background-color: var(--magnolia, #f8f4ff);
+		background-color: var(--color-pale, #f8f4ff);
 
 		> .logo {
 			$font-size: 20;

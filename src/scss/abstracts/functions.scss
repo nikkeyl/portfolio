@@ -4,6 +4,12 @@
 	@return div(round($number * 10000), 10000);
 }
 
+@function div-rounding($divisible, $divisor) {
+	$result: div($divisible, $divisor);
+
+	@return rounding($result);
+}
+
 @function to-em($px, $default: 16) {
 	@return rounding(div($px, $default)) + em;
 }

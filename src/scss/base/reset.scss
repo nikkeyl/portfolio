@@ -18,10 +18,12 @@
 html,
 body {
 	min-block-size: 100vb;
-	min-inline-size: $min-width + px;
-	background-color: var(--background-primary, #fff);
+	min-inline-size: $min-inline-size + px;
+	background-color: var(--color-background-primary, #fff);
 	overscroll-behavior: none;
-	scroll-padding-block-start: calc(var(--header-height, #{to-rem(94)}) + to-rem(15));
+	scroll-padding-block-start: calc(
+		var(--header-block-size, #{to-rem(94)}) + to-rem(15)
+	);
 	scrollbar-gutter: stable;
 
 	@include media-motion(no-preference) {
@@ -30,17 +32,17 @@ body {
 }
 
 ::selection {
-	color: var(--secondary, #222);
-	background-color: rgb(var(--inverse-rgb, 255 238 0) / 0.8);
+	color: var(--color-secondary, #222);
+	background-color: rgb(var(--color-inverse-rgb, 255 238 0) / 0.8);
 
 	.dark & {
-		color: var(--primary, #222);
+		color: var(--color-primary, #222);
 	}
 }
 
 :focus-visible {
 	outline-offset: to-rem(2);
-	outline-color: var(--accent, #0d8);
+	outline-color: var(--color-accent, #0d8);
 }
 
 summary,

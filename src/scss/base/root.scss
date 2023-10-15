@@ -1,41 +1,47 @@
 @use "@scss/abstracts" as *;
 
 :root {
-	--primary: #fff;
-	--magnolia: #f8f4ff;
-	--secondary: #222;
-	--accent: #0d8;
-	--inverse: #fe0;
-	--disabled: #888;
+	--color-primary: #fff;
+	--color-pale: #f8f4ff;
+	--color-secondary: #222;
+	--color-accent: #0d8;
+	--color-inverse: #fe0;
+	--color-disabled: #888;
 
 	// #f8f4ff
-	--magnolia-rgb: 248 244 255;
+	--color-pale-rgb: 248 244 255;
 
 	// #0d8
-	--accent-rgb: 4 219 137;
+	--color-accent-rgb: 4 219 137;
 
 	// #fe0
-	--inverse-rgb: 255 238 0;
+	--color-inverse-rgb: 255 238 0;
 
 	// #888
-	--disabled-rgb: 136 136 136;
+	--color-disabled-rgb: 136 136 136;
 
 	// Main colors
-	--background-primary: var(--primary, #fff);
-	--text-primary: var(--secondary, #222);
+	--color-background-primary: var(--color-primary, #fff);
+	--color-text-primary: var(--color-secondary, #222);
 
-	// Fonts
-	--system-ui: system-ui;
-	--font-family: "Roboto";
-	--font-size: #{to-rem(16)};
-	--font-weight: 700;
+	// Font families
+	--font-system-ui: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+		oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	--font-family-base: "Roboto";
+
+	// Font sizes
+	--font-size-base: #{to-rem(16)};
+
+	// Font weights
+	--font-weight-400: 400;
+	--font-weight-500: 500;
+	--font-weight-700: 700;
+	--font-weight-base: var(--font-weight-700, 700);
 
 	// Header
-	--header-height: #{to-rem(64)};
+	--header-block-size: #{to-rem(64)};
 
-	// Paddings
+	// Container
+	--container-inline-size: #{to-rem($container-inline-size)};
 	--container-padding-inline: #{to-rem($container-padding-inline)};
-
-	// Widths
-	--container-width: #{to-rem($container-width)};
 }

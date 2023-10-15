@@ -1,7 +1,4 @@
-- const PRODUCTION = self.htmlWebpackPlugin.options.production
-
 - const projectConfig = require('/project.config.js')
-- let { lang } = projectConfig
 
 - const skills = require('/src/views/data/skills.json')
 - const spoilers = require('/src/views/data/spoilers.json')
@@ -9,13 +6,21 @@
 - const reviews = require('/src/views/data/reviews.json')
 - const socials = require('/src/views/data/socials.json')
 
+- const {
+-		default: {
+-			entry,
+- 		lang: localization
+- 	}
+-	} = projectConfig
+- const PRODUCTION = self.htmlWebpackPlugin.options.production
+
 block variables
 	- let title
 	- let preloader
 	- let popups
 
 doctype html
-html(lang=lang)
+html(lang=localization)
 	head
 		title=title
 		meta(charset='UTF-8')
@@ -52,4 +57,4 @@ html(lang=lang)
 		if popups
 			include ../components/popup
 
-		script(src='assets/js/app.min.js')
+		script(src=`assets/js/${entry}.min.js`)
