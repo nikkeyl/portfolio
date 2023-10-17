@@ -1,0 +1,5 @@
+@use "@scss/abstracts" as *;
+
+.border-radius {
+	border-radius: to-rem(10);
+}

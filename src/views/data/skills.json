@@ -1,127 +1,127 @@
 {
   "skills": [
     {
-      "icon": "assets/img/svg/html.svg",
+      "icon": "assets/img/svg/skills/html.svg",
       "name": "HTML"
     },
     {
-      "icon": "assets/img/svg/pug.svg",
+      "icon": "assets/img/svg/skills/pug.svg",
       "name": "Pug"
     },
     {
-      "icon": "assets/img/svg/css.svg",
+      "icon": "assets/img/svg/skills/css.svg",
       "name": "CSS"
     },
     {
-      "icon": "assets/img/svg/scss.svg",
+      "icon": "assets/img/svg/skills/scss.svg",
       "name": "SCSS"
     },
     {
-      "icon": "assets/img/svg/js.svg",
+      "icon": "assets/img/svg/skills/js.svg",
       "name": "JavaScript"
     },
     {
-      "icon": "assets/img/svg/ts.svg",
+      "icon": "assets/img/svg/skills/ts.svg",
       "name": "TypeScript"
     },
     {
-      "icon": "assets/img/svg/mocha.svg",
+      "icon": "assets/img/svg/skills/mocha.svg",
       "name": "Mocha"
     },
     {
-      "icon": "assets/img/svg/json.svg",
+      "icon": "assets/img/svg/skills/json.svg",
       "name": "JSON"
     },
     {
-      "icon": "assets/img/svg/yaml.svg",
+      "icon": "assets/img/svg/skills/yaml.svg",
       "name": "YAML"
     },
     {
-      "icon": "assets/img/svg/markdown.svg",
+      "icon": "assets/img/svg/skills/markdown.svg",
       "name": "Markdown"
     },
     {
-      "icon": "assets/img/svg/svg.svg",
+      "icon": "assets/img/svg/skills/svg.svg",
       "name": "SVG"
     },
     {
-      "icon": "assets/img/svg/bem.svg",
+      "icon": "assets/img/svg/skills/bem.svg",
       "name": "BEM"
     },
     {
-      "icon": "assets/img/svg/eslint.svg",
+      "icon": "assets/img/svg/skills/eslint.svg",
       "name": "ESlint"
     },
     {
-      "icon": "assets/img/svg/stylelint.svg",
+      "icon": "assets/img/svg/skills/stylelint.svg",
       "name": "Stylelint"
     },
     {
-      "icon": "assets/img/svg/prettier.svg",
+      "icon": "assets/img/svg/skills/prettier.svg",
       "name": "Prettier"
     },
     {
-      "icon": "assets/img/svg/editor-config.svg",
+      "icon": "assets/img/svg/skills/editor-config.svg",
       "name": "EditorConfig"
     },
     {
-      "icon": "assets/img/svg/remark.svg",
+      "icon": "assets/img/svg/skills/remark.svg",
       "name": "Remark"
     },
     {
-      "icon": "assets/img/svg/github-actions.svg",
+      "icon": "assets/img/svg/skills/github-actions.svg",
       "name": "GitHub Actions"
     },
     {
-      "icon": "assets/img/svg/w3c.svg",
+      "icon": "assets/img/svg/skills/w3c.svg",
       "name": "W3C"
     },
     {
-      "icon": "assets/img/svg/a11y.svg",
+      "icon": "assets/img/svg/skills/a11y.svg",
       "name": "Accessibility"
     },
     {
-      "icon": "assets/img/svg/semver.svg",
+      "icon": "assets/img/svg/skills/semver.svg",
       "name": "SemVer"
     },
     {
-      "icon": "assets/img/svg/browserslist.svg",
+      "icon": "assets/img/svg/skills/browserslist.svg",
       "name": "Browserslist"
     },
     {
-      "icon": "assets/img/svg/lighthouse.svg",
+      "icon": "assets/img/svg/skills/lighthouse.svg",
       "name": "LightHouse"
     },
     {
-      "icon": "assets/img/svg/npm.svg",
+      "icon": "assets/img/svg/skills/npm.svg",
       "name": "NPM"
     },
     {
-      "icon": "assets/img/svg/webpack.svg",
+      "icon": "assets/img/svg/skills/webpack.svg",
       "name": "Webpack"
     },
     {
-      "icon": "assets/img/svg/gulp.svg",
+      "icon": "assets/img/svg/skills/gulp.svg",
       "name": "Gulp"
     },
     {
-      "icon": "assets/img/svg/svgo.svg",
+      "icon": "assets/img/svg/skills/svgo.svg",
       "name": "SVGO"
     },
     {
-      "icon": "assets/img/svg/git.svg",
+      "icon": "assets/img/svg/skills/git.svg",
       "name": "Git"
     },
     {
-      "icon": "assets/img/svg/figma.svg",
+      "icon": "assets/img/svg/skills/figma.svg",
       "name": "Figma"
     },
     {
-      "icon": "assets/img/svg/vscode.svg",
+      "icon": "assets/img/svg/skills/vscode.svg",
       "name": "Visual Studio Code"
     },
     {
-      "icon": "assets/img/svg/github.svg",
+      "icon": "assets/img/svg/skills/github.svg",
       "name": "GitHub"
     }
   ]

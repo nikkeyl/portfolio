@@ -1,4 +1,3 @@
-@use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
 .project-card {
@@ -48,6 +47,20 @@
 
 			@include media-hover {
 				color: var(--color-accent, #0d8);
+			}
+		}
+	}
+
+	.halloween & {
+		@include media-hover {
+			.project-card__image {
+				&::before {
+					background-color: transparent;
+				}
+
+				img {
+					scale: 1.03;
+				}
 			}
 		}
 	}

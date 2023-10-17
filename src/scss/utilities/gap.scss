@@ -1,0 +1,5 @@
+@use "@scss/abstracts" as *;
+
+.gap {
+	gap: to-rem(20);
+}

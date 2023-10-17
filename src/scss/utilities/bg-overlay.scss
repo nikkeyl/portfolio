@@ -6,12 +6,10 @@ body {
 
 		inset: 0;
 		z-index: 149;
-		background-color: rgb(var(--color-disabled-rgb, 136 136 136) / 0.5);
+		background-color: rgb(var(--color-gray-rgb, 136 136 136) / 0.5);
 		opacity: 0;
 		backdrop-filter: blur(to-rem(5));
-		transition:
-			backdrop-filter 0.8s,
-			opacity 0.8s;
+		transition: opacity 0.5s;
 		pointer-events: none;
 	}
 

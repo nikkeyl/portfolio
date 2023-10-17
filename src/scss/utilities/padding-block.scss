@@ -1,0 +1,5 @@
+@use "@scss/abstracts" as *;
+
+.padding-block {
+	padding-block: to-rem(30);
+}

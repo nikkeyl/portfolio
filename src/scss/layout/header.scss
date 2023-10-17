@@ -1,13 +1,14 @@
-@use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
 .header {
-	position: sticky;
+	position: fixed;
 	inset-block-start: 0;
+	inset-inline: 0;
 	z-index: 90;
+	max-inline-size: 100%;
 
 	&__container {
-		min-block-size: var(--header-block-size, #{to-rem(64)});
+		min-block-size: var(--header-block-size, #{to-rem($header-block-size)});
 		padding-block: to-rem(12);
 		background-color: var(--color-pale, #f8f4ff);
 		backdrop-filter: blur(to-rem(50));
@@ -42,9 +43,12 @@
 		padding-inline: to-rem(14);
 	}
 
+	.lock & {
+		inset-inline-end: to-rem(15);
+	}
+
 	@include media-min(350) {
 		padding-block-start: to-rem(15);
-		padding-block-end: 0;
 		padding-inline: to-rem(15);
 	}
 }

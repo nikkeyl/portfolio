@@ -6,11 +6,8 @@
 // tips
 
 // при загрузке появляется секция about-me а потом прокручивается до hero
-// repo card theme
 // popup.js to-do так что-бы при открытии попапа все элменеты были не доступны для TAB
 // icons in skills section
-
-// focus-visible not working
 
 // spoilers
 // optimize
@@ -27,7 +24,7 @@
 	border-radius: to-rem(30);
 	block-size: to-rem(40);
 	inline-size: to-rem(24);
-	background-color: var(--color-disabled, #888);
+	background-color: var(--color-gray, #888);
 
 	&::before {
 		@include pseudo;
@@ -48,5 +45,9 @@
 			box-shadow: 0 0 to-rem(20) rgb(var(--color-inverse-rgb, 255 238 0) / 0.5);
 			background-color: var(--color-inverse, #fe0);
 		}
+	}
+
+	.halloween & {
+		display: none;
 	}
 }

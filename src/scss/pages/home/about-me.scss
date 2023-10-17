@@ -1,0 +1,57 @@
+@use "@scss/abstracts" as *;
+
+.about-me {
+	@include responsive-output(800, $tablet, 1);
+
+	&__inner {
+		background-color: var(--color-accent, #0d8);
+	}
+
+	&__container {
+		@include media-min($tablet) {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__body {
+		z-index: 1;
+		color: var(--color-primary, #fff);
+
+		.dark & {
+			color: var(--color-text-primary, #fff);
+		}
+
+		@include media-min($tablet) {
+			padding-inline-start: to-rem(50);
+		}
+	}
+
+	&__title {
+		@include media-min($tablet) {
+			text-align: start;
+		}
+	}
+
+	&__image {
+		background-color: var(--color-inverse, #fe0);
+
+		@include media-min($tablet) {
+			&::before {
+				@include pseudo;
+
+				inset-block-start: to-rem(-150);
+				inset-inline-end: to-rem(-130);
+				z-index: 4;
+				block-size: to-rem(1000);
+				inline-size: to-rem(200);
+				background-color: var(--color-accent, #0d8);
+				rotate: 11.5deg;
+			}
+		}
+	}
+
+	@include media-min($tablet) {
+		overflow: hidden;
+	}
+}

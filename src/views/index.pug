@@ -5,6 +5,8 @@ block variables
 	- preloader = true
 	- popups = true
 	- userName = 'nikkeyl'
+	- header = true
+	- footer = true
 
 block content
 	section.hero.fullscreen.flex-align-center
@@ -21,7 +23,7 @@ block content
 	section.about-me
 		.about-me__inner
 			.container.about-me__container
-				.about-me__body.padding-y
+				.about-me__body.padding-block
 					h2.title.margin-bottom.about-me__title
 						| Who Am I?
 					.text
@@ -33,29 +35,32 @@ block content
 						each skill in skills.skills
 							p.sr-only=skill.name
 
-		.about-me__image
+		.about-me__image.bg-spare
 			img(
 				src=`@img/about/${userName}.jpg`
 				alt='Nikita Almanov'
 			)
-	.skills.padding-y#skills(role='marquee')
-		.skills__icons.gap
-			each skill in skills.skills
-				.skills__icon
-					img(
-						src=skill.icon
-						alt=skill.name
-						data-tippy-content=skill.name
-					)
+	.skills.padding-block#skills
+		h2.title.margin-bottom
+			| Skills
+		.skills__row(role='marquee')
+			.skills__icons.gap
+				each skill in skills.skills
+					.skills__icon
+						img(
+							src=skill.icon
+							alt=skill.name
+							data-tippy-content=skill.name
+						)
 
-	section.portfolio.padding-y#portfolio
+	section.portfolio.padding-block#portfolio
 		.container
 			h2.title.margin-bottom
 				| Portfolio
 			.grid.portfolio__cards.gap
 				each card in projects.cards
 					article.project-card.border-radius
-						a.bg-image.project-card__image(href=card.linkSite)
+						a.project-card__image.bg-image.bg-spare.broken-glass(href=card.linkSite)
 							img(
 								src=card.img
 								alt=card.name
@@ -69,7 +74,7 @@ block content
 								data-tippy-content=card.name
 							) View
 
-	section.reviews.padding-y
+	section.reviews.padding-block
 		.container
 			h2.title.margin-bottom
 				| Reviews
@@ -80,10 +85,11 @@ block content
 							article(class=[
 								'review',
 								review.class,
-								'border-radius'
+								'border-radius',
+								'broken-glass'
 							])
 								.review__info.flex-align-center
-									.bg-image.review__image
+									.review__image.bg-image.bg-spare
 										img(
 											src=review.img
 											alt=review.name
@@ -94,7 +100,7 @@ block content
 									| !{review.text}
 
 				.swiper-pagination.reviews__pagination
-	section.padding-y#questions
+	section.padding-block#questions
 		.container
 			h2.title.margin-bottom
 				| FAQ
@@ -130,6 +136,7 @@ block content
 							) Contact Me
 								svg
 									use(href='@img/icons/sprite.svg#info')
+								//- img(src='@img/svg/halloween/hat.svg' alt='hat')
 						ul.socials.spoiler__socials.flex-align-center
 							each social in socials.socials
 								li.socials__item

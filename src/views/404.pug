@@ -5,7 +5,21 @@ block variables
 	- title = 'Page Not Found - 404'
 	- preloader = true
 	- popups = false
+	- header = false
+	- footer = false
 
 block content
-//- title
-//- button
+	section.error-404.fullscreen
+		.container.error-404__container
+			h1.error-404__title
+				| 4
+				div
+					img(src='@img/svg/halloween/eye.svg' alt='eye')
+					span 0
+				| 4
+			a.button.button--full(
+					href='https://nikkeyl.github.io/nikkeyl'
+				) Back Home
+
+	//- title
+	//- button

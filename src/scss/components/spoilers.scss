@@ -1,4 +1,3 @@
-@use "sass:math" as *;
 @use "@scss/abstracts" as *;
 
 .spoiler {
@@ -9,9 +8,18 @@
 	&__trigger {
 		position: relative;
 		padding: to-rem(10);
+		font-family: var(--font-family-open-sans), sans-serif;
 		text-align: start;
 		line-height: div-rounding(20, 16);
 		cursor: pointer;
+
+		strong {
+			flex: 1;
+		}
+
+		.halloween & {
+			font-family: var(--font-family-creepster, var(--font-system-ui, sans-serif));
+		}
 
 		.spoiler-init & {
 			span {
@@ -26,16 +34,29 @@
 					@include pseudo;
 
 					inset-block-start: 50%;
-					inset-inline-end: to-rem(10);
+					inset-inline-end: to-rem(15);
 					border-radius: to-rem(2);
 					block-size: to-rem(2);
 					inline-size: to-rem(20);
 					background-color: var(--color-secondary, #222);
 					transition: rotate 0.3s;
+
+					.halloween & {
+						display: none;
+					}
 				}
 
 				&::before {
 					rotate: 90deg;
+				}
+
+				.halloween & {
+					background-image: url("@img/svg/halloween/bones.svg");
+					background-position: center;
+					background-size: cover;
+					background-repeat: no-repeat;
+					rotate: 45deg;
+					transition: rotate 0.3s;
 				}
 			}
 
@@ -47,6 +68,12 @@
 
 					&::after {
 						rotate: -45deg;
+					}
+				}
+
+				.halloween & {
+					span {
+						rotate: 0deg;
 					}
 				}
 			}
@@ -64,6 +91,18 @@
 			inline-size: to-rem(20);
 			fill: none;
 			stroke: #fff;
+		}
+
+		.halloween & {
+			padding-inline-end: to-rem(30);
+			background-image: url("@img/svg/halloween/hat.svg");
+			background-position: right;
+			background-size: to-rem(20);
+			background-repeat: no-repeat;
+
+			svg {
+				display: none;
+			}
 		}
 	}
 

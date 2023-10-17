@@ -1,0 +1,7 @@
+@use "@scss/abstracts" as *;
+
+.margin-bottom {
+	&:not(:last-child) {
+		margin-block-end: to-rem(30);
+	}
+}

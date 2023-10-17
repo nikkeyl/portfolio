@@ -1,0 +1,19 @@
+@use "@scss/abstracts" as *;
+
+.broken-glass {
+	.halloween & {
+		&::before {
+			@include pseudo;
+
+			z-index: 1;
+			block-size: 100%;
+			inline-size: 100%;
+			background-image: url("@img/svg/halloween/glass.svg");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: 0.2;
+			transition: opacity 0.3s;
+		}
+	}
+}

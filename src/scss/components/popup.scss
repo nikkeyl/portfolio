@@ -30,8 +30,8 @@
 		opacity: 0;
 		scale: 0;
 		transition:
-			opacity 0.3s,
-			scale 0.3s;
+			opacity 0.5s,
+			scale 0.5s;
 
 		.lock & {
 			opacity: 1;
@@ -43,20 +43,35 @@
 	}
 
 	&__icon {
+		block-size: to-rem(150);
+		inline-size: to-rem(150);
 		animation: drag 1s infinite;
 
 		svg {
 			border-radius: 50%;
-			block-size: to-rem(150);
-			inline-size: to-rem(150);
 			box-shadow: 0 to-rem(8) to-rem(15)
 				rgb(var(--color-accent-rgb, 4 219 137) / 0.25);
 			fill: none;
 			stroke: var(--color-accent, #0d8);
+
+			.halloween & {
+				display: none;
+			}
+		}
+
+		img {
+			display: none;
 		}
 
 		&:not(:last-child) {
 			margin-block-end: to-rem(25);
+		}
+
+		.halloween & {
+			background-image: url("@img/svg/halloween/gravestone.svg");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 
 		@keyframes drag {
@@ -106,6 +121,10 @@
 			block-size: to-rem(2);
 			inline-size: 100%;
 			background-color: var(--color-secondary, #222);
+
+			.halloween & {
+				display: none;
+			}
 		}
 
 		&::before {
@@ -116,6 +135,15 @@
 		&::after {
 			inset-block-end: calc(50% - to-rem(1));
 			rotate: 45deg;
+		}
+
+		.halloween & {
+			block-size: to-rem(25);
+			inline-size: to-rem(30);
+			background-image: url("@img/svg/halloween/bones.svg");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 	}
 

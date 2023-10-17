@@ -8,6 +8,7 @@ import { Popup } from '@js/components/Popup'
 // import { ScrollWatcher } from '@js/modules/scroll/watcher'
 
 // ----------------------------------------------------------------MODULES
+import eventsCalendar from './modules/eventsCalendar'
 import { addLoadedClass } from '@js/modules/addLoadedClass'
 import { addTouchClass } from '@js/modules/addTouchClass'
 import { colorScheme } from '@js/modules/colorScheme'
@@ -30,6 +31,7 @@ spoilers()
 new Popup()
 
 // ----------------------------------------------------------------MODULES
+eventsCalendar()
 addLoadedClass()
 addTouchClass()
 colorScheme()

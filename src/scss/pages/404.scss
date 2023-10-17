@@ -1,0 +1,78 @@
+@use "sass:math" as *;
+@use "@scss/abstracts" as *;
+
+.error-404 {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		$font-size: 350;
+
+		@include adaptive-value(
+			"font-size",
+			$font-size,
+			160,
+			2,
+			$max-inline-size,
+			$min-inline-size
+		);
+
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		font-family: var(--font-family-open-sans, #{var(--font-family-open-sans)}),
+			sans-serif;
+		font-size: to-rem($font-size);
+		color: var(--color-accent, #0d8);
+
+		span {
+			color: var(--color-pale, #fff);
+		}
+
+		img {
+			display: none;
+			@include adaptive-value(
+				"block-size",
+				$font-size,
+				140,
+				2,
+				$max-inline-size,
+				$min-inline-size
+			);
+			@include adaptive-value(
+				"inline-size",
+				$font-size,
+				140,
+				2,
+				$max-inline-size,
+				$min-inline-size
+			);
+		}
+
+		&:not(:last-child) {
+			margin-block-end: to-rem(30);
+		}
+
+		.halloween & {
+			font-family: var(--font-family-creepster, var(--font-system-ui, sans-serif));
+
+			img {
+				display: block;
+			}
+
+			span {
+				display: none;
+			}
+		}
+	}
+
+	.halloween & {
+		background-image: url("@img/events/halloween/house.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}

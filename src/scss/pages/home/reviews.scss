@@ -1,0 +1,12 @@
+@use "@scss/abstracts" as *;
+
+.reviews {
+	&__slider {
+		margin: to-rem(-5);
+		padding: to-rem(5);
+	}
+
+	&__review {
+		margin-inline: auto;
+	}
+}

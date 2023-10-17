@@ -18,6 +18,8 @@ block variables
 	- let title
 	- let preloader
 	- let popups
+	- let header
+	- let footer
 
 doctype html
 html(lang=localization)
@@ -45,12 +47,14 @@ html(lang=localization)
 		)
 	body
 		.wrapper
-			include header
+			if header
+				include header
 
 			main.page
 				block content
 
-			include footer
+			if footer
+				include footer
 
 		if preloader
 			include ../components/preloader

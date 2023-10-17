@@ -1,12 +1,41 @@
 @use "@scss/abstracts" as *;
 
 :root {
+	// Container
+	--container-inline-size: #{to-rem($container-inline-size)};
+	--container-padding-inline: #{to-rem($container-padding-inline)};
+
+	// Header
+	--header-block-size: #{to-rem($header-block-size)};
+
+	// Font families
+	--font-system-ui: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+		oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	--font-family-roboto: #{$font-family-roboto};
+	--font-family-open-sans: #{$font-family-open-sans};
+	--font-family-creepster: #{$font-family-creepster};
+	--font-family-base: var(--font-family-roboto, #{$font-family-roboto});
+
+	// Font sizes
+	--font-size-title: #{to-rem($font-size-title)};
+	--font-size-subtitle: #{to-rem($font-size-subtitle)};
+	--font-size-text: #{to-rem($font-size-text)};
+	--font-size-base: var(--font-size-text, #{to-rem($font-size-text)});
+
+	// Font weights
+	--font-weight-400: #{$font-weight-400};
+	--font-weight-500: #{$font-weight-500};
+	--font-weight-700: #{$font-weight-700};
+	--font-weight-base: var(--font-weight-700, #{$font-weight-700});
+
+	// Colors
 	--color-primary: #fff;
-	--color-pale: #f8f4ff;
 	--color-secondary: #222;
 	--color-accent: #0d8;
 	--color-inverse: #fe0;
-	--color-disabled: #888;
+	--color-pale: #f8f4ff;
+	--color-gray: #888;
+	--color-purple: #80f;
 
 	// #f8f4ff
 	--color-pale-rgb: 248 244 255;
@@ -18,30 +47,9 @@
 	--color-inverse-rgb: 255 238 0;
 
 	// #888
-	--color-disabled-rgb: 136 136 136;
+	--color-gray-rgb: 136 136 136;
 
 	// Main colors
 	--color-background-primary: var(--color-primary, #fff);
 	--color-text-primary: var(--color-secondary, #222);
-
-	// Font families
-	--font-system-ui: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
-		oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-	--font-family-base: "Roboto";
-
-	// Font sizes
-	--font-size-base: #{to-rem(16)};
-
-	// Font weights
-	--font-weight-400: 400;
-	--font-weight-500: 500;
-	--font-weight-700: 700;
-	--font-weight-base: var(--font-weight-700, 700);
-
-	// Header
-	--header-block-size: #{to-rem(64)};
-
-	// Container
-	--container-inline-size: #{to-rem($container-inline-size)};
-	--container-padding-inline: #{to-rem($container-padding-inline)};
 }

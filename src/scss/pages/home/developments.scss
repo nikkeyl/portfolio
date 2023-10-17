@@ -1,0 +1,17 @@
+@use "@scss/abstracts" as *;
+
+.developments {
+	&__card {
+		position: relative;
+		overflow: hidden;
+		transition: scale 0.3s;
+
+		&:focus-visible {
+			scale: 1.03;
+		}
+
+		@include media-hover {
+			scale: 1.03;
+		}
+	}
+}

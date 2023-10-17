@@ -1,0 +1,35 @@
+@use "@scss/abstracts" as *;
+
+.hero {
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		&:not(:last-child) {
+			@include adaptive-value("margin-block-end", 80, 30);
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: to-rem(15);
+
+		@include media-min($phone) {
+			align-self: center;
+		}
+	}
+
+	&__button {
+		@include slide(2, 50, 1.5, 0.4, top);
+	}
+
+	.halloween & {
+		background-image: url("@img/events/halloween/house.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
