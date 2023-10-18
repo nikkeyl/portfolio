@@ -11,7 +11,7 @@ const colorScheme = () => {
 			: 'light'
 	}
 
-	const changeTheme = (saveTheme = false) => {
+	const changeTheme = (isSaveTheme = false) => {
 		const currentTheme = html.classList.contains('light') ? 'light' : 'dark'
 
 		let newTheme
@@ -19,13 +19,18 @@ const colorScheme = () => {
 		currentTheme === 'light' ? (newTheme = 'dark') : (newTheme = 'light')
 		html.classList.remove(currentTheme)
 		html.classList.add(newTheme)
-		saveTheme ? localStorage.setItem('user-theme', newTheme) : null
+
+		if (isSaveTheme) {
+			localStorage.setItem('user-theme', newTheme)
+		}
 	}
 
 	window
 		.matchMedia('(prefers-color-scheme: dark)')
 		.addEventListener('change', () => {
-			!saveUserTheme ? changeTheme() : null
+			if (!saveUserTheme) {
+				changeTheme()
+			}
 		})
 
 	const switchThemeButton = document.querySelector('.theme-switch')

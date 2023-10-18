@@ -5,7 +5,6 @@
 // add link to reviews section
 // tips
 
-// при загрузке появляется секция about-me а потом прокручивается до hero
 // popup.js to-do так что-бы при открытии попапа все элменеты были не доступны для TAB
 // icons in skills section
 
@@ -24,7 +23,7 @@
 	border-radius: to-rem(30);
 	block-size: to-rem(40);
 	inline-size: to-rem(24);
-	background-color: var(--color-gray, #888);
+	background-color: var(--color-gray, #{$color-gray});
 
 	&::before {
 		@include pseudo;
@@ -34,16 +33,17 @@
 		border-radius: 50%;
 		block-size: to-rem(20);
 		inline-size: to-rem(20);
-		background-color: var(--color-pale, #888);
+		background-color: var(--color-pale, #{$color-gray});
 		transition:
-			background-color 0.3s,
-			box-shadow 0.3s 0.2s,
-			inset-block-start 0.3s;
+			background-color var(--transition-duration, #{$transition-duration}),
+			box-shadow var(--transition-duration, #{$transition-duration}),
+			inset-block-start var(--transition-duration, #{$transition-duration});
 
 		.dark & {
 			inset-block-start: to-rem(18);
-			box-shadow: 0 0 to-rem(20) rgb(var(--color-inverse-rgb, 255 238 0) / 0.5);
-			background-color: var(--color-inverse, #fe0);
+			box-shadow: 0 0 to-rem(20)
+				rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.5);
+			background-color: var(--color-inverse, #{$color-inverse});
 		}
 	}
 

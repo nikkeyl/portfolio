@@ -1,23 +1,37 @@
-import { html } from '@js/helpers/nodeList'
+import { html, body, lockPadding } from '@js/helpers/nodeList'
 
-let bodyLockStatus = true
+let isBodyLockStatus = true
 
 const delayToggle = (delay = 500) => {
-	bodyLockStatus = false
+	isBodyLockStatus = false
 	setTimeout(() => {
-		bodyLockStatus = true
+		isBodyLockStatus = true
 	}, delay)
 }
 
 const bodyUnlock = (delay) => {
-	if (bodyLockStatus) {
+	if (isBodyLockStatus) {
+		for (const elem of lockPadding) {
+			elem.style.paddingRight = 0;
+		}
+
+		body.style.paddingRight = 0;
 		html.classList.remove('lock')
+
 		delayToggle(delay)
 	}
 }
 const bodyLock = (delay) => {
-	if (bodyLockStatus) {
+	const paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+	if (isBodyLockStatus) {
+		for (const elem of lockPadding) {
+			elem.style.paddingRight = paddingRight
+		}
+
+		body.style.paddingRight = paddingRight
 		html.classList.add('lock')
+
 		delayToggle(delay)
 	}
 }
@@ -26,4 +40,4 @@ const bodyLockToggle = (delay) => {
 	html.classList.contains('lock') ? bodyUnlock(delay) : bodyLock(delay)
 }
 
-export { bodyLockStatus, bodyLockToggle, bodyUnlock, bodyLock }
+export { isBodyLockStatus, bodyLockToggle, bodyUnlock, bodyLock }

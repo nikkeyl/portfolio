@@ -24,7 +24,7 @@ $font-family-open-sans: "OpenSans";
 $font-family-creepster: "Creepster";
 
 // Font sizes
-$font-size-title: 50;
+$font-size-title: 40;
 $font-size-subtitle: 30;
 $font-size-text: 16;
 
@@ -32,3 +32,21 @@ $font-size-text: 16;
 $font-weight-400: 400;
 $font-weight-500: 500;
 $font-weight-700: 700;
+
+// Colors
+$color-primary: #fff;
+$color-secondary: #222;
+$color-accent: #0d8;
+$color-inverse: #fe0;
+$color-pale: #f8f4ff;
+$color-gray: #888;
+$color-purple: #80f;
+$color-blood: #800;
+
+// Colors RGB
+$color-accent-rgb: 4 219 137;
+$color-inverse-rgb: 255 238 0;
+$color-gray-rgb: 136 136 136;
+
+// Transitions
+$transition-duration: 0.3s

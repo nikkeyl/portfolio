@@ -6,24 +6,37 @@
 	flex-wrap: wrap;
 
 	&__item {
-		transition: scale 0.3s;
-
-		a {
-			border-radius: 50%;
-		}
-
 		svg {
-			block-size: to-rem(40);
-			inline-size: to-rem(40);
-			fill: var(--color-secondary, #222);
+			$size: 40;
+
+			block-size: to-rem($size);
+			inline-size: to-rem($size);
+			fill: var(--color-secondary, #{$color-secondary});
+			transition: fill var(--transition-duration, #{$transition-duration});
+
+			.halloween & {
+				fill: var(--color-inverse, #{$color-accent});
+			}
 		}
 
 		&:focus-within {
 			scale: 1.05;
+
+			.halloween & {
+				svg {
+					fill: var(--color-blood, #{$color-blood});
+				}
+			}
 		}
 
 		@include media-hover {
 			scale: 1.05;
+
+			.halloween & {
+				svg {
+					fill: var(--color-blood, #{$color-blood});
+				}
+			}
 		}
 	}
 }

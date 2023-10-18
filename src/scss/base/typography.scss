@@ -2,14 +2,14 @@
 @use "@scss/abstracts" as *;
 
 body {
-	font-family: var(--font-family-base, var(--font-system-ui, sans-serif));
+	font-family: var(--font-family-base, #{$font-family-creepster});
 	font-size: var(--font-size-base, #{to-rem($font-size-text)});
 	font-weight: var(--font-weight-base, #{$font-weight-700});
 	line-height: 1;
-	color: var(--color-text-primary, #222);
+	color: var(--color-text-primary, #{$color-secondary});
 
 	.halloween & {
-		font-family: var(--font-family-creepster, var(--font-system-ui, sans-serif));
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
 	}
 }
 
@@ -23,45 +23,52 @@ a {
 }
 
 .title {
-	font-family: var(--font-family-open-sans), sans-serif;
+	font-family: var(--font-family-open-sans, #{$font-family-open-sans});
 	font-size: var(--font-size-title, #{to-rem($font-size-title)});
 	text-align: center;
 	line-height: div-rounding(60, $font-size-title);
 
 	span {
 		&:not([data-typed]) {
-			color: var(--color-accent, #0d8);
+			color: var(--color-accent, #{$color-accent});
 		}
 	}
 
-	&--big {
-		@include adaptive-value("font-size", 96, 50);
+	.halloween & {
+		[data-typed] {
+			color: var(--color-inverse, #{$color-accent});
+		}
 
-		line-height: div-rounding(131, 96);
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
+		color: var(--color-accent, #{$color-accent});
 	}
 
-	.halloween & {
-		font-family: var(--font-family-creepster, var(--font-system-ui, sans-serif));
+	&--big {
+		$font-size: 95;
+
+		@include adaptive-value("font-size", $font-size, 44);
+
+		line-height: div-rounding(130, $font-size);
 	}
 }
 
 .card-title {
-	font-family: var(--font-family-open-sans), sans-serif;
+	font-family: var(--font-family-open-sans, #{$font-family-open-sans});
 	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
 	line-height: div-rounding(40, $font-size-subtitle);
 
 	.halloween & {
-		font-family: var(--font-family-creepster, var(--font-system-ui, sans-serif));
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
 	}
 }
 
 .text {
 	font-weight: var(--font-weight-400, #{$font-weight-400});
-	line-height: 140%;
+	line-height: 1.4;
 
 	p {
 		&:not(:last-child) {
-			margin-block-end: to-em(3);
+			margin-block-end: to-em(4);
 		}
 	}
 }
@@ -70,13 +77,17 @@ a {
 	$font-size: 24;
 
 	font-size: to-rem($font-size);
-	line-height: div-rounding(33, $font-size);
+	line-height: div-rounding(30, $font-size);
 }
 
 .link {
 	position: relative;
 	font-weight: var(--font-weight-700, #{$font-weight-700});
-	color: var(--color-purple, #80f);
+	color: var(--color-purple, #{$color-purple});
+
+	.halloween & {
+		color: var(--color-blood, #{$color-blood});
+	}
 
 	@include media-min($tablet) {
 		&::after {
@@ -87,8 +98,14 @@ a {
 			border-radius: to-rem(2);
 			block-size: to-rem(2);
 			inline-size: 0;
-			background-color: var(--color-purple, #80f);
-			transition: inline-size 0.3s;
+			background-color: var(--color-purple, #{$color-purple});
+			transition: inline-size var(--transition-duration, #{$transition-duration});
+		}
+
+		.halloween & {
+			&::after {
+				background-color: var(--color-blood, #{$color-blood});
+			}
 		}
 
 		&:focus-visible {

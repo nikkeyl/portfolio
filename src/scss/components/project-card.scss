@@ -8,11 +8,10 @@
 
 	&__image {
 		padding-block-end: 90%;
-		background-color: var(--color-accent, #0d8);
+		background-color: var(--color-accent, #{$color-accent});
 
 		img {
 			object-position: top;
-			transition: scale 0.3s;
 
 			@include media-hover {
 				scale: 1.03;
@@ -30,7 +29,7 @@
 		display: grid;
 		gap: to-rem(10);
 		padding: to-rem(10);
-		background-color: var(--color-pale, #f8f4ff);
+		background-color: var(--color-pale, #{$color-pale});
 	}
 
 	&__title {
@@ -39,14 +38,26 @@
 		a {
 			display: block;
 			inline-size: 100%;
-			transition: color 0.3s;
+			transition: color var(--transition-duration, #{$transition-duration});
+
+			.halloween & {
+				color: var(--color-accent, #{$color-accent});
+
+				&:focus-visible {
+					color: var(--color-inverse, #{$color-accent});
+				}
+
+				@include media-hover {
+					color: var(--color-inverse, #{$color-accent});
+				}
+			}
 
 			&:focus-visible {
-				color: var(--color-accent, #0d8);
+				color: var(--color-accent, #{$color-accent});
 			}
 
 			@include media-hover {
-				color: var(--color-accent, #0d8);
+				color: var(--color-accent, #{$color-accent});
 			}
 		}
 	}

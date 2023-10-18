@@ -1,10 +1,9 @@
-import { bodyLockStatus, bodyUnlock, bodyLock } from '@js/helpers/bodyLockToggle'
+import { isBodyLockStatus, bodyUnlock, bodyLock } from '@js/helpers/bodyLockToggle'
 import { html } from '@js/helpers/nodeList'
 
 class Popup {
 	constructor() {
 		const config = {
-			init: true,
 			attributeOpenButton: 'data-popup',
 			attributeCloseButton: 'data-close',
 			classes: {
@@ -13,8 +12,8 @@ class Popup {
 				popupActive: 'popup--show',
 				overlayShow: 'overlay-show'
 			},
-			closeEsc: true,
-			bodyLock: true
+			isCloseEsc: true,
+			isBodyLock: true
 		}
 
 		this.isOpen = false
@@ -44,7 +43,7 @@ class Popup {
 				...config.on
 			}
 		}
-		this.bodyLock = false
+		this.isBodyLock = false
 		this.initPopups()
 	}
 
@@ -97,7 +96,7 @@ class Popup {
 
 		document.addEventListener('keydown', (event) => {
 			if (
-				this.options.closeEsc &&
+				this.options.isCloseEsc &&
 				event.key === escapeKey &&
 				event.code === 'Escape' &&
 				this.isOpen
@@ -110,8 +109,8 @@ class Popup {
 	}
 
 	open(selectorValue) {
-		if (bodyLockStatus) {
-			this.bodyLock = html.classList.contains('lock') && !this.isOpen
+		if (isBodyLockStatus) {
+			this.isBodyLock = html.classList.contains('lock') && !this.isOpen
 
 			if (
 				selectorValue &&
@@ -143,7 +142,9 @@ class Popup {
 				html.classList.add(this.options.classes.overlayShow)
 
 				if (!this.reopen) {
-					!this.bodyLock ? bodyLock() : null
+					if (!this.isBodyLock) {
+						bodyLock()
+					}
 				} else {
 					this.reopen = false
 				}
@@ -166,7 +167,7 @@ class Popup {
 			this.previousOpen.selector = selectorValue
 		}
 
-		if (!this.isOpen || !bodyLockStatus) {
+		if (!this.isOpen || !isBodyLockStatus) {
 			return
 		}
 
@@ -175,7 +176,9 @@ class Popup {
 
 		if (!this.reopen) {
 			html.classList.remove(this.options.classes.overlayShow)
-			!this.bodyLock ? bodyUnlock() : null
+			if (!this.isBodyLock) {
+				bodyUnlock()
+			}
 			this.isOpen = false
 		}
 

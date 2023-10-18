@@ -2,11 +2,14 @@
 @use "@scss/abstracts" as *;
 
 .logo {
-	@include adaptive-value("font-size", 30, 22);
+	$font-size: 30;
 
-	line-height: div-rounding(40, 30);
+	@include adaptive-value("font-size", $font-size, 22);
+
+	line-height: div-rounding(40, $font-size);
 
 	.halloween & {
-		font-family: var(--font-family-creepster, var(--font-system-ui, sans-serif));
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
+		color: var(--color-inverse, #{$color-accent});
 	}
 }

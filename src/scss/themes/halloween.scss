@@ -1,6 +1,10 @@
+@use "@scss/abstracts" as *;
+
 .halloween {
+	--color-primary: #{$color-secondary};
+	--color-secondary: #{$color-pale};
 	--color-accent: #f80;
-	--color-inverse: #0d8;
+	--color-inverse: #{$color-accent};
 	--color-pale: #000;
 	--color-gray-rgb: 249 250 254;
 	--color-accent-rgb: 255 128 0;

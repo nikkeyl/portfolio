@@ -1,0 +1,8 @@
+.bg-event {
+	.halloween & {
+		background-image: url("@img/events/halloween/house.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}

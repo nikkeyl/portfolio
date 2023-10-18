@@ -38,19 +38,21 @@
 }
 
 .swiper-pagination-bullet {
+	$size: 15;
+
 	border-radius: to-rem(30);
-	block-size: to-rem(15);
-	inline-size: to-rem(15);
-	background-color: var(--color-gray, #888);
+	block-size: to-rem($size);
+	inline-size: to-rem($size);
+	background-color: var(--color-gray, #{$color-gray});
 	transition:
-		background-color 0.3s,
-		box-shadow 0.3s,
-		inline-size 0.3s;
+		background-color var(--transition-duration, #{$transition-duration}),
+		box-shadow var(--transition-duration, #{$transition-duration}),
+		inline-size var(--transition-duration, #{$transition-duration});
 	cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
 	inline-size: to-rem(30);
-	box-shadow: 0 to-rem(2) to-rem(4) rgb(var(--color-accent-rgb, 4 219 137) / 0.25);
-	background-color: var(--color-accent, #0d8);
+	box-shadow: 0 0 to-rem(5) rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
+	background-color: var(--color-accent, #{$color-accent});
 }

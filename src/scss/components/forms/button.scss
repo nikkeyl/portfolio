@@ -5,30 +5,26 @@
 	display: inline-flex;
 	justify-content: center;
 	border-radius: to-rem(50);
-	box-shadow: 0 0 to-rem(15) rgb(var(--color-accent-rgb, 4 219 137) / 0.25);
-	padding: to-rem(15);
+	box-shadow: 0 0 to-rem(15)
+		rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
+	padding-block: to-rem(11);
+	padding-inline: to-rem(15);
 	text-align: center;
-	line-height: div-rounding(18, 16);
-	color: var(--color-primary, #fff);
-	background-color: var(--color-accent, #0d8);
+	line-height: div-rounding(18, $font-size-text);
+	color: var(--color-primary, #{$color-primary});
+	background-color: var(--color-accent, #{$color-accent});
 	transition:
-		background-color 0.3s,
-		box-shadow 0.3s,
-		translate 0.3s,
-		color 0.3s;
+		background-color var(--transition-duration, #{$transition-duration}),
+		box-shadow var(--transition-duration, #{$transition-duration}),
+		transform var(--transition-duration, #{$transition-duration}),
+		color var(--transition-duration, #{$transition-duration});
 
-	&:focus-visible {
-		box-shadow: 0 0 to-rem(15) rgb(var(--color-inverse-rgb, 255 238 0) / 0.25);
-		color: var(--color-secondary, #222);
-		background-color: var(--color-inverse, #fe0);
-
-		.dark & {
-			color: var(--color-primary, #222);
-		}
+	.dark & {
+		color: var(--color-secondary, #{$color-primary});
 	}
 
-	&:active {
-		translate: 0 to-rem(3);
+	.halloween & {
+		color: var(--color-primary, #{$color-secondary});
 	}
 
 	&--full {
@@ -37,17 +33,33 @@
 		}
 	}
 
-	.dark & {
-		color: var(--color-secondary, #fff);
+	&:focus-visible {
+		box-shadow: 0 0 to-rem(15)
+			rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.25);
+		color: var(--color-secondary, #{$color-secondary});
+		background-color: var(--color-inverse, #{$color-inverse});
+
+		.dark & {
+			color: var(--color-primary, #{$color-secondary});
+		}
+	}
+
+	&:active {
+		transform: translateY(to-rem(3));
 	}
 
 	@include media-hover {
-		box-shadow: 0 0 to-rem(15) rgb(var(--color-inverse-rgb, 255 238 0) / 0.25);
-		color: var(--color-secondary, #222);
-		background-color: var(--color-inverse, #fe0);
+		box-shadow: 0 0 to-rem(15)
+			rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.25);
+		color: var(--color-secondary, #{$color-secondary});
+		background-color: var(--color-inverse, #{$color-inverse});
 
 		.dark & {
-			color: var(--color-primary, #222);
+			color: var(--color-primary, #{$color-secondary});
+		}
+
+		.halloween & {
+			color: var(--color-primary, #{$color-secondary});
 		}
 	}
 }

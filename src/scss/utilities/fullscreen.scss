@@ -1,13 +1,10 @@
 @use "@scss/abstracts" as *;
 
 .fullscreen {
-	@include adaptive-value("padding-block", 140, 90);
-
-	display: flex;
-	align-items: center;
 	min-block-size: 100dvb;
+	padding-block: to-rem(90);
 
 	.touch & {
-		transition: min-block-size 0.2s;
+		transition: min-block-size var(--transition-duration, #{$transition-duration});
 	}
 }

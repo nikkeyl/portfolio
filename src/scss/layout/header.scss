@@ -1,54 +1,48 @@
 @use "@scss/abstracts" as *;
 
 .header {
+	$breakpoint-540: 540;
+	$breakpoint-350: 350;
+
 	position: fixed;
-	inset-block-start: 0;
-	inset-inline: 0;
 	z-index: 90;
-	max-inline-size: 100%;
+	min-block-size: var(--header-block-size, #{to-rem($header-block-size)});
 
 	&__container {
-		min-block-size: var(--header-block-size, #{to-rem($header-block-size)});
 		padding-block: to-rem(12);
-		background-color: var(--color-pale, #f8f4ff);
-		backdrop-filter: blur(to-rem(50));
+		background-color: var(--color-pale, #{$color-pale});
 
-		@include media-min(350) {
-			border-radius: to-rem(10);
+		@include media-max($breakpoint-540) {
+			justify-content: center;
 		}
 
-		@include media-max(540) {
-			justify-content: center;
+		@include media-max($breakpoint-350) {
+			border-radius: 0;
 		}
 	}
 
 	&__body {
 		@include adaptive-value("gap", 20, 8);
-
-		display: flex;
 	}
 
 	&__logo {
-		@include media-min(540) {
+		@include media-min($breakpoint-540) {
 			flex: 1;
 		}
 
-		@include media-max(540) {
+		@include media-max($breakpoint-540) {
 			display: none;
 		}
 	}
 
-	&__button {
-		padding-block: to-rem(10);
-		padding-inline: to-rem(14);
+	@include media-min($breakpoint-350) {
+		$inset: 15;
+
+		inset-block-start: to-rem($inset);
+		inset-inline: to-rem($inset);
 	}
 
-	.lock & {
-		inset-inline-end: to-rem(15);
-	}
-
-	@include media-min(350) {
-		padding-block-start: to-rem(15);
-		padding-inline: to-rem(15);
+	@include media-max($breakpoint-350) {
+		inset-inline: 0;
 	}
 }

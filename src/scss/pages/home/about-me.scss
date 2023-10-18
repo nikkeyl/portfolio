@@ -4,7 +4,7 @@
 	@include responsive-output(800, $tablet, 1);
 
 	&__inner {
-		background-color: var(--color-accent, #0d8);
+		background-color: var(--color-accent, #{$color-accent});
 	}
 
 	&__container {
@@ -16,10 +16,14 @@
 
 	&__body {
 		z-index: 1;
-		color: var(--color-primary, #fff);
+		color: var(--color-primary, #{$color-primary});
 
 		.dark & {
-			color: var(--color-text-primary, #fff);
+			color: var(--color-text-primary, #{$color-primary});
+		}
+
+		.halloween & {
+			color: var(--color-primary, #{$color-secondary});
 		}
 
 		@include media-min($tablet) {
@@ -28,13 +32,17 @@
 	}
 
 	&__title {
+		.halloween & {
+			color: var(--color-primary, #{$color-secondary});
+		}
+
 		@include media-min($tablet) {
 			text-align: start;
 		}
 	}
 
 	&__image {
-		background-color: var(--color-inverse, #fe0);
+		background-color: var(--color-inverse, #{$color-inverse});
 
 		@include media-min($tablet) {
 			&::before {
@@ -45,7 +53,7 @@
 				z-index: 4;
 				block-size: to-rem(1000);
 				inline-size: to-rem(200);
-				background-color: var(--color-accent, #0d8);
+				background-color: var(--color-accent, #{$color-accent});
 				rotate: 11.5deg;
 			}
 		}

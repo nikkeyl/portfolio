@@ -4,20 +4,15 @@
 .popup {
 	position: fixed;
 	inset: 0;
-	padding-block-start: to-rem(30);
+	padding-block: to-rem(30);
 	padding-inline: to-rem($container-padding-inline);
 	opacity: 0;
 	transition: opacity 0.5s;
 	pointer-events: none;
 
 	&__wrapper {
-		flex-grow: 1;
-		flex-shrink: 1;
-		flex-basis: auto;
-		flex-direction: column;
 		justify-content: center;
 		min-block-size: 100%;
-		inline-size: 100%;
 	}
 
 	&__content {
@@ -26,7 +21,7 @@
 		max-inline-size: to-rem(400);
 		padding-block: to-rem(50);
 		padding-inline: to-rem(20);
-		background-color: var(--color-pale, #f8f4ff);
+		background-color: var(--color-pale, #{$color-pale});
 		opacity: 0;
 		scale: 0;
 		transition:
@@ -38,33 +33,22 @@
 		}
 	}
 
-	&__body {
-		flex-direction: column;
-	}
-
 	&__icon {
-		block-size: to-rem(150);
-		inline-size: to-rem(150);
+		$font-size: 150;
+
+		block-size: to-rem($font-size);
+		inline-size: to-rem($font-size);
 		animation: drag 1s infinite;
 
 		svg {
-			border-radius: 50%;
 			box-shadow: 0 to-rem(8) to-rem(15)
-				rgb(var(--color-accent-rgb, 4 219 137) / 0.25);
+				rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
 			fill: none;
-			stroke: var(--color-accent, #0d8);
+			stroke: var(--color-accent, #{$color-accent});
 
 			.halloween & {
 				display: none;
 			}
-		}
-
-		img {
-			display: none;
-		}
-
-		&:not(:last-child) {
-			margin-block-end: to-rem(25);
 		}
 
 		.halloween & {
@@ -90,15 +74,16 @@
 	}
 
 	&__text {
-		$font-size: 18;
-
 		max-inline-size: to-rem(210);
-		font-size: to-rem($font-size);
 		text-align: center;
-		line-height: div-rounding(25, $font-size);
 
 		span {
-			color: var(--color-accent, #0d8);
+			color: var(--color-accent, #{$color-accent});
+		}
+
+		.halloween & {
+			color: var(--color-inverse, #{$color-accent});
+
 		}
 	}
 
@@ -120,7 +105,7 @@
 			border-radius: to-rem(2);
 			block-size: to-rem(2);
 			inline-size: 100%;
-			background-color: var(--color-secondary, #222);
+			background-color: var(--color-secondary, #{$color-secondary});
 
 			.halloween & {
 				display: none;

@@ -29,27 +29,24 @@
 	--font-weight-base: var(--font-weight-700, #{$font-weight-700});
 
 	// Colors
-	--color-primary: #fff;
-	--color-secondary: #222;
-	--color-accent: #0d8;
-	--color-inverse: #fe0;
-	--color-pale: #f8f4ff;
-	--color-gray: #888;
-	--color-purple: #80f;
+	--color-primary: #{$color-primary};
+	--color-secondary: #{$color-secondary};
+	--color-accent: #{$color-accent};
+	--color-inverse: #{$color-inverse};
+	--color-pale: #{$color-pale};
+	--color-gray: #{$color-gray};
+	--color-purple: #{$color-purple};
+	--color-blood: #{$color-blood};
 
-	// #f8f4ff
-	--color-pale-rgb: 248 244 255;
-
-	// #0d8
-	--color-accent-rgb: 4 219 137;
-
-	// #fe0
-	--color-inverse-rgb: 255 238 0;
-
-	// #888
-	--color-gray-rgb: 136 136 136;
+	// Colors RGB
+	--color-accent-rgb: #{$color-accent-rgb};
+	--color-inverse-rgb: #{$color-inverse-rgb};
+	--color-gray-rgb: #{$color-gray-rgb};
 
 	// Main colors
-	--color-background-primary: var(--color-primary, #fff);
-	--color-text-primary: var(--color-secondary, #222);
+	--color-background-primary: var(--color-primary, #{$color-primary});
+	--color-text-primary: var(--color-secondary, #{$color-secondary});
+
+	// Transitions
+	--transition-duration: #{$transition-duration};
 }

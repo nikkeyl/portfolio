@@ -1,14 +1,14 @@
 - const socials = require('/src/views/data/socials.json')
 
-header.header
-	.container.header__container.flex-align-center
+header.header(data-lp)
+	.container.header__container.flex-align-center.border-radius-10
 		.logo.header__logo
 			| Nikita Almanov
-		.header__body
+		.header__body.flex-align-center
 			ul.socials.flex-align-center(aria-label='Socials')
 				each social in socials.socials
-					li.socials__item
-						a(
+					li.socials__item.tr-scale
+						a.border-radius-50(
 							href=social.link
 							data-tippy-content=social.tip
 							aria-label=social.tip
@@ -16,7 +16,7 @@ header.header
 							svg
 								use(href=`@img/icons/sprite.svg#${social.icon}`)
 
-			a.button.header__button(
+			a.button(
 				href='#questions'
 				data-tippy-content='Questions about work'
 			) FAQ

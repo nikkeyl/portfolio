@@ -13,7 +13,7 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 			opacity: 0.2;
-			transition: opacity 0.3s;
+			transition: opacity var(--transition-duration, #{$transition-duration});
 		}
 	}
 }

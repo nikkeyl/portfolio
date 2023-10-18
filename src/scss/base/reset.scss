@@ -19,12 +19,11 @@ html,
 body {
 	min-block-size: 100vb;
 	min-inline-size: $min-inline-size + px;
-	background-color: var(--color-background-primary, #fff);
+	background-color: var(--color-background-primary, #{$color-primary});
 	overscroll-behavior: none;
 	scroll-padding-block-start: calc(
 		var(--header-block-size, #{to-rem(94)}) + to-rem(15)
 	);
-	scrollbar-gutter: stable;
 
 	@include media-motion(no-preference) {
 		scroll-behavior: smooth;
@@ -32,17 +31,21 @@ body {
 }
 
 ::selection {
-	color: var(--color-secondary, #222);
-	background-color: rgb(var(--color-inverse-rgb, 255 238 0) / 0.8);
+	color: var(--color-secondary, #{$color-secondary});
+	background-color: rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.8);
 
 	.dark & {
-		color: var(--color-primary, #222);
+		color: var(--color-primary, #{$color-secondary});
+	}
+
+	.halloween & {
+		color: var(--color-primary, #{$color-secondary});
 	}
 }
 
 :focus-visible {
 	outline-offset: to-rem(2);
-	outline-color: var(--color-accent, #0d8);
+	outline-color: var(--color-accent, #{$color-accent});
 }
 
 summary,

@@ -25,11 +25,4 @@
 	&__button {
 		@include slide(2, 50, 1.5, 0.4, top);
 	}
-
-	.halloween & {
-		background-image: url("@img/events/halloween/house.jpg");
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
 }

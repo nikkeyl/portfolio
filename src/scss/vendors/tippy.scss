@@ -11,15 +11,21 @@
 }
 
 .tippy-content {
-	border-radius: to-rem(7);
-	box-shadow: 0 to-rem(3) to-rem(15) rgb(var(--color-inverse-rgb, 255 238 0) / 0.25);
-	padding-block: to-rem(3);
+	$font-size: 13;
+	
+	border-radius: to-rem(10);
+	box-shadow: 0 0 to-rem(20) rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.25);
+	padding-block: to-rem(2);
 	padding-inline: to-rem(10);
-	font-size: to-rem(13);
-	line-height: div-rounding(22, 13);
-	background-color: var(--color-inverse, #fe0);
+	font-size: to-rem($font-size);
+	line-height: div-rounding(22, $font-size);
+	background-color: var(--color-inverse, #{$color-inverse});
 
 	.dark & {
-		color: var(--color-primary, #222);
+		color: var(--color-primary, #{$color-secondary});
+	}
+
+	.halloween & {
+		color: var(--color-primary, #{$color-secondary});
 	}
 }

@@ -9,17 +9,16 @@ block variables
 	- footer = false
 
 block content
-	section.error-404.fullscreen
-		.container.error-404__container
-			h1.error-404__title
+	section.error-404.bg-event.fullscreen.flex-align-center
+		.container.flex-align-center.flex-column
+			h1.error-404__title.margin-bottom-20.flex-align-center
 				| 4
 				div
-					img(src='@img/svg/halloween/eye.svg' alt='eye')
+					img(
+						src='@img/svg/halloween/eye.svg'
+						alt='eye'
+					)
 					span 0
 				| 4
-			a.button.button--full(
-					href='https://nikkeyl.github.io/nikkeyl'
-				) Back Home
-
-	//- title
-	//- button
+			a.button.button--full(href='https://nikkeyl.github.io/nikkeyl')
+				| Back Home
