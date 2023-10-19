@@ -1,19 +1,19 @@
-import { uniqArray } from '@js/helpers/uniqArray'
-import { html } from '@js/helpers/nodeList'
+import uniqArray from '@js/helpers/uniqArray';
+import { html } from '@js/helpers/nodeList';
 
 class ScrollWatcher {
 	constructor() {
-		this.observer
-		!html.classList.contains('watcher') ? this.scrollWatcherRun() : null
+		this.observer;
+		!html.classList.contains('watcher') ? this.scrollWatcherRun() : null;
 	}
 
 	scrollWatcherUpdate() {
-		this.scrollWatcherRun()
+		this.scrollWatcherRun();
 	}
 
 	scrollWatcherRun() {
-		html.classList.add('watcher')
-		this.scrollWatcherConstructor(document.querySelectorAll('[data-watch]'))
+		html.classList.add('watcher');
+		this.scrollWatcherConstructor(document.querySelectorAll('[data-watch]'));
 	}
 
 	scrollWatcherConstructor(items) {
@@ -21,99 +21,99 @@ class ScrollWatcher {
 			Array.from(items).map((item) => {
 				return `${item.dataset.watchRoot || null}|${
 					item.dataset.watchMargin || '0px'
-				}|${item.dataset.watchThreshold || 0}`
+				}|${item.dataset.watchThreshold || 0}`;
 			})
-		)
+		);
 
 		uniqParams.forEach((uniqParam) => {
-			const uniqParamArray = uniqParam.split('|')
+			const uniqParamArray = uniqParam.split('|');
 			const paramsWatch = {
 				root: uniqParamArray[0],
 				margin: uniqParamArray[1],
 				threshold: uniqParamArray[2]
-			}
+			};
 			const groupItems = Array.from(items).filter((item) => {
-				const watchRoot = item.dataset.watchRoot || null
-				const watchMargin = item.dataset.watchMargin || '0px'
-				const watchThreshold = item.dataset.watchThreshold || 0
+				const watchRoot = item.dataset.watchRoot || null;
+				const watchMargin = item.dataset.watchMargin || '0px';
+				const watchThreshold = item.dataset.watchThreshold || 0;
 
 				if (
 					String(watchRoot) === paramsWatch.root &&
 					String(watchMargin) === paramsWatch.margin &&
 					String(watchThreshold) === paramsWatch.threshold
 				) {
-					return item
+					return item;
 				}
-			})
-			const configWatcher = this.getScrollWatcherConfig(paramsWatch)
+			});
+			const configWatcher = this.getScrollWatcherConfig(paramsWatch);
 
-			this.scrollWatcherInit(groupItems, configWatcher)
-		})
+			this.scrollWatcherInit(groupItems, configWatcher);
+		});
 	}
 
 	getScrollWatcherConfig(paramsWatch) {
-		const configWatcher = {}
+		const configWatcher = {};
 
 		if (document.querySelector(paramsWatch.root)) {
-			configWatcher.root = document.querySelector(paramsWatch.root)
+			configWatcher.root = document.querySelector(paramsWatch.root);
 		}
 
-		configWatcher.rootMargin = paramsWatch.margin
+		configWatcher.rootMargin = paramsWatch.margin;
 
 		if (paramsWatch.threshold === 'prx') {
-			paramsWatch.threshold = []
+			paramsWatch.threshold = [];
 
 			for (let i = 0; i <= 1.0; i += 0.005) {
-				paramsWatch.threshold.push(i)
+				paramsWatch.threshold.push(i);
 			}
 		} else {
-			paramsWatch.threshold = paramsWatch.threshold.split(',')
+			paramsWatch.threshold = paramsWatch.threshold.split(',');
 		}
 
-		configWatcher.threshold = paramsWatch.threshold
+		configWatcher.threshold = paramsWatch.threshold;
 
-		return configWatcher
+		return configWatcher;
 	}
 
 	scrollWatcherCreate(configWatcher) {
 		this.observer = new IntersectionObserver((entries, observer) => {
 			entries.forEach((entry) => {
-				return this.scrollWatcherCallback(entry, observer)
-			})
-		}, configWatcher)
+				return this.scrollWatcherCallback(entry, observer);
+			});
+		}, configWatcher);
 	}
 
 	scrollWatcherInit(items, configWatcher) {
-		this.scrollWatcherCreate(configWatcher)
+		this.scrollWatcherCreate(configWatcher);
 		items.forEach((item) => {
-			return this.observer.observe(item)
-		})
+			return this.observer.observe(item);
+		});
 	}
 
 	scrollWatcherIntersecting(entry, targetElement) {
 		if (entry.isIntersecting) {
 			!targetElement.classList.contains('watcher-view')
 				? targetElement.classList.add('watcher-view')
-				: null
+				: null;
 		} else {
 			targetElement.classList.contains('watcher-view')
 				? targetElement.classList.remove('watcher-view')
-				: null
+				: null;
 		}
 	}
 
 	scrollWatcherOff(targetElement, observer) {
-		observer.unobserve(targetElement)
+		observer.unobserve(targetElement);
 	}
 
 	scrollWatcherCallback(entry, observer) {
-		const targetElement = entry.target
+		const targetElement = entry.target;
 
-		this.scrollWatcherIntersecting(entry, targetElement)
+		this.scrollWatcherIntersecting(entry, targetElement);
 		targetElement.hasAttribute('data-watch-once') && entry.isIntersecting
 			? this.scrollWatcherOff(targetElement, observer)
-			: null
+			: null;
 	}
 }
 
-export { ScrollWatcher }
+export { ScrollWatcher };

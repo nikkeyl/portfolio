@@ -1,5 +1,5 @@
 const uniqArray = (array) => {
-	return Array.from(new Set(array))
-}
+	return Array.from(new Set(array));
+};
 
-export { uniqArray }
+export default uniqArray;

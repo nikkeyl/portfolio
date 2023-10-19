@@ -1,16 +1,15 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .button {
 	display: inline-flex;
 	justify-content: center;
 	border-radius: to-rem(50);
-	box-shadow: 0 0 to-rem(15)
-		rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
 	padding-block: to-rem(11);
 	padding-inline: to-rem(15);
 	text-align: center;
-	line-height: div-rounding(18, $font-size-text);
+	line-height: div-rounding(18, $font-size-base);
 	color: var(--color-primary, #{$color-primary});
 	background-color: var(--color-accent, #{$color-accent});
 	transition:
@@ -19,12 +18,19 @@
 		transform var(--transition-duration, #{$transition-duration}),
 		color var(--transition-duration, #{$transition-duration});
 
-	.dark & {
-		color: var(--color-secondary, #{$color-primary});
+	&:focus-visible {
+		color: var(--color-secondary, #{$color-secondary});
+		background-color: var(--color-inverse, #{$color-inverse});
+
+		.dark & {
+			color: var(--color-primary, #{$color-secondary});
+		}
+
+		@extend %box-shadow-inverse;
 	}
 
-	.halloween & {
-		color: var(--color-primary, #{$color-secondary});
+	&:active {
+		transform: translateY(to-rem(3));
 	}
 
 	&--full {
@@ -33,19 +39,12 @@
 		}
 	}
 
-	&:focus-visible {
-		box-shadow: 0 0 to-rem(15)
-			rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.25);
-		color: var(--color-secondary, #{$color-secondary});
-		background-color: var(--color-inverse, #{$color-inverse});
-
-		.dark & {
-			color: var(--color-primary, #{$color-secondary});
-		}
+	.dark & {
+		color: var(--color-secondary, #{$color-primary});
 	}
 
-	&:active {
-		transform: translateY(to-rem(3));
+	.halloween & {
+		color: var(--color-primary, #{$color-secondary});
 	}
 
 	@include media-hover {
@@ -62,4 +61,6 @@
 			color: var(--color-primary, #{$color-secondary});
 		}
 	}
+
+	@extend %box-shadow-accent;
 }

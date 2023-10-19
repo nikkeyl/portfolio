@@ -1,5 +1,6 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .popup {
 	position: fixed;
@@ -34,28 +35,27 @@
 	}
 
 	&__icon {
-		$font-size: 150;
+		$size: 150;
 
-		block-size: to-rem($font-size);
-		inline-size: to-rem($font-size);
+		block-size: to-rem($size);
+		inline-size: to-rem($size);
 		animation: drag 1s infinite;
 
 		svg {
-			box-shadow: 0 to-rem(8) to-rem(15)
-				rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
 			fill: none;
 			stroke: var(--color-accent, #{$color-accent});
 
 			.halloween & {
 				display: none;
 			}
+
+			@extend %box-shadow-accent;
 		}
 
 		.halloween & {
 			background-image: url("@img/svg/halloween/gravestone.svg");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
+
+			@extend %background;
 		}
 
 		@keyframes drag {
@@ -83,7 +83,6 @@
 
 		.halloween & {
 			color: var(--color-inverse, #{$color-accent});
-
 		}
 	}
 
@@ -126,9 +125,8 @@
 			block-size: to-rem(25);
 			inline-size: to-rem(30);
 			background-image: url("@img/svg/halloween/bones.svg");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
+
+			@extend %background;
 		}
 	}
 

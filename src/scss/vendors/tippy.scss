@@ -1,5 +1,6 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 [data-tippy-root] {
 	z-index: 95 !important;
@@ -11,10 +12,10 @@
 }
 
 .tippy-content {
+	@extend %box-shadow-inverse;
 	$font-size: 13;
-	
+
 	border-radius: to-rem(10);
-	box-shadow: 0 0 to-rem(20) rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.25);
 	padding-block: to-rem(2);
 	padding-inline: to-rem(10);
 	font-size: to-rem($font-size);

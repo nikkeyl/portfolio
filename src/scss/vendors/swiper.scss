@@ -1,4 +1,5 @@
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .swiper {
 	overflow: hidden;
@@ -53,6 +54,7 @@
 
 .swiper-pagination-bullet-active {
 	inline-size: to-rem(30);
-	box-shadow: 0 0 to-rem(5) rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
 	background-color: var(--color-accent, #{$color-accent});
+
+	@extend %box-shadow-accent;
 }

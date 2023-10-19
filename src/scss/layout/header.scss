@@ -1,7 +1,7 @@
 @use "@scss/abstracts" as *;
 
 .header {
-	$breakpoint-540: 540;
+	$breakpoint-515: 515;
 	$breakpoint-350: 350;
 
 	position: fixed;
@@ -9,10 +9,16 @@
 	min-block-size: var(--header-block-size, #{to-rem($header-block-size)});
 
 	&__container {
-		padding-block: to-rem(12);
+		@include media-max($breakpoint-350) {
+			padding: 0;
+		}
+	}
+
+	&__body {
+		padding: to-rem(12);
 		background-color: var(--color-pale, #{$color-pale});
 
-		@include media-max($breakpoint-540) {
+		@include media-max($breakpoint-515) {
 			justify-content: center;
 		}
 
@@ -21,25 +27,23 @@
 		}
 	}
 
-	&__body {
+	&__inner {
 		@include adaptive-value("gap", 20, 8);
 	}
 
 	&__logo {
-		@include media-min($breakpoint-540) {
+		@include media-min($breakpoint-515) {
 			flex: 1;
 		}
 
-		@include media-max($breakpoint-540) {
+		@include media-max($breakpoint-515) {
 			display: none;
 		}
 	}
 
 	@include media-min($breakpoint-350) {
-		$inset: 15;
-
-		inset-block-start: to-rem($inset);
-		inset-inline: to-rem($inset);
+		inset-block-start: to-rem($header-inset-block-start);
+		inline-size: 100%;
 	}
 
 	@include media-max($breakpoint-350) {

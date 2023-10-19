@@ -22,7 +22,8 @@ body {
 	background-color: var(--color-background-primary, #{$color-primary});
 	overscroll-behavior: none;
 	scroll-padding-block-start: calc(
-		var(--header-block-size, #{to-rem(94)}) + to-rem(15)
+		var(--header-block-size, #{to-rem($header-block-size)}) +
+			var(--header-inset-block-start, #{$header-inset-block-start})
 	);
 
 	@include media-motion(no-preference) {
@@ -34,11 +35,8 @@ body {
 	color: var(--color-secondary, #{$color-secondary});
 	background-color: rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.8);
 
+	.halloween &,
 	.dark & {
-		color: var(--color-primary, #{$color-secondary});
-	}
-
-	.halloween & {
 		color: var(--color-primary, #{$color-secondary});
 	}
 }

@@ -18,11 +18,15 @@
 		$min-size: 0.000001;
 	}
 
-	@if $inline-size-from == $container-inline-size and $container-max-inline-size == 0 {
+	@if $inline-size-from == $container-inline-size and $container-max-inline-size == 0
+	{
 		$inline-size-from: $max-inline-size;
 	}
 
-	$slope: div-rounding(($start-size - $min-size), ($inline-size-from - $inline-size-to));
+	$slope: div-rounding(
+		($start-size - $min-size),
+		($inline-size-from - $inline-size-to)
+	);
 	$y-intersection: -$inline-size-to * $slope + $min-size;
 
 	@if $y-intersection == 0 {

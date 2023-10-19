@@ -1,0 +1,17 @@
+@use "@scss/abstracts" as *;
+
+%box-shadow-inverse {
+	box-shadow: 0 0 to-rem(15)
+		rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.25);
+}
+
+%box-shadow-accent {
+	box-shadow: 0 0 to-rem(15)
+		rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
+}
+
+%background {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

@@ -2,9 +2,9 @@
 @use "@scss/abstracts" as *;
 
 body {
-	font-family: var(--font-family-base, #{$font-family-creepster});
-	font-size: var(--font-size-base, #{to-rem($font-size-text)});
-	font-weight: var(--font-weight-base, #{$font-weight-700});
+	font-family: var(--font-family-base, var(--font-system-ui, system-ui));
+	font-size: var(--font-size-base, #{to-rem($font-size-base)});
+	font-weight: var(--font-weight-base, #{$font-weight-base});
 	line-height: 1;
 	color: var(--color-text-primary, #{$color-secondary});
 
@@ -22,9 +22,31 @@ a {
 	color: inherit;
 }
 
+.logo {
+	$font-size: 30;
+
+	@include adaptive-value("font-size", $font-size, 20, 2, $max-inline-size, 515);
+
+	line-height: div-rounding(40, $font-size);
+
+	.halloween & {
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
+		color: var(--color-inverse, #{$color-accent});
+	}
+}
+
+.spoiler-trigger {
+	line-height: div-rounding(20, $font-size-base);
+
+	.halloween & {
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
+		color: var(--color-accent, #{$color-accent});
+	}
+}
+
 .title {
-	font-family: var(--font-family-open-sans, #{$font-family-open-sans});
 	font-size: var(--font-size-title, #{to-rem($font-size-title)});
+	font-weight: var(--font-weight-700, #{$font-weight-700});
 	text-align: center;
 	line-height: div-rounding(60, $font-size-title);
 
@@ -34,15 +56,6 @@ a {
 		}
 	}
 
-	.halloween & {
-		[data-typed] {
-			color: var(--color-inverse, #{$color-accent});
-		}
-
-		font-family: var(--font-family-creepster, #{$font-family-creepster});
-		color: var(--color-accent, #{$color-accent});
-	}
-
 	&--big {
 		$font-size: 95;
 
@@ -50,10 +63,18 @@ a {
 
 		line-height: div-rounding(130, $font-size);
 	}
+
+	.halloween & {
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
+		color: var(--color-accent, #{$color-accent});
+
+		[data-typed] {
+			color: var(--color-inverse, #{$color-accent});
+		}
+	}
 }
 
 .card-title {
-	font-family: var(--font-family-open-sans, #{$font-family-open-sans});
 	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
 	line-height: div-rounding(40, $font-size-subtitle);
 
@@ -63,6 +84,7 @@ a {
 }
 
 .text {
+	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
 	line-height: 1.4;
 
@@ -70,6 +92,10 @@ a {
 		&:not(:last-child) {
 			margin-block-end: to-em(4);
 		}
+	}
+
+	.halloween & {
+		font-family: var(--font-family-creepster, #{$font-family-creepster});
 	}
 }
 
@@ -82,7 +108,7 @@ a {
 
 .link {
 	position: relative;
-	font-weight: var(--font-weight-700, #{$font-weight-700});
+	font-weight: var(--font-weight-base, #{$font-weight-base});
 	color: var(--color-purple, #{$color-purple});
 
 	.halloween & {
@@ -102,15 +128,15 @@ a {
 			transition: inline-size var(--transition-duration, #{$transition-duration});
 		}
 
-		.halloween & {
-			&::after {
-				background-color: var(--color-blood, #{$color-blood});
-			}
-		}
-
 		&:focus-visible {
 			&::after {
 				inline-size: 100%;
+			}
+		}
+
+		.halloween & {
+			&::after {
+				background-color: var(--color-blood, #{$color-blood});
 			}
 		}
 

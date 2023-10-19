@@ -2,8 +2,9 @@
 
 .hero {
 	&__container {
-		display: flex;
-		flex-direction: column;
+		@include media-max($phone) {
+			inline-size: 100%;
+		}
 	}
 
 	&__title {

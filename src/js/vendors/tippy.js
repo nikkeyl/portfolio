@@ -1,11 +1,14 @@
-import tippy from 'tippy.js'
+import tippy from 'tippy.js';
 
-import '@scss/vendors/tippy'
+import '@scss/vendors/tippy';
+
+const left = 0;
+const top = 0;
 
 tippy('[data-tippy-content]', {
 	animation: 'rise',
 	delay: 80,
-	offset: [0, 5],
+	offset: [left, top],
 	placement: 'bottom',
 	role: 'tooltip'
-})
+});

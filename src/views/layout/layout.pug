@@ -12,14 +12,14 @@
 - 		lang: localization
 - 	}
 -	} = projectConfig
-- const PRODUCTION = self.htmlWebpackPlugin.options.production
+- const production = self.htmlWebpackPlugin.options.production
 
 block variables
 	- let title
-	- let preloader
-	- let popups
 	- let header
 	- let footer
+	- let popups
+	- let preloader
 
 doctype html
 html(lang=localization)
@@ -34,19 +34,20 @@ html(lang=localization)
 			name='format-detection'
 			content='telephone=no'
 		)
+		link#favicon(
+			rel='icon'
+			href='favicon.ico'
+		)
 
-		if PRODUCTION
+		if production
 			link(
 				rel='stylesheet'
 				href='assets/css/style.min.css'
 			)
 
-		link#favicon(
-			rel='icon'
-			href='favicon.ico'
-		)
+		script(defer src=`assets/js/${entry}.min.js`)
 	body
-		.wrapper
+		.wrapper.flex-column
 			if header
 				include header
 
@@ -60,5 +61,3 @@ html(lang=localization)
 			include ../components/preloader
 		if popups
 			include ../components/popup
-
-		script(src=`assets/js/${entry}.min.js`)

@@ -2,8 +2,10 @@
 
 .reviews {
 	&__slider {
-		margin: to-rem(-5);
-		padding: to-rem(5);
+		$space: 20;
+
+		margin: to-rem(-$space);
+		padding: to-rem($space);
 	}
 
 	&__review {

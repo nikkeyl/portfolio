@@ -2,23 +2,22 @@ extends layout/layout
 
 block variables
 	- title = 'Nikita Almanov - Front-End Development'
-	- preloader = true
-	- popups = true
-	- userName = 'nikkeyl'
 	- header = true
 	- footer = true
+	- popups = true
+	- preloader = true
+	- gitHubName = 'nikkeyl'
 
 block content
 	section.hero.bg-event.fullscreen.flex-align-center
-		.container.hero__container
+		.container.hero__container.flex-column
 			h1.title.title--big.hero__title
 				| #[span Front-End]
 				| #[span(data-typed) Development]
 			.hero__actions
-				a.button.button--full.hero__button(
-					href='#portfolio'
-				) Portfolio
-				a.button.button--full.hero__button(href=`https://t.me/${userName}`)
+				a.button.button--full.hero__button(href='#portfolio')
+					| Portfolio
+				a.button.button--full.hero__button(href=`https://t.me/${gitHubName}`)
 					| Order a Website
 	section.about-me
 		.about-me__inner
@@ -37,7 +36,7 @@ block content
 
 		.about-me__image.bg-spare
 			img(
-				src=`@img/about/${userName}.jpg`
+				src=`@img/about/${gitHubName}.jpg`
 				loading='lazy'
 				alt='Nikita Almanov'
 			)
@@ -108,14 +107,15 @@ block content
 		.container
 			h2.title.margin-bottom-30
 				| FAQ
-				span.sr-only Questions and answers
+				span.sr-only
+					| Questions and answers
 			.grid.gap(
 				data-spoilers
 				data-one-spoiler
 			)
 				each spoiler in spoilers.spoilers
 					details.spoiler.border-radius-10
-						summary.spoiler__trigger.gap.flex-align-center(
+						summary.spoiler-trigger.spoiler__trigger.gap.flex-align-center(
 							data-spoiler
 							data-spoiler-close
 						)
@@ -123,10 +123,11 @@ block content
 							span
 						.text.spoiler__content
 							| !{spoiler.content}
-						.sr-only !{spoiler.content}
+						.sr-only
+							| !{spoiler.content}
 
 				details.spoiler.border-radius-10
-					summary.spoiler__trigger.gap.flex-align-center(
+					summary.spoiler-trigger.spoiler__trigger.gap.flex-align-center(
 						data-spoiler
 						data-spoiler-close
 					) #[strong Questions Left?]
@@ -149,4 +150,5 @@ block content
 									)
 										svg
 											use(href=`@img/icons/sprite.svg#${social.icon}`)
-					p.sr-only I answer calls and messages from 12:00 to 20:00.
+					p.sr-only
+						| I answer calls and messages from 12:00 to 20:00.

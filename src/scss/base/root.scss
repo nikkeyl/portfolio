@@ -7,6 +7,7 @@
 
 	// Header
 	--header-block-size: #{to-rem($header-block-size)};
+	--header-inset-block-start: #{to-rem($header-inset-block-start)};
 
 	// Font families
 	--font-system-ui: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
@@ -14,19 +15,19 @@
 	--font-family-roboto: #{$font-family-roboto};
 	--font-family-open-sans: #{$font-family-open-sans};
 	--font-family-creepster: #{$font-family-creepster};
-	--font-family-base: var(--font-family-roboto, #{$font-family-roboto});
+	--font-family-base: var(--font-family-open-sans, #{$font-family-base});
 
 	// Font sizes
 	--font-size-title: #{to-rem($font-size-title)};
 	--font-size-subtitle: #{to-rem($font-size-subtitle)};
 	--font-size-text: #{to-rem($font-size-text)};
-	--font-size-base: var(--font-size-text, #{to-rem($font-size-text)});
+	--font-size-base: var(--font-size-text, #{to-rem($font-size-base)});
 
 	// Font weights
 	--font-weight-400: #{$font-weight-400};
 	--font-weight-500: #{$font-weight-500};
 	--font-weight-700: #{$font-weight-700};
-	--font-weight-base: var(--font-weight-700, #{$font-weight-700});
+	--font-weight-base: var(--font-weight-500, #{$font-weight-base});
 
 	// Colors
 	--color-primary: #{$color-primary};

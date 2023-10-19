@@ -15,6 +15,7 @@ $phone: 480;
 
 // Header
 $header-block-size: 64;
+$header-inset-block-start: 15;
 
 // Main font families
 $font-family-roboto: "Roboto";
@@ -22,16 +23,19 @@ $font-family-open-sans: "OpenSans";
 
 // Custom font families
 $font-family-creepster: "Creepster";
+$font-family-base: $font-family-open-sans;
 
 // Font sizes
 $font-size-title: 40;
 $font-size-subtitle: 30;
 $font-size-text: 16;
+$font-size-base: $font-size-text;
 
 // Font weights
 $font-weight-400: 400;
 $font-weight-500: 500;
 $font-weight-700: 700;
+$font-weight-base: $font-weight-500;
 
 // Colors
 $color-primary: #fff;

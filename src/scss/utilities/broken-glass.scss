@@ -1,4 +1,5 @@
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .broken-glass {
 	.halloween & {
@@ -9,11 +10,10 @@
 			block-size: 100%;
 			inline-size: 100%;
 			background-image: url("@img/svg/halloween/glass.svg");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
 			opacity: 0.2;
 			transition: opacity var(--transition-duration, #{$transition-duration});
+
+			@extend %background;
 		}
 	}
 }

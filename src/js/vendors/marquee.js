@@ -1,6 +1,6 @@
-import Marquee from 'vanilla-marquee'
+import Marquee from 'vanilla-marquee';
 
-const elem = document.querySelector('[role="marquee"]')
+const elem = document.querySelector('[role="marquee"]');
 
 if (elem) {
 	new Marquee(elem, {
@@ -11,5 +11,5 @@ if (elem) {
 		gap: 20,
 		pauseOnHover: true,
 		startVisible: true
-	})
+	});
 }

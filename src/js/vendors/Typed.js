@@ -1,18 +1,23 @@
-import Typed from 'typed.js'
+import Typed from 'typed.js';
 
-import { html } from '@js/helpers/nodeList'
+import { html } from '@js/helpers/nodeList';
 
-const elem = document.querySelector('[data-typed]')
+const typedText = () => {
+	const typedElement = document.querySelector('[data-typed]');
+	const string = html.classList.contains('halloween')
+		? 'Magic'
+		: html.classList.contains('new-year')
+		? 'Miracle'
+		: 'Development';
 
-if (elem) {
-	new Typed(elem, {
-		strings: [
-			html.classList.contains('halloween')
-				? 'Magic' : html.classList.contains('new-year')
-					? 'Miracle' : 'Development'
-		],
-		typeSpeed: 50,
-		loop: false,
-		fadeOut: true
-	})
-}
+	if (typedElement) {
+		new Typed(typedElement, {
+			strings: [string],
+			typeSpeed: 50,
+			loop: false,
+			fadeOut: true
+		});
+	}
+};
+
+export default typedText;

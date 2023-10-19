@@ -8,7 +8,6 @@
 		@include adaptive-value("font-size", $font-size, 150);
 
 		flex-wrap: nowrap;
-		font-family: var(--font-family-open-sans, #{$font-family-open-sans});
 		font-size: to-rem($font-size);
 		color: var(--color-accent, #{$color-accent});
 

@@ -1,12 +1,12 @@
 extends layout/layout
 
 block variables
-	- lang = 'en'
 	- title = 'Page Not Found - 404'
-	- preloader = true
-	- popups = false
 	- header = false
 	- footer = false
+	- popups = false
+	- preloader = true
+	- gitHubName = 'nikkeyl'
 
 block content
 	section.error-404.bg-event.fullscreen.flex-align-center
@@ -20,5 +20,5 @@ block content
 					)
 					span 0
 				| 4
-			a.button.button--full(href='https://nikkeyl.github.io/nikkeyl')
+			a.button.button--full(href=`https://${gitHubName}.github.io/${gitHubName}`)
 				| Back Home

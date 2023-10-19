@@ -1,11 +1,10 @@
 @use "@scss/abstracts" as *;
 
 .footer {
-	padding: to-rem(15);
+	padding-block: to-rem(15);
 
-	&__container {
+	&__body {
 		padding-block: to-rem(10);
-		font-weight: var(--font-weight-500, 500);
 		text-align: center;
 		background-color: var(--color-pale, #{$color-pale});
 

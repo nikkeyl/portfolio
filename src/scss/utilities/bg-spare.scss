@@ -1,8 +1,9 @@
+@use "@scss/utilities/placeholders" as *;
+
 .bg-spare {
 	.halloween & {
 		background-image: url("@img/events/halloween/happy-halloween.jpg");
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
+
+		@extend %background;
 	}
 }

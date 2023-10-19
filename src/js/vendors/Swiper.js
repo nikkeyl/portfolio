@@ -42,4 +42,4 @@ const initSliders = () => {
 	}
 }
 
-export { initSliders }
+export default initSliders

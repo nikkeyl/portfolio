@@ -1,10 +1,10 @@
-import { isMobile } from '@js/helpers/isMobile'
-import { html } from '@js/helpers/nodeList'
+import isMobile from '@js/helpers/isMobile';
+import { html } from '@js/helpers/nodeList';
 
 const addTouchClass = () => {
 	if (isMobile.any()) {
-		html.classList.add('touch')
+		html.classList.add('touch');
 	}
-}
+};
 
-export { addTouchClass }
+export default addTouchClass;

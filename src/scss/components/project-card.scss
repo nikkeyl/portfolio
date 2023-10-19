@@ -40,6 +40,10 @@
 			inline-size: 100%;
 			transition: color var(--transition-duration, #{$transition-duration});
 
+			&:focus-visible {
+				color: var(--color-accent, #{$color-accent});
+			}
+
 			.halloween & {
 				color: var(--color-accent, #{$color-accent});
 
@@ -50,10 +54,6 @@
 				@include media-hover {
 					color: var(--color-inverse, #{$color-accent});
 				}
-			}
-
-			&:focus-visible {
-				color: var(--color-accent, #{$color-accent});
 			}
 
 			@include media-hover {
