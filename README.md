@@ -7,7 +7,7 @@
 - 👥 I can work in a team
 - 🧠 I also don't like routine, so I automate it and concentrate on the essentials
 - 🌿 The rest of the time I'm improving in minimalism
-- 🎥 Discussing cinema
+- 🎥 Discussing cinema and philosophy
 - 💬 Talking with friends
 - 🚴‍♂️ And Doing Sports
 
@@ -30,7 +30,8 @@
 ## Projects
 
 - 🏭 [![](https://img.shields.io/badge/conqueror-fe0)](https://github.com/nikkeyl/conqueror)
-  > Builder for Front-End based on Gulp and Webpack.
+  > Conqueror is a semi-framework for simple, fast, and modular front-end development
+  > based on Gulp, Webpack and Babel.
 
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
   > This is not just a portfolio site, it's a collection of
