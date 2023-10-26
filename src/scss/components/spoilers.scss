@@ -26,19 +26,20 @@
 
 				&::before,
 				&::after {
-					@include pseudo;
-
 					inset-block-start: 50%;
 					inset-inline-end: to-rem(15);
 					border-radius: to-rem(2);
 					block-size: to-rem(2);
 					inline-size: to-rem(20);
 					background-color: var(--color-secondary, #{$color-secondary});
-					transition: rotate var(--transition-duration, #{$transition-duration});
+					transition: rotate
+						var(--default-transition-duration, #{$default-transition-duration});
 
 					.halloween & {
 						display: none;
 					}
+
+					@extend %pseudo;
 				}
 
 				&::before {
@@ -48,7 +49,8 @@
 				.halloween & {
 					background-image: url("@img/svg/halloween/bones.svg");
 					rotate: 45deg;
-					transition: rotate var(--transition-duration, #{$transition-duration});
+					transition: rotate
+						var(--default-transition-duration, #{$default-transition-duration});
 
 					@extend %background;
 				}
@@ -128,7 +130,6 @@
 	&__content {
 		padding: to-rem(15);
 		color: var(--color-primary, #{$color-secondary});
-		background-color: var(--color-accent, #{$color-accent});
 
 		.dark & {
 			color: var(--color-secondary, #{$color-primary});
@@ -137,5 +138,7 @@
 		.halloween & {
 			color: var(--color-primary, #{$color-secondary});
 		}
+
+		@extend %bg-color-accent;
 	}
 }

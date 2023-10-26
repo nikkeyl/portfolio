@@ -4,15 +4,15 @@
 .broken-glass {
 	.halloween & {
 		&::before {
-			@include pseudo;
-
-			z-index: 1;
+			z-index: var(--z-index-1, #{$z-index-1});
 			block-size: 100%;
 			inline-size: 100%;
 			background-image: url("@img/svg/halloween/glass.svg");
 			opacity: 0.2;
-			transition: opacity var(--transition-duration, #{$transition-duration});
+			transition: opacity
+				var(--default-transition-duration, #{$default-transition-duration});
 
+			@extend %pseudo;
 			@extend %background;
 		}
 	}

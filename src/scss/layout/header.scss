@@ -5,7 +5,7 @@
 	$breakpoint-350: 350;
 
 	position: fixed;
-	z-index: 90;
+	z-index: var(--z-index-2, #{$z-index-2});
 	min-block-size: var(--header-block-size, #{to-rem($header-block-size)});
 
 	&__container {

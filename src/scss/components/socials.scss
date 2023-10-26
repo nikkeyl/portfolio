@@ -12,7 +12,8 @@
 			block-size: to-rem($size);
 			inline-size: to-rem($size);
 			fill: var(--color-secondary, #{$color-secondary});
-			transition: fill var(--transition-duration, #{$transition-duration});
+			transition: fill
+				var(--default-transition-duration, #{$default-transition-duration});
 
 			.halloween & {
 				fill: var(--color-inverse, #{$color-accent});

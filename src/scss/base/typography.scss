@@ -1,5 +1,6 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 body {
 	font-family: var(--font-family-base, var(--font-system-ui, system-ui));
@@ -40,7 +41,8 @@ a {
 
 	.halloween & {
 		font-family: var(--font-family-creepster, #{$font-family-creepster});
-		color: var(--color-accent, #{$color-accent});
+
+		@extend %color-accent;
 	}
 }
 
@@ -52,7 +54,7 @@ a {
 
 	span {
 		&:not([data-typed]) {
-			color: var(--color-accent, #{$color-accent});
+			@extend %color-accent;
 		}
 	}
 
@@ -66,11 +68,12 @@ a {
 
 	.halloween & {
 		font-family: var(--font-family-creepster, #{$font-family-creepster});
-		color: var(--color-accent, #{$color-accent});
 
 		[data-typed] {
 			color: var(--color-inverse, #{$color-accent});
 		}
+
+		@extend %color-accent;
 	}
 }
 
@@ -125,7 +128,8 @@ a {
 			block-size: to-rem(2);
 			inline-size: 0;
 			background-color: var(--color-purple, #{$color-purple});
-			transition: inline-size var(--transition-duration, #{$transition-duration});
+			transition: inline-size
+				var(--default-transition-duration, #{$default-transition-duration});
 		}
 
 		&:focus-visible {

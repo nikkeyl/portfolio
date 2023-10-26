@@ -10,13 +10,12 @@
 	padding-inline: to-rem(15);
 	text-align: center;
 	line-height: div-rounding(18, $font-size-base);
-	color: var(--color-primary, #{$color-primary});
-	background-color: var(--color-accent, #{$color-accent});
 	transition:
-		background-color var(--transition-duration, #{$transition-duration}),
-		box-shadow var(--transition-duration, #{$transition-duration}),
-		transform var(--transition-duration, #{$transition-duration}),
-		color var(--transition-duration, #{$transition-duration});
+		background-color
+			var(--default-transition-duration, #{$default-transition-duration}),
+		box-shadow var(--default-transition-duration, #{$default-transition-duration}),
+		transform var(--default-transition-duration, #{$default-transition-duration}),
+		color var(--default-transition-duration, #{$default-transition-duration});
 
 	&:focus-visible {
 		color: var(--color-secondary, #{$color-secondary});
@@ -62,5 +61,7 @@
 		}
 	}
 
+	@extend %color-primary;
+	@extend %bg-color-accent;
 	@extend %box-shadow-accent;
 }

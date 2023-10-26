@@ -17,13 +17,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: to-rem(15);
+		align-self: center;
 
-		@include media-min($phone) {
-			align-self: center;
+		li {
+			@include slide(2, 50, 1.5, $default-transition-duration, top);
 		}
-	}
-
-	&__button {
-		@include slide(2, 50, 1.5, 0.4, top);
 	}
 }

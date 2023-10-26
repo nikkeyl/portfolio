@@ -1,10 +1,11 @@
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .about-me {
 	@include responsive-output(800, $tablet, 1);
 
 	&__inner {
-		background-color: var(--color-accent, #{$color-accent});
+		@extend %bg-color-accent;
 	}
 
 	&__container {
@@ -15,8 +16,7 @@
 	}
 
 	&__body {
-		z-index: 1;
-		color: var(--color-primary, #{$color-primary});
+		z-index: var(--z-index-1, #{$z-index-1});
 
 		.dark & {
 			color: var(--color-text-primary, #{$color-primary});
@@ -29,6 +29,8 @@
 		@include media-min($tablet) {
 			padding-inline-start: to-rem(50);
 		}
+
+		@extend %color-primary;
 	}
 
 	&__title {
@@ -50,7 +52,7 @@
 
 				inset-block-start: to-rem(-150);
 				inset-inline-end: to-rem(-130);
-				z-index: 4;
+				z-index: var(--z-index-1, #{$z-index-1});
 				block-size: to-rem(1000);
 				inline-size: to-rem(200);
 				background-color: var(--color-accent, #{$color-accent});

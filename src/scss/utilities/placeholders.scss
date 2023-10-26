@@ -15,3 +15,20 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+%pseudo {
+	content: "";
+	position: absolute;
+}
+
+%color-primary {
+	color: var(--color-primary, #{$color-primary});
+}
+
+%bg-color-accent {
+	background-color: var(--color-accent, #{$color-accent});
+}
+
+%color-accent {
+	color: var(--color-accent, #{$color-accent});
+}

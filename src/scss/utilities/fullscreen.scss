@@ -5,6 +5,7 @@
 	padding-block: to-rem(90);
 
 	.touch & {
-		transition: min-block-size var(--transition-duration, #{$transition-duration});
+		transition: min-block-size
+			var(--default-transition-duration, #{$default-transition-duration});
 	}
 }

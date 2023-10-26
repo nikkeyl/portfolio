@@ -190,7 +190,7 @@
 			$delay: ($i - 1) * $animation-delay;
 
 			&:nth-child(#{$i}) {
-				animation-delay: #{$delay}s;
+				animation-delay: $delay;
 			}
 		}
 	}

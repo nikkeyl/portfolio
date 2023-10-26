@@ -46,9 +46,10 @@
 	inline-size: to-rem($size);
 	background-color: var(--color-gray, #{$color-gray});
 	transition:
-		background-color var(--transition-duration, #{$transition-duration}),
-		box-shadow var(--transition-duration, #{$transition-duration}),
-		inline-size var(--transition-duration, #{$transition-duration});
+		background-color
+			var(--default-transition-duration, #{$default-transition-duration}),
+		box-shadow var(--default-transition-duration, #{$default-transition-duration}),
+		inline-size var(--default-transition-duration, #{$default-transition-duration});
 	cursor: pointer;
 }
 

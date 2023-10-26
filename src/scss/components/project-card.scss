@@ -1,4 +1,5 @@
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .project-card {
 	display: grid;
@@ -8,11 +9,8 @@
 
 	&__image {
 		padding-block-end: 90%;
-		background-color: var(--color-accent, #{$color-accent});
 
 		img {
-			object-position: top;
-
 			@include media-hover {
 				scale: 1.03;
 			}
@@ -23,6 +21,8 @@
 				scale: 1.03;
 			}
 		}
+
+		@extend %color-accent;
 	}
 
 	&__body {
@@ -38,15 +38,14 @@
 		a {
 			display: block;
 			inline-size: 100%;
-			transition: color var(--transition-duration, #{$transition-duration});
+			transition: color
+				var(--default-transition-duration, #{$default-transition-duration});
 
 			&:focus-visible {
-				color: var(--color-accent, #{$color-accent});
+				@extend %color-accent;
 			}
 
 			.halloween & {
-				color: var(--color-accent, #{$color-accent});
-
 				&:focus-visible {
 					color: var(--color-inverse, #{$color-accent});
 				}
@@ -54,6 +53,8 @@
 				@include media-hover {
 					color: var(--color-inverse, #{$color-accent});
 				}
+
+				@extend %color-accent;
 			}
 
 			@include media-hover {

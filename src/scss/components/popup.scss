@@ -8,7 +8,8 @@
 	padding-block: to-rem(30);
 	padding-inline: to-rem($container-padding-inline);
 	opacity: 0;
-	transition: opacity 0.5s;
+	transition: opacity
+		var(--default-transition-duration, #{$default-transition-duration});
 	pointer-events: none;
 
 	&__wrapper {
@@ -26,8 +27,8 @@
 		opacity: 0;
 		scale: 0;
 		transition:
-			opacity 0.5s,
-			scale 0.5s;
+			opacity var(--default-transition-duration, #{$default-transition-duration}),
+			scale var(--default-transition-duration, #{$default-transition-duration});
 
 		.lock & {
 			opacity: 1;
@@ -78,7 +79,7 @@
 		text-align: center;
 
 		span {
-			color: var(--color-accent, #{$color-accent});
+			@extend %color-accent;
 		}
 
 		.halloween & {
@@ -90,7 +91,6 @@
 		position: absolute;
 		inset-block-start: to-rem(20);
 		inset-inline-end: to-rem(15);
-		z-index: 5;
 		display: block;
 		block-size: to-rem(18);
 		inline-size: to-rem(30);
@@ -98,8 +98,6 @@
 
 		&::before,
 		&::after {
-			@include pseudo;
-
 			inset-inline-end: 0;
 			border-radius: to-rem(2);
 			block-size: to-rem(2);
@@ -109,6 +107,8 @@
 			.halloween & {
 				display: none;
 			}
+
+			@extend %pseudo;
 		}
 
 		&::before {
@@ -131,7 +131,7 @@
 	}
 
 	&--show {
-		z-index: 150;
+		z-index: var(--z-index-4, #{$z-index-4});
 		overflow: auto;
 		opacity: 1;
 		pointer-events: auto;

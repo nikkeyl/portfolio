@@ -7,10 +7,8 @@ const slideUp = (target, duration = 500, showMore = 0) => {
 		target.offsetHeight;
 		target.style.overflow = 'hidden';
 		target.style.height = `${showMore}px`;
-		target.style.paddingTop = 0;
-		target.style.paddingBottom = 0;
-		target.style.marginTop = 0;
-		target.style.marginBottom = 0;
+		target.style.paddingBlock = 0;
+		target.style.marginBlock = 0;
 
 		window.setTimeout(() => {
 			target.hidden = !showMore;
@@ -19,10 +17,8 @@ const slideUp = (target, duration = 500, showMore = 0) => {
 				target.style.removeProperty('height');
 			}
 
-			target.style.removeProperty('padding-top');
-			target.style.removeProperty('padding-bottom');
-			target.style.removeProperty('margin-top');
-			target.style.removeProperty('margin-bottom');
+			target.style.removeProperty('padding-block');
+			target.style.removeProperty('margin-block');
 
 			if (target.hidden) {
 				target.style.removeProperty('overflow');

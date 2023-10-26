@@ -17,6 +17,12 @@ $phone: 480;
 $header-block-size: 64;
 $header-inset-block-start: 15;
 
+// Z-index
+$z-index-1: 1;
+$z-index-2: 2;
+$z-index-3: 3;
+$z-index-4: 4;
+
 // Main font families
 $font-family-roboto: "Roboto";
 $font-family-open-sans: "OpenSans";
@@ -53,4 +59,4 @@ $color-inverse-rgb: 255 238 0;
 $color-gray-rgb: 136 136 136;
 
 // Transitions
-$transition-duration: 0.3s
+$default-transition-duration: 500ms;

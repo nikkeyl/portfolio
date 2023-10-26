@@ -1,5 +1,6 @@
 @use "sass:math" as *;
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .error-404 {
 	&__title {
@@ -9,7 +10,6 @@
 
 		flex-wrap: nowrap;
 		font-size: to-rem($font-size);
-		color: var(--color-accent, #{$color-accent});
 
 		span {
 			color: var(--color-inverse, #{$color-inverse});
@@ -33,5 +33,7 @@
 				display: none;
 			}
 		}
+
+		@extend %color-accent;
 	}
 }

@@ -15,12 +15,7 @@
 	}
 }
 
-html,
-body {
-	min-block-size: 100vb;
-	min-inline-size: $min-inline-size + px;
-	background-color: var(--color-background-primary, #{$color-primary});
-	overscroll-behavior: none;
+html {
 	scroll-padding-block-start: calc(
 		var(--header-block-size, #{to-rem($header-block-size)}) +
 			var(--header-inset-block-start, #{$header-inset-block-start})
@@ -29,6 +24,12 @@ body {
 	@include media-motion(no-preference) {
 		scroll-behavior: smooth;
 	}
+}
+
+body {
+	min-inline-size: $min-inline-size + px;
+	background-color: var(--color-background-primary, #{$color-primary});
+	overscroll-behavior-block: none;
 }
 
 ::selection {

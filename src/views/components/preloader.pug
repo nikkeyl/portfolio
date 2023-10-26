@@ -14,24 +14,11 @@
 			touch-action: none;
 		}
 
-		.loading body {
-			opacity: 0;
-			visibility: hidden;
-		}
-
-		.loaded body {
-			opacity: 1;
-			visibility: visible;
-			transition: opacity .5s;
-		}
-
 		.preloader {
 			position: fixed;
 			inset: 0;
-			z-index: 999;
+			z-index: 3;
 			background-color: #fff;
-			opacity: 1;
-			visibility: visible;
 		}
 
 		.dark .preloader {
@@ -46,18 +33,19 @@
 			position: absolute;
 			inset-block-start: 50%;
 			inset-inline-start: 50%;
-			block-size: 6.25rem;
+			block-size: auto;
+			translate: -50% -50%;
 			inline-size: 6.25rem;
 			animation: spin 2s linear infinite;
 		}
 
 		@keyframes spin {
 			0% {
-				transform: translate(-50%, -50%) rotate(0deg);
+				rotate: 0;
 			}
 
 			100% {
-				transform: translate(-50%, -50%) rotate(360deg);
+				rotate: 360deg;
 			}
 		}
 
@@ -65,32 +53,50 @@
 			opacity: 0;
 			visibility: hidden;
 			transition:
-				visibility 0.3s,
-				opacity 0.3s;
+				visibility .3s,
+				opacity .3s;
 		}
 	script.
-		const preloader = () => {
-			const preloaderTemplate =
-				`
-					<div class="preloader">
-						<div class="preloader__load">
-							<svg viewBox="0 0 100 100">
-								<path
-									fill="transparent"
-									stroke-linecap="round"
-									stroke-width="8"
-									stroke="#0d8"
-									d="M50 10 a 40 40 0 0 1 0 80"
-								/>
-							</svg>
-						</div>
+		const html = document.documentElement;
+		const color = html.classList.contains('halloween') ? "#f80" : "#0d8";
+		const preloaderTemplate =
+			`
+				<div class="preloader">
+					<div class="preloader__load">
+						<svg viewBox="0 0 100 100">
+							<path
+								fill="transparent"
+								stroke="${color}"
+								stroke-width="8"
+								stroke-linecap="round"
+								d="M50 10 a 40 40 0 0 1 0 80"
+							/>
+						</svg>
 					</div>
-				`;
+				</div>
+			`;
 
-			document.querySelector('html').insertAdjacentHTML(
-				"beforeend",
-				preloaderTemplate
-			);
-		}
+		html.insertAdjacentHTML(
+			"beforeend",
+			preloaderTemplate
+		);
+		document.addEventListener('DOMContentLoaded', () => {
+			const preloader = () => {
+				const preloader = document.querySelector('.preloader');
+				const preloaderContainer = document.getElementById('preloader');
+				const delay = 300;
 
-		preloader();
+				if (html.classList.contains('loaded')) {
+					setInterval(() => {
+						preloader.classList.add('hide');
+
+						setTimeout(() => {
+							preloader.remove();
+							preloaderContainer.remove();
+						}, delay);
+					}, delay);
+				}
+			}
+
+			preloader();
+		})

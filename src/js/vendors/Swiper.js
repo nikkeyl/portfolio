@@ -14,18 +14,14 @@ const initSliders = () => {
 			speed: 800,
 			grabCursor: true,
 			simulateTouch: true,
-
+			a11y: true,
 			pagination: {
 				el: '.reviews__pagination',
 				clickable: true
 			},
-
 			keyboard: {
 				pageUpDown: true
 			},
-
-			a11y: true,
-
 			breakpoints: {
 				320: {
 					slidesPerView: 1,

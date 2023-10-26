@@ -5,7 +5,7 @@ body {
 		@include pseudo("", fixed);
 
 		inset: 0;
-		z-index: 149;
+		z-index: var(--z-index-3, #{$z-index-3});
 		background-color: rgb(var(--color-gray-rgb, #{$color-gray-rgb}) / 0.5);
 		opacity: 0;
 		backdrop-filter: blur(to-rem(5));

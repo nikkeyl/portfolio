@@ -8,7 +8,7 @@
 		text-align: center;
 		background-color: var(--color-pale, #{$color-pale});
 
-		> .logo {
+		.logo {
 			$font-size: 20;
 
 			font-size: to-rem($font-size);

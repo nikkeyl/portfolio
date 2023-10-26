@@ -3,7 +3,7 @@
 @use "@scss/utilities/placeholders" as *;
 
 [data-tippy-root] {
-	z-index: 95 !important;
+	z-index: var(--z-index-2, #{$z-index-2}) !important;
 }
 
 .tippy-box[data-animation="rise"][data-state="hidden"] {
@@ -12,7 +12,6 @@
 }
 
 .tippy-content {
-	@extend %box-shadow-inverse;
 	$font-size: 13;
 
 	border-radius: to-rem(10);
@@ -22,11 +21,10 @@
 	line-height: div-rounding(22, $font-size);
 	background-color: var(--color-inverse, #{$color-inverse});
 
-	.dark & {
-		color: var(--color-primary, #{$color-secondary});
-	}
-
+	.dark &,
 	.halloween & {
 		color: var(--color-primary, #{$color-secondary});
 	}
+
+	@extend %box-shadow-inverse;
 }

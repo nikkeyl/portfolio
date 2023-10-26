@@ -9,16 +9,18 @@ block variables
 	- gitHubName = 'nikkeyl'
 
 block content
-	section.hero.bg-event.fullscreen.flex-align-center
+	section.hero.fullscreen.flex-align-center.bg-event
 		.container.hero__container.flex-column
 			h1.title.title--big.hero__title
 				| #[span Front-End]
 				| #[span(data-typed) Development]
-			.hero__actions
-				a.button.button--full.hero__button(href='#portfolio')
-					| Portfolio
-				a.button.button--full.hero__button(href=`https://t.me/${gitHubName}`)
-					| Order a Website
+			ul.hero__actions
+				li
+					a.button.button--full(href='#portfolio')
+						| Portfolio
+				li
+					a.button.button--full(href=`https://t.me/${gitHubName}`)
+						| Order a Website
 	section.about-me
 		.about-me__inner
 			.container.about-me__container
@@ -26,14 +28,18 @@ block content
 					h2.title.about-me__title.margin-bottom-30
 						| Who Am I?
 					.text
-						p I have been studying front-end development for only a year, #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
-						p You can see for yourself by going to #[a.link(href='#portfolio') portfolio].
-						p Also, thanks to my minimalism, I #[strong write clean and understandable code].
-						p If you want to know #[strong what technologies I own], you can go down a little #[a.link(href='#skills') lower].
-
-						each skill in skills.skills
-							p.sr-only=skill.name
-
+						p
+							| I have been studying front-end development for only a year,
+							| #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
+						p
+							| You can see for yourself by going to
+							| #[a.link(href='#portfolio') portfolio].
+						p
+							| Also, thanks to my minimalism,
+							| I #[strong write clean and understandable code].
+						p
+							| If you want to know #[strong what technologies I own],
+							| you can go down a little #[a.link(href='#skills') lower].
 		.about-me__image.bg-spare
 			img(
 				src=`@img/about/${gitHubName}.jpg`
@@ -43,6 +49,9 @@ block content
 	.skills.padding-block#skills
 		h2.title.margin-bottom-30
 			| Skills
+		each skill in skills.skills
+			p.sr-only
+				=skill.name
 		.skills__row(role='marquee')
 			.skills__icons.gap
 				each skill in skills.skills
@@ -58,10 +67,10 @@ block content
 		.container
 			h2.title.margin-bottom-30
 				| Portfolio
-			.grid.portfolio__cards.gap
+			.portfolio__cards.grid.gap
 				each card in projects.cards
 					article.project-card.border-radius-10
-						a.project-card__image.bg-image.bg-spare.broken-glass(href=card.linkSite)
+						a.project-card__image.bg-spare.bg-image.broken-glass(href=card.linkSite)
 							img.tr-scale(
 								src=card.img
 								loading='lazy'
@@ -71,10 +80,8 @@ block content
 							h3.card-title.project-card__title
 								a(href=card.linkSite)
 									=card.name
-							a.button.project-card__button(
-								href=card.linkSite
-								data-tippy-content=card.name
-							) View
+							a.button.project-card__button(href=card.linkSite)
+								| View
 
 	section.reviews.padding-block
 		.container
@@ -87,11 +94,11 @@ block content
 							article(class=[
 								'review',
 								review.class,
-								'broken-glass',
-								'border-radius-10'
+								'border-radius-10',
+								'broken-glass'
 							])
 								.review__info.flex-align-center
-									.review__image.bg-image.bg-spare.border-radius-50
+									.review__image.bg-spare.bg-image.border-radius-50
 										img(
 											src=review.img
 											loading='lazy'
@@ -106,7 +113,7 @@ block content
 	section.padding-block#questions
 		.container
 			h2.title.margin-bottom-30
-				| FAQ
+				| Q&A
 				span.sr-only
 					| Questions and answers
 			.grid.gap(
@@ -140,6 +147,8 @@ block content
 						) Contact Me
 							svg
 								use(href='@img/icons/sprite.svg#info')
+						p.sr-only
+							| I answer calls and messages from 12:00 to 20:00.
 						ul.socials.spoiler__socials.flex-align-center
 							each social in socials.socials
 								li.socials__item.tr-scale
@@ -150,5 +159,3 @@ block content
 									)
 										svg
 											use(href=`@img/icons/sprite.svg#${social.icon}`)
-					p.sr-only
-						| I answer calls and messages from 12:00 to 20:00.

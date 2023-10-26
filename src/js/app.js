@@ -8,9 +8,9 @@ import spoilers from '@js/components/spoilers';
 import addLoadedClass from '@js/modules/addLoadedClass';
 import addTouchClass from '@js/modules/addTouchClass';
 import colorScheme from '@js/modules/colorScheme';
-import currentYear from '@js/modules/currentYear';
-import webp from '@js/modules/webp';
+import getCurrentYear from '@js/modules/getCurrentYear';
 import startUntilEvent from '@js/modules/startUntilEvent';
+import webp from '@js/modules/webp';
 
 // Vendors
 import initSliders from '@js/vendors/Swiper';
@@ -26,15 +26,10 @@ spoilers();
 addLoadedClass();
 addTouchClass();
 colorScheme();
-currentYear();
+getCurrentYear();
 startUntilEvent();
 webp();
 
 // Vendors
 initSliders();
 typedText();
-
-// Scroll
-// import { ScrollWatcher } from '@js/modules/scroll/watcher'
-// import { customCursor } from './modules/customCursor'
-// import '@js/vendors/SimpleBar'

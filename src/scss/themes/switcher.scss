@@ -1,22 +1,6 @@
 @use "@scss/abstracts" as *;
 @use "@scss/utilities/placeholders" as *;
 
-// colorScheme.js
-// preloader
-// add link to reviews section
-// tips
-
-// popup.js to-do так что-бы при открытии попапа все элменеты были не доступны для TAB
-// icons in skills section [bem, stylelint, semver, github]
-
-// spoilers
-// optimize
-
-// page speed
-// chrome devtools
-// accessibility report
-// github issues
-
 .theme-switcher {
 	position: relative;
 	flex-grow: 0;
@@ -28,8 +12,6 @@
 	background-color: var(--color-gray, #{$color-gray});
 
 	&::before {
-		@include pseudo;
-
 		inset-block-start: to-rem(2);
 		inset-inline-start: to-rem(2);
 		border-radius: 50%;
@@ -37,9 +19,11 @@
 		inline-size: to-rem(20);
 		background-color: var(--color-pale, #{$color-gray});
 		transition:
-			background-color var(--transition-duration, #{$transition-duration}),
-			box-shadow var(--transition-duration, #{$transition-duration}),
-			inset-block-start var(--transition-duration, #{$transition-duration});
+			background-color
+				var(--default-transition-duration, #{$default-transition-duration}),
+			box-shadow var(--default-transition-duration, #{$default-transition-duration}),
+			inset-block-start
+				var(--default-transition-duration, #{$default-transition-duration});
 
 		.dark & {
 			inset-block-start: to-rem(18);
@@ -47,6 +31,8 @@
 
 			@extend %box-shadow-inverse;
 		}
+
+		@extend %pseudo;
 	}
 
 	.halloween & {

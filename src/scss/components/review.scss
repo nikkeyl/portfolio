@@ -1,4 +1,5 @@
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .review {
 	overflow: hidden;
@@ -12,7 +13,7 @@
 		background-color: var(--color-pale, #{$color-pale});
 
 		.halloween & {
-			color: var(--color-accent, #{$color-accent});
+			@extend %color-accent;
 		}
 	}
 
@@ -26,8 +27,6 @@
 
 	&__text {
 		padding: to-rem(15);
-		color: var(--color-primary, #{$color-primary});
-		background: var(--color-accent, #{$color-accent});
 
 		.dark & {
 			color: var(--color-text-primary, #{$color-primary});
@@ -36,6 +35,9 @@
 		.halloween & {
 			color: var(--color-primary, #{$color-secondary});
 		}
+
+		@extend %color-primary;
+		@extend %bg-color-accent;
 	}
 
 	.swiper-slide-active & {
