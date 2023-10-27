@@ -42,6 +42,8 @@
 - [**Chat AI App**](https://github.com/StarkElessar/chat-ai-app)
   > Convenient corporate chat based on chatGPT-4.
 
+- [**GitHub Profile Achivement Russian**](https://github.com/github-profile-achievements/russian)
+
 ## Contacts
 
 - 📱 You can write to me here [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl) or here [![](https://img.shields.io/badge/nikkeyl-red?style=flat&logo=Gmail&logoColor=white)](mailto:nikkeyl.dev@gmail.com)
