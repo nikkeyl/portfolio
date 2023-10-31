@@ -30,8 +30,8 @@
 ## Projects
 
 - 🏭 [![](https://img.shields.io/badge/conqueror-fe0)](https://github.com/nikkeyl/conqueror)
-  > Conqueror is a semi-framework for simple, fast, and modular front-end development
-  > based on Gulp, Webpack and Babel.
+  > Conqueror is a website builder for simple, fast and modular Front-End development
+  > based on Gulp and Webpack. Supports ES6 to ES5 transpilation using Babel
 
 - 🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
   > This is not just a portfolio site, it's a collection of
