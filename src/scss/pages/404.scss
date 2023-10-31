@@ -5,6 +5,7 @@
 .error-404 {
 	&__title {
 		$font-size: 350;
+		font-weight: var(--font-weight-700, #{$font-weight-700});
 
 		@include adaptive-value("font-size", $font-size, 150);
 

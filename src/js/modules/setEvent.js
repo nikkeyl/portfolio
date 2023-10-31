@@ -1,18 +1,18 @@
 import { html } from '@js/helpers/nodeList';
 
-const startUntilEvent = () => {
+const setEvent = () => {
 	const currentDate = new Date();
 	const currentYear = currentDate.getFullYear();
-	const [halloweenStart, halloweenEnd] = [
-		new Date(`10.17.${currentYear}`),
-		new Date(`10.31.${currentYear}`)
+	const [halloweenStartDate, halloweenEndDate] = [
+		new Date(`10.30.${currentYear}`),
+		new Date(`11.01.${currentYear}`)
 	];
-	const halloweenDuration =
-		currentDate >= halloweenStart && currentDate <= halloweenEnd;
+	const isHalloween =
+		currentDate > halloweenStartDate && currentDate < halloweenEndDate;
 	const favicon = document.getElementById('favicon');
 
 	switch (true) {
-		case halloweenDuration:
+		case isHalloween:
 			favicon.setAttribute('href', 'assets/img/favicons/halloween.ico');
 			html.classList.add('halloween');
 			break;
@@ -21,4 +21,4 @@ const startUntilEvent = () => {
 	}
 };
 
-export default startUntilEvent;
+export default setEvent;

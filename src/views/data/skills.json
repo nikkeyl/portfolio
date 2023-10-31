@@ -105,6 +105,10 @@
       "name": "Gulp"
     },
     {
+      "icon": "assets/img/svg/skills/babel.svg",
+      "name": "Babel"
+    },
+    {
       "icon": "assets/img/svg/skills/svgo.svg",
       "name": "SVGO"
     },

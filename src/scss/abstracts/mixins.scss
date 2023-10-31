@@ -65,11 +65,12 @@
 }
 
 @mixin responsive-output($body-inline-size, $breakpoint: $tablet, $reverse: 0) {
-	$percent: round(div($body-inline-size, $container-max-inline-size) * 100);
-	$inline-size: $body-inline-size - ($body-inline-size - $percent);
+	$body-max-inline-size: div-rounding($body-inline-size, $container-max-inline-size) *
+		100;
+	$image-inline-size: $body-inline-size - ($body-inline-size - $body-max-inline-size);
 
-	@if $inline-size <= 10 {
-		$inline-size: 0 + $inline-size;
+	@if $image-inline-size <= 10 {
+		$image-inline-size: 0 + $image-inline-size;
 	}
 
 	&__inner {
@@ -90,7 +91,7 @@
 
 	&__body {
 		@include media-min($breakpoint) {
-			inline-size: $percent + 0%;
+			inline-size: $body-max-inline-size + 0%;
 		}
 	}
 
@@ -101,11 +102,17 @@
 			flex-shrink: 0;
 			flex-basis: calc(
 				(
-						(100% - to-rem($container-padding-inline)) *
-							div(div((100 - $percent), 1), 100)
-					) + (to-rem($container-padding-inline) / 2)
+						(
+								100% -
+									var(
+										--container-padding-inline,
+										#{to-rem($container-padding-inline)}
+									)
+							) * div(div((100 - $body-max-inline-size), 1), 100)
+					) +
+					(var(--container-padding-inline, #{to-rem($container-padding-inline)}) / 2)
 			);
-			aspect-ratio: 4 / 3;
+			aspect-ratio: 16 / 9;
 
 			img {
 				position: absolute;
@@ -125,7 +132,8 @@
 			flex-grow: 0;
 			flex-shrink: 0;
 			flex-basis: calc(
-				50% - (div($inline-size, 100) - 0.5) * to-rem($container-max-inline-size)
+				50% - (div($image-inline-size, 100) - 0.5) *
+					to-rem($container-max-inline-size)
 			);
 		}
 	}

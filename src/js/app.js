@@ -9,7 +9,7 @@ import addLoadedClass from '@js/modules/addLoadedClass';
 import addTouchClass from '@js/modules/addTouchClass';
 import colorScheme from '@js/modules/colorScheme';
 import getCurrentYear from '@js/modules/getCurrentYear';
-import startUntilEvent from '@js/modules/startUntilEvent';
+import setEvent from '@js/modules/setEvent';
 import webp from '@js/modules/webp';
 
 // Vendors
@@ -27,7 +27,7 @@ addLoadedClass();
 addTouchClass();
 colorScheme();
 getCurrentYear();
-startUntilEvent();
+setEvent();
 webp();
 
 // Vendors
