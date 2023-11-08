@@ -97,7 +97,6 @@
 
 	&__image {
 		@include media-min($breakpoint) {
-			position: relative;
 			flex-grow: 0;
 			flex-shrink: 0;
 			flex-basis: calc(
@@ -113,12 +112,9 @@
 					(var(--container-padding-inline, #{to-rem($container-padding-inline)}) / 2)
 			);
 			aspect-ratio: 16 / 9;
-
+			
 			img {
-				position: absolute;
-				inset: 0;
-				block-size: 100%;
-				object-fit: cover;
+				object-position: center;
 			}
 
 			@if $reverse == 1 {

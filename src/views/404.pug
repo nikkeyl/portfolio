@@ -9,16 +9,11 @@ block variables
 	- gitHubName = 'nikkeyl'
 
 block content
-	section.error-404.bg-event.fullscreen.flex-align-center
+	section.error-404.flex-align-center.fullscreen.bg-event
 		.container.flex-align-center.flex-column
-			h1.error-404__title.margin-bottom-20.flex-align-center
+			h1.error-404__title.flex-align-center.margin-bottom-20
 				| 4
-				div
-					img(
-						src='@img/svg/halloween/eye.svg'
-						alt='eye'
-					)
-					span 0
+				span 0
 				| 4
 			a.button.button--full(href=`https://${gitHubName}.github.io/${gitHubName}`)
 				| Back Home

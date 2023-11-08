@@ -10,12 +10,6 @@
 		rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
 }
 
-%background {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
 %pseudo {
 	content: "";
 	position: absolute;

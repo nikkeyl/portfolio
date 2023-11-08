@@ -9,7 +9,7 @@ block variables
 	- gitHubName = 'nikkeyl'
 
 block content
-	section.hero.fullscreen.flex-align-center.bg-event
+	section.hero.flex-align-center.fullscreen
 		.container.hero__container.flex-column
 			h1.title.title--big.hero__title
 				| #[span Front-End]
@@ -40,11 +40,13 @@ block content
 						p
 							| If you want to know #[strong what technologies I own],
 							| you can go down a little #[a.link(href='#skills') lower].
-		.about-me__image.bg-spare
+		.about-me__image
 			img(
 				src=`@img/about/${gitHubName}.jpg`
-				loading='lazy'
 				alt='Nikita Almanov'
+				loading='lazy'
+				width='400'
+				height='400'
 			)
 	.skills.padding-block#skills
 		h2.title.margin-bottom-30
@@ -70,7 +72,7 @@ block content
 			.portfolio__cards.grid.gap
 				each card in projects.cards
 					article.project-card.border-radius-10
-						a.project-card__image.bg-spare.bg-image.broken-glass(href=card.linkSite)
+						a.project-card__image.overflow-hidden(href=card.linkSite)
 							img.tr-scale(
 								src=card.img
 								loading='lazy'
@@ -98,7 +100,7 @@ block content
 								'broken-glass'
 							])
 								.review__info.flex-align-center
-									.review__image.bg-spare.bg-image.border-radius-50
+									.review__image.overflow-hidden.border-radius-50
 										img(
 											src=review.img
 											loading='lazy'
@@ -122,7 +124,7 @@ block content
 			)
 				each spoiler in spoilers.spoilers
 					details.spoiler.border-radius-10
-						summary.spoiler-trigger.spoiler__trigger.gap.flex-align-center(
+						summary.spoiler-trigger.spoiler__trigger.flex-align-center.gap(
 							data-spoiler
 							data-spoiler-close
 						)
@@ -134,7 +136,7 @@ block content
 							| !{spoiler.content}
 
 				details.spoiler.border-radius-10
-					summary.spoiler-trigger.spoiler__trigger.gap.flex-align-center(
+					summary.spoiler-trigger.spoiler__trigger.flex-align-center.gap(
 						data-spoiler
 						data-spoiler-close
 					) #[strong Questions Left?]

@@ -1,9 +1,0 @@
-@use "@scss/utilities/placeholders" as *;
-
-.bg-event {
-	.halloween & {
-		background-image: url("@img/events/halloween/house.jpg");
-
-		@extend %background;
-	}
-}

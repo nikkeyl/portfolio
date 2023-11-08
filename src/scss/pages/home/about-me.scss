@@ -2,14 +2,18 @@
 @use "@scss/utilities/placeholders" as *;
 
 .about-me {
-	@include responsive-output(800, $tablet, 1);
+	$body-inline-size: 800;
+	$breakpoint: $tablet;
+	$reverse: 1;
+
+	@include responsive-output($body-inline-size, $breakpoint, $reverse);
 
 	&__inner {
 		@extend %bg-color-accent;
 	}
 
 	&__container {
-		@include media-min($tablet) {
+		@include media-min($breakpoint) {
 			display: flex;
 			align-items: center;
 		}
@@ -18,27 +22,15 @@
 	&__body {
 		z-index: var(--z-index-1, #{$z-index-1});
 
-		.dark & {
-			color: var(--color-text-primary, #{$color-primary});
-		}
-
-		.halloween & {
-			color: var(--color-primary, #{$color-secondary});
-		}
-
-		@include media-min($tablet) {
-			padding-inline-start: to-rem(50);
+		@include media-min($breakpoint) {
+			padding-inline-start: to-rem(10);
 		}
 
 		@extend %color-primary;
 	}
 
 	&__title {
-		.halloween & {
-			color: var(--color-primary, #{$color-secondary});
-		}
-
-		@include media-min($tablet) {
+		@include media-min($breakpoint) {
 			text-align: start;
 		}
 	}
@@ -46,14 +38,13 @@
 	&__image {
 		background-color: var(--color-inverse, #{$color-inverse});
 
-		@include media-min($tablet) {
+		@include media-min($breakpoint) {
 			&::before {
 				@include pseudo;
 
-				inset-block-start: to-rem(-150);
-				inset-inline-end: to-rem(-130);
+				inset-inline-end: to-rem(-135);
 				z-index: var(--z-index-1, #{$z-index-1});
-				block-size: to-rem(1000);
+				min-block-size: 120%;
 				inline-size: to-rem(200);
 				background-color: var(--color-accent, #{$color-accent});
 				rotate: 11.5deg;
@@ -61,7 +52,7 @@
 		}
 	}
 
-	@include media-min($tablet) {
+	@include media-min($breakpoint) {
 		overflow: hidden;
 	}
 }

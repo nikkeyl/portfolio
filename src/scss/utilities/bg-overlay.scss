@@ -18,10 +18,4 @@ body {
 			opacity: 1;
 		}
 	}
-
-	.halloween & {
-		&::after {
-			background-color: rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.5);
-		}
-	}
 }

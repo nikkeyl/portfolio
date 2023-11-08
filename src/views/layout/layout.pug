@@ -9,7 +9,13 @@
 - const {
 -		default: {
 -			entry,
-- 		lang: localization
+- 		language,
+-			html: {
+-				isJavaScriptInHead,
+-				meta: {
+-					description
+-				}
+-			}
 - 	}
 -	} = projectConfig
 - const production = self.htmlWebpackPlugin.options.production
@@ -22,20 +28,33 @@ block variables
 	- let preloader
 
 doctype html
-html(lang=localization)
+html(lang=language)
 	head
 		title=title
+		meta(
+			name='description'
+			content=description
+		)
 		meta(charset='UTF-8')
 		meta(
 			name='viewport'
-			content='width=device-width, initial-scale=1'
+			content='width=device-width, initial-scale=1, viewport-fit=cover'
 		)
 		meta(
 			name='format-detection'
 			content='telephone=no'
 		)
+		meta(
+			name='apple-mobile-web-app-capable'
+			content='yes'
+		)
+		meta(
+			name='apple-mobile-web-app-status-bar-style'
+			content='black'
+		)
 		link#favicon(
 			rel='icon'
+			type='image/x-icon'
 			href='favicon.ico'
 		)
 
@@ -45,7 +64,8 @@ html(lang=localization)
 				href='assets/css/style.min.css'
 			)
 
-		script(defer src=`assets/js/${entry}.min.js`)
+		if isJavaScriptInHead
+			script(defer src=`assets/js/${entry}.min.js`)
 	body
 		.wrapper.flex-column
 			if header
@@ -61,3 +81,6 @@ html(lang=localization)
 			include ../components/preloader
 		if popups
 			include ../components/popup
+
+		if !isJavaScriptInHead
+			script(src=`assets/js/${entry}.min.js`)

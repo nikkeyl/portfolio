@@ -55,10 +55,6 @@
 		.dark & {
 			color: var(--color-primary, #{$color-secondary});
 		}
-
-		.halloween & {
-			color: var(--color-primary, #{$color-secondary});
-		}
 	}
 
 	@extend %color-primary;

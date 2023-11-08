@@ -18,6 +18,7 @@
 			span {
 				$size: 30;
 
+				position: relative;
 				display: block;
 				flex-grow: 0;
 				flex-shrink: 0;
@@ -27,7 +28,7 @@
 				&::before,
 				&::after {
 					inset-block-start: 50%;
-					inset-inline-end: to-rem(15);
+					inset-inline-start: 20%;
 					border-radius: to-rem(2);
 					block-size: to-rem(2);
 					inline-size: to-rem(20);
@@ -35,40 +36,17 @@
 					transition: rotate
 						var(--default-transition-duration, #{$default-transition-duration});
 
-					.halloween & {
-						display: none;
-					}
-
 					@extend %pseudo;
 				}
 
 				&::before {
 					rotate: 90deg;
 				}
-
-				.halloween & {
-					background-image: url("@img/svg/halloween/bones.svg");
-					rotate: 45deg;
-					transition: rotate
-						var(--default-transition-duration, #{$default-transition-duration});
-
-					@extend %background;
-				}
 			}
 
 			&.spoiler-active {
 				span {
 					&::before {
-						rotate: 45deg;
-					}
-
-					&::after {
-						rotate: -45deg;
-					}
-				}
-
-				.halloween & {
-					span {
 						rotate: 0deg;
 					}
 				}
@@ -91,23 +69,7 @@
 			block-size: to-rem($size);
 			inline-size: to-rem($size);
 			fill: none;
-			stroke: var(--color-primary, #{$color-primary});
-
-			.dark & {
-				stroke: var(--color-secondary, #{$color-primary});
-			}
-		}
-
-		.halloween & {
-			padding-inline-end: to-rem(30);
-			background-image: url("@img/svg/halloween/hat.svg");
-			background-position: right;
-			background-size: to-rem(20);
-			background-repeat: no-repeat;
-
-			svg {
-				display: none;
-			}
+			stroke: var(--color-pale, #{$color-pale});
 		}
 	}
 
@@ -115,29 +77,12 @@
 		justify-content: center;
 
 		svg {
-			fill: var(--color-primary, #{$color-secondary});
-
-			.dark & {
-				fill: var(--color-secondary, #{$color-pale});
-			}
-
-			.halloween & {
-				fill: var(--color-primary, #{$color-secondary});
-			}
+			fill: var(--color-pale, #{$color-pale});
 		}
 	}
 
 	&__content {
 		padding: to-rem(15);
-		color: var(--color-primary, #{$color-secondary});
-
-		.dark & {
-			color: var(--color-secondary, #{$color-primary});
-		}
-
-		.halloween & {
-			color: var(--color-primary, #{$color-secondary});
-		}
 
 		@extend %bg-color-accent;
 	}

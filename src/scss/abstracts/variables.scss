@@ -14,7 +14,7 @@ $tablet: 768;
 $phone: 480;
 
 // Header
-$header-block-size: 64;
+$header-min-block-size: 64;
 $header-inset-block-start: 15;
 
 // Z-index
@@ -23,12 +23,9 @@ $z-index-2: 2;
 $z-index-3: 3;
 $z-index-4: 4;
 
-// Main font families
+// Font families
 $font-family-roboto: "Roboto";
 $font-family-open-sans: "OpenSans";
-
-// Custom font families
-$font-family-creepster: "Creepster";
 $font-family-base: $font-family-open-sans;
 
 // Font sizes
@@ -51,7 +48,6 @@ $color-inverse: #fe0;
 $color-pale: #f8f4ff;
 $color-gray: #888;
 $color-purple: #80f;
-$color-blood: #800;
 
 // Colors RGB
 $color-accent-rgb: 4 219 137;

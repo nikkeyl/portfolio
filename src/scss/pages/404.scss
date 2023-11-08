@@ -5,12 +5,12 @@
 .error-404 {
 	&__title {
 		$font-size: 350;
-		font-weight: var(--font-weight-700, #{$font-weight-700});
 
 		@include adaptive-value("font-size", $font-size, 150);
 
 		flex-wrap: nowrap;
 		font-size: to-rem($font-size);
+		font-weight: var(--font-weight-700, #{$font-weight-700});
 
 		span {
 			color: var(--color-inverse, #{$color-inverse});
@@ -21,18 +21,6 @@
 			@include adaptive-value("inline-size", $font-size, 140);
 
 			display: none;
-		}
-
-		.halloween & {
-			font-family: var(--font-family-creepster, #{$font-family-creepster});
-
-			img {
-				display: block;
-			}
-
-			span {
-				display: none;
-			}
 		}
 
 		@extend %color-accent;

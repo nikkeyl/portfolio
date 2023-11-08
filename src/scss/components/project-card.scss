@@ -4,13 +4,11 @@
 .project-card {
 	display: grid;
 	overflow: hidden;
-	inline-size: 100%;
-	max-inline-size: to-rem(400);
 
 	&__image {
-		padding-block-end: 90%;
-
 		img {
+			aspect-ratio: 16 / 9;
+
 			@include media-hover {
 				scale: 1.03;
 			}
@@ -37,7 +35,6 @@
 
 		a {
 			display: block;
-			inline-size: 100%;
 			transition: color
 				var(--default-transition-duration, #{$default-transition-duration});
 
@@ -45,34 +42,8 @@
 				@extend %color-accent;
 			}
 
-			.halloween & {
-				&:focus-visible {
-					color: var(--color-inverse, #{$color-accent});
-				}
-
-				@include media-hover {
-					color: var(--color-inverse, #{$color-accent});
-				}
-
-				@extend %color-accent;
-			}
-
 			@include media-hover {
 				color: var(--color-accent, #{$color-accent});
-			}
-		}
-	}
-
-	.halloween & {
-		@include media-hover {
-			.project-card__image {
-				&::before {
-					background-color: transparent;
-				}
-
-				img {
-					scale: 1.03;
-				}
 			}
 		}
 	}

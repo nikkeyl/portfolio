@@ -8,10 +8,6 @@ body {
 	font-weight: var(--font-weight-base, #{$font-weight-base});
 	line-height: 1;
 	color: var(--color-text-primary, #{$color-secondary});
-
-	.halloween & {
-		font-family: var(--font-family-creepster, #{$font-family-creepster});
-	}
 }
 
 a {
@@ -29,21 +25,10 @@ a {
 	@include adaptive-value("font-size", $font-size, 20, 2, $max-inline-size, 515);
 
 	line-height: div-rounding(40, $font-size);
-
-	.halloween & {
-		font-family: var(--font-family-creepster, #{$font-family-creepster});
-		color: var(--color-inverse, #{$color-accent});
-	}
 }
 
 .spoiler-trigger {
 	line-height: div-rounding(20, $font-size-base);
-
-	.halloween & {
-		font-family: var(--font-family-creepster, #{$font-family-creepster});
-
-		@extend %color-accent;
-	}
 }
 
 .title {
@@ -65,40 +50,23 @@ a {
 
 		line-height: div-rounding(130, $font-size);
 	}
-
-	.halloween & {
-		font-family: var(--font-family-creepster, #{$font-family-creepster});
-
-		[data-typed] {
-			color: var(--color-inverse, #{$color-accent});
-		}
-
-		@extend %color-accent;
-	}
 }
 
 .card-title {
 	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
 	line-height: div-rounding(40, $font-size-subtitle);
-
-	.halloween & {
-		font-family: var(--font-family-creepster, #{$font-family-creepster});
-	}
 }
 
 .text {
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
 	line-height: 1.4;
+	color: var(--color-pale, #{$color-pale});
 
 	p {
 		&:not(:last-child) {
 			margin-block-end: to-em(4);
 		}
-	}
-
-	.halloween & {
-		font-family: var(--font-family-creepster, #{$font-family-creepster});
 	}
 }
 
@@ -110,44 +78,12 @@ a {
 }
 
 .link {
-	position: relative;
 	font-weight: var(--font-weight-base, #{$font-weight-base});
 	color: var(--color-purple, #{$color-purple});
+	transition: color
+		var(--default-transition-duration, #{$default-transition-duration});
 
-	.halloween & {
-		color: var(--color-blood, #{$color-blood});
-	}
-
-	@include media-min($tablet) {
-		&::after {
-			@include pseudo;
-
-			inset-block-end: 0;
-			inset-inline-start: 0;
-			border-radius: to-rem(2);
-			block-size: to-rem(2);
-			inline-size: 0;
-			background-color: var(--color-purple, #{$color-purple});
-			transition: inline-size
-				var(--default-transition-duration, #{$default-transition-duration});
-		}
-
-		&:focus-visible {
-			&::after {
-				inline-size: 100%;
-			}
-		}
-
-		.halloween & {
-			&::after {
-				background-color: var(--color-blood, #{$color-blood});
-			}
-		}
-
-		@include media-hover {
-			&::after {
-				inline-size: 100%;
-			}
-		}
+	@include media-hover {
+		color: var(--color-inverse, #{$color-inverse});
 	}
 }

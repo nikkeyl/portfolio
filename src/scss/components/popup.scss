@@ -19,8 +19,7 @@
 
 	&__content {
 		position: relative;
-		inline-size: 100%;
-		max-inline-size: to-rem(400);
+		inline-size: max(25rem);
 		padding-block: to-rem(50);
 		padding-inline: to-rem(20);
 		background-color: var(--color-pale, #{$color-pale});
@@ -46,17 +45,7 @@
 			fill: none;
 			stroke: var(--color-accent, #{$color-accent});
 
-			.halloween & {
-				display: none;
-			}
-
 			@extend %box-shadow-accent;
-		}
-
-		.halloween & {
-			background-image: url("@img/svg/halloween/gravestone.svg");
-
-			@extend %background;
 		}
 
 		@keyframes drag {
@@ -81,10 +70,6 @@
 		span {
 			@extend %color-accent;
 		}
-
-		.halloween & {
-			color: var(--color-inverse, #{$color-accent});
-		}
 	}
 
 	&__close {
@@ -104,10 +89,6 @@
 			inline-size: 100%;
 			background-color: var(--color-secondary, #{$color-secondary});
 
-			.halloween & {
-				display: none;
-			}
-
 			@extend %pseudo;
 		}
 
@@ -119,14 +100,6 @@
 		&::after {
 			inset-block-end: calc(50% - to-rem(1));
 			rotate: 45deg;
-		}
-
-		.halloween & {
-			block-size: to-rem(25);
-			inline-size: to-rem(30);
-			background-image: url("@img/svg/halloween/bones.svg");
-
-			@extend %background;
 		}
 	}
 

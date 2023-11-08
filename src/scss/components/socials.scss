@@ -15,29 +15,17 @@
 			transition: fill
 				var(--default-transition-duration, #{$default-transition-duration});
 
-			.halloween & {
-				fill: var(--color-inverse, #{$color-accent});
+			@include media-hover {
+				fill: var(--color-purple, #{$color-purple});
 			}
 		}
 
 		&:focus-within {
 			scale: 1.05;
-
-			.halloween & {
-				svg {
-					fill: var(--color-blood, #{$color-blood});
-				}
-			}
 		}
 
 		@include media-hover {
 			scale: 1.05;
-
-			.halloween & {
-				svg {
-					fill: var(--color-blood, #{$color-blood});
-				}
-			}
 		}
 	}
 }

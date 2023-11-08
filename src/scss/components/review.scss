@@ -5,16 +5,13 @@
 	overflow: hidden;
 	max-inline-size: to-rem(400);
 	filter: grayscale(1);
-	transition: filter 0.8s;
+	transition: filter
+		var(--default-transition-duration, #{$default-transition-duration});
 
 	&__info {
 		gap: to-rem(15);
 		padding: to-rem(15);
 		background-color: var(--color-pale, #{$color-pale});
-
-		.halloween & {
-			@extend %color-accent;
-		}
 	}
 
 	&__image {
@@ -27,14 +24,6 @@
 
 	&__text {
 		padding: to-rem(15);
-
-		.dark & {
-			color: var(--color-text-primary, #{$color-primary});
-		}
-
-		.halloween & {
-			color: var(--color-primary, #{$color-secondary});
-		}
 
 		@extend %color-primary;
 		@extend %bg-color-accent;

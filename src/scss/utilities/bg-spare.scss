@@ -1,9 +1,0 @@
-@use "@scss/utilities/placeholders" as *;
-
-.bg-spare {
-	.halloween & {
-		background-image: url("@img/events/halloween/happy-halloween.jpg");
-
-		@extend %background;
-	}
-}

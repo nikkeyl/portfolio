@@ -17,7 +17,7 @@
 
 html {
 	scroll-padding-block-start: calc(
-		var(--header-block-size, #{to-rem($header-block-size)}) +
+		var(--header-min-block-size, #{to-rem($header-min-block-size)}) +
 			var(--header-inset-block-start, #{$header-inset-block-start})
 	);
 
@@ -29,31 +29,43 @@ html {
 body {
 	min-inline-size: $min-inline-size + px;
 	background-color: var(--color-background-primary, #{$color-primary});
-	overscroll-behavior-block: none;
+	overscroll-behavior: none;
 }
 
 ::selection {
-	color: var(--color-secondary, #{$color-secondary});
+	color: var(--color-primary, #{$color-secondary});
 	background-color: rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.8);
-
-	.halloween &,
-	.dark & {
-		color: var(--color-primary, #{$color-secondary});
-	}
 }
 
 :focus-visible {
+	outline: to-rem(2) solid var(--color-accent, #{$color-accent});
 	outline-offset: to-rem(2);
-	outline-color: var(--color-accent, #{$color-accent});
+
+	// Styles for a contrasting theme
+	// popup text
+	// mocha icon overflow
+	// favicon for new year theme and setEvent add new year
+	// purple color
+	// outline not working with link, images and svg socials
 }
 
 summary,
 ul {
-	list-style: none;
+	list-style-type: none;
 }
 
 picture,
-img,
+img {
+	vertical-align: middle;
+	shape-margin: 0.75rem;
+	block-size: 100%;
+	inline-size: 100%;
+	font-style: italic;
+	background-repeat: no-repeat;
+	object-fit: cover;
+	object-position: top;
+}
+
 svg {
 	display: block;
 	inline-size: 100%;
