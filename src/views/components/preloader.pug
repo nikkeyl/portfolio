@@ -25,25 +25,16 @@
 			background-color: #333;
 		}
 
-		.halloween .preloader {
-			background-color: #000;
-		}
-
-		.preloader__load {
+		.preloader__spinner {
 			position: absolute;
 			inset-block-start: 50%;
 			inset-inline-start: 50%;
-			block-size: auto;
-			translate: -50% -50%;
 			inline-size: 6.25rem;
+			translate: -50% -50%;
 			animation: spin 2s linear infinite;
 		}
 
 		@keyframes spin {
-			0% {
-				rotate: 0;
-			}
-
 			100% {
 				rotate: 360deg;
 			}
@@ -53,20 +44,19 @@
 			opacity: 0;
 			visibility: hidden;
 			transition:
-				visibility .3s,
-				opacity .3s;
+				visibility 300ms,
+				opacity 300ms;
 		}
 	script.
 		const html = document.documentElement;
-		const color = html.classList.contains('halloween') ? "#f80" : "#0d8";
 		const preloaderTemplate =
 			`
 				<div class="preloader">
-					<div class="preloader__load">
+					<div class="preloader__spinner">
 						<svg viewBox="0 0 100 100">
 							<path
 								fill="transparent"
-								stroke="${color}"
+								stroke="#0d8"
 								stroke-width="8"
 								stroke-linecap="round"
 								d="M50 10 a 40 40 0 0 1 0 80"
@@ -81,9 +71,9 @@
 			preloaderTemplate
 		);
 		document.addEventListener('DOMContentLoaded', () => {
-			const preloader = () => {
-				const preloader = document.querySelector('.preloader');
+			const preloaderInit = () => {
 				const preloaderContainer = document.getElementById('preloader');
+				const preloader = document.querySelector('.preloader');
 				const delay = 500;
 
 				if (html.classList.contains('loaded')) {
@@ -91,12 +81,12 @@
 						preloader.classList.add('hide');
 
 						setTimeout(() => {
-							preloader.remove();
 							preloaderContainer.remove();
+							preloader.remove();
 						}, delay);
 					}, delay);
 				}
 			}
 
-			preloader();
+			preloaderInit();
 		})
