@@ -2,8 +2,6 @@
 @use "@scss/utilities/placeholders" as *;
 
 .socials {
-	@extend %gap;
-
 	flex-wrap: wrap;
 
 	&__item {
@@ -29,4 +27,6 @@
 			scale: 1.05;
 		}
 	}
+
+	@extend %gap;
 }

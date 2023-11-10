@@ -2,9 +2,7 @@
 
 .fullscreen {
 	justify-content: center;
-	min-block-size: calc(
-		100dvb - var(--header-min-block-size, #{$header-min-block-size})
-	);
+	min-block-size: 100dvb;
 	padding-block: to-rem(90);
 
 	.touch & {
