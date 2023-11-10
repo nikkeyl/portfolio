@@ -40,12 +40,9 @@ body {
 :focus-visible {
 	outline: to-rem(2) solid var(--color-accent, #{$color-accent});
 	outline-offset: to-rem(2);
-
-	// Styles for a contrasting theme
 	// popup text
 	// mocha icon overflow
-	// favicon for new year theme and setEvent add new year
-	// purple color
+	// перенести класс container с div на section
 	// outline not working with link, images and svg socials
 }
 

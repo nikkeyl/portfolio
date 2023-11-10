@@ -19,23 +19,13 @@ a {
 	color: inherit;
 }
 
-.logo {
-	$font-size: 30;
-
-	@include adaptive-value("font-size", $font-size, 20, 2, $max-inline-size, 515);
-
-	line-height: div-rounding(40, $font-size);
-}
-
-.spoiler-trigger {
-	line-height: div-rounding(20, $font-size-base);
-}
-
 .title {
+	$line-height: 60;
+
 	font-size: var(--font-size-title, #{to-rem($font-size-title)});
 	font-weight: var(--font-weight-700, #{$font-weight-700});
 	text-align: center;
-	line-height: div-rounding(60, $font-size-title);
+	line-height: div-rounding($line-height, $font-size-title);
 
 	span {
 		&:not([data-typed]) {
@@ -45,45 +35,78 @@ a {
 
 	&--big {
 		$font-size: 95;
+		$line-height: 130;
 
 		@include adaptive-value("font-size", $font-size, 44);
 
-		line-height: div-rounding(130, $font-size);
+		line-height: div-rounding($line-height, $font-size);
 	}
 }
 
-.card-title {
-	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
-	line-height: div-rounding(40, $font-size-subtitle);
-}
-
 .text {
+	$line-height: 1.4;
+	$margin-block-end: 4;
+
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
-	line-height: 1.4;
-	color: var(--color-pale, #{$color-pale});
+	line-height: $line-height;
+	color: var(--color-primary, #{$color-primary});
 
 	p {
 		&:not(:last-child) {
-			margin-block-end: to-em(4);
+			margin-block-end: to-em($margin-block-end);
 		}
 	}
 }
 
-.review-name {
-	$font-size: 24;
-
-	font-size: to-rem($font-size);
-	line-height: div-rounding(30, $font-size);
-}
-
 .link {
-	font-weight: var(--font-weight-base, #{$font-weight-base});
-	color: var(--color-purple, #{$color-purple});
+	color: var(--color-secondary, #{$color-primary});
 	transition: color
 		var(--default-transition-duration, #{$default-transition-duration});
+
+	&:focus-visible {
+		color: var(--color-inverse, #{$color-inverse});
+	}
 
 	@include media-hover {
 		color: var(--color-inverse, #{$color-inverse});
 	}
+}
+
+.logo {
+	$font-size: 30;
+	$line-height: 40;
+	$min-inline-size: 515;
+
+	@include adaptive-value(
+		"font-size",
+		$font-size,
+		20,
+		2,
+		$max-inline-size,
+		$min-inline-size
+	);
+
+	line-height: div-rounding($line-height, $font-size);
+}
+
+.card-title {
+	$line-height: 40;
+
+	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
+	line-height: div-rounding($line-height, $font-size-subtitle);
+}
+
+.review-name {
+	$font-size: 24;
+	$line-height: 30;
+
+	font-size: to-rem($font-size);
+	line-height: div-rounding($line-height, $font-size);
+}
+
+.spoiler-trigger {
+	$line-height: 20;
+
+	line-height: div-rounding($line-height, $font-size-base);
 }

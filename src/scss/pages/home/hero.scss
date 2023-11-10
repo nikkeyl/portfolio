@@ -1,11 +1,11 @@
 @use "@scss/abstracts" as *;
 
 .hero {
-	&__container {
-		@include media-max($phone) {
-			inline-size: 100%;
-		}
+	@include media-max($phone) {
+		inline-size: 100%;
 	}
+	// &__container {
+	// }
 
 	&__title {
 		&:not(:last-child) {

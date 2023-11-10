@@ -1,7 +1,7 @@
 extends layout/layout
 
 block variables
-	- title = 'Page Not Found - 404'
+	- title = 'Page Not Found'
 	- header = false
 	- footer = false
 	- popups = false
@@ -9,11 +9,10 @@ block variables
 	- gitHubName = 'nikkeyl'
 
 block content
-	section.error-404.flex-align-center.fullscreen.bg-event
-		.container.flex-align-center.flex-column
-			h1.error-404__title.flex-align-center.margin-bottom-20
-				| 4
-				span 0
-				| 4
-			a.button.button--full(href=`https://${gitHubName}.github.io/${gitHubName}`)
-				| Back Home
+	section.error-404.container.flex-align-center.flex-column.fullscreen
+		h1.error-404__title.margin-bottom-20
+			| 4
+			span 0
+			| 4
+		a.button.button--full(href=`https://${gitHubName}.github.io/${gitHubName}`)
+			| Back Home

@@ -16,7 +16,7 @@
 				var(--default-transition-duration, #{$default-transition-duration});
 
 			@include media-hover {
-				fill: var(--color-purple, #{$color-purple});
+				fill: var(--color-gray, #{$color-gray});
 			}
 		}
 

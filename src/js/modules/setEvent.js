@@ -7,14 +7,29 @@ const setEvent = () => {
 		new Date(`10.30.${currentYear}`),
 		new Date(`11.01.${currentYear}`)
 	];
+	const [newYearStartDate, newYearEndDate] = [
+		new Date(`12.30.${currentYear}`),
+		new Date(`12.01.${currentYear}`)
+	];
 	const isHalloween =
 		currentDate > halloweenStartDate && currentDate < halloweenEndDate;
-	const favicon = document.getElementById('favicon');
+	const isNewYear =
+		currentDate > newYearStartDate && currentDate < newYearEndDate;
+
+	const changeFavicon = (faviconName, themeClass) => {
+		const favicon = document.getElementById('favicon');
+
+		favicon.setAttribute('href', `assets/img/favicons/${faviconName}.ico`);
+		html.classList.add(themeClass);
+	}
 
 	switch (true) {
 		case isHalloween:
-			favicon.setAttribute('href', 'assets/img/favicons/halloween.ico');
-			html.classList.add('halloween');
+			changeFavicon('halloween', 'halloween')
+			break;
+		case isNewYear:
+			changeFavicon('new-year', 'new-year')
+			html.classList.remove('dark')
 			break;
 		default:
 			break;

@@ -39,7 +39,8 @@
 
 		block-size: to-rem($size);
 		inline-size: to-rem($size);
-		animation: drag 1s infinite;
+		animation: drag
+			var(--default-transition-duration, #{$default-transition-duration}) infinite;
 
 		svg {
 			fill: none;

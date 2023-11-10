@@ -1,26 +1,17 @@
-@use "sass:math" as *;
 @use "@scss/abstracts" as *;
 @use "@scss/utilities/placeholders" as *;
 
 .error-404 {
 	&__title {
 		$font-size: 350;
+		text-align: center;
 
 		@include adaptive-value("font-size", $font-size, 150);
 
-		flex-wrap: nowrap;
-		font-size: to-rem($font-size);
 		font-weight: var(--font-weight-700, #{$font-weight-700});
 
 		span {
 			color: var(--color-inverse, #{$color-inverse});
-		}
-
-		img {
-			@include adaptive-value("block-size", $font-size, 140);
-			@include adaptive-value("inline-size", $font-size, 140);
-
-			display: none;
 		}
 
 		@extend %color-accent;

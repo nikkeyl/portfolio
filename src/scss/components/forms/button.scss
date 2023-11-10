@@ -3,13 +3,18 @@
 @use "@scss/utilities/placeholders" as *;
 
 .button {
+	$border-radius: 50;
+	$padding-block: 11;
+	$padding-inline: 15;
+	$line-height: 18;
+
 	display: inline-flex;
 	justify-content: center;
-	border-radius: to-rem(50);
-	padding-block: to-rem(11);
-	padding-inline: to-rem(15);
+	border-radius: to-rem($border-radius);
+	padding-block: to-rem($padding-block);
+	padding-inline: to-rem($padding-inline);
 	text-align: center;
-	line-height: div-rounding(18, $font-size-base);
+	line-height: div-rounding($line-height, $font-size-base);
 	transition:
 		background-color
 			var(--default-transition-duration, #{$default-transition-duration}),
@@ -32,19 +37,11 @@
 		transform: translateY(to-rem(3));
 	}
 
-	&--full {
-		@include media-max($phone) {
-			inline-size: 100%;
-		}
-	}
-
-	.dark & {
-		color: var(--color-secondary, #{$color-primary});
-	}
-
-	.halloween & {
-		color: var(--color-primary, #{$color-secondary});
-	}
+	// &--full {
+	// 	@include media-max($phone) {
+	// 		inline-size: 100%;
+	// 	}
+	// }
 
 	@include media-hover {
 		box-shadow: 0 0 to-rem(15)

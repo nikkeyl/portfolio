@@ -4,6 +4,8 @@
 .project-card {
 	display: grid;
 	overflow: hidden;
+	inline-size: 100%;
+	background-color: var(--color-pale, #{$color-pale});
 
 	&__image {
 		img {
@@ -27,7 +29,6 @@
 		display: grid;
 		gap: to-rem(10);
 		padding: to-rem(10);
-		background-color: var(--color-pale, #{$color-pale});
 	}
 
 	&__title {

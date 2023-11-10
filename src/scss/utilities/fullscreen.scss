@@ -3,6 +3,7 @@
 .fullscreen {
 	min-block-size: 100dvb;
 	padding-block: to-rem(90);
+	justify-content: center;
 
 	.touch & {
 		transition: min-block-size
