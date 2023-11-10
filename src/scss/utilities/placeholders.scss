@@ -1,5 +1,21 @@
 @use "@scss/abstracts" as *;
 
+%gap {
+ @include adaptive-value("gap", 20, 8);
+}
+
+%bg-color-secondary {
+	background-color: var(--color-secondary, #{$color-secondary});
+}
+
+%bg-color-accent {
+	background-color: var(--color-accent, #{$color-accent});
+}
+
+%bg-color-inverse {
+	background-color: var(--color-inverse, #{$color-inverse});
+}
+
 %box-shadow-inverse {
 	box-shadow: 0 0 to-rem(15)
 		rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.25);
@@ -10,19 +26,14 @@
 		rgb(var(--color-accent-rgb, #{$color-accent-rgb}) / 0.25);
 }
 
-%pseudo {
-	content: "";
-	position: absolute;
-}
-
 %color-primary {
 	color: var(--color-primary, #{$color-primary});
 }
 
-%bg-color-accent {
-	background-color: var(--color-accent, #{$color-accent});
-}
-
 %color-accent {
 	color: var(--color-accent, #{$color-accent});
+}
+
+%color-inverse {
+	color: var(--color-inverse, #{$color-inverse});
 }

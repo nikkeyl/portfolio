@@ -5,7 +5,8 @@
 	$breakpoint-515: 515;
 	$breakpoint-350: 350;
 
-	position: sticky;
+	position: fixed;
+	inline-size: 100%;
 	z-index: var(--z-index-2, #{$z-index-2});
 	min-block-size: var(--header-min-block-size, #{to-rem($header-min-block-size)});
 
