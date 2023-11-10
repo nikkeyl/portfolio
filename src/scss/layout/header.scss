@@ -1,10 +1,11 @@
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .header {
 	$breakpoint-515: 515;
 	$breakpoint-350: 350;
 
-	position: fixed;
+	position: sticky;
 	z-index: var(--z-index-2, #{$z-index-2});
 	min-block-size: var(--header-min-block-size, #{to-rem($header-min-block-size)});
 
@@ -15,20 +16,13 @@
 	}
 
 	&__body {
+		justify-content: center;
 		padding: to-rem(12);
 		background-color: var(--color-pale, #{$color-pale});
-
-		@include media-max($breakpoint-515) {
-			justify-content: center;
-		}
 
 		@include media-max($breakpoint-350) {
 			border-radius: 0;
 		}
-	}
-
-	&__inner {
-		@include adaptive-value("gap", 20, 8);
 	}
 
 	&__logo {
@@ -41,12 +35,11 @@
 		}
 	}
 
-	@include media-min($breakpoint-350) {
-		inset-block-start: to-rem($header-inset-block-start);
-		inline-size: 100%;
+	&__inner {
+		@extend %gap;
 	}
 
-	@include media-max($breakpoint-350) {
-		inset-inline: 0;
+	@include media-min($breakpoint-350) {
+		inset-block-start: to-rem($header-inset-block-start);
 	}
 }

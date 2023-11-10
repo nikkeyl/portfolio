@@ -20,9 +20,8 @@
 	}
 
 	&__body {
-		z-index: var(--z-index-1, #{$z-index-1});
-
 		@include media-min($breakpoint) {
+			z-index: var(--z-index-1, #{$z-index-1});
 			padding-inline-start: to-rem(10);
 		}
 
@@ -36,8 +35,6 @@
 	}
 
 	&__image {
-		background-color: var(--color-inverse, #{$color-inverse});
-
 		@include media-min($breakpoint) {
 			&::before {
 				@include pseudo;
@@ -50,6 +47,8 @@
 				rotate: 11.5deg;
 			}
 		}
+
+		@extend %bg-color-inverse;
 	}
 
 	@include media-min($breakpoint) {

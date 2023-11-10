@@ -1,7 +1,8 @@
 @use "@scss/abstracts" as *;
+@use "@scss/utilities/placeholders" as *;
 
 .socials {
-	@include adaptive-value("gap", 20, 8);
+	@extend %gap;
 
 	flex-wrap: wrap;
 

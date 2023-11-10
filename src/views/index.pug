@@ -9,18 +9,17 @@ block variables
 	- gitHubName = 'nikkeyl'
 
 block content
-	section.hero.flex-align-center.fullscreen
-		.container.hero__container.flex-column
-			h1.title.title--big.hero__title
-				| #[span Front-End]
-				| #[span(data-typed) Development]
-			ul.hero__actions
-				li
-					a.button.button--full(href='#portfolio')
-						| Portfolio
-				li
-					a.button.button--full(href=`https://t.me/${gitHubName}`)
-						| Order a Website
+	section.hero.container.flex-align-center.flex-column.fullscreen
+		h1.title.title--big.hero__title
+			| #[span Front-End]
+			| #[span(data-typed) Development]
+		ul.hero__actions
+			li
+				a.button.button--full(href='#portfolio')
+					| Portfolio
+			li
+				a.button.button--full(href=`https://t.me/${gitHubName}`)
+					| Order a Website
 	section.about-me
 		.about-me__inner
 			.container.about-me__container
@@ -45,8 +44,6 @@ block content
 				src=`@img/about/${gitHubName}.jpg`
 				alt='Nikita Almanov'
 				loading='lazy'
-				width='400'
-				height='400'
 			)
 	.skills.padding-block#skills
 		h2.title.margin-bottom-30
@@ -65,25 +62,24 @@ block content
 							data-tippy-content=skill.name
 						)
 
-	section.portfolio.padding-block#portfolio
-		.container
-			h2.title.margin-bottom-30
-				| Portfolio
-			.portfolio__cards.grid.gap
-				each card in projects.cards
-					article.project-card.border-radius-10
-						a.project-card__image.overflow-hidden(href=card.linkSite)
-							img.tr-scale(
-								src=card.img
-								loading='lazy'
-								alt=card.name
-							)
-						.project-card__body
-							h3.card-title.project-card__title
-								a(href=card.linkSite)
-									=card.name
-							a.button.project-card__button(href=card.linkSite)
-								| View
+	section.portfolio.container.padding-block#portfolio
+		h2.title.margin-bottom-30
+			| Portfolio
+		.portfolio__cards.grid.gap
+			each card in projects.cards
+				article.project-card.border-radius-10
+					a.project-card__image.overflow-hidden(href=card.linkSite)
+						img.tr-scale(
+							src=card.img
+							loading='lazy'
+							alt=card.name
+						)
+					.project-card__body
+						h3.card-title.project-card__title
+							a(href=card.linkSite)
+								=card.name
+						a.button.project-card__button(href=card.linkSite)
+							| View
 
 	section.reviews.padding-block
 		.container
@@ -96,8 +92,7 @@ block content
 							article(class=[
 								'review',
 								review.class,
-								'border-radius-10',
-								'broken-glass'
+								'border-radius-10'
 							])
 								.review__info.flex-align-center
 									.review__image.overflow-hidden.border-radius-50
@@ -112,52 +107,51 @@ block content
 									| !{review.text}
 
 				.swiper-pagination.reviews__pagination
-	section.padding-block#questions
-		.container
-			h2.title.margin-bottom-30
-				| Q&A
-				span.sr-only
-					| Questions and answers
-			.grid.gap(
-				data-spoilers
-				data-one-spoiler
-			)
-				each spoiler in spoilers.spoilers
-					details.spoiler.border-radius-10
-						summary.spoiler-trigger.spoiler__trigger.flex-align-center.gap(
-							data-spoiler
-							data-spoiler-close
-						)
-							strong=spoiler.title
-							span
-						.text.spoiler__content
-							| !{spoiler.content}
-						.sr-only
-							| !{spoiler.content}
-
+	section.container.padding-block#questions
+		h2.title.margin-bottom-30
+			| Q&A
+			span.sr-only
+				| Questions and answers
+		.grid.gap(
+			data-spoilers
+			data-one-spoiler
+		)
+			each spoiler in spoilers.spoilers
 				details.spoiler.border-radius-10
 					summary.spoiler-trigger.spoiler__trigger.flex-align-center.gap(
 						data-spoiler
 						data-spoiler-close
-					) #[strong Questions Left?]
+					)
+						strong=spoiler.title
 						span
 					.text.spoiler__content
-						a.spoiler__info.flex-align-center.margin-bottom-20(
-							href='#'
-							data-popup='#info'
-							data-tippy-content='Working Hours'
-						) Contact Me
-							svg
-								use(href='@img/icons/sprite.svg#info')
-						p.sr-only
-							| I answer calls and messages from 12:00 to 20:00.
-						ul.socials.spoiler__socials.flex-align-center
-							each social in socials.socials
-								li.socials__item.tr-scale
-									a.border-radius-50(
-										href=social.link
-										data-tippy-content=social.tip
-										aria-label=social.tip
-									)
-										svg
-											use(href=`@img/icons/sprite.svg#${social.icon}`)
+						| !{spoiler.content}
+					.sr-only
+						| !{spoiler.content}
+
+			details.spoiler.border-radius-10
+				summary.spoiler-trigger.spoiler__trigger.flex-align-center.gap(
+					data-spoiler
+					data-spoiler-close
+				) #[strong Questions Left?]
+					span
+				.text.spoiler__content
+					a.spoiler__info.flex-align-center.margin-bottom-20(
+						href='#'
+						data-popup='#info'
+						data-tippy-content='Working Hours'
+					) Contact Me
+						svg
+							use(href='@img/icons/sprite.svg#info')
+					p.sr-only
+						| I answer calls and messages from 12:00 to 20:00.
+					ul.socials.spoiler__socials.flex-align-center
+						each social in socials.socials
+							li.socials__item.tr-scale
+								a.border-radius-50(
+									href=social.link
+									data-tippy-content=social.tip
+									aria-label=social.tip
+								)
+									svg
+										use(href=`@img/icons/sprite.svg#${social.icon}`)

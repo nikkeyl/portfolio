@@ -2,14 +2,15 @@
 
 body {
 	&::after {
-		@include pseudo("", fixed);
+		@include pseudo;
 
 		inset: 0;
 		z-index: var(--z-index-3, #{$z-index-3});
 		background-color: rgb(var(--color-gray-rgb, #{$color-gray-rgb}) / 0.5);
 		opacity: 0;
 		backdrop-filter: blur(to-rem(5));
-		transition: opacity 0.5s;
+		transition: opacity
+			var(--default-transition-duration, #{$default-transition-duration});
 		pointer-events: none;
 	}
 

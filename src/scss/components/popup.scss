@@ -84,13 +84,14 @@
 
 		&::before,
 		&::after {
+			@include pseudo;
+
 			inset-inline-end: 0;
 			border-radius: to-rem(2);
 			block-size: to-rem(2);
 			inline-size: 100%;
-			background-color: var(--color-secondary, #{$color-secondary});
 
-			@extend %pseudo;
+			@extend %bg-color-secondary;
 		}
 
 		&::before {

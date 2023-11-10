@@ -10,5 +10,6 @@ tippy('[data-tippy-content]', {
 	delay: 80,
 	offset: [left, top],
 	placement: 'bottom',
-	role: 'tooltip'
+	role: 'tooltip',
 });
+// tips.hide(500)

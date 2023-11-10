@@ -24,12 +24,12 @@
 
 	&:focus-visible {
 		color: var(--color-secondary, #{$color-secondary});
-		background-color: var(--color-inverse, #{$color-inverse});
 
 		.dark & {
 			color: var(--color-primary, #{$color-secondary});
 		}
 
+		@extend %bg-color-inverse;
 		@extend %box-shadow-inverse;
 	}
 
@@ -37,11 +37,11 @@
 		transform: translateY(to-rem(3));
 	}
 
-	// &--full {
-	// 	@include media-max($phone) {
-	// 		inline-size: 100%;
-	// 	}
-	// }
+	&--full {
+		@include media-max($phone) {
+			inline-size: 100%;
+		}
+	}
 
 	@include media-hover {
 		box-shadow: 0 0 to-rem(15)

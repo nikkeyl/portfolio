@@ -4,14 +4,14 @@
 .error-404 {
 	&__title {
 		$font-size: 350;
-		text-align: center;
 
 		@include adaptive-value("font-size", $font-size, 150);
 
 		font-weight: var(--font-weight-700, #{$font-weight-700});
+		text-align: center;
 
 		span {
-			color: var(--color-inverse, #{$color-inverse});
+			@extend %color-inverse;
 		}
 
 		@extend %color-accent;

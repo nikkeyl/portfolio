@@ -1,12 +1,6 @@
 @use "@scss/abstracts" as *;
 
 .hero {
-	@include media-max($phone) {
-		inline-size: 100%;
-	}
-	// &__container {
-	// }
-
 	&__title {
 		&:not(:last-child) {
 			@include adaptive-value("margin-block-end", 80, 30);
@@ -22,5 +16,9 @@
 		li {
 			@include slide(2, 50, 1.5, $default-transition-duration, top);
 		}
+	}
+
+	@include media-max($phone) {
+		inline-size: 100%;
 	}
 }

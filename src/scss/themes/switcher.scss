@@ -12,12 +12,14 @@
 	background-color: var(--color-gray, #{$color-gray});
 
 	&::before {
+		@include pseudo;
+
 		inset-block-start: to-rem(2);
 		inset-inline-start: to-rem(2);
 		border-radius: 50%;
 		block-size: to-rem(20);
 		inline-size: to-rem(20);
-		background-color: var(--color-pale, #{$color-gray});
+		background-color: var(--color-pale, #{$color-pale});
 		transition:
 			background-color
 				var(--default-transition-duration, #{$default-transition-duration}),
@@ -27,12 +29,10 @@
 
 		.dark & {
 			inset-block-start: to-rem(18);
-			background-color: var(--color-inverse, #{$color-inverse});
 
+			@extend %bg-color-inverse;
 			@extend %box-shadow-inverse;
 		}
-
-		@extend %pseudo;
 	}
 
 	.halloween &,

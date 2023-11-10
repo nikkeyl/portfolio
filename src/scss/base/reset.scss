@@ -38,12 +38,13 @@ body {
 }
 
 :focus-visible {
-	outline: to-rem(2) solid var(--color-accent, #{$color-accent});
+	outline: to-rem(2) solid var(--color-inverse, #{$color-inverse});
 	outline-offset: to-rem(2);
+
 	// popup text
 	// mocha icon overflow
-	// перенести класс container с div на section
-	// outline not working with link, images and svg socials
+	// hover .socials and .link
+	// outline not working with svg socials
 }
 
 summary,

@@ -1,9 +1,11 @@
 @use "@scss/abstracts" as *;
 
 .fullscreen {
-	min-block-size: 100dvb;
-	padding-block: to-rem(90);
 	justify-content: center;
+	min-block-size: calc(
+		100dvb - var(--header-min-block-size, #{$header-min-block-size})
+	);
+	padding-block: to-rem(90);
 
 	.touch & {
 		transition: min-block-size

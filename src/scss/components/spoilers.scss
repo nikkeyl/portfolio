@@ -27,16 +27,17 @@
 
 				&::before,
 				&::after {
+					@include pseudo;
+
 					inset-block-start: 50%;
 					inset-inline-start: 20%;
 					border-radius: to-rem(2);
 					block-size: to-rem(2);
 					inline-size: to-rem(20);
-					background-color: var(--color-secondary, #{$color-secondary});
 					transition: rotate
 						var(--default-transition-duration, #{$default-transition-duration});
 
-					@extend %pseudo;
+					@extend %bg-color-secondary;
 				}
 
 				&::before {

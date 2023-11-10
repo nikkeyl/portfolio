@@ -27,12 +27,6 @@ a {
 	text-align: center;
 	line-height: div-rounding($line-height, $font-size-title);
 
-	span {
-		&:not([data-typed]) {
-			@extend %color-accent;
-		}
-	}
-
 	&--big {
 		$font-size: 95;
 		$line-height: 130;
@@ -40,6 +34,12 @@ a {
 		@include adaptive-value("font-size", $font-size, 44);
 
 		line-height: div-rounding($line-height, $font-size);
+
+		span {
+			&:not([data-typed]) {
+				@extend %color-accent;
+			}
+		}
 	}
 }
 
@@ -50,13 +50,14 @@ a {
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
 	line-height: $line-height;
-	color: var(--color-primary, #{$color-primary});
 
 	p {
 		&:not(:last-child) {
 			margin-block-end: to-em($margin-block-end);
 		}
 	}
+
+	@extend %color-primary;
 }
 
 .link {
@@ -65,7 +66,7 @@ a {
 		var(--default-transition-duration, #{$default-transition-duration});
 
 	&:focus-visible {
-		color: var(--color-inverse, #{$color-inverse});
+		@extend %color-inverse;
 	}
 
 	@include media-hover {
@@ -75,17 +76,10 @@ a {
 
 .logo {
 	$font-size: 30;
+	$end-font-size: 20;
 	$line-height: 40;
-	$min-inline-size: 515;
 
-	@include adaptive-value(
-		"font-size",
-		$font-size,
-		20,
-		2,
-		$max-inline-size,
-		$min-inline-size
-	);
+	@include adaptive-value("font-size", $font-size, $end-font-size);
 
 	line-height: div-rounding($line-height, $font-size);
 }
