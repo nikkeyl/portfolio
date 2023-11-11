@@ -21,6 +21,8 @@ html {
 			var(--header-inset-block-start, #{$header-inset-block-start})
 	);
 
+	color-scheme: light;
+
 	@include media-motion(no-preference) {
 		scroll-behavior: smooth;
 	}

@@ -1,9 +1,4 @@
-@use "@scss/abstracts" as *;
-
 .new-year {
-	--color-primary: #{$color-primary};
 	--color-accent: #3a1;
 	--color-accent-rgb: 51 170 17;
-
-	color-scheme: light;
 }

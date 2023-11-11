@@ -14,12 +14,16 @@
 .tippy-content {
 	$font-size: 13;
 
-	border-radius: to-rem(50);
+	@extend %border-radius;
 	padding-block: to-rem(2);
 	padding-inline: to-rem(10);
 	font-size: to-rem($font-size);
 	line-height: div-rounding(22, $font-size);
 	background-color: var(--color-inverse, #{$color-inverse});
+
+	.touch & {
+		display: none;
+	}
 
 	.dark & {
 		color: var(--color-primary, #{$color-secondary});

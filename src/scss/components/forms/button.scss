@@ -8,7 +8,7 @@
 
 	display: inline-flex;
 	justify-content: center;
-	border-radius: to-rem(50);
+	@extend %border-radius;
 	padding-block: to-rem(10);
 	padding-inline: to-rem(15);
 	line-height: div-rounding($line-height, $font-size-base);

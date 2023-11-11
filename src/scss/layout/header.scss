@@ -3,7 +3,7 @@
 
 .header {
 	$breakpoint-515: 515;
-	$breakpoint-352: 352;
+	$breakpoint-350: 350;
 
 	position: fixed;
 	z-index: var(--z-index-2, #{$z-index-2});
@@ -11,7 +11,7 @@
 	inline-size: 100%;
 
 	&__container {
-		@include media-max($breakpoint-352) {
+		@include media-max($breakpoint-350) {
 			padding: 0;
 		}
 	}
@@ -20,7 +20,7 @@
 		justify-content: center;
 		background-color: var(--color-pale, #{$color-pale});
 
-		@include media-max($breakpoint-352) {
+		@include media-max($breakpoint-350) {
 			border-radius: 0;
 		}
 	}
@@ -39,7 +39,7 @@
 		@extend %gap;
 	}
 
-	@include media-min($breakpoint-352) {
+	@include media-min($breakpoint-350) {
 		inset-block-start: to-rem($header-inset-block-start);
 	}
 }

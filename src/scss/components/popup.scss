@@ -5,6 +5,7 @@
 .popup {
 	position: fixed;
 	inset: 0;
+	padding-inline: to-rem($container-padding-inline);
 	opacity: 0;
 	transition: opacity
 		var(--default-transition-duration, #{$default-transition-duration});

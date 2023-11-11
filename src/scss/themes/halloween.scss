@@ -1,9 +1,4 @@
-@use "@scss/abstracts" as *;
-
 .halloween {
-	--color-primary: #{$color-secondary};
 	--color-accent: #f80;
 	--color-accent-rgb: 255 128 0;
-
-	color-scheme: dark;
 }
