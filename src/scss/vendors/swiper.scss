@@ -47,9 +47,9 @@
 	background-color: var(--color-gray, #{$color-gray});
 	transition:
 		background-color
-			var(--default-transition-duration, #{$default-transition-duration}),
-		box-shadow var(--default-transition-duration, #{$default-transition-duration}),
-		inline-size var(--default-transition-duration, #{$default-transition-duration});
+			var(--transition-duration-default, #{$transition-duration-default}),
+		box-shadow var(--transition-duration-default, #{$transition-duration-default}),
+		inline-size var(--transition-duration-default, #{$transition-duration-default});
 	cursor: pointer;
 }
 

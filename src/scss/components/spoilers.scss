@@ -34,7 +34,7 @@
 					block-size: to-rem(2);
 					inline-size: to-rem(20);
 					transition: rotate
-						var(--default-transition-duration, #{$default-transition-duration});
+						var(--transition-duration-default, #{$transition-duration-default});
 
 					@extend %bg-color-secondary;
 				}

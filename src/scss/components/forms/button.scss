@@ -8,16 +8,15 @@
 
 	display: inline-flex;
 	justify-content: center;
-	@extend %border-radius;
 	padding-block: to-rem(10);
 	padding-inline: to-rem(15);
-	line-height: div-rounding($line-height, $font-size-base);
+	line-height: div-rounding($line-height, $font-size-default);
 	transition:
 		background-color
-			var(--default-transition-duration, #{$default-transition-duration}),
-		box-shadow var(--default-transition-duration, #{$default-transition-duration}),
-		transform var(--default-transition-duration, #{$default-transition-duration}),
-		color var(--default-transition-duration, #{$default-transition-duration});
+			var(--transition-duration-default, #{$transition-duration-default}),
+		box-shadow var(--transition-duration-default, #{$transition-duration-default}),
+		transform var(--transition-duration-default, #{$transition-duration-default}),
+		color var(--transition-duration-default, #{$transition-duration-default});
 
 	&:focus-visible {
 		color: var(--color-secondary, #{$color-secondary});
@@ -51,6 +50,7 @@
 		}
 	}
 
+	@extend %border-radius;
 	@extend %color-primary;
 	@extend %bg-color-accent;
 	@extend %box-shadow-accent;

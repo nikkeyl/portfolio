@@ -10,7 +10,7 @@ body {
 		opacity: 0;
 		backdrop-filter: blur(to-rem(5));
 		transition: opacity
-			var(--default-transition-duration, #{$default-transition-duration});
+			var(--transition-duration-default, #{$transition-duration-default});
 		pointer-events: none;
 	}
 

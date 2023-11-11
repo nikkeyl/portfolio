@@ -16,12 +16,11 @@
 }
 
 html {
+	color-scheme: light;
 	scroll-padding-block-start: calc(
 		var(--header-min-block-size, #{to-rem($header-min-block-size)}) +
 			var(--header-inset-block-start, #{$header-inset-block-start})
 	);
-
-	color-scheme: light;
 
 	@include media-motion(no-preference) {
 		scroll-behavior: smooth;
@@ -47,7 +46,7 @@ body {
 
 	// popup text
 	// mocha icon overflow
-	// hover .socials and .link
+	// hover .socials
 	// outline not working with svg socials
 }
 

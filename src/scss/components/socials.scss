@@ -12,7 +12,7 @@
 			inline-size: to-rem($size);
 			fill: var(--color-secondary, #{$color-secondary});
 			transition: fill
-				var(--default-transition-duration, #{$default-transition-duration});
+				var(--transition-duration-default, #{$transition-duration-default});
 
 			@include media-hover {
 				fill: var(--color-gray, #{$color-gray});

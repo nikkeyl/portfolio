@@ -2,5 +2,5 @@
 
 .tr-scale {
 	transition: scale
-		var(--default-transition-duration, #{$default-transition-duration});
+		var(--transition-duration-default, #{$transition-duration-default});
 }

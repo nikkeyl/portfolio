@@ -21,17 +21,17 @@
 		display: flex;
 		gap: to-rem($gap);
 
-		@include media-max($phone) {
-			flex-wrap: wrap;
-			inline-size: $width;
-		}
-
 		li {
 			@include media-max($phone) {
 				inline-size: $width;
 			}
 
-			// @include slide(2, 50, 1.5, $default-transition-duration, top);
+			// @include slide(2, 50, 1.5, $transition-duration-default, top);
+		}
+
+		@include media-max($phone) {
+			flex-wrap: wrap;
+			inline-size: $width;
 		}
 	}
 }

@@ -12,4 +12,5 @@ tippy('[data-tippy-content]', {
 	placement: 'bottom',
 	role: 'tooltip',
 });
+// disable in js on phone but in css
 // tips.hide(500)

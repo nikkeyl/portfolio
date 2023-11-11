@@ -3,9 +3,9 @@
 @use "@scss/utilities/placeholders" as *;
 
 body {
-	font-family: var(--font-family-base, var(--font-system-ui, system-ui));
-	font-size: var(--font-size-base, #{to-rem($font-size-base)});
-	font-weight: var(--font-weight-base, #{$font-weight-base});
+	font-family: var(--font-family-default, var(--font-system-ui, system-ui));
+	font-size: var(--font-size-default, #{to-rem($font-size-default)});
+	font-weight: var(--font-weight-default, #{$font-weight-default});
 	line-height: 1;
 	color: var(--color-text-primary, #{$color-secondary});
 }
@@ -31,7 +31,7 @@ a {
 		$font-size: 95;
 		$line-height: 130;
 
-		@include adaptive-value("font-size", $font-size, 45);
+		@include adaptive-value("font-size", $font-size, 40);
 
 		line-height: div-rounding($line-height, $font-size);
 
@@ -48,7 +48,7 @@ a {
 
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
-	line-height: div-rounding($line-height, $font-size-base);
+	line-height: div-rounding($line-height, $font-size-default);
 
 	p {
 		&:not(:last-child) {
@@ -62,7 +62,7 @@ a {
 .link {
 	color: var(--color-secondary, #{$color-primary});
 	transition: color
-		var(--default-transition-duration, #{$default-transition-duration});
+		var(--transition-duration-default, #{$transition-duration-default});
 
 	&:focus-visible {
 		@extend %color-inverse;
@@ -100,5 +100,5 @@ a {
 .spoiler-trigger {
 	$line-height: 20;
 
-	line-height: div-rounding($line-height, $font-size-base);
+	line-height: div-rounding($line-height, $font-size-default);
 }

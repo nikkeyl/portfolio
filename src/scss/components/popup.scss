@@ -8,7 +8,7 @@
 	padding-inline: to-rem($container-padding-inline);
 	opacity: 0;
 	transition: opacity
-		var(--default-transition-duration, #{$default-transition-duration});
+		var(--transition-duration-default, #{$transition-duration-default});
 	pointer-events: none;
 
 	&__wrapper {
@@ -24,8 +24,8 @@
 		opacity: 0;
 		scale: 0;
 		transition:
-			opacity var(--default-transition-duration, #{$default-transition-duration}),
-			scale var(--default-transition-duration, #{$default-transition-duration});
+			opacity var(--transition-duration-default, #{$transition-duration-default}),
+			scale var(--transition-duration-default, #{$transition-duration-default});
 
 		.lock & {
 			opacity: 1;
@@ -39,7 +39,7 @@
 		block-size: to-rem($size);
 		inline-size: to-rem($size);
 		animation: drag
-			var(--default-transition-duration, #{$default-transition-duration}) infinite;
+			var(--transition-duration-default, #{$transition-duration-default}) infinite;
 
 		svg {
 			fill: transparent;

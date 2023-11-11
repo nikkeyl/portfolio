@@ -22,10 +22,10 @@
 		background-color: var(--color-pale, #{$color-pale});
 		transition:
 			background-color
-				var(--default-transition-duration, #{$default-transition-duration}),
-			box-shadow var(--default-transition-duration, #{$default-transition-duration}),
+				var(--transition-duration-default, #{$transition-duration-default}),
+			box-shadow var(--transition-duration-default, #{$transition-duration-default}),
 			inset-block-start
-				var(--default-transition-duration, #{$default-transition-duration});
+				var(--transition-duration-default, #{$transition-duration-default});
 
 		.dark & {
 			inset-block-start: to-rem(18);
