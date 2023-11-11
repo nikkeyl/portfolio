@@ -74,7 +74,7 @@ block content
 							loading='lazy'
 							alt=card.name
 						)
-					.project-card__body
+					.project-card__body.padding-15
 						h3.card-title.project-card__title
 							a(href=card.linkSite)
 								=card.name
@@ -85,7 +85,7 @@ block content
 		.container
 			h2.title.margin-bottom-30
 				| Reviews
-			.swiper.reviews__slider
+			.swiper.reviews__slider.padding-15
 				.swiper-wrapper.margin-bottom-30
 					each review in reviews.reviews
 						.swiper-slide
@@ -94,7 +94,7 @@ block content
 								review.class,
 								'border-radius-10'
 							])
-								.review__info.flex-align-center
+								.review__info.padding-15.flex-align-center
 									.review__image.overflow-hidden.border-radius-50
 										img(
 											src=review.img
@@ -103,7 +103,7 @@ block content
 										)
 									h3.review-name.review__name
 										=review.name
-								.text.review__text
+								.text.review__text.padding-15
 									| !{review.text}
 
 				.swiper-pagination.reviews__pagination
@@ -118,24 +118,24 @@ block content
 		)
 			each spoiler in spoilers.spoilers
 				details.spoiler.border-radius-10
-					summary.spoiler-trigger.spoiler__trigger.flex-align-center.gap(
+					summary.spoiler-trigger.spoiler__trigger.padding-15.flex-align-center.gap(
 						data-spoiler
 						data-spoiler-close
 					)
 						strong=spoiler.title
 						span
-					.text.spoiler__content
+					.text.spoiler__content.padding-15
 						| !{spoiler.content}
 					.sr-only
 						| !{spoiler.content}
 
 			details.spoiler.border-radius-10
-				summary.spoiler-trigger.spoiler__trigger.flex-align-center.gap(
+				summary.spoiler-trigger.spoiler__trigger.padding-15.flex-align-center.gap(
 					data-spoiler
 					data-spoiler-close
 				) #[strong Questions Left?]
 					span
-				.text.spoiler__content
+				.text.spoiler__content.padding-15
 					a.spoiler__info.flex-align-center.margin-bottom-20(
 						href='#'
 						data-popup='#info'

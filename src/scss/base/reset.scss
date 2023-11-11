@@ -38,8 +38,10 @@ body {
 }
 
 :focus-visible {
-	outline: to-rem(2) solid var(--color-inverse, #{$color-inverse});
-	outline-offset: to-rem(2);
+	$outline: 2;
+
+	outline: to-rem($outline) solid var(--color-inverse, #{$color-inverse});
+	outline-offset: to-rem($outline);
 
 	// popup text
 	// mocha icon overflow
@@ -54,12 +56,12 @@ ul {
 
 picture,
 img {
+	$size: 100%;
+
 	vertical-align: middle;
-	shape-margin: 0.75rem;
-	block-size: 100%;
-	inline-size: 100%;
+	block-size: $size;
+	inline-size: $size;
 	font-style: italic;
-	background-repeat: no-repeat;
 	object-fit: cover;
 	object-position: top;
 }

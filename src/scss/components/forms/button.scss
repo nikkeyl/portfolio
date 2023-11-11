@@ -3,17 +3,14 @@
 @use "@scss/utilities/placeholders" as *;
 
 .button {
-	$border-radius: 50;
-	$padding-block: 11;
-	$padding-inline: 15;
-	$line-height: 18;
+	$line-height: 20;
+	$color-dark-theme: var(--color-primary, #{$color-secondary});
 
 	display: inline-flex;
 	justify-content: center;
-	border-radius: to-rem($border-radius);
-	padding-block: to-rem($padding-block);
-	padding-inline: to-rem($padding-inline);
-	text-align: center;
+	border-radius: to-rem(50);
+	padding-block: to-rem(10);
+	padding-inline: to-rem(15);
 	line-height: div-rounding($line-height, $font-size-base);
 	transition:
 		background-color
@@ -26,7 +23,7 @@
 		color: var(--color-secondary, #{$color-secondary});
 
 		.dark & {
-			color: var(--color-primary, #{$color-secondary});
+			color: $color-dark-theme;
 		}
 
 		@extend %bg-color-inverse;
@@ -50,7 +47,7 @@
 		background-color: var(--color-inverse, #{$color-inverse});
 
 		.dark & {
-			color: var(--color-primary, #{$color-secondary});
+			color: $color-dark-theme;
 		}
 	}
 

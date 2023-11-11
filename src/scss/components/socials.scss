@@ -20,11 +20,11 @@
 		}
 
 		&:focus-within {
-			scale: 1.05;
+			scale: var(--scale-default, #{$scale-default});
 		}
 
 		@include media-hover {
-			scale: 1.05;
+			scale: var(--scale-default, #{$scale-default});
 		}
 	}
 

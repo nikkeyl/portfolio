@@ -10,30 +10,25 @@
 
 	&__info {
 		gap: to-rem(15);
-		padding: to-rem(15);
 		background-color: var(--color-pale, #{$color-pale});
 	}
 
 	&__image {
+		$size: 70;
+
 		flex-grow: 0;
 		flex-shrink: 0;
-		flex-basis: to-rem(70);
-		block-size: to-rem(70);
+		flex-basis: to-rem($size);
+		block-size: to-rem($size);
 		background-color: var(--color-accent, #{$color-accent});
 	}
 
 	&__text {
-		padding: to-rem(15);
-
 		@extend %color-primary;
 		@extend %bg-color-accent;
 	}
 
 	.swiper-slide-active & {
 		filter: grayscale(0);
-
-		&::before {
-			opacity: 0;
-		}
 	}
 }

@@ -1,24 +1,37 @@
 @use "@scss/abstracts" as *;
 
 .hero {
+	$gap: 15;
+	$width: 100%;
+
 	&__title {
+		$margin-block-start-size: 80;
+		$margin-block-end-size: 30;
+
 		&:not(:last-child) {
-			@include adaptive-value("margin-block-end", 80, 30);
+			@include adaptive-value(
+				"margin-block-end",
+				$margin-block-start-size,
+				$margin-block-end-size
+			);
 		}
 	}
 
 	&__actions {
 		display: flex;
-		flex-wrap: wrap;
-		gap: to-rem(15);
-		align-self: center;
+		gap: to-rem($gap);
+
+		@include media-max($phone) {
+			flex-wrap: wrap;
+			inline-size: $width;
+		}
 
 		li {
-			@include slide(2, 50, 1.5, $default-transition-duration, top);
-		}
-	}
+			@include media-max($phone) {
+				inline-size: $width;
+			}
 
-	@include media-max($phone) {
-		inline-size: 100%;
+			// @include slide(2, 50, 1.5, $default-transition-duration, top);
+		}
 	}
 }

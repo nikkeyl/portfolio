@@ -31,7 +31,7 @@ a {
 		$font-size: 95;
 		$line-height: 130;
 
-		@include adaptive-value("font-size", $font-size, 44);
+		@include adaptive-value("font-size", $font-size, 45);
 
 		line-height: div-rounding($line-height, $font-size);
 
@@ -44,16 +44,15 @@ a {
 }
 
 .text {
-	$line-height: 1.4;
-	$margin-block-end: 4;
+	$line-height: 22;
 
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
-	line-height: $line-height;
+	line-height: div-rounding($line-height, $font-size-base);
 
 	p {
 		&:not(:last-child) {
-			margin-block-end: to-em($margin-block-end);
+			margin-block-end: to-em(4);
 		}
 	}
 
@@ -76,10 +75,9 @@ a {
 
 .logo {
 	$font-size: 30;
-	$end-font-size: 20;
 	$line-height: 40;
 
-	@include adaptive-value("font-size", $font-size, $end-font-size);
+	@include adaptive-value("font-size", $font-size, 20);
 
 	line-height: div-rounding($line-height, $font-size);
 }

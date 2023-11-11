@@ -13,7 +13,6 @@
 	--z-index-1: #{$z-index-1};
 	--z-index-2: #{$z-index-2};
 	--z-index-3: #{$z-index-3};
-	--z-index-4: #{$z-index-4};
 
 	// Font families
 	--font-system-ui: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
@@ -50,6 +49,9 @@
 	// Main colors
 	--color-background-primary: var(--color-primary, #{$color-primary});
 	--color-text-primary: var(--color-secondary, #{$color-secondary});
+
+	// Transforms
+	--scale-default: #{$scale-default};
 
 	// Transitions
 	--default-transition-duration: #{$default-transition-duration};

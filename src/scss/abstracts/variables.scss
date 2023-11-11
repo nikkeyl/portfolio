@@ -14,14 +14,13 @@ $tablet: 768;
 $phone: 480;
 
 // Header
-$header-min-block-size: 64;
+$header-min-block-size: 70;
 $header-inset-block-start: 15;
 
 // Z-index
 $z-index-1: 1;
 $z-index-2: 2;
 $z-index-3: 3;
-$z-index-4: 4;
 
 // Font families
 $font-family-roboto: "Roboto";
@@ -52,6 +51,9 @@ $color-gray: #888;
 $color-accent-rgb: 4 219 137;
 $color-inverse-rgb: 255 238 0;
 $color-gray-rgb: 136 136 136;
+
+// Transforms
+$scale-default: 1.05;
 
 // Transitions
 $default-transition-duration: 500ms;

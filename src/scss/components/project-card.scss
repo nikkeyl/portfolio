@@ -12,13 +12,13 @@
 			aspect-ratio: 16 / 9;
 
 			@include media-hover {
-				scale: 1.03;
+				scale: var(--scale-default, #{$scale-default});
 			}
 		}
 
 		&:focus-visible {
 			img {
-				scale: 1.03;
+				scale: var(--scale-default, #{$scale-default});
 			}
 		}
 
@@ -28,7 +28,6 @@
 	&__body {
 		display: grid;
 		gap: to-rem(10);
-		padding: to-rem(10);
 	}
 
 	&__title {

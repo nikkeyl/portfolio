@@ -2,10 +2,10 @@
 
 body {
 	&::after {
-		@include pseudo;
+		@include pseudo("", fixed);
 
 		inset: 0;
-		z-index: var(--z-index-3, #{$z-index-3});
+		z-index: var(--z-index-2, #{$z-index-2});
 		background-color: rgb(var(--color-gray-rgb, #{$color-gray-rgb}) / 0.5);
 		opacity: 0;
 		backdrop-filter: blur(to-rem(5));

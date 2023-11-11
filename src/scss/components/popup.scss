@@ -5,8 +5,6 @@
 .popup {
 	position: fixed;
 	inset: 0;
-	padding-block: to-rem(30);
-	padding-inline: to-rem($container-padding-inline);
 	opacity: 0;
 	transition: opacity
 		var(--default-transition-duration, #{$default-transition-duration});
@@ -19,9 +17,8 @@
 
 	&__content {
 		position: relative;
-		inline-size: max(25rem);
-		padding-block: to-rem(50);
-		padding-inline: to-rem(20);
+		inline-size: max(20rem);
+		padding: to-rem(30);
 		background-color: var(--color-pale, #{$color-pale});
 		opacity: 0;
 		scale: 0;
@@ -36,6 +33,7 @@
 
 	&__icon {
 		$size: 150;
+		$rotate: 3deg;
 
 		block-size: to-rem($size);
 		inline-size: to-rem($size);
@@ -43,7 +41,7 @@
 			var(--default-transition-duration, #{$default-transition-duration}) infinite;
 
 		svg {
-			fill: none;
+			fill: transparent;
 			stroke: var(--color-accent, #{$color-accent});
 
 			@extend %box-shadow-accent;
@@ -51,21 +49,20 @@
 
 		@keyframes drag {
 			0% {
-				rotate: 3deg;
+				rotate: $rotate;
 			}
 
 			50% {
-				rotate: -3deg;
+				rotate: -$rotate;
 			}
 
 			100% {
-				rotate: 3deg;
+				rotate: $rotate;
 			}
 		}
 	}
 
 	&__text {
-		max-inline-size: to-rem(210);
 		text-align: center;
 
 		span {
@@ -74,39 +71,42 @@
 	}
 
 	&__close {
+		$inset: 15;
+		$size: 30;
+		$rotate: 45deg;
+
 		position: absolute;
-		inset-block-start: to-rem(20);
-		inset-inline-end: to-rem(15);
-		display: block;
-		block-size: to-rem(18);
-		inline-size: to-rem(30);
-		cursor: pointer;
+		inset-block-start: to-rem($inset);
+		inset-inline-end: to-rem($inset);
+		block-size: to-rem($size);
+		inline-size: to-rem($size);
 
 		&::before,
 		&::after {
+			$block-size: 2;
+
 			@include pseudo;
 
+			inset-block: calc(50% - to-rem($block-size));
 			inset-inline-end: 0;
 			border-radius: to-rem(2);
-			block-size: to-rem(2);
+			block-size: to-rem($block-size);
 			inline-size: 100%;
 
 			@extend %bg-color-secondary;
 		}
 
 		&::before {
-			inset-block-start: calc(50% - to-rem(1));
-			rotate: -45deg;
+			rotate: -$rotate;
 		}
 
 		&::after {
-			inset-block-end: calc(50% - to-rem(1));
-			rotate: 45deg;
+			rotate: $rotate;
 		}
 	}
 
 	&--show {
-		z-index: var(--z-index-4, #{$z-index-4});
+		z-index: var(--z-index-3, #{$z-index-3});
 		overflow: auto;
 		opacity: 1;
 		pointer-events: auto;
