@@ -4,8 +4,6 @@
 	--color-primary: #{$color-secondary};
 	--color-pale: #444;
 	--color-secondary: #{$color-pale};
-	--color-background-primary: var(--color-primary, #333);
-	--color-text-primary: var(--color-secondary, #{$color-pale});
 
 	color-scheme: dark;
 }

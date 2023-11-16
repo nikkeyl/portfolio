@@ -2,11 +2,6 @@
 
 .fullscreen {
 	justify-content: center;
-	min-block-size: 100dvb;
+	min-block-size: 100svb;
 	padding-block: to-rem(90);
-
-	.touch & {
-		transition: min-block-size
-			var(--transition-duration-default, #{$transition-duration-default});
-	}
 }

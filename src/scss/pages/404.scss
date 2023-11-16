@@ -3,9 +3,7 @@
 
 .error-404 {
 	&__title {
-		$font-size: 350;
-
-		@include adaptive-value("font-size", $font-size, 150);
+		@include adaptive-value("font-size", 350, 150);
 
 		font-weight: var(--font-weight-700, #{$font-weight-700});
 		text-align: center;

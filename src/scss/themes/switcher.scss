@@ -2,23 +2,27 @@
 @use "@scss/utilities/placeholders" as *;
 
 .theme-switcher {
+	$inline-size: 24;
+
 	position: relative;
 	flex-grow: 0;
 	flex-shrink: 0;
-	flex-basis: to-rem(24);
+	flex-basis: to-rem($inline-size);
 	border-radius: to-rem(30);
 	block-size: to-rem(40);
-	inline-size: to-rem(24);
+	inline-size: to-rem($inline-size);
 	background-color: var(--color-gray, #{$color-gray});
 
 	&::before {
+		$size: 20;
+
 		@include pseudo;
 
 		inset-block-start: to-rem(2);
 		inset-inline-start: to-rem(2);
 		border-radius: 50%;
-		block-size: to-rem(20);
-		inline-size: to-rem(20);
+		block-size: to-rem($size);
+		inline-size: to-rem($size);
 		background-color: var(--color-pale, #{$color-pale});
 		transition:
 			background-color

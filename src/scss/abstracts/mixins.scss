@@ -1,4 +1,3 @@
-@use "sass:math" as *;
 @use "variables" as *;
 @use "functions" as *;
 
@@ -23,7 +22,7 @@
 		$inline-size-from: $max-inline-size;
 	}
 
-	$slope: div-rounding(
+	$slope: div-round(
 		($start-size - $min-size),
 		($inline-size-from - $inline-size-to)
 	);
@@ -65,7 +64,7 @@
 }
 
 @mixin responsive-output($body-inline-size, $breakpoint: $tablet, $reverse: 0) {
-	$body-max-inline-size: div-rounding($body-inline-size, $container-max-inline-size) *
+	$body-max-inline-size: div-round($body-inline-size, $container-max-inline-size) *
 		100;
 	$image-inline-size: $body-inline-size - ($body-inline-size - $body-max-inline-size);
 
@@ -107,7 +106,7 @@
 										--container-padding-inline,
 										#{to-rem($container-padding-inline)}
 									)
-							) * div(div((100 - $body-max-inline-size), 1), 100)
+							) * div-round(div-round((100 - $body-max-inline-size), 1), 100)
 					) +
 					(var(--container-padding-inline, #{to-rem($container-padding-inline)}) / 2)
 			);
@@ -128,7 +127,7 @@
 			flex-grow: 0;
 			flex-shrink: 0;
 			flex-basis: calc(
-				50% - (div($image-inline-size, 100) - 0.5) *
+				50% - (div-round($image-inline-size, 100) - 0.5) *
 					to-rem($container-max-inline-size)
 			);
 		}
@@ -202,11 +201,9 @@
 
 @mixin grid($type: fit, $min: to-rem(290), $max: 1fr, $breakpoint: $phone) {
 	display: grid;
-	@content;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 
-	@include media-min($breakpoint) {
-		grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
-	}
+	@content;
 }
 
 @mixin media-min-max($min-inline-size: 320, $max-inline-size: $tablet) {

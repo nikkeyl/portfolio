@@ -2,11 +2,9 @@
 @use "@scss/utilities/placeholders" as *;
 
 .about-me {
-	$body-inline-size: 800;
 	$breakpoint: $tablet;
-	$reverse: 1;
 
-	@include responsive-output($body-inline-size, $breakpoint, $reverse);
+	@include responsive-output(800, $breakpoint, 1);
 
 	&__inner {
 		@extend %bg-color-accent;

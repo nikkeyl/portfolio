@@ -1,35 +1,28 @@
 @use "@scss/abstracts" as *;
 
 .hero {
-	$gap: 15;
+	$breakpoint: $phone;
 	$width: 100%;
 
 	&__title {
-		$margin-block-start-size: 80;
-		$margin-block-end-size: 30;
-
 		&:not(:last-child) {
-			@include adaptive-value(
-				"margin-block-end",
-				$margin-block-start-size,
-				$margin-block-end-size
-			);
+			@include adaptive-value("margin-block-end", 80, 30);
 		}
 	}
 
 	&__actions {
 		display: flex;
-		gap: to-rem($gap);
+		gap: to-rem(15);
 
 		li {
-			@include media-max($phone) {
+			@include media-max($breakpoint) {
 				inline-size: $width;
 			}
 
 			// @include slide(2, 50, 1.5, $transition-duration-default, top);
 		}
 
-		@include media-max($phone) {
+		@include media-max($breakpoint) {
 			flex-wrap: wrap;
 			inline-size: $width;
 		}

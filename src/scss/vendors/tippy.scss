@@ -1,4 +1,3 @@
-@use "sass:math" as *;
 @use "@scss/abstracts" as *;
 @use "@scss/utilities/placeholders" as *;
 
@@ -18,7 +17,7 @@
 	padding-block: to-rem(2);
 	padding-inline: to-rem(10);
 	font-size: to-rem($font-size);
-	line-height: div-rounding(22, $font-size);
+	line-height: div-round(22, $font-size);
 	background-color: var(--color-inverse, #{$color-inverse});
 
 	.touch & {
