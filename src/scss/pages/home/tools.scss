@@ -1,0 +1,46 @@
+@use "@scss/abstracts" as *;
+
+.tools {
+	&__row {
+		display: grid;
+	}
+
+	&__icons {
+		display: flex;
+	}
+
+	&__icon {
+		$size: 70;
+
+		display: flex;
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: to-rem($size);
+		align-items: center;
+		justify-content: center;
+		block-size: to-rem($size);
+		inline-size: to-rem($size);
+
+		img {
+			block-size: auto;
+		}
+
+		&:not(.not-studied) {
+			transition-property: padding, border-radius, background-color;
+			transition-duration: var(
+				--transition-duration-default,
+				#{$transition-duration-default}
+			);
+
+			@include media-hover {
+				border-radius: to-rem($border-radius-10);
+				padding: to-rem($padding);
+				background-color: var(--color-pale, #{$color-pale});
+			}
+		}
+
+		&.not-studied {
+			filter: grayscale(1);
+		}
+	}
+}

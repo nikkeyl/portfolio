@@ -3,7 +3,6 @@
     {
       "files": "*.js",
       "options": {
-        "semi": false,
         "singleQuote": true,
         "trailingComma": "none"
       }

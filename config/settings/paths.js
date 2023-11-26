@@ -1,42 +1,57 @@
-import { basename, resolve } from 'path'
+import { basename, resolve } from 'path';
 
-const assetsFolder = 'assets'
-const binFolder = 'bin'
-const buildFolder = resolve('dist')
-const rootDirectory = basename(resolve())
-const srcFolder = resolve('src')
-const paths = {
+import projectConfig from '../../project.config.js';
+
+import PLUGINS from './plugins.js';
+
+const {
+	entry,
+	gitHubUserName,
+	cache: { folder },
+	images: { watchExtensions, spriteFileName },
+	server: { staticFolder }
+} = projectConfig;
+const { join } = PLUGINS;
+
+const assetsFolder = 'assets';
+const cacheFolder = folder;
+const buildFolder = resolve(staticFolder);
+const rootDirectory = basename(resolve());
+const srcFolder = resolve('src');
+const PATHS = {
 	assetsFolder,
-	binFolder,
 	buildFolder,
+	cacheFolder,
 	rootDirectory,
 	srcFolder,
-	fontFacesFile: `${srcFolder}/scss/base/font-face.scss`,
+	fontFacesFile: join(srcFolder, 'scss/base/font-faces.scss'),
+	gitIgnoreFile: '.gitignore',
 	gitKeepFiles: '**/.gitkeep',
-	repository: `https://github.com/nikkeyl/${rootDirectory}.git`,
-	spriteFile: '../img/icons/sprite.svg',
-	versionFile: `${binFolder}/version.json`,
+	remoteRepositoryLink: `https://github.com/${gitHubUserName}/${rootDirectory}.git`,
+	gitHubPagesLink: `https://${gitHubUserName}.github.io/${rootDirectory}`,
+	spriteFile: `../img/icons/${spriteFileName}.svg`,
+	versionFile: join(cacheFolder, 'version.json'),
 	build: {
-		css: `${buildFolder}/${assetsFolder}/css/`,
-		// fonts ???
-		fonts: `${buildFolder}/${assetsFolder}/fonts/`,
-		html: `${buildFolder}/`,
-		images: `${buildFolder}/${assetsFolder}/img/`,
-		js: `${buildFolder}/${assetsFolder}/js/`
+		css: join(buildFolder, assetsFolder, 'css/'),
+		fonts: join(buildFolder, assetsFolder, 'fonts/'),
+		html: join(buildFolder, '/'),
+		images: join(buildFolder, assetsFolder, 'img/'),
+		js: join(buildFolder, assetsFolder, 'js/')
 	},
 	src: {
-		favicon: `${srcFolder}/favicon.ico`,
-		fonts: `${srcFolder}/fonts/`,
-		htaccess: `${srcFolder}/.htaccess`,
-		images: `${srcFolder}/img/**/*.*`,
-		js: `${srcFolder}/js/app.js`,
-		json: `${srcFolder}/views/**/*.json`,
-		pug: `${srcFolder}/views/**/*.pug`,
-		robots: `${srcFolder}/robots.txt`,
-		sprite: `${srcFolder}/img/sprite/*.svg`,
-		static: `${srcFolder}/static/`,
-		svg: [`${srcFolder}/img/**/*.svg`, `!${srcFolder}/img/sprite/*.svg`]
+		favicon: join(srcFolder, 'favicon.ico'),
+		fonts: join(srcFolder, 'fonts/'),
+		htaccess: join(srcFolder, '.htaccess'),
+		images: `${srcFolder}/img/**/*.{${watchExtensions}}`,
+		js: join(srcFolder, `js/${entry}.js`),
+		json: join(srcFolder, 'views/**/*.json'),
+		markdown: join(srcFolder, 'views/markdown/*.md'),
+		pug: join(srcFolder, 'views/**/*.pug'),
+		robots: join(srcFolder, 'robots.txt'),
+		sprite: join(srcFolder, 'img/sprite/*.svg'),
+		static: join(srcFolder, 'static/'),
+		svg: [join(srcFolder, 'img/**/*.svg'), join(`!${srcFolder}`, 'img/sprite/*.svg')]
 	}
-}
+};
 
-export { paths }
+export default PATHS;

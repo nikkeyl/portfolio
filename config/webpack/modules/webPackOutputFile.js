@@ -1,11 +1,13 @@
-import { paths } from '../../settings/paths.js'
+import PATHS from '../../settings/paths.js';
 
-const { buildFolder } = paths
+const { buildFolder } = PATHS;
 
-const output = (fileName) => ({
-	filename: fileName,
-	path: buildFolder,
-	publicPath: '/'
-})
+const output = (fileName) => {
+	return {
+		filename: fileName,
+		path: buildFolder,
+		publicPath: '/'
+	};
+};
 
-export { output }
+export default output;

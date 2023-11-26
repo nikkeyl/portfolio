@@ -1,8 +1,8 @@
-import { paths } from './config/settings/paths.js'
+import PATHS from './config/settings/paths.js';
 
-import { svgoConfig } from './svgo.config.js'
+import svgoConfig from './svgo.config.js';
 
-const { spriteFile } = paths
+const { spriteFile } = PATHS;
 
 const svgSpriteConfig = {
 	mode: {
@@ -25,6 +25,6 @@ const svgSpriteConfig = {
 			'aria-hidden': true
 		}
 	}
-}
+};
 
-export { svgSpriteConfig }
+export default svgSpriteConfig;

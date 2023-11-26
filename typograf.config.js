@@ -1,5 +1,9 @@
+import projectConfig from './project.config.js';
+
+const { lang } = projectConfig;
+
 const typografConfig = {
-	locale: ['ru', 'en-US'],
+	locale: lang === 'ru' ? ['ru', 'en-US'] : ['en-US'],
 	enableRule: [
 		'common/html/processingAttrs',
 		'common/number/digitGrouping',
@@ -13,6 +17,6 @@ const typografConfig = {
 		'attrs',
 		['alt', 'placeholder', 'title']
 	]
-}
+};
 
-export { typografConfig }
+export default typografConfig;

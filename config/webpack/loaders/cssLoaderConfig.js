@@ -1,16 +1,18 @@
-const cssLoaderConfig = (options = {}) => {
-	const { importLoaders = 0, sourceMap = false, endPath = '' } = options
-
+const cssLoaderConfig = ({
+	endPath = '',
+	importLoaders = 0,
+	isSourceMap = false
+} = {}) => {
 	return {
-		importLoaders: importLoaders,
-		sourceMap: sourceMap,
+		importLoaders,
 		modules: false,
+		sourceMap: isSourceMap,
 		url: {
 			filter: (url) => {
-				!url.includes(`img${endPath}`) || !url.includes(`fonts${endPath}`)
+				!url.includes(`img${endPath}`) || !url.includes(`fonts${endPath}`);
 			}
 		}
-	}
-}
+	};
+};
 
-export { cssLoaderConfig }
+export default cssLoaderConfig;

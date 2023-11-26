@@ -1,16 +1,15 @@
-import { paths } from '../../settings/paths.js'
+import PATHS from '../../settings/paths.js';
+import PLUGINS from '../../settings/plugins.js';
 
-const { srcFolder } = paths
+const { srcFolder } = PATHS;
+const { join } = PLUGINS;
 
 const extensionsAndAliases = {
 	alias: {
-		'@js': `${srcFolder}/js`,
-		'@scss': `${srcFolder}/scss`
+		'@js': join(srcFolder, 'js'),
+		'@scss': join(srcFolder, 'scss')
 	},
-	extensions: [
-		'.js',
-		'.scss'
-	]
-}
+	extensions: ['.js', '.scss']
+};
 
-export { extensionsAndAliases }
+export default extensionsAndAliases;

@@ -1,47 +1,50 @@
-import { plugins } from './config/settings/plugins.js'
+import projectConfig from './project.config.js';
 
-import { deploy } from './config/utilities/deploy.js'
-import { reset } from './config/utilities/reset.js'
-import { validator } from './config/utilities/validators.js'
-import { zip } from './config/utilities/zip.js'
+import PLUGINS from './config/settings/plugins.js';
 
-import { fontsStyles } from './config/gulp-tasks/fonts-tasks/fontsStyles.js'
-import { otfToTtf } from './config/gulp-tasks/fonts-tasks/otfToTtf.js'
-import { ttfToWoff2 } from './config/gulp-tasks/fonts-tasks/ttfToWoff2.js'
+import { updateFlag } from './config/helpers/flags.js';
 
-import { jsDev } from './config/gulp-tasks/js-tasks/jsDev.js'
-import { jsProd } from './config/gulp-tasks/js-tasks/jsProd.js'
+import deploy from './config/gulp-tasks/utilities/deploy.js';
+import gitignore from './config/gulp-tasks/utilities/gitignore.js';
+import reset from './config/gulp-tasks/utilities/reset.js';
+import validator from './config/gulp-tasks/utilities/validators.js';
+import zip from './config/gulp-tasks/utilities/zip.js';
 
-import { images } from './config/gulp-tasks/images-tasks/images.js'
-import { sprite } from './config/gulp-tasks/images-tasks/sprite.js'
+import fontsStyles from './config/gulp-tasks/fonts-tasks/fontsStyles.js';
+import convertOtfToTtf from './config/gulp-tasks/fonts-tasks/convertOtfToTtf.js';
+import convertTtfToWoff2 from './config/gulp-tasks/fonts-tasks/convertTtfToWoff2.js';
 
-import { css } from './config/gulp-tasks/css.js'
-import { html } from './config/gulp-tasks/html.js'
+import jsDev from './config/gulp-tasks/js-tasks/jsDev.js';
+import jsProd from './config/gulp-tasks/js-tasks/jsProd.js';
 
-import { argv } from 'node:process'
+import images from './config/gulp-tasks/images-tasks/images.js';
+import sprite from './config/gulp-tasks/images-tasks/sprite.js';
+
+import css from './config/gulp-tasks/css.js';
+import html from './config/gulp-tasks/html.js';
 
 const {
+	images: { webp, avif }
+} = projectConfig;
+const {
 	gulp: { parallel, series }
-} = plugins
-
-const webpFlag = argv.includes('--webp')
-const updateFlag = argv.includes('--update')
+} = PLUGINS;
 
 const fonts = series(
 	reset,
-	otfToTtf,
-	ttfToWoff2,
+	convertOtfToTtf,
+	convertTtfToWoff2,
 	fontsStyles.bind(null, updateFlag)
-)
+);
 const build = series(
 	fonts,
 	jsDev,
 	jsProd,
-	parallel(images.bind(null, webpFlag), html.bind(null, webpFlag), css),
+	parallel(images.bind(null, webp, avif), html.bind(null, webp, avif), css),
 	parallel(validator, zip)
-)
-const dev = parallel(fonts, sprite.bind(null, updateFlag))
+);
+const dev = parallel(fonts, sprite.bind(null, updateFlag));
 
-export { build, deploy, fonts, sprite }
+export { build, gitignore, deploy, fonts, sprite };
 
-export default dev
+export default dev;

@@ -1,9 +1,9 @@
-import { jsFormatter } from './jsFormatter.js'
+import webPackConfig from '../../webpack/webpack.prod.js';
 
-import webPackConfig from '../../webpack/webpack.prod.js'
+import jsFormatter from './jsFormatter.js';
 
 const jsProd = () => {
-	return jsFormatter(webPackConfig, 'Prod')
-}
+	return jsFormatter(webPackConfig, 'jsProd');
+};
 
-export { jsProd }
+export default jsProd;

@@ -1,10 +1,9 @@
 {
 	"Exclude": [
-		"fontFaceTemplate.js",
+		"generateFontFaceDeclarations.js",
 		"stylelintrc.json",
 		"customCursor.js",
 		"reviews.json",
-		"spoilers.js",
 		"mixins.scss",
 		"README.md",
 		"index.pug",

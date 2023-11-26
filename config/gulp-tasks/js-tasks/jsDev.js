@@ -1,16 +1,19 @@
-import { plugins } from '../../settings/plugins.js'
+import projectConfig from '../../../project.config.js';
 
-import { jsFormatter } from './jsFormatter.js'
+import PLUGINS from '../../settings/plugins.js';
 
-import { output } from '../../webpack/modules/webPackOutputFile.js'
+import webPackConfig from '../../webpack/webpack.prod.js';
 
-import webPackConfig from '../../webpack/webpack.prod.js'
+import output from '../../webpack/modules/webPackOutputFile.js';
 
-const { TerserPlugin } = plugins
+import jsFormatter from './jsFormatter.js';
 
-const webPackConfigBeautify = Object.assign({}, webPackConfig)
+const { entry } = projectConfig;
+const { TerserPlugin } = PLUGINS;
 
-webPackConfigBeautify.optimization = {
+const webPackBeautifyConfig = Object.assign({}, webPackConfig);
+
+webPackBeautifyConfig.optimization = {
 	minimizer: [
 		new TerserPlugin({
 			extractComments: false,
@@ -28,11 +31,11 @@ webPackConfigBeautify.optimization = {
 			}
 		})
 	]
-}
-webPackConfigBeautify.output = output('app.js')
+};
+webPackBeautifyConfig.output = output(`${entry}.js`);
 
 const jsDev = () => {
-	return jsFormatter(webPackConfigBeautify, 'Dev')
-}
+	return jsFormatter(webPackBeautifyConfig, 'jsDev');
+};
 
-export { jsDev }
+export default jsDev;

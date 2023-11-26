@@ -48,6 +48,7 @@ a {
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
 	line-height: div-round($line-height, $font-size-default);
+	hyphens: auto;
 
 	p {
 		&:not(:last-child) {

@@ -1,10 +1,17 @@
+import projectConfig from './project.config.js';
+
+const {
+	images: { optimizationLevel }
+} = projectConfig;
+
 const imageMinConfig = {
+	interlaced: true,
+	optimizationLevel,
 	svgoPlugins: [
 		{
 			removeViewBox: false
 		}
-	],
-	interlaced: true
-}
+	]
+};
 
-export { imageMinConfig }
+export default imageMinConfig;

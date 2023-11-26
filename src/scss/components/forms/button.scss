@@ -10,12 +10,11 @@
 	padding-block: to-rem(10);
 	padding-inline: to-rem(15);
 	line-height: div-round($line-height, $font-size-default);
-	transition:
-		background-color
-			var(--transition-duration-default, #{$transition-duration-default}),
-		box-shadow var(--transition-duration-default, #{$transition-duration-default}),
-		transform var(--transition-duration-default, #{$transition-duration-default}),
-		color var(--transition-duration-default, #{$transition-duration-default});
+	transition-property: background-color, box-shadow, transform, color;
+	transition-duration: var(
+		--transition-duration-default,
+		#{$transition-duration-default}
+	);
 
 	&:focus-visible {
 		color: var(--color-secondary, #{$color-secondary});

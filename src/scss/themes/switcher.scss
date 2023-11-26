@@ -20,16 +20,15 @@
 
 		inset-block-start: to-rem(2);
 		inset-inline-start: to-rem(2);
-		border-radius: 50%;
+		border-radius: $border-radius-50;
 		block-size: to-rem($size);
 		inline-size: to-rem($size);
 		background-color: var(--color-pale, #{$color-pale});
-		transition:
-			background-color
-				var(--transition-duration-default, #{$transition-duration-default}),
-			box-shadow var(--transition-duration-default, #{$transition-duration-default}),
-			inset-block-start
-				var(--transition-duration-default, #{$transition-duration-default});
+		transition-property: background-color, box-shadow, inset-block-start;
+		transition-duration: var(
+			--transition-duration-default,
+			#{$transition-duration-default}
+		);
 
 		.dark & {
 			inset-block-start: to-rem(18);

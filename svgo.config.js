@@ -8,7 +8,8 @@ const svgoConfig = {
 					removeViewBox: false
 				}
 			}
-		}, {
+		},
+		{
 			name: 'removeAttrs',
 			params: {
 				attrs: '(fill|stroke|style)'
@@ -16,6 +17,6 @@ const svgoConfig = {
 		},
 		'removeXMLNS'
 	]
-}
+};
 
-export { svgoConfig }
+export default svgoConfig;

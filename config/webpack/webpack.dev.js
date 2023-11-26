@@ -1,17 +1,30 @@
-import { paths } from '../settings/paths.js'
-import { plugins } from '../settings/plugins.js'
+import projectConfig from '../../project.config.js';
 
-import { extensionsAndAliases } from './modules/extensionsAndAliases.js'
-import { output } from './modules/webPackOutputFile.js'
+import PATHS from '../settings/paths.js';
+import PLUGINS from '../settings/plugins.js';
 
-import { cssLoaderConfig } from './loaders/cssLoaderConfig.js'
-import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
+import {
+	jsExtensionRegex,
+	nodeModulesRegex,
+	pugExtensionRegex,
+	scssExtensionRegex
+} from '../helpers/regExps.js';
 
-import { pugPages } from './plugins/pugPages.js'
+import extensionsAndAliases from './modules/extensionsAndAliases.js';
+import output from './modules/webPackOutputFile.js';
+
+import cssLoaderConfig from './loaders/cssLoaderConfig.js';
+import replaceLoaderConfig from './loaders/replaceLoaderConfig.js';
+
+import pugPages from './plugins/pugPages.js';
 
 const {
-	assetsFolder,
+	entry,
+	server: { port, sourceMap, staticFolder, stats, watchFiles }
+} = projectConfig;
+const {
 	buildFolder,
+	assetsFolder,
 	srcFolder,
 	src: {
 		favicon: faviconSrc,
@@ -20,39 +33,41 @@ const {
 		js: jsSrc,
 		json: jsonSrc,
 		pug: pugSrc,
-		static: staticSrc
+		static: staticSrc,
+		markdown: markdownSrc
 	}
-} = paths
-const { CopyPlugin, HtmlWebpackPlugin } = plugins
+} = PATHS;
+const { CopyPlugin, HtmlWebpackPlugin, join } = PLUGINS;
 
-const config = {
+export default {
 	mode: 'development',
-	devtool: 'inline-source-map',
-	stats: 'errors-warnings',
+	devtool: sourceMap,
+	stats,
 	optimization: {
 		minimize: false
 	},
 	entry: jsSrc,
-	output: output(`${assetsFolder}/js/app.min.js`),
+	output: output(join(assetsFolder, `js/${entry}.min.js`)),
 	devServer: {
-		compress: true,
+		compress: false,
 		historyApiFallback: true,
 		open: true,
-		port: 3000,
-		static: buildFolder,
-		watchFiles: [imagesSrc, jsonSrc, pugSrc]
+		port,
+		hot: 'only',
+		static: staticFolder,
+		watchFiles: [imagesSrc, jsonSrc, markdownSrc, pugSrc, ...watchFiles]
 	},
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
-				exclude: /node_modules/,
+				test: jsExtensionRegex,
+				exclude: nodeModulesRegex,
 				resolve: {
 					fullySpecified: false
 				}
 			},
 			{
-				test: /\.scss$/,
+				test: scssExtensionRegex,
 				exclude: fontsSrc,
 				use: [
 					'style-loader',
@@ -65,9 +80,9 @@ const config = {
 					{
 						loader: 'css-loader',
 						options: cssLoaderConfig({
+							endPath: '/',
 							importLoaders: 1,
-							sourceMap: true,
-							endPath: '/'
+							isSourceMap: true
 						})
 					},
 					{
@@ -79,7 +94,7 @@ const config = {
 				]
 			},
 			{
-				test: /\.pug$/,
+				test: pugExtensionRegex,
 				use: [
 					{
 						loader: 'pug-loader',
@@ -98,27 +113,26 @@ const config = {
 		]
 	},
 	plugins: [
-		...pugPages.map(
-			(pugPage) =>
-				new HtmlWebpackPlugin({
-					filename: pugPage.replace(/\.pug$/, '.html'),
-					inject: false,
-					minify: false,
-					production: false,
-					template: `${srcFolder}/views/${pugPage}`
-				})
-		),
+		...pugPages.map((pugPage) => {
+			return new HtmlWebpackPlugin({
+				filename: pugPage.replace(pugExtensionRegex, '.html'),
+				inject: false,
+				minify: false,
+				production: false,
+				template: join(srcFolder, 'views', pugPage)
+			});
+		}),
 		new CopyPlugin({
 			patterns: [
 				{
-					from: `${srcFolder}/img`,
-					to: `${assetsFolder}/img`,
+					from: join(srcFolder, 'img'),
+					to: join(assetsFolder, 'img'),
 					noErrorOnMissing: true,
 					force: true
 				},
 				{
 					from: staticSrc,
-					to: `${assetsFolder}/static`,
+					to: join(assetsFolder, 'static'),
 					noErrorOnMissing: true,
 					force: true
 				},
@@ -131,6 +145,5 @@ const config = {
 		})
 	],
 	resolve: extensionsAndAliases
-}
+};
 
-export default config

@@ -3,7 +3,6 @@
 
 .header {
 	$breakpoint-515: 515;
-	$breakpoint-350: 350;
 
 	position: fixed;
 	z-index: var(--z-index-2, #{$z-index-2});

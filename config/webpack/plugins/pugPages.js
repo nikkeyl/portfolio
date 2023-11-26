@@ -1,13 +1,16 @@
-import { paths } from '../../settings/paths.js'
-import { plugins } from '../../settings/plugins.js'
+import PATHS from '../../settings/paths.js';
+import PLUGINS from '../../settings/plugins.js';
 
-const { srcFolder } = paths
+const { srcFolder } = PATHS;
 const {
+	join,
 	fs: { readdirSync }
-} = plugins
+} = PLUGINS;
 
-const pugPages = readdirSync(`${srcFolder}/views`).filter((fileExt) => {
-	return fileExt.endsWith('.pug')
-})
+const FILE_EXTENSION = new RegExp('.[^.]+$')
 
-export { pugPages }
+const pugPages = readdirSync(join(srcFolder, 'views')).filter((fileExtension) => {
+	return fileExtension.endsWith('.pug');
+});
+
+export default pugPages;

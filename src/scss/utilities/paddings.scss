@@ -1,7 +1,7 @@
 @use "@scss/abstracts" as *;
 
 .padding-12 {
-	padding: to-rem(12);
+	padding: to-rem($padding);
 }
 
 .padding-block {

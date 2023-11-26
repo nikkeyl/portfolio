@@ -1,16 +1,21 @@
-import { paths } from './config/settings/paths.js'
+import projectConfig from './project.config.js';
 
-const { binFolder } = paths
+import PATHS from './config/settings/paths.js';
+
+const {
+	html: { accessibilityLevel }
+} = projectConfig;
+const { cacheFolder } = PATHS;
 
 const a11yConfig = {
-	accessibilityLevel: 'WCAG2AAA',
+	accessibilityLevel,
 	force: true,
 	reportLevels: {
 		error: true,
 		warning: true
 	},
-	reportLocation: binFolder,
+	reportLocation: cacheFolder,
 	verbose: false
-}
+};
 
-export { a11yConfig }
+export default a11yConfig;

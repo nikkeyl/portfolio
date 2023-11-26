@@ -12,10 +12,18 @@ $desktop: $container-inline-size;
 $laptop: 992;
 $tablet: 768;
 $phone: 480;
+$breakpoint-350: 350;
 
 // Header
-$header-min-block-size: 65;
+$header-min-block-size: 64;
 $header-inset-block-start: 15;
+
+// Paddings
+$padding: 12;
+
+// Border radiuses
+$border-radius-10: 10;
+$border-radius-50: 50%;
 
 // Z-index
 $z-index-1: 1;

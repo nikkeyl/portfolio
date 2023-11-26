@@ -1,17 +1,24 @@
-import { paths } from './config/settings/paths.js'
+import projectConfig from './project.config.js';
 
-const { versionFile } = paths
+import PATHS from './config/settings/paths.js';
+
+const {
+	html: {
+		version: { assets, format }
+	}
+} = projectConfig;
+const { versionFile } = PATHS;
 
 const versionNumberConfig = {
-	value: '%DT%',
+	value: format,
 	append: {
 		key: 'v',
 		cover: 0,
-		to: ['css', 'js']
+		to: assets
 	},
 	output: {
 		file: versionFile
 	}
-}
+};
 
-export { versionNumberConfig }
+export default versionNumberConfig;

@@ -1,25 +1,56 @@
-import { paths } from '../../settings/paths.js'
-import { plugins } from '../../settings/plugins.js'
+import svgSprite from 'gulp-svg-sprite';
 
-import { svgSpriteConfig } from '../../../svgSprite.config.js'
+import PATHS from '../../settings/paths.js';
+import PLUGINS from '../../settings/plugins.js';
 
-import svgSprite from 'gulp-svg-sprite'
+import svgSpriteConfig from '../../../svgSprite.config.js';
 
 const {
+	spriteFile,
 	srcFolder,
 	src: { sprite: spriteSrc }
-} = paths
+} = PATHS;
 const {
+	join,
 	notifier,
-	gulp: { dest, src }
-} = plugins
+	status,
+	gulp: { dest, src },
+	fs: {
+		existsSync,
+		promises: { readdir }
+	}
+} = PLUGINS;
 
-// Сделать также как и в fontsStyle.js
-const sprite = () => {
-	return src(spriteSrc)
-		.pipe(notifier.errorHandler('sprite'))
-		.pipe(svgSprite(svgSpriteConfig))
-		.pipe(dest(srcFolder)) // ???
-}
+const sprite = async (updateFlag) => {
+	const taskName = 'sprite';
+	const spriteSvg = join(srcFolder, spriteFile);
+	const isSpriteFileExists = existsSync(spriteSvg) && !updateFlag;
 
-export { sprite }
+	if (isSpriteFileExists) {
+		return notifier.warning(taskName, {
+			path: spriteSvg,
+			message: isSpriteFileExists
+		});
+	}
+
+	try {
+		const hasUpdate = status.state(spriteSvg, updateFlag);
+
+		src('src/img/sprite/*.svg')
+			.pipe(notifier.errorHandler(taskName))
+			.pipe(svgSprite(svgSpriteConfig))
+			.pipe(dest(srcFolder));
+
+		return notifier.success(taskName, {
+			path: spriteSrc,
+			message: hasUpdate
+		});
+	} catch (error) {
+		return notifier.error(taskName, {
+			path: spriteSrc,
+			message: error
+		});
+	}
+};
+
+export default sprite;

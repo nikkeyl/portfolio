@@ -1,17 +1,33 @@
-import { paths } from '../settings/paths.js'
-import { plugins } from '../settings/plugins.js'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import { extensionsAndAliases } from './modules/extensionsAndAliases.js'
-import { output } from './modules/webPackOutputFile.js'
+import projectConfig from '../../project.config.js';
 
-import { cssLoaderConfig } from './loaders/cssLoaderConfig.js'
-import { replaceLoaderConfig } from './loaders/replaceLoaderConfig.js'
+import PATHS from '../settings/paths.js';
+import PLUGINS from '../settings/plugins.js';
 
-import { linters } from './plugins/linters.js'
-import { pugPages } from './plugins/pugPages.js'
+import {
+	jsExtensionRegex,
+	nodeModulesRegex,
+	pugExtensionRegex,
+	scssExtensionRegex
+} from '../helpers/regExps.js';
 
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import extensionsAndAliases from './modules/extensionsAndAliases.js';
+import output from './modules/webPackOutputFile.js';
 
+import cssLoaderConfig from './loaders/cssLoaderConfig.js';
+import replaceLoaderConfig from './loaders/replaceLoaderConfig.js';
+
+import LINTERS from './plugins/linters.js';
+import pugPages from './plugins/pugPages.js';
+
+const {
+	entry,
+	cache: { settings },
+	formatters: {
+		languages: { sassOutputStyle, pugPretty }
+	}
+} = projectConfig;
 const {
 	assetsFolder,
 	srcFolder,
@@ -21,15 +37,13 @@ const {
 		robots: robotsSrc,
 		static: staticSrc
 	}
-} = paths
-const { CopyPlugin, TerserPlugin, HtmlWebpackPlugin } = plugins
-const { esLint, styleLint } = linters
+} = PATHS;
+const { CopyPlugin, HtmlWebpackPlugin, join, TerserPlugin } = PLUGINS;
+const { esLint, styleLint } = LINTERS;
 
-const config = {
+export default {
 	mode: 'production',
-	cache: {
-		type: 'filesystem'
-	},
+	cache: settings,
 	optimization: {
 		minimizer: [
 			new TerserPlugin({
@@ -37,18 +51,18 @@ const config = {
 			})
 		]
 	},
-	output: output('app.min.js'),
+	output: output(`${entry}.min.js`),
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
-				exclude: /node_modules/,
+				test: jsExtensionRegex,
+				exclude: nodeModulesRegex,
 				resolve: {
 					fullySpecified: false
 				}
 			},
 			{
-				test: /\.scss$/,
+				test: scssExtensionRegex,
 				use: [
 					MiniCssExtractPlugin.loader,
 					{
@@ -65,19 +79,19 @@ const config = {
 						loader: 'sass-loader',
 						options: {
 							sassOptions: {
-								outputStyle: 'expanded'
+								outputStyle: sassOutputStyle
 							}
 						}
 					}
 				]
 			},
 			{
-				test: /\.pug$/,
+				test: pugExtensionRegex,
 				use: [
 					{
 						loader: 'pug-loader',
 						options: {
-							pretty: true,
+							pretty: pugPretty,
 							self: true
 						}
 					},
@@ -92,24 +106,19 @@ const config = {
 		]
 	},
 	plugins: [
-		// styleLint,
-		// esLint,
-
-		...pugPages.map(
-			(pugPage) =>
-				new HtmlWebpackPlugin({
-					filename: `../../${pugPage.replace(/\.pug$/, '.html')}`,
-					inject: false,
-					minify: false,
-					production: true,
-					template: `${srcFolder}/views/${pugPage}`
-				})
-		),
+		...pugPages.map((pugPage) => {
+			return new HtmlWebpackPlugin({
+				filename: join('../..', pugPage.replace(pugExtensionRegex, '.html')),
+				inject: false,
+				minify: false,
+				production: true,
+				template: join(srcFolder, 'views', pugPage)
+			});
+		}),
 		new MiniCssExtractPlugin({
 			filename: '../css/style.css'
 		}),
 		new CopyPlugin({
-			// Paths ???
 			patterns: [
 				{
 					from: staticSrc,
@@ -135,6 +144,4 @@ const config = {
 		})
 	],
 	resolve: extensionsAndAliases
-}
-
-export default config
+};

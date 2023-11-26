@@ -1,26 +1,26 @@
-import { paths } from '../../settings/paths.js'
-import { plugins } from '../../settings/plugins.js'
+import webpack from 'webpack-stream';
 
-import webpack from 'webpack-stream'
+import PATHS from '../../settings/paths.js';
+import PLUGINS from '../../settings/plugins.js';
 
 const {
-	build: { js: jsDest },
+	build: { js: jsBuild },
 	src: { js: jsSrc }
-} = paths
+} = PATHS;
 const {
 	notifier,
 	gulp: { dest, src }
-} = plugins
+} = PLUGINS;
 
 const jsFormatter = (config, taskName) => {
 	return src(jsSrc)
-		.pipe(notifier.errorHandler(`js${taskName}`))
+		.pipe(notifier.errorHandler(taskName))
 		.pipe(
 			webpack({
 				config
 			})
 		)
-		.pipe(dest(jsDest))
-}
+		.pipe(dest(jsBuild));
+};
 
-export { jsFormatter }
+export default jsFormatter;
