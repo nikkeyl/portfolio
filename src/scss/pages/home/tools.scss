@@ -1,13 +1,7 @@
 @use "@scss/abstracts" as *;
 
 .tools {
-	&__row {
-		display: grid;
-	}
-
-	&__icons {
-		display: flex;
-	}
+	@include marquee;
 
 	&__icon {
 		$size: 70;

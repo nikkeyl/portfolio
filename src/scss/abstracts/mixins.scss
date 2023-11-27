@@ -199,6 +199,45 @@
 	}
 }
 
+@mixin marquee(
+	$gap: 20,
+	$speed: 30s,
+	$timing-function: linear,
+	$pause-on-hover: 1,
+	$reverse: 0
+) {
+	.marquee-wrapper {
+		display: flex;
+		gap: to-rem($gap);
+		user-select: none;
+
+		@if $pause-on-hover == 1 {
+			@include media-hover {
+				.marquee {
+					animation-play-state: paused;
+				}
+			}
+		}
+
+		.marquee {
+			display: flex;
+			gap: to-rem($gap);
+			animation: scroll $speed $timing-function infinite;
+			will-change: transform;
+
+			@if $reverse == 1 {
+				animation-direction: reverse;
+			}
+
+			@keyframes scroll {
+				100% {
+					transform: translateX(-100%);
+				}
+			}
+		}
+	}
+}
+
 @mixin grid($type: fit, $min: to-rem(290), $max: 1fr, $breakpoint: $phone) {
 	display: grid;
 	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));

@@ -1,157 +1,176 @@
 extends layout/layout
 
 block variables
-  - title = 'Nikita Almanov - Front-End Development'
-  - header = true
-  - footer = true
-  - popups = true
-  - preloader = true
-  - gitHubName = 'nikkeyl'
+	- title = 'Nikita Almanov - Front-End Development'
+	- header = true
+	- footer = true
+	- popups = true
+	- preloader = true
+	- name = 'nikkeyl'
 
 block content
-  section.hero.container.flex-align-center.flex-column.fullscreen
-    h1.title.title--big.hero__title
-      | #[span Front-End]
-      | #[span(data-typed) Development]
-    ul.hero__actions
-      li
-        a.button.button--full(href='#portfolio')
-          | Portfolio
-      li
-        a.button.button--full(href=`https://t.me/${gitHubName}`)
-          | Order a Website
-  section.about-me
-    .about-me__inner
-      .container.about-me__container
-        .about-me__body.padding-block
-          h2.title.about-me__title.margin-bottom-30
-            | Who Am I?
-          .text
-            p
-              | I have been studying front-end development for only a year,
-              | #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
-            p
-              | You can see for yourself by going to
-              | #[a.link(href='#portfolio') portfolio].
-            p
-              | Also, thanks to my minimalism,
-              | I #[strong write clean and understandable code].
-            p
-              | If you want to know #[strong what technologies I own],
-              | you can go down a little #[a.link(href='#tools') lower].
-    .about-me__image
-      img(
-        src=`@img/about/${gitHubName}.jpg`
-        alt='Nikita Almanov'
-        loading='lazy'
-      )
-  .tools.padding-block#tools
-    h2.title.margin-bottom-30
-      | Tools
-    each tool in tools.tools
-      p.sr-only
-        =tool.name
-    .tools__row(role='marquee')
-      .tools__icons.gap
-        each tool in tools.tools
-          div(class=['tools__icon', tool.studied ? 'not-studied' : ''])
-            img(
-              src=tool.icon
-              loading='lazy'
-              alt=tool.name
-              data-tippy-content=tool.name
-            )
+	section.hero.container.flex-align-center.flex-column.fullscreen
+		h1.title.title--big.hero__title
+			| #[span Front-End]
+			| #[span(data-typed) Development]
+		ul.hero__actions
+			li
+				a.button.button--full(href='#portfolio')
+					| Portfolio
+			li
+				a.button.button--full(href=`https://t.me/${name}`)
+					| Order a Website
+	section.about-me
+		.about-me__inner
+			.container.about-me__container
+				.about-me__body.padding-block
+					h2.title.about-me__title.margin-bottom-30
+						| Who Am I?
+					.text
+						p
+							| I have been studying front-end development for only a year,
+							| #[strong but I am no longer inferior in quality and speed of my work to experienced developers.]
+						p
+							| You can see for yourself by going to
+							| #[a.link(href='#portfolio') portfolio].
+						p
+							| Also, thanks to my minimalism,
+							| I #[strong write clean and understandable code].
+						p
+							| If you want to know #[strong what technologies I own],
+							| you can go down a little #[a.link(href='#tools') lower].
+		.about-me__image
+			img(
+				src=`@img/about/${name}.jpg`
+				alt='Nikita Almanov'
+				loading='lazy'
+			)
+	.tools.padding-block#tools
+		h2.title.margin-bottom-30
+			| Tools
+		each tool in tools.tools
+			p.sr-only
+				=tool.name
+		.marquee-wrapper
+			.marquee.gap-20
+				each tool in tools.tools
+					div(
+						class=[
+							'tools__icon',
+							tool.studied ? 'not-studied' : ''
+						]
+						data-tippy-content=tool.name
+					)
+						img(
+							src=tool.icon
+							loading='lazy'
+							alt=tool.name
+						)
+			.marquee.gap-20(aria-hidden='true')
+				each tool in tools.tools
+					div(
+						class=[
+							'tools__icon',
+							tool.studied ? 'not-studied' : ''
+						]
+						data-tippy-content=tool.name
+					)
+						img(
+							src=tool.icon
+							loading='lazy'
+							alt=tool.name
+						)
 
-  section.portfolio.container.padding-block#portfolio
-    h2.title.margin-bottom-30
-      | Portfolio
-    .grid.gap
-      each card in projects.cards
-        article.project-card.border-radius-10
-          a.project-card__image.overflow-hidden(href=card.linkSite)
-            img.tr-scale(
-              src=card.img
-              loading='lazy'
-              alt=card.name
-            )
-          .project-card__body.padding-12
-            h3.card-title.project-card__title
-              a(href=card.linkSite)
-                =card.name
-            a.button.project-card__button(href=card.linkSite)
-              | View
+	section.portfolio.container.padding-block#portfolio
+		h2.title.margin-bottom-30
+			| Portfolio
+		.grid.gap-20
+			each card in projects.cards
+				article.project-card.border-radius-10
+					a.project-card__image.overflow-hidden(href=card.linkSite)
+						img.tr-scale(
+							src=card.img
+							loading='lazy'
+							alt=card.name
+						)
+					.project-card__body.padding-12
+						h3.card-title.project-card__title
+							a(href=card.linkSite)
+								=card.name
+						a.button.project-card__button(href=card.linkSite)
+							| View
 
-  section.reviews.padding-block
-    .container
-      h2.title.margin-bottom-30
-        | Reviews
-      .swiper.reviews__slider.padding-12
-        .swiper-wrapper.margin-bottom-30
-          each review in reviews.reviews
-            .swiper-slide
-              article(class=[
-                'review',
-                review.class,
-                'border-radius-10'
-              ])
-                .review__info.padding-12.flex-align-center
-                  .review__image.overflow-hidden.border-radius-50
-                    img(
-                      src=review.img
-                      loading='lazy'
-                      alt=review.name
-                    )
-                  h3.review-name.review__name
-                    =review.name
-                .text.review__text.padding-12
-                  | !{review.text}
+	section.reviews.padding-block
+		.container
+			h2.title.margin-bottom-30
+				| Reviews
+			.swiper.reviews__slider.padding-12
+				.swiper-wrapper.margin-bottom-30
+					each review in reviews.reviews
+						.swiper-slide
+							article(class=[
+								'review',
+								review.class,
+								'border-radius-10'
+							])
+								.review__info.padding-12.flex-align-center
+									.review__image.overflow-hidden.border-radius-50
+										img(
+											src=review.img
+											loading='lazy'
+											alt=review.name
+										)
+									h3.review-name.review__name
+										=review.name
+								.text.review__text.padding-12
+									| !{review.text}
 
-        .swiper-pagination.reviews__pagination
-  section.container.padding-block#questions
-    h2.title.margin-bottom-30
-      | Q&A
-      span.sr-only
-        | Questions and answers
-    .grid.gap(
-      data-spoilers
-      data-one-spoiler
-    )
-      each spoiler in spoilers.spoilers
-        details.spoiler.border-radius-10
-          summary.spoiler-trigger.spoiler__trigger.padding-12.flex-align-center.gap(
-            data-spoiler
-            data-spoiler-close
-          )
-            strong=spoiler.title
-            span
-          .text.spoiler__content.padding-12
-            | !{spoiler.content}
-          .sr-only
-            | !{spoiler.content}
+				.swiper-pagination.reviews__pagination
+	section.container.padding-block#questions
+		h2.title.margin-bottom-30
+			| Q&A
+			span.sr-only
+				| Questions and answers
+		.grid.gap-20(
+			data-spoilers
+			data-one-spoiler
+		)
+			each spoiler in spoilers.spoilers
+				details.spoiler.border-radius-10
+					summary.spoiler-trigger.spoiler__trigger.padding-12.flex-align-center.gap-20(
+						data-spoiler
+						data-spoiler-close
+					)
+						strong=spoiler.title
+						span
+					.text.spoiler__content.padding-12
+						| !{spoiler.content}
+					.sr-only
+						| !{spoiler.content}
 
-      details.spoiler.border-radius-10
-        summary.spoiler-trigger.spoiler__trigger.padding-12.flex-align-center.gap(
-          data-spoiler
-          data-spoiler-close
-        ) #[strong Questions Left?]
-          span
-        .text.spoiler__content.padding-12
-          a.spoiler__info.flex-align-center.margin-bottom-20(
-            href='#'
-            data-popup='#info'
-            data-tippy-content='Working Hours'
-          ) Contact Me
-            svg
-              use(href='@img/icons/sprite.svg#info')
-          p.sr-only
-            | I answer calls and messages from 12:00 to 20:00.
-          ul.socials.spoiler__socials.flex-align-center
-            each social in socials.socials
-              li.socials__item.tr-scale
-                a.border-radius-50(
-                  href=social.link
-                  data-tippy-content=social.tip
-                  aria-label=social.tip
-                )
-                  svg
-                    use(href=`@img/icons/sprite.svg#${social.icon}`)
+			details.spoiler.border-radius-10
+				summary.spoiler-trigger.spoiler__trigger.padding-12.flex-align-center.gap-20(
+					data-spoiler
+					data-spoiler-close
+				) #[strong Questions Left?]
+					span
+				.text.spoiler__content.padding-12
+					a.spoiler__info.flex-align-center.margin-bottom-20(
+						href='#'
+						data-popup='#info'
+						data-tippy-content='Working Hours'
+					) Contact Me
+						svg
+							use(href='@img/icons/sprite.svg#info')
+					p.sr-only
+						| I answer calls and messages from 12:00 to 20:00.
+					ul.socials.spoiler__socials.flex-align-center
+						each social in socials.socials
+							li.socials__item.tr-scale
+								a.border-radius-50(
+									href=social.link
+									data-tippy-content=social.tip
+									aria-label=social.tip
+								)
+									svg
+										use(href=`@img/icons/sprite.svg#${social.icon}`)

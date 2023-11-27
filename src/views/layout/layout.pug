@@ -65,7 +65,7 @@ html(lang=language)
       )
 
     if isJavaScriptInHead
-      script(defer src=`assets/js/${entry}.min.js`)
+      script(src=`assets/js/${entry}.min.js` defer)
   body
     .wrapper.flex-column
       if header
