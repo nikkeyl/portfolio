@@ -18,8 +18,6 @@
 			@include media-max($breakpoint) {
 				inline-size: $width;
 			}
-
-			// @include slide(2, 50, 1.5, $transition-duration-default, top);
 		}
 
 		@include media-max($breakpoint) {
