@@ -44,8 +44,9 @@ body {
 }
 
 ::selection {
-	color: var(--color-primary, #{$color-secondary});
-	background-color: rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 0.8);
+	color: var(--color-pale, #{$color-pale});
+
+	@extend %bg-color-secondary;
 }
 
 :focus-visible {
@@ -53,11 +54,6 @@ body {
 
 	outline: to-rem($outline) solid var(--color-inverse, #{$color-inverse});
 	outline-offset: to-rem($outline);
-
-	// popup text
-	// mocha icon overflow
-	// hover .socials
-	// outline not working with svg socials
 }
 
 summary,

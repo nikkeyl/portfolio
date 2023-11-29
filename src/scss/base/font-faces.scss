@@ -5,7 +5,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	src: url("../fonts/OpenSans-Medium.woff2") format("woff2");
 	font-family: "OpenSans";
@@ -13,7 +12,13 @@
 	font-style: normal;
 	font-display: swap;
 }
-
+@font-face {
+	src: url("../fonts/Pacifico-Regular.woff2") format("woff2");
+	font-family: "Pacifico";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
 @font-face {
 	src: url("../fonts/Roboto-Regular.woff2") format("woff2");
 	font-family: "Roboto";

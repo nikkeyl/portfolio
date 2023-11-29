@@ -6,7 +6,10 @@ body {
 
 		inset: 0;
 		z-index: var(--z-index-2, #{$z-index-2});
-		background-color: rgb(var(--color-gray-rgb, #{$color-gray-rgb}) / 0.5);
+		background-color: rgb(
+			var(--color-gray-rgb, #{$color-gray-rgb}) /
+				var(--opacity-default, #{$opacity-default})
+		);
 		opacity: 0;
 		backdrop-filter: blur(to-rem(5));
 		transition: opacity

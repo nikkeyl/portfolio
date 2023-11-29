@@ -35,6 +35,9 @@ $font-family-roboto: "Roboto";
 $font-family-open-sans: "OpenSans";
 $font-family-default: $font-family-open-sans;
 
+// Fonts for events
+$font-family-xmas: 'Pacifico';
+
 // Font sizes
 $font-size-title: 40;
 $font-size-subtitle: 30;
@@ -65,3 +68,6 @@ $scale-default: 1.05;
 
 // Transitions
 $transition-duration-default: 500ms;
+
+// Opacity
+$opacity-default: 0.25;

@@ -1,12 +1,11 @@
 const projectConfig = {
-	entry: 'app',
+	entry: 'main',
 	language: 'en',
 	gitHubUserName: 'nikkeyl',
 	cache: {
 		folder: '.cache',
 		settings: {
 			type: 'filesystem',
-			// cacheDirectory: '.cache'
 		}
 	},
 	formatters: {

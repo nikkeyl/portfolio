@@ -106,9 +106,8 @@
 
 	&--show {
 		z-index: var(--z-index-3, #{$z-index-3});
-		overflow: auto;
+		overflow-block: auto;
 		pointer-events: auto;
-		overscroll-behavior: none;
 
 		.popup__content {
 			opacity: 1;

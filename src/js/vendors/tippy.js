@@ -10,7 +10,5 @@ tippy('[data-tippy-content]', {
 	delay: 80,
 	offset: [left, top],
 	placement: 'bottom',
-	role: 'tooltip',
+	role: 'tooltip'
 });
-// disable in js on phone but in css
-// tips.hide(500)

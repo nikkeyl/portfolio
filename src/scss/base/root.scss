@@ -21,6 +21,9 @@
 	--font-family-open-sans: #{$font-family-open-sans};
 	--font-family-default: var(--font-family-open-sans, #{$font-family-default});
 
+	// Fonts for events
+	----font-family-xmas: #{$font-family-xmas};
+
 	// Font sizes
 	--font-size-title: #{to-rem($font-size-title)};
 	--font-size-subtitle: #{to-rem($font-size-subtitle)};
@@ -55,4 +58,7 @@
 
 	// Transitions
 	--transition-duration-default: #{$transition-duration-default};
+
+	// Opacity
+	--opacity-default: #{$opacity-default};
 }

@@ -1,38 +1,35 @@
-import { html } from '@js/helpers/nodeList';
+import { date, currentYear, html } from '@js/helpers/nodeList';
 
 const setEvent = () => {
-	const currentDate = new Date();
-	const currentYear = currentDate.getFullYear();
+	const currentDate = new Date(
+		`${date.getMonth() + 1}.${date.getDate()}.${currentYear}`
+	);
 	const [halloweenStartDate, halloweenEndDate] = [
-		new Date(`10.30.${currentYear}`),
-		new Date(`11.01.${currentYear}`)
+		new Date(`10.25.${currentYear}`),
+		new Date(`10.31.${currentYear}`)
 	];
-	const [newYearStartDate, newYearEndDate] = [
-		new Date(`12.30.${currentYear}`),
-		new Date(`12.01.${currentYear}`)
+	const [xmasStartDate, xmasEndDate] = [
+		new Date(`12.25.${currentYear}`),
+		new Date(`12.31.${currentYear}`)
 	];
 	const isHalloween =
-		currentDate > halloweenStartDate && currentDate < halloweenEndDate;
-	const isNewYear =
-		currentDate > newYearStartDate && currentDate < newYearEndDate;
+		currentDate >= halloweenStartDate && currentDate <= halloweenEndDate;
+	const isXmas = currentDate >= xmasStartDate && currentDate <= xmasEndDate;
 
-	const changeFavicon = (faviconName, themeClass) => {
+	const changeFavicon = (themeName) => {
 		const favicon = document.getElementById('favicon');
 
-		favicon.setAttribute('href', `assets/img/favicons/${faviconName}.ico`);
-		html.classList.add(themeClass);
+		favicon.setAttribute('href', `assets/img/favicons/${themeName}.ico`);
+		html.classList.add(themeName);
+	};
+
+	if (isHalloween) {
+		changeFavicon('halloween');
 	}
 
-	switch (true) {
-		case isHalloween:
-			changeFavicon('halloween', 'halloween')
-			break;
-		case isNewYear:
-			changeFavicon('new-year', 'new-year')
-			html.classList.remove('dark')
-			break;
-		default:
-			break;
+	if (isXmas) {
+		changeFavicon('xmas');
+		html.classList.remove('dark');
 	}
 };
 
