@@ -13,9 +13,9 @@ const isMobile = {
 	},
 	any: () => {
 		return (
-			isMobile.blackBerry() ||
-			isMobile.android() ||
-			isMobile.opera() ||
+			isMobile.blackBerry() ??
+			isMobile.android() ??
+			isMobile.opera() ??
 			isMobile.ios()
 		);
 	}

@@ -42,7 +42,7 @@ const spoilers = () => {
 		spoilersArray.forEach((spoilersParent) => {
 			spoilersParent = isMatchMedia ? spoilersParent.item : spoilersParent;
 
-			if (isMatchMedia.matches || !isMatchMedia) {
+			if (isMatchMedia.matches ?? !isMatchMedia) {
 				spoilersParent.classList.add(spoilersInitClass);
 				initSpoilerBody(spoilersParent);
 			} else {

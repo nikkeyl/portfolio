@@ -62,7 +62,7 @@ class Popup {
 			if (buttonOpen) {
 				event.preventDefault();
 				this.dataValue =
-					buttonOpen?.getAttribute(this.options.attributeOpenButton) || 'error';
+					buttonOpen?.getAttribute(this.options.attributeOpenButton) ?? 'error';
 
 				if (this.dataValue !== 'error') {
 					if (!this.isOpen) {
@@ -84,7 +84,7 @@ class Popup {
 			);
 
 			if (
-				buttonClose ||
+				buttonClose ??
 				(!event.target.closest(`.${this.options.classes.popupContent}`) &&
 					this.isOpen)
 			) {
@@ -167,7 +167,7 @@ class Popup {
 			this.previousOpen.selector = selectorValue;
 		}
 
-		if (!this.isOpen || !isBodyLockStatus) {
+		if (!this.isOpen ?? !isBodyLockStatus) {
 			return;
 		}
 
