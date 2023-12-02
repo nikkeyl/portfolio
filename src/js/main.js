@@ -13,7 +13,6 @@ import webp from '@js/modules/webp';
 
 // Vendors
 import initSliders from '@js/vendors/Swiper';
-import typedText from '@js/vendors/Typed';
 import '@js/vendors/tippy';
 
 // Components
@@ -29,4 +28,3 @@ webp();
 
 // Vendors
 initSliders();
-typedText();

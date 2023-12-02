@@ -15,7 +15,7 @@
 				var(--transition-duration-default, #{$transition-duration-default});
 
 			@include media-hover {
-				fill: var(--color-gray, #{$color-gray});
+				fill: var(--color-accent, #{$color-accent});
 			}
 		}
 

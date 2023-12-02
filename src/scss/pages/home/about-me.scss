@@ -38,7 +38,6 @@
 				@include pseudo;
 
 				inset-inline-end: to-rem(-135);
-				z-index: var(--z-index-1, #{$z-index-1});
 				min-block-size: 120%;
 				inline-size: to-rem(200);
 				background-color: var(--color-accent, #{$color-accent});

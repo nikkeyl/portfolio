@@ -1,10 +1,6 @@
 @use "@scss/abstracts" as *;
 @use "@scss/utilities/placeholders" as *;
 
-[data-tippy-root] {
-	z-index: var(--z-index-2, #{$z-index-2}) !important;
-}
-
 .tippy-box[data-animation="rise"][data-state="hidden"] {
 	transform: translateY(to-rem(10));
 	opacity: 0;
