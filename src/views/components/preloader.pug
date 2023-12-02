@@ -9,6 +9,7 @@
 			box-sizing: border-box;
 		}
 
+		html,
 		body {
 			overflow: hidden;
 			touch-action: none;
@@ -16,6 +17,9 @@
 
 		.preloader {
 			position: fixed;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			inset: 0;
 			z-index: 3;
 			background-color: #fff;
@@ -25,34 +29,28 @@
 			background-color: #333;
 		}
 
-		.preloader__spinner {
+		.preloader__ring {
 			position: absolute;
-			inset-block-start: 50%;
-			inset-inline-start: 50%;
 			inline-size: 6.25rem;
-			translate: -50% -50%;
 			animation: spin 2s linear infinite;
 		}
 
 		@keyframes spin {
 			100% {
-				rotate: 360deg;
+				transform: rotate(360deg);
 			}
 		}
 
 		.preloader.hide {
 			opacity: 0;
-			visibility: hidden;
-			transition:
-				visibility 300ms,
-				opacity 300ms;
+			transition: opacity 500ms;
 		}
 	script.
 		const html = document.documentElement;
 		const preloaderTemplate =
 			`
 				<div class="preloader">
-					<div class="preloader__spinner">
+					<div class="preloader__ring">
 						<svg viewBox="0 0 100 100">
 							<path
 								fill="transparent"

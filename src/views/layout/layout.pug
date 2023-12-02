@@ -77,10 +77,10 @@ html(lang=language)
       if footer
         include footer
 
-    if preloader
-      include ../components/preloader
-    if popups
-      include ../components/popup
+  if preloader
+    include ../components/preloader
+  if popups
+    include ../components/popup
 
-    if !isJavaScriptInHead
-      script(src=`assets/js/${entry}.min.js`)
+  if !isJavaScriptInHead
+    script(src=`assets/js/${entry}.min.js`)
