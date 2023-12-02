@@ -19,9 +19,7 @@
 
 				position: relative;
 				display: block;
-				flex-grow: 0;
-				flex-shrink: 0;
-				flex-basis: to-rem($size);
+				flex: 0 0 to-rem($size);
 				block-size: to-rem($size);
 
 				&::before,

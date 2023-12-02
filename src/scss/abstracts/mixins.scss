@@ -74,9 +74,7 @@
 
 	&__inner {
 		display: flex;
-		flex-grow: 0;
-		flex-shrink: 0;
-		flex-basis: 100%;
+		flex: 0 0 100%;
 	}
 
 	&__container {
@@ -96,9 +94,7 @@
 
 	&__image {
 		@include media-min($breakpoint) {
-			flex-grow: 0;
-			flex-shrink: 0;
-			flex-basis: calc(
+			flex: 0 0 calc(
 				(
 						(
 								100% -
@@ -124,9 +120,7 @@
 		}
 
 		@include media-min($container-inline-size) {
-			flex-grow: 0;
-			flex-shrink: 0;
-			flex-basis: calc(
+			flex: 0 0 calc(
 				50% - (div-round($image-inline-size, 100) - 0.5) *
 					to-rem($container-max-inline-size)
 			);
