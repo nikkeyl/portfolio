@@ -19,6 +19,7 @@
 		background-color: var(--color-pale, #{$color-pale});
 		opacity: 0;
 		scale: 0;
+		will-change: scale;
 		transition-property: opacity, scale;
 		transition-duration: var(
 			--transition-duration-default,
