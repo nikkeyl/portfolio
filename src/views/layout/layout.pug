@@ -24,7 +24,6 @@ block variables
   - let title
   - let header
   - let footer
-  - let popups
   - let preloader
 
 doctype html
@@ -79,8 +78,6 @@ html(lang=language)
 
   if preloader
     include ../components/preloader
-  if popups
-    include ../components/popup
 
   if !isJavaScriptInHead
     script(src=`assets/js/${entry}.min.js`)

@@ -4,7 +4,6 @@ block variables
 	- title = 'Nikita Almanov - Front-End Development'
 	- header = true
 	- footer = true
-	- popups = true
 	- preloader = true
 	- name = 'nikkeyl'
 
@@ -147,30 +146,3 @@ block content
 						| !{spoiler.content}
 					.sr-only
 						| !{spoiler.content}
-
-			details.spoiler.border-radius-10
-				summary.spoiler-trigger.spoiler__trigger.padding-12.flex-align-center.gap-20(
-					data-spoiler
-					data-spoiler-close
-				) #[strong Questions Left?]
-					span
-				.text.spoiler__content.padding-12
-					a.spoiler__info.flex-align-center.margin-bottom-20(
-						href='#'
-						data-popup-open='#info'
-						data-tippy-content='Working Hours'
-					) Contact Me
-						svg
-							use(href='@img/icons/sprite.svg#info')
-					p.sr-only
-						| I answer calls and messages from 12:00 to 20:00.
-					ul.socials.spoiler__socials.flex-align-center
-						each social in socials.socials
-							li.socials__item.tr-scale
-								a.border-radius-50(
-									href=social.link
-									data-tippy-content=social.tip
-									aria-label=social.tip
-								)
-									svg
-										use(href=`@img/icons/sprite.svg#${social.icon}`)

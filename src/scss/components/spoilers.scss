@@ -58,29 +58,6 @@
 		}
 	}
 
-	&__info {
-		gap: to-rem(10);
-		margin-inline: auto;
-		inline-size: fit-content;
-
-		svg {
-			$size: 20;
-
-			block-size: to-rem($size);
-			inline-size: to-rem($size);
-			fill: transparent;
-			stroke: var(--color-pale, #{$color-pale});
-		}
-	}
-
-	&__socials {
-		justify-content: center;
-
-		svg {
-			fill: var(--color-pale, #{$color-pale});
-		}
-	}
-
 	&__content {
 		@extend %bg-color-accent;
 	}

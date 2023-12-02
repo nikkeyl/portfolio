@@ -1,7 +1,6 @@
 import '@scss/style';
 
 // Components
-import Popup from '@js/components/Popup';
 import spoilers from '@js/components/spoilers';
 
 // Modules
@@ -18,7 +17,6 @@ import typedText from '@js/vendors/Typed';
 import '@js/vendors/tippy';
 
 // Components
-new Popup();
 spoilers();
 
 // Modules

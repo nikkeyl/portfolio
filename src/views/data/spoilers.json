@@ -1,44 +1,40 @@
 {
   "spoilers": [
     {
-      "title": "What Are the Guarantees?",
-      "content": "<p>After the delivery of the project, I undertake to correct the mistakes made during the development within 1 week.</p>"
+      "title": "Warranty",
+      "content": "<p>Once the project is completed, I commit to fixing the mistakes made(by me) during development within 1 week.</p>"
     },
     {
-      "title": "What About the Deadlines?",
-      "content": "<p>I do the work within the agreed time frame.</p>"
+      "title": "Deadlines",
+      "content": "<p>I meet deadlines.</p>"
     },
     {
-      "title": "How and When Is the Payment Made?",
+      "title": "Payment",
       "content": "<p>I work on a prepayment of 30% of the order amount.</p>"
     },
     {
-      "title": "When Does Work Start?",
-      "content": "<p>After clarifying all the details of the project and receiving an advance payment.</p>"
+      "title": "Getting Started",
+      "content": "<p>Once all project details have been taken care of and prepayment has been received.</p>"
     },
     {
-      "title": "What Is the Quality of My Work?",
-      "content": "<p>The best!</p><p>I try to test each work thoroughly.</p><p>Your site will be valid, responsive, accessible, cross-browser, semantic.</p>"
+      "title": "Quality",
+      "content": "<p>The best!</p><p>I try to test each work thoroughly.</p><p>Your site will be valid, responsive, accessible, cross-browser and semantic.</p>"
     },
     {
-      "title": "Forgot To Specify Something in the TR?",
-      "content": "<p>What was not specified in the TR, as well as edits (except for mistakes made by me), I do for a fee.</p>"
+      "title": "Edits",
+      "content": "<p>If edits, revisions or improvements were not specified in the TR, in this case, there will be a separate payment for each.</p><p>If the mistakes were made by me, then the edits are free.</p>"
     },
     {
-      "title": "Do You Have a PC-Only Layout?",
-      "content": "<p>In this case, I will develop a responsive design for mobile devices based on the layout for PC for free.</p>"
+      "title": "Consultation",
+      "content": "<p>I give tips for improvement on UX.</p>"
     },
     {
-      "title": "Consultation?",
-      "content": "<p>I give advice on ease of use.</p>"
+      "title": "Browsers",
+      "content": "<p>I don't support older browsers, as well as IE.</p>"
     },
     {
-      "title": "Discount?",
+      "title": "Discount",
       "content": "<p>For the second order, a 15% discount.</p>"
-    },
-    {
-      "title": "Old Browsers?",
-      "content": "<p>I don't support older browsers, as well as Internet Explorer.</p>"
     }
   ]
 }
