@@ -9,7 +9,7 @@ const setEvent = () => {
 		new Date(`10.31.${currentYear}`)
 	];
 	const [xmasStartDate, xmasEndDate] = [
-		new Date(`12.25.${currentYear}`),
+		new Date(`12.01.${currentYear}`),
 		new Date(`12.31.${currentYear}`)
 	];
 	const isHalloween =
