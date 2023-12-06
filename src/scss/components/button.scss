@@ -28,7 +28,7 @@
 	}
 
 	&:active {
-		transform: translateY(to-rem(3));
+		transform: translateY(to-rem(5));
 	}
 
 	&--full {
@@ -39,9 +39,9 @@
 
 	@include media-hover {
 		box-shadow: 0 0 to-rem(15)
-			rgb(
+			oklch(
 				var(--color-inverse-rgb, #{$color-inverse-rgb}) /
-					var(--opacity-default, #{$opacity-default})
+					var(--alpha-default, #{$alpha-default})
 			);
 		color: var(--color-secondary, #{$color-secondary});
 		background-color: var(--color-inverse, #{$color-inverse});

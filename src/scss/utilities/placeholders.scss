@@ -24,7 +24,7 @@
 	box-shadow: 0 0 to-rem(15)
 		rgb(
 			var(--color-inverse-rgb, #{$color-inverse-rgb}) /
-				var(--opacity-default, #{$opacity-default})
+				var(--alpha-default, #{$alpha-default})
 		);
 }
 
@@ -32,7 +32,7 @@
 	box-shadow: 0 0 to-rem(15)
 		rgb(
 			var(--color-accent-rgb, #{$color-accent-rgb}) /
-				var(--opacity-default, #{$opacity-default})
+				var(--alpha-default, #{$alpha-default})
 		);
 }
 
