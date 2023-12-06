@@ -39,7 +39,7 @@
 
 	@include media-hover {
 		box-shadow: 0 0 to-rem(15)
-			oklch(
+			rgb(
 				var(--color-inverse-rgb, #{$color-inverse-rgb}) /
 					var(--alpha-default, #{$alpha-default})
 			);
