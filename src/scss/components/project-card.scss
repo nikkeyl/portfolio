@@ -3,7 +3,9 @@
 
 .project-card {
 	display: grid;
+	grid-template-rows: 1fr auto;
 	overflow: hidden;
+	aspect-ratio: 1;
 	inline-size: 100%;
 	background-color: var(--color-pale, #{$color-pale});
 

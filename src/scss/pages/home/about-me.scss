@@ -45,6 +45,10 @@
 			}
 		}
 
+		@include media-max($breakpoint) {
+			aspect-ratio: 1;
+		}
+
 		@extend %bg-color-inverse;
 	}
 

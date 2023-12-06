@@ -15,6 +15,7 @@
 		--transition-duration-default,
 		#{$transition-duration-default}
 	);
+	user-select: none;
 
 	&:focus-visible {
 		color: var(--color-secondary, #{$color-secondary});

@@ -29,7 +29,7 @@ const setEvent = () => {
 
 	if (isXmas) {
 		changeFavicon('xmas');
-		html.classList.remove('dark');
+		html.classList.remove('light');
 	}
 };
 
