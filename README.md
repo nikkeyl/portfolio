@@ -21,7 +21,15 @@
 
 -   🏭 [![](https://img.shields.io/badge/conqueror-builder-fe0)](https://github.com/Conqueror-Site-Builder)
 
-    > Powerful ecosystem for quick and easy development of websites of any complexity.
+    > Powerful ecosystem for quick and easy development
+    > of websites of any complexity.
+
+-   🛠️ [![](https://img.shields.io/badge/conqueror-template-0d8)](https://github.com/Conqueror-Site-Builder/conqueror-repo-template)
+
+    > Template for quick project creation, for convenient work you can
+    > use such tools as:
+    > CI, Commitizen, Commtilint, Semantic Release, Husky, CodeQL analysis,
+    > Mocha, Pre-commit Hooks, Issue Templates and much more
 
 -   🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
 
@@ -29,10 +37,6 @@
     > best practices from the world of Front-End Development.
 
 ## Participated
-
--   [**Chat AI App**](https://github.com/StarkElessar/chat-ai-app)
-
-    > Convenient corporate chat based on chatGPT-4.
 
 -   [**GitHub Profile Achivement Russian**](https://github.com/github-profile-achievements/russian)
 
