@@ -20,7 +20,7 @@
 	&__body {
 		@include media-min($breakpoint) {
 			z-index: var(--z-index-1, #{$z-index-1});
-			padding-inline-start: to-rem(10);
+			padding-inline-start: to-rem(20);
 		}
 
 		@extend %color-primary;
@@ -30,26 +30,6 @@
 		@include media-min($breakpoint) {
 			text-align: start;
 		}
-	}
-
-	&__image {
-		@include media-min($breakpoint) {
-			&::before {
-				@include pseudo;
-
-				inset-inline-end: to-rem(-135);
-				min-block-size: 120%;
-				inline-size: to-rem(200);
-				background-color: var(--color-accent, #{$color-accent});
-				rotate: 11.5deg;
-			}
-		}
-
-		@include media-max($breakpoint) {
-			aspect-ratio: 1;
-		}
-
-		@extend %bg-color-inverse;
 	}
 
 	@include media-min($breakpoint) {
