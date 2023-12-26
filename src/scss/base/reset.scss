@@ -19,19 +19,10 @@
 html {
 	color-scheme: light;
 
-	@include media-min($breakpoint-350) {
-		scroll-padding-block-start: calc(
-			var(--header-min-block-size, #{to-rem($header-min-block-size)}) +
-				var(--header-inset-block-start, #{$header-inset-block-start})
-		);
-	}
-
-	@include media-max($breakpoint-350) {
-		scroll-padding-block-start: var(
-			--header-min-block-size,
-			#{to-rem($header-min-block-size)}
-		);
-	}
+	scroll-padding-block-start: var(
+		--header-min-block-size,
+		#{to-rem($header-min-block-size)}
+	);
 
 	@include media-motion(no-preference) {
 		scroll-behavior: smooth;
