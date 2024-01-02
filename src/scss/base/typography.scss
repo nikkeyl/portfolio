@@ -24,7 +24,7 @@ a {
 	font-size: var(--font-size-title, #{to-rem($font-size-title)});
 	font-weight: var(--font-weight-700, #{$font-weight-700});
 	text-align: center;
-	line-height: div-round($line-height, $font-size-title);
+	line-height: decimal-round($line-height, $font-size-title);
 
 	&--big {
 		$font-size: 95;
@@ -32,7 +32,7 @@ a {
 
 		@include adaptive-value("font-size", $font-size, 40);
 
-		line-height: div-round($line-height, $font-size);
+		line-height: decimal-round($line-height, $font-size);
 
 		span {
 			&:not([data-typed]) {
@@ -51,7 +51,7 @@ a {
 	strong {
 		font-weight: var(--font-weight-700, #{$font-weight-700});
 	}
-	line-height: div-round($line-height, $font-size-default);
+	line-height: decimal-round($line-height, $font-size-default);
 	hyphens: auto;
 
 	p {
@@ -83,14 +83,14 @@ a {
 
 	@include adaptive-value("font-size", $font-size, 20);
 
-	line-height: div-round($line-height, $font-size);
+	line-height: decimal-round($line-height, $font-size);
 }
 
 .card-title {
 	$line-height: 40;
 
 	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
-	line-height: div-round($line-height, $font-size-subtitle);
+	line-height: decimal-round($line-height, $font-size-subtitle);
 }
 
 .review-name {
@@ -98,11 +98,11 @@ a {
 	$line-height: 30;
 
 	font-size: to-rem($font-size);
-	line-height: div-round($line-height, $font-size);
+	line-height: decimal-round($line-height, $font-size);
 }
 
 .spoiler-trigger {
 	$line-height: 20;
 
-	line-height: div-round($line-height, $font-size-default);
+	line-height: decimal-round($line-height, $font-size-default);
 }

@@ -22,7 +22,7 @@
 		$inline-size-from: $max-inline-size;
 	}
 
-	$slope: div-round(
+	$slope: decimal-round(
 		($start-size - $min-size),
 		($inline-size-from - $inline-size-to)
 	);
@@ -64,7 +64,7 @@
 }
 
 @mixin responsive-output($body-inline-size, $breakpoint: $tablet, $reverse: 0) {
-	$body-max-inline-size: div-round($body-inline-size, $container-max-inline-size) *
+	$body-max-inline-size: decimal-round($body-inline-size, $container-max-inline-size) *
 		100;
 	$image-inline-size: $body-inline-size - ($body-inline-size - $body-max-inline-size);
 
@@ -102,7 +102,7 @@
 										--container-padding-inline,
 										#{to-rem($container-padding-inline)}
 									)
-							) * div-round(div-round((100 - $body-max-inline-size), 1), 100)
+							) * decimal-round(decimal-round((100 - $body-max-inline-size), 1), 100)
 					) +
 					(var(--container-padding-inline, #{to-rem($container-padding-inline)}) / 2)
 			);
@@ -121,7 +121,7 @@
 
 		@include media-min($container-inline-size) {
 			flex: 0 0 calc(
-				50% - (div-round($image-inline-size, 100) - 0.5) *
+				50% - (decimal-round($image-inline-size, 100) - 0.5) *
 					to-rem($container-max-inline-size)
 			);
 		}
