@@ -5,11 +5,11 @@ const setEvent = () => {
 		`${date.getMonth() + 1}.${date.getDate()}.${currentYear}`
 	);
 	const [halloweenStartDate, halloweenEndDate] = [
-		new Date(`10.25.${currentYear}`),
+		new Date(`10.24.${currentYear}`),
 		new Date(`10.31.${currentYear}`)
 	];
 	const [xmasStartDate, xmasEndDate] = [
-		new Date(`12.01.${currentYear}`),
+		new Date(`12.24.${currentYear}`),
 		new Date(`12.31.${currentYear}`)
 	];
 	const isHalloween =
@@ -25,11 +25,13 @@ const setEvent = () => {
 
 	if (isHalloween) {
 		changeFavicon('halloween');
+		html.classList.remove('light');
 	}
 
 	if (isXmas) {
 		changeFavicon('xmas');
 		html.classList.remove('light');
+		html.classList.remove('dark');
 	}
 };
 

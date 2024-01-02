@@ -111,8 +111,7 @@
     },
 		{
 			"icon": "assets/img/svg/tools/mocha.svg",
-			"name": "Mocha",
-      "studied": true
+			"name": "Mocha"
 		},
     {
       "icon": "assets/img/svg/tools/svgo.svg",
@@ -156,11 +155,6 @@
     {
       "icon": "assets/img/svg/tools/lighthouse.svg",
       "name": "Lighthouse"
-    },
-    {
-      "icon": "assets/img/svg/tools/gitkraken.svg",
-      "name": "GitKraken",
-      "studied": true
     },
 		{
 			"icon": "assets/img/svg/tools/figma.svg",

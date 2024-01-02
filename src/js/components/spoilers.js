@@ -7,8 +7,8 @@ const spoilers = () => {
 	const spoilersAttribute = 'data-spoilers';
 	const detailsElement = 'details'
 	const summaryElement = 'summary'
-	const spoilersArray = document.querySelectorAll(`[${spoilersAttribute}]`);
-	const spoilersRegular = Array.from(spoilersArray).filter((item) => {
+	const spoilers = document.querySelectorAll(`[${spoilersAttribute}]`);
+	const spoilersRegular = Array.from(spoilers).filter((item) => {
 		return !item.dataset.spoilers.split(',')[0];
 	});
 	const defaultSpeed = 500;
