@@ -1,53 +1,18 @@
 import { html } from '@js/helpers/nodeList';
 
 const colorScheme = () => {
-	const saveUserTheme = localStorage.getItem('user-theme');
+	const prefersDarkMode =
+		window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-	let userTheme;
+	html.classList.add(prefersDarkMode ? 'dark' : 'light');
 
 	if (window.matchMedia) {
-		userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-			? 'dark'
-			: 'light';
-	}
+		const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
 
-	const changeTheme = (isSaveTheme = false) => {
-		const currentTheme = html.classList.contains('light') ? 'light' : 'dark';
-
-		let newTheme;
-
-		currentTheme === 'light' ? (newTheme = 'dark') : (newTheme = 'light');
-		html.classList.remove(currentTheme);
-		html.classList.add(newTheme);
-
-		if (isSaveTheme) {
-			localStorage.setItem('user-theme', newTheme);
+		if (darkMode) {
+			html.classList.remove(prefersDarkMode ? 'light' : 'dark');
 		}
-	};
-
-	window
-		.matchMedia('(prefers-color-scheme: dark)')
-		.addEventListener('change', () => {
-			if (!saveUserTheme) {
-				changeTheme();
-			}
-		});
-
-	const switchThemeButton = document.querySelector('.theme-switcher');
-
-	if (switchThemeButton) {
-		switchThemeButton.addEventListener('click', () => {
-			changeTheme(true);
-		});
 	}
-
-	const setThemeClass = () => {
-		saveUserTheme
-			? html.classList.add(saveUserTheme)
-			: html.classList.add(userTheme);
-	};
-
-	setThemeClass();
 };
 
 export default colorScheme;
