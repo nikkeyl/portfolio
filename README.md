@@ -24,6 +24,10 @@
     > Powerful ecosystem for quick and easy development
     > of websites of any complexity.
 
+-   🔄 [![](https://img.shields.io/badge/conqueror-builder-39a)](https://github.com/Conqueror-Site-Builder/browtest)
+
+    > Quick and easy cross-browser testing of your website!
+
 -   🛠️ [![](https://img.shields.io/badge/conqueror-template-0d8)](https://github.com/Conqueror-Site-Builder/conqueror-repo-template)
 
     > Template for quick project creation, for convenient work you can
