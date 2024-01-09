@@ -47,11 +47,14 @@ body {
 	outline-offset: to-rem($outline);
 }
 
-summary,
-ul {
-	&::marker {
+summary {
+	// Reset marker on Safari
+	&::-webkit-details-marker {
 		display: none;
 	}
+}
+
+ul {
 	list-style-type: none;
 }
 
@@ -75,7 +78,7 @@ svg {
 button {
 	background-color: transparent;
 
-  @include media-hover {
-    cursor: pointer;
-  }
+	@include media-hover {
+		cursor: pointer;
+	}
 }
