@@ -2,16 +2,16 @@
 @use "@scss/utilities/placeholders" as *;
 
 .error-404 {
-  &__title {
-    @include adaptive-value("font-size", 350, 150);
+	&__title {
+		@include adaptive-value("font-size", 350, 150);
 
-    font-weight: var(--font-weight-700, #{$font-weight-700});
-    text-align: center;
+		font-weight: var(--font-weight-700, #{$font-weight-700});
+		text-align: center;
 
-    span {
-      @extend %color-inverse;
-    }
+		span {
+			@extend %color-inverse;
+		}
 
-    @extend %color-accent;
-  }
+		@extend %color-accent;
+	}
 }

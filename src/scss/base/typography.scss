@@ -47,12 +47,13 @@ a {
 
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
+	line-height: decimal-round($line-height, $font-size-default);
+	hyphens: auto;
+
 	span,
 	strong {
 		font-weight: var(--font-weight-700, #{$font-weight-700});
 	}
-	line-height: decimal-round($line-height, $font-size-default);
-	hyphens: auto;
 
 	p {
 		&:not(:last-child) {

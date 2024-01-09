@@ -1,28 +1,28 @@
 @use "@scss/abstracts" as *;
 
 .hero {
-  $breakpoint: $phone;
-  $width: 100%;
+	$breakpoint: $phone;
+	$width: 100%;
 
-  &__title {
-    &:not(:last-child) {
-      @include adaptive-value("margin-block-end", 80, 30);
-    }
-  }
+	&__title {
+		&:not(:last-child) {
+			@include adaptive-value("margin-block-end", 80, 30);
+		}
+	}
 
-  &__actions {
-    display: flex;
-    gap: to-rem(15);
+	&__actions {
+		display: flex;
+		gap: to-rem(15);
 
-    li {
-      @include media-max($breakpoint) {
-        inline-size: $width;
-      }
-    }
+		li {
+			@include media-max($breakpoint) {
+				inline-size: $width;
+			}
+		}
 
-    @include media-max($breakpoint) {
-      flex-wrap: wrap;
-      inline-size: $width;
-    }
-  }
+		@include media-max($breakpoint) {
+			flex-wrap: wrap;
+			inline-size: $width;
+		}
+	}
 }

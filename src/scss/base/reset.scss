@@ -17,8 +17,7 @@
 }
 
 html {
-	color-scheme: light;
-
+	color-scheme: dark light;
 	scroll-padding-block-start: var(
 		--header-min-block-size,
 		#{to-rem($header-min-block-size)}

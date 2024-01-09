@@ -2,9 +2,9 @@
 
 @function decimal-round($divisible, $divisor, $decimals: 4) {
 	$divide: div($divisible, $divisor);
-  $pow: pow(10, $decimals);
+	$pow: pow(10, $decimals);
 
-  @return div(round($divide * $pow), $pow);
+	@return div(round($divide * $pow), $pow);
 }
 
 @function to-em($px, $default: 16) {
