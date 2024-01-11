@@ -27,8 +27,8 @@
     {
       "img": "assets/img/projects/car-dealership.jpg",
       "name": "Car Dealership",
-      "linkSite": "https://nikkeyl.github.io/Car-dealership",
-      "linkCode": "https://github.com/nikkeyl/Car-dealership"
+      "linkSite": "https://nikkeyl.github.io/car-dealership",
+      "linkCode": "https://github.com/nikkeyl/car-dealership"
     },
     {
       "img": "assets/img/projects/deep.jpg",
@@ -39,8 +39,8 @@
     {
       "img": "assets/img/projects/agency.jpg",
       "name": "Agency",
-      "linkSite": "https://nikkeyl.github.io/Agency",
-      "linkCode": "https://github.com/nikkeyl/Agency"
+      "linkSite": "https://nikkeyl.github.io/agency",
+      "linkCode": "https://github.com/nikkeyl/agency"
     },
     {
       "img": "assets/img/projects/saimon.jpg",
@@ -63,14 +63,14 @@
     {
       "img": "assets/img/projects/aster.jpg",
       "name": "Aster",
-      "linkSite": "https://nikkeyl.github.io/Aster",
-      "linkCode": "https://github.com/nikkeyl/Aster"
+      "linkSite": "https://nikkeyl.github.io/aster",
+      "linkCode": "https://github.com/nikkeyl/aster"
     },
     {
       "img": "assets/img/projects/cleaning-services.jpg",
       "name": "Cleaning",
-      "linkSite": "https://nikkeyl.github.io/Cleaning",
-      "linkCode": "https://github.com/nikkeyl/Cleaning"
+      "linkSite": "https://nikkeyl.github.io/cleaning",
+      "linkCode": "https://github.com/nikkeyl/cleaning"
     },
     {
       "img": "assets/img/projects/euroflex.jpg",
