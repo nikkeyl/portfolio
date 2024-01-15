@@ -133,6 +133,11 @@
       "name": "Cypress"
     },
     {
+      "icon": "assets/img/svg/tools/playwright.svg",
+      "name": "Playwright",
+      "studied": true
+    },
+    {
       "icon": "assets/img/svg/tools/w3c.svg",
       "name": "W3C",
       "studied": true
