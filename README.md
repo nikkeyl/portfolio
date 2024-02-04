@@ -19,16 +19,16 @@
 
 ## Projects
 
--   🏭 [![](https://img.shields.io/badge/conqueror-builder-fe0)](https://github.com/Conqueror-Site-Builder)
+-   🏭 [![](https://img.shields.io/badge/archoleat-builder-fe0)](https://github.com/Archoleat)
 
     > Powerful ecosystem for quick and easy development
     > of websites of any complexity.
 
--   🔄 [![](https://img.shields.io/badge/browtest-39a)](https://github.com/Conqueror-Site-Builder/browtest)
+-   🔄 [![](https://img.shields.io/badge/browtest-39a)](https://github.com/Archoleat/browtest)
 
     > Quick and easy cross-browser testing of your website!
 
--   🛠️ [![](https://img.shields.io/badge/conqueror-template-0d8)](https://github.com/Conqueror-Site-Builder/conqueror-repo-template)
+-   🛠️ [![](https://img.shields.io/badge/archoleat-template-0d8)](https://github.com/Archoleat/archoleat-repo-template)
 
     > Template for quick project creation, for convenient work you can
     > use such tools as:
