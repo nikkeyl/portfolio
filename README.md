@@ -1,4 +1,4 @@
-# **Hello, I'm Nikita Almanov**
+# **Hello, I'm Nikkeyl**
 
 **Let's get straight to the point**
 
