@@ -52,6 +52,7 @@
 
 ## Stats
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nikkeyl&theme=github_dark)
-![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nikkeyl&theme=github_dark)
-![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=nikkeyl&theme=github_dark)
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nikkeyl&theme=2077)
+![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nikkeyl&theme=2077)
+![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=nikkeyl&theme=2077)
+![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=nikkeyl&theme=2077)
