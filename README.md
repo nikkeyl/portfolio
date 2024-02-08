@@ -7,8 +7,14 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" width="40" height="40" title="HTML5">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" width="40" height="40" title="CSS3">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="40" height="40" title="SASS">&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40" title="Tailwind">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" title="JavaScript">&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" height="40" title="TypeScript">&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" title="NodeJS">&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/babel/babel-original.svg" width="40" height="40" title="Babel">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mocha/mocha-plain.svg" width="40" height="40" title="Mocha">&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" width="40" height="40" title="Cypress">&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" width="40" height="40" title="Playwright">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" width="40" height="40" title="ESLint">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" width="40" height="40" title="NPM">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" width="40" height="40" title="Webpack">&nbsp;
@@ -19,32 +25,8 @@
 
 ## Projects
 
--   🏭 [![](https://img.shields.io/badge/archoleat-builder-fe0)](https://github.com/Archoleat)
-
-    > Powerful ecosystem for quick and easy development
-    > of websites of any complexity.
-
--   🔄 [![](https://img.shields.io/badge/browtest-39a)](https://github.com/Archoleat/browtest)
-
-    > Quick and easy cross-browser testing of your website!
-
--   🛠️ [![](https://img.shields.io/badge/archoleat-template-0d8)](https://github.com/Archoleat/archoleat-repo-template)
-
-    > Template for quick project creation, for convenient work you can
-    > use such tools as:
-    > CI, Commitizen, Commtilint, Semantic Release, Husky, CodeQL analysis,
-    > Mocha, Pre-commit Hooks, Issue Templates and much more
-
--   🌐 [![](https://img.shields.io/badge/nikkeyl-0d8)](https://nikkeyl.github.io/nikkeyl)
-
-    > This is not just a portfolio site, it's a collection of
-    > best practices from the world of Front-End Development.
-
-## Participated
-
--   [**GitHub Profile Achivement Russian**](https://github.com/github-profile-achievements/russian)
-
--   [**Typograf**](https://github.com/typograf/typograf)
+-   [**Archoleat Organization**](https://github.com/Archoleat)
+-   [**Other Projects**](https://github.com/nikkeyl?tab=repositories)
 
 ## Contacts
 
