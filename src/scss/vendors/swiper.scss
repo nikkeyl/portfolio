@@ -6,11 +6,12 @@
 }
 
 .swiper-wrapper {
-	position: relative;
 	display: flex;
+	position: relative;
+	flex-wrap: nowrap;
+	box-sizing: content-box;
 	block-size: 100%;
 	inline-size: 100%;
-	box-sizing: content-box;
 }
 
 .swiper-initialized {
@@ -34,6 +35,7 @@
 
 .swiper-pagination {
 	display: flex;
+	flex-wrap: nowrap;
 	gap: to-rem(5);
 	justify-content: center;
 }
@@ -41,6 +43,7 @@
 .swiper-pagination-bullet {
 	$size: 15;
 
+	cursor: pointer;
 	border-radius: to-rem(30);
 	block-size: to-rem($size);
 	inline-size: to-rem($size);
@@ -50,7 +53,6 @@
 		--transition-duration-default,
 		#{$transition-duration-default}
 	);
-	cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {

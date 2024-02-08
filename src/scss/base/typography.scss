@@ -2,10 +2,10 @@
 @use "@scss/utilities/placeholders" as *;
 
 body {
+	line-height: 1;
 	font-family: var(--font-family-default, var(--font-system-ui, system-ui));
 	font-size: var(--font-size-default, #{to-rem($font-size-default)});
 	font-weight: var(--font-weight-default, #{$font-weight-default});
-	line-height: 1;
 	color: var(--color-text-primary, #{$color-secondary});
 }
 
@@ -21,10 +21,10 @@ a {
 .title {
 	$line-height: 60;
 
+	line-height: decimal-round($line-height, $font-size-title);
+	text-align: center;
 	font-size: var(--font-size-title, #{to-rem($font-size-title)});
 	font-weight: var(--font-weight-700, #{$font-weight-700});
-	text-align: center;
-	line-height: decimal-round($line-height, $font-size-title);
 
 	&--big {
 		$font-size: 95;
@@ -45,10 +45,10 @@ a {
 .text {
 	$line-height: 22;
 
-	font-family: var(--font-family-roboto, #{$font-family-roboto});
-	font-weight: var(--font-weight-400, #{$font-weight-400});
 	line-height: decimal-round($line-height, $font-size-default);
 	hyphens: auto;
+	font-family: var(--font-family-roboto, #{$font-family-roboto});
+	font-weight: var(--font-weight-400, #{$font-weight-400});
 
 	span,
 	strong {
@@ -90,16 +90,16 @@ a {
 .card-title {
 	$line-height: 40;
 
-	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
 	line-height: decimal-round($line-height, $font-size-subtitle);
+	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
 }
 
 .review-name {
 	$font-size: 24;
 	$line-height: 30;
 
-	font-size: to-rem($font-size);
 	line-height: decimal-round($line-height, $font-size);
+	font-size: to-rem($font-size);
 }
 
 .spoiler-trigger {

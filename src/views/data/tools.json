@@ -22,20 +22,67 @@
     },
     {
       "icon": "assets/img/svg/tools/tailwind.svg",
-      "name": "Tailwind"
+      "name": "Tailwind",
+      "studied": true
     },
     {
-      "icon": "assets/img/svg/tools/bootstrap.svg",
-      "name": "Bootstrap"
-    },
-    {
-      "icon": "assets/img/svg/tools/js.svg",
+      "icon": "assets/img/svg/tools/javascript.svg",
       "name": "JavaScript",
       "studied": true
     },
     {
-      "icon": "assets/img/svg/tools/ts.svg",
+      "icon": "assets/img/svg/tools/typescript.svg",
       "name": "TypeScript"
+    },
+    {
+      "icon": "assets/img/svg/tools/nodejs.svg",
+      "name": "NodeJS"
+    },
+    {
+      "icon": "assets/img/svg/tools/react.svg",
+      "name": "React"
+    },
+    {
+      "icon": "assets/img/svg/tools/redux.svg",
+      "name": "Redux"
+    },
+    {
+      "icon": "assets/img/svg/tools/gulp.svg",
+      "name": "Gulp",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/webpack.svg",
+      "name": "Webpack",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/esbuild.svg",
+      "name": "ESBuild"
+    },
+    {
+      "icon": "assets/img/svg/tools/babel.svg",
+      "name": "Babel",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/mocha.svg",
+      "name": "Mocha",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/playwright.svg",
+      "name": "Playwright",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/cypress.svg",
+      "name": "Cypress"
+    },
+    {
+      "icon": "assets/img/svg/tools/git.svg",
+      "name": "Git",
+      "studied": true
     },
     {
       "icon": "assets/img/svg/tools/json.svg",
@@ -58,7 +105,7 @@
       "studied": true
     },
     {
-      "icon": "assets/img/svg/tools/editor-config.svg",
+      "icon": "assets/img/svg/tools/editorconfig.svg",
       "name": "EditorConfig",
       "studied": true
     },
@@ -83,10 +130,6 @@
       "studied": true
     },
     {
-      "icon": "assets/img/svg/tools/nodejs.svg",
-      "name": "NodeJS"
-    },
-    {
       "icon": "assets/img/svg/tools/npm.svg",
       "name": "NPM",
       "studied": true
@@ -94,47 +137,6 @@
     {
       "icon": "assets/img/svg/tools/svgo.svg",
       "name": "SVGO",
-      "studied": true
-    },
-    {
-      "icon": "assets/img/svg/tools/gulp.svg",
-      "name": "Gulp",
-      "studied": true
-    },
-    {
-      "icon": "assets/img/svg/tools/webpack.svg",
-      "name": "Webpack",
-      "studied": true
-    },
-    {
-      "icon": "assets/img/svg/tools/esbuild.svg",
-      "name": "ESBuild"
-    },
-    {
-      "icon": "assets/img/svg/tools/react.svg",
-      "name": "React"
-    },
-    {
-      "icon": "assets/img/svg/tools/redux.svg",
-      "name": "Redux"
-    },
-    {
-      "icon": "assets/img/svg/tools/babel.svg",
-      "name": "Babel",
-      "studied": true
-    },
-    {
-      "icon": "assets/img/svg/tools/mocha.svg",
-      "name": "Mocha",
-      "studied": true
-    },
-    {
-      "icon": "assets/img/svg/tools/cypress.svg",
-      "name": "Cypress"
-    },
-    {
-      "icon": "assets/img/svg/tools/playwright.svg",
-      "name": "Playwright",
       "studied": true
     },
     {
@@ -177,11 +179,6 @@
       "name": "Docker"
     },
     {
-      "icon": "assets/img/svg/tools/git.svg",
-      "name": "Git",
-      "studied": true
-    },
-    {
       "icon": "assets/img/svg/tools/lighthouse.svg",
       "name": "Lighthouse",
       "studied": true
@@ -194,6 +191,15 @@
     {
       "icon": "assets/img/svg/tools/vscode.svg",
       "name": "Visual Studio Code",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/netlify.svg",
+      "name": "Netlify"
+    },
+    {
+      "icon": "assets/img/svg/tools/chatgpt.svg",
+      "name": "ChatGPT",
       "studied": true
     },
     {

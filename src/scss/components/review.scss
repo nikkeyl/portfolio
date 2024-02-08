@@ -4,9 +4,9 @@
 .review {
 	overflow: hidden;
 	max-inline-size: to-rem(400);
-	filter: grayscale(1);
 	transition: filter
 		var(--transition-duration-default, #{$transition-duration-default});
+	filter: grayscale(1);
 
 	&__info {
 		gap: to-rem(15);

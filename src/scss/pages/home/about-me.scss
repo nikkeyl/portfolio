@@ -10,16 +10,8 @@
 		@extend %bg-color-accent;
 	}
 
-	&__container {
-		@include media-min($breakpoint) {
-			display: flex;
-			align-items: center;
-		}
-	}
-
 	&__body {
 		@include media-min($breakpoint) {
-			z-index: var(--z-index-1, #{$z-index-1});
 			padding-inline-start: to-rem(20);
 		}
 
@@ -30,9 +22,5 @@
 		@include media-min($breakpoint) {
 			text-align: start;
 		}
-	}
-
-	@include media-min($breakpoint) {
-		overflow: hidden;
 	}
 }

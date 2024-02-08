@@ -6,6 +6,7 @@
 	$color-dark-theme: var(--color-primary, #{$color-secondary});
 
 	display: inline-flex;
+	flex-wrap: nowrap;
 	justify-content: center;
 	padding-block: to-rem(10);
 	padding-inline: to-rem(15);
@@ -44,8 +45,8 @@
 				var(--color-inverse-rgb, #{$color-inverse-rgb}) /
 					var(--alpha-default, #{$alpha-default})
 			);
-		color: var(--color-secondary, #{$color-secondary});
 		background-color: var(--color-inverse, #{$color-inverse});
+		color: var(--color-secondary, #{$color-secondary});
 
 		.dark & {
 			color: $color-dark-theme;

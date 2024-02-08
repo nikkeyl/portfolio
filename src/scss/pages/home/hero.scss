@@ -12,6 +12,7 @@
 
 	&__actions {
 		display: flex;
+		flex-wrap: wrap;
 		gap: to-rem(15);
 
 		li {

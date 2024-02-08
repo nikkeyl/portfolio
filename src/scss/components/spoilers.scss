@@ -17,8 +17,8 @@
 			span {
 				$size: 30;
 
-				position: relative;
 				display: block;
+				position: relative;
 				flex: 0 0 to-rem($size);
 				block-size: to-rem($size);
 
