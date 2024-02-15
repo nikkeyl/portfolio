@@ -57,6 +57,11 @@
       "studied": true
     },
     {
+      "icon": "assets/img/svg/tools/rollup.svg",
+      "name": "Rollup",
+      "studied": true
+    },
+    {
       "icon": "assets/img/svg/tools/esbuild.svg",
       "name": "ESBuild"
     },
