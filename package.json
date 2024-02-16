@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "init": "npm i && husky install && rm .husky/_/.gitignore",
+    "init": "pnpm install && husky",
     "dev": "gulp && webpack serve -c config/webpack/webpack.dev.js",
     "build": "gulp build",
     "deploy:gh-pages": "gulp deploy -d dist",
@@ -15,6 +15,7 @@
     "fonts:update": "gulp fonts --update"
   },
   "devDependencies": {
+    "@archoleat/stylelint-config-extended-scss": "*",
     "chai": "*",
     "chalk": "*",
     "copy-webpack-plugin": "*",
@@ -75,20 +76,12 @@
     "remark-preset-lint-consistent": "*",
     "remark-preset-lint-markdown-style-guide": "*",
     "remark-preset-lint-recommended": "*",
-    "rko": "0.6.5",
     "sass": "*",
     "sass-loader": "*",
     "simplebar": "*",
     "string-replace-loader": "*",
     "style-loader": "*",
     "stylelint": "*",
-    "stylelint-config-standard-scss": "*",
-    "stylelint-high-performance-animation": "*",
-    "stylelint-order": "*",
-    "stylelint-plugin-defensive-css": "*",
-    "stylelint-plugin-logical-css": "*",
-    "stylelint-prettier": "*",
-    "stylelint-webpack-plugin": "*",
     "swiper": "*",
     "terser-webpack-plugin": "*",
     "tippy.js": "*",

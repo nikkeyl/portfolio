@@ -1,5 +1,5 @@
 {
-	"tools": [
+  "tools": [
     {
       "icon": "assets/img/svg/tools/html.svg",
       "name": "HTML",
@@ -37,6 +37,21 @@
     {
       "icon": "assets/img/svg/tools/nodejs.svg",
       "name": "NodeJS"
+    },
+    {
+      "icon": "assets/img/svg/tools/nvm.svg",
+      "name": "NVM",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/npm.svg",
+      "name": "NPM",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/pnpm.svg",
+      "name": "PNPM",
+      "studied": true
     },
     {
       "icon": "assets/img/svg/tools/react.svg",
@@ -132,11 +147,6 @@
     {
       "icon": "assets/img/svg/tools/stylelint.svg",
       "name": "Stylelint",
-      "studied": true
-    },
-    {
-      "icon": "assets/img/svg/tools/npm.svg",
-      "name": "NPM",
       "studied": true
     },
     {
