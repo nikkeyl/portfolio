@@ -6,238 +6,238 @@ settings:
 
 devDependencies:
   '@archoleat/stylelint-config-extended-scss':
-    specifier: 1.4.0
-    version: 1.4.0(postcss@8.4.35)(prettier@3.2.5)(stylelint@16.2.1)
+    specifier: ^1.4.1
+    version: 1.4.1(postcss@8.4.35)(prettier@3.2.5)(stylelint@16.2.1)
   chai:
-    specifier: '*'
+    specifier: ^5.1.0
     version: 5.1.0
   chalk:
-    specifier: '*'
+    specifier: ^5.3.0
     version: 5.3.0
   copy-webpack-plugin:
-    specifier: '*'
+    specifier: ^12.0.2
     version: 12.0.2(webpack@5.90.2)
   css-loader:
-    specifier: '*'
+    specifier: ^6.10.0
     version: 6.10.0(webpack@5.90.2)
   del:
-    specifier: '*'
+    specifier: ^7.1.0
     version: 7.1.0
   editorconfig-checker:
-    specifier: '*'
+    specifier: ^5.1.4
     version: 5.1.4
   eslint:
-    specifier: '*'
+    specifier: ^8.56.0
     version: 8.56.0
   eslint-config-prettier:
-    specifier: '*'
+    specifier: ^9.1.0
     version: 9.1.0(eslint@8.56.0)
   eslint-plugin-import:
-    specifier: '*'
+    specifier: ^2.29.1
     version: 2.29.1(eslint@8.56.0)
   eslint-plugin-no-use-extend-native:
-    specifier: '*'
+    specifier: ^0.5.0
     version: 0.5.0
   eslint-plugin-optimize-regex:
-    specifier: '*'
+    specifier: ^1.2.1
     version: 1.2.1
   eslint-plugin-prettier:
-    specifier: '*'
+    specifier: ^5.1.3
     version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.2.5)
   eslint-plugin-promise:
-    specifier: '*'
+    specifier: ^6.1.1
     version: 6.1.1(eslint@8.56.0)
   eslint-plugin-sonarjs:
-    specifier: '*'
+    specifier: ^0.24.0
     version: 0.24.0(eslint@8.56.0)
   eslint-webpack-plugin:
-    specifier: '*'
+    specifier: ^4.0.1
     version: 4.0.1(eslint@8.56.0)(webpack@5.90.2)
   gh-pages:
-    specifier: '*'
+    specifier: ^6.1.1
     version: 6.1.1
   gulp:
-    specifier: '*'
+    specifier: ^4.0.2
     version: 4.0.2
   gulp-autoprefixer:
-    specifier: '*'
+    specifier: ^9.0.0
     version: 9.0.0(gulp@4.0.2)
   gulp-avif:
-    specifier: '*'
+    specifier: ^1.1.1
     version: 1.1.1
   gulp-avif-html:
-    specifier: '*'
+    specifier: ^1.0.4
     version: 1.0.4
   gulp-clean-css:
-    specifier: '*'
+    specifier: ^4.3.0
     version: 4.3.0
   gulp-csscomb:
-    specifier: '*'
+    specifier: ^3.1.0
     version: 3.1.0
   gulp-fonter-fix:
-    specifier: '*'
+    specifier: ^0.0.1
     version: 0.0.1
   gulp-group-css-media-queries:
-    specifier: '*'
+    specifier: ^1.2.2
     version: 1.2.2
   gulp-html-bem-validator:
-    specifier: '*'
+    specifier: ^1.0.5
     version: 1.0.5
   gulp-htmlmin:
-    specifier: '*'
+    specifier: ^5.0.1
     version: 5.0.1
   gulp-if:
-    specifier: '*'
+    specifier: ^3.0.0
     version: 3.0.0
   gulp-imagemin:
-    specifier: '*'
+    specifier: ^9.0.0
     version: 9.0.0(gulp@4.0.2)
   gulp-newer:
-    specifier: '*'
+    specifier: ^1.4.0
     version: 1.4.0
   gulp-notify:
-    specifier: '*'
+    specifier: ^4.0.0
     version: 4.0.0
   gulp-plumber:
-    specifier: '*'
+    specifier: ^1.2.1
     version: 1.2.1
   gulp-rename:
-    specifier: '*'
+    specifier: ^2.0.0
     version: 2.0.0
   gulp-shorthand:
-    specifier: '*'
+    specifier: ^1.1.0
     version: 1.1.0
   gulp-svg-sprite:
-    specifier: '*'
+    specifier: ^2.0.3
     version: 2.0.3
   gulp-ttf2woff2:
-    specifier: '*'
+    specifier: ^4.0.1
     version: 4.0.1
   gulp-typograf:
-    specifier: '*'
+    specifier: ^4.1.0
     version: 4.1.0
   gulp-version-number:
-    specifier: '*'
+    specifier: ^0.2.4
     version: 0.2.4
   gulp-w3c-html-validator:
-    specifier: '*'
+    specifier: ^5.3.0
     version: 5.3.0
   gulp-wcag-accessibility:
-    specifier: '*'
+    specifier: ^0.0.1
     version: 0.0.1
   gulp-webp:
-    specifier: '*'
+    specifier: ^5.0.0
     version: 5.0.0(gulp@4.0.2)
   gulp-webp-html-nosvg:
-    specifier: '*'
+    specifier: ^1.1.1
     version: 1.1.1
   gulp-webpcss:
-    specifier: '*'
+    specifier: ^1.1.1
     version: 1.1.1
   gulp-zip:
-    specifier: '*'
+    specifier: ^6.0.0
     version: 6.0.0(gulp@4.0.2)
   html-webpack-plugin:
-    specifier: '*'
+    specifier: ^5.6.0
     version: 5.6.0(webpack@5.90.2)
   husky:
-    specifier: '*'
+    specifier: ^9.0.11
     version: 9.0.11
   inputmask:
-    specifier: '*'
+    specifier: ^5.0.8
     version: 5.0.8
   isotope-layout:
-    specifier: '*'
+    specifier: ^3.0.6
     version: 3.0.6
   js-datepicker:
-    specifier: '*'
+    specifier: ^5.18.2
     version: 5.18.2
   jstransformer-markdown-it:
-    specifier: '*'
+    specifier: ^3.0.0
     version: 3.0.0
   lightgallery:
-    specifier: '*'
+    specifier: ^2.7.2
     version: 2.7.2
   lint-staged:
-    specifier: '*'
+    specifier: ^15.2.2
     version: 15.2.2
   mini-css-extract-plugin:
-    specifier: '*'
+    specifier: ^2.8.0
     version: 2.8.0(webpack@5.90.2)
   mocha:
-    specifier: '*'
+    specifier: ^10.3.0
     version: 10.3.0
   nouislider:
-    specifier: '*'
+    specifier: ^15.7.1
     version: 15.7.1
   pug-loader:
-    specifier: '*'
+    specifier: ^2.4.0
     version: 2.4.0(pug@2.0.4)
   remark-cli:
-    specifier: '*'
+    specifier: ^12.0.0
     version: 12.0.0
   remark-lint:
-    specifier: '*'
+    specifier: ^9.1.2
     version: 9.1.2
   remark-preset-lint-consistent:
-    specifier: '*'
+    specifier: ^5.1.2
     version: 5.1.2
   remark-preset-lint-markdown-style-guide:
-    specifier: '*'
+    specifier: ^5.1.3
     version: 5.1.3
   remark-preset-lint-recommended:
-    specifier: '*'
+    specifier: ^6.1.3
     version: 6.1.3
   sass:
-    specifier: '*'
+    specifier: ^1.71.0
     version: 1.71.0
   sass-loader:
-    specifier: '*'
+    specifier: ^14.1.0
     version: 14.1.0(sass@1.71.0)(webpack@5.90.2)
   simplebar:
-    specifier: '*'
+    specifier: ^6.2.5
     version: 6.2.5
   string-replace-loader:
-    specifier: '*'
+    specifier: ^3.1.0
     version: 3.1.0(webpack@5.90.2)
   style-loader:
-    specifier: '*'
+    specifier: ^3.3.4
     version: 3.3.4(webpack@5.90.2)
   stylelint:
-    specifier: '*'
+    specifier: ^16.2.1
     version: 16.2.1
   swiper:
-    specifier: '*'
+    specifier: ^11.0.6
     version: 11.0.6
   terser-webpack-plugin:
-    specifier: '*'
+    specifier: ^5.3.10
     version: 5.3.10(webpack@5.90.2)
   tippy.js:
-    specifier: '*'
+    specifier: ^6.3.7
     version: 6.3.7
   typed.js:
-    specifier: '*'
+    specifier: ^2.1.0
     version: 2.1.0
   vanilla-marquee:
-    specifier: '*'
+    specifier: ^1.1.2
     version: 1.1.2
   webp-converter:
     specifier: 2.2.3
     version: 2.2.3
   webpack:
-    specifier: '*'
+    specifier: ^5.90.2
     version: 5.90.2(webpack-cli@5.1.4)
   webpack-cli:
-    specifier: '*'
+    specifier: ^5.1.4
     version: 5.1.4(webpack-dev-server@5.0.2)(webpack@5.90.2)
   webpack-dev-server:
-    specifier: '*'
+    specifier: ^5.0.2
     version: 5.0.2(quill-delta@5.1.0)(rxjs@7.8.1)(tslib@2.6.2)(webpack-cli@5.1.4)(webpack@5.90.2)
   webpack-stream:
-    specifier: '*'
+    specifier: ^7.0.0
     version: 7.0.0(webpack@5.90.2)
   wnumb:
-    specifier: '*'
+    specifier: ^1.2.0
     version: 1.2.0
 
 packages:
@@ -247,8 +247,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@archoleat/stylelint-config-extended-scss@1.4.0(postcss@8.4.35)(prettier@3.2.5)(stylelint@16.2.1):
-    resolution: {integrity: sha512-pzyJTaxzoFaL05joi3PRuiNVR0OXj3WWA1Qf5+oJxmAilh3W3PODR2IIbToa1uCUPoAHrkO73Oq2uKoipUwefQ==}
+  /@archoleat/stylelint-config-extended-scss@1.4.1(postcss@8.4.35)(prettier@3.2.5)(stylelint@16.2.1):
+    resolution: {integrity: sha512-h+WnNM5sE/+5vl3Uo27t5F+uqVVWhjuBCF+pnvikIslL7d+bI0PPEP/F6zFHP/5amGPKTKaQYqtRSIqDZ46VpQ==}
     engines: {node: '>=20.11.0', npm: '>=10.4.0'}
     peerDependencies:
       stylelint: '*'
@@ -769,6 +769,7 @@ packages:
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+    requiresBuild: true
     dev: true
 
   /@types/babel-types@7.0.15:
@@ -2139,6 +2140,7 @@ packages:
 
   /boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+    requiresBuild: true
     dev: true
 
   /brace-expansion@1.1.11:
@@ -2819,6 +2821,7 @@ packages:
   /commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+    requiresBuild: true
     dev: true
 
   /commander@8.3.0:
@@ -3105,6 +3108,7 @@ packages:
   /css-what@6.1.0:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
     engines: {node: '>= 6'}
+    requiresBuild: true
     dev: true
 
   /css@2.2.4:
@@ -3603,6 +3607,7 @@ packages:
 
   /dom-serializer@1.4.1:
     resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==}
+    requiresBuild: true
     dependencies:
       domelementtype: 2.3.0
       domhandler: 4.3.1
@@ -8142,6 +8147,7 @@ packages:
 
   /mdn-data@2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}
+    requiresBuild: true
     dev: true
 
   /mdn-data@2.0.30:
@@ -9107,6 +9113,7 @@ packages:
 
   /nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
+    requiresBuild: true
     dependencies:
       boolbase: 1.0.0
     dev: true
@@ -12050,6 +12057,7 @@ packages:
   /stable@0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
     deprecated: 'Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility'
+    requiresBuild: true
     dev: true
 
   /stack-trace@0.0.10:
