@@ -3,23 +3,27 @@
 
 .project-card {
 	display: grid;
-	grid-template-rows: 1fr auto;
-	overflow: hidden;
+
 	aspect-ratio: 1;
 	inline-size: 100%;
+
+	overflow: hidden;
+
+	grid-template-rows: 1fr auto;
+
 	background-color: var(--color-pale, #{$color-pale});
 
 	&__image {
-		img {
-			aspect-ratio: 16 / 9;
-
-			@include media-hover {
+		&:focus-visible {
+			img {
 				scale: var(--scale-default, #{$scale-default});
 			}
 		}
 
-		&:focus-visible {
-			img {
+		img {
+			aspect-ratio: 16 / 9;
+
+			@include media-hover {
 				scale: var(--scale-default, #{$scale-default});
 			}
 		}
@@ -29,6 +33,7 @@
 
 	&__body {
 		display: grid;
+
 		gap: to-rem(10);
 	}
 
@@ -37,6 +42,7 @@
 
 		a {
 			display: block;
+
 			transition: color
 				var(--transition-duration-default, #{$transition-duration-default});
 

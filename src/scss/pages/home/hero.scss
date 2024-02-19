@@ -12,8 +12,10 @@
 
 	&__actions {
 		display: flex;
-		flex-wrap: wrap;
+
 		gap: to-rem(15);
+
+		flex-wrap: wrap;
 
 		li {
 			@include media-max($breakpoint) {
@@ -22,8 +24,9 @@
 		}
 
 		@include media-max($breakpoint) {
-			flex-wrap: wrap;
 			inline-size: $width;
+
+			flex-wrap: wrap;
 		}
 	}
 }

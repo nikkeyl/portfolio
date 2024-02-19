@@ -1,7 +1,9 @@
 @use "@scss/abstracts" as *;
 
 .fullscreen {
-	justify-content: center;
 	min-block-size: 100svb;
+
 	padding-block: to-rem(90);
+
+	justify-content: center;
 }

@@ -7,11 +7,15 @@
 
 .swiper-wrapper {
 	display: flex;
+
 	position: relative;
-	flex-wrap: nowrap;
+
 	box-sizing: content-box;
+
 	block-size: 100%;
 	inline-size: 100%;
+
+	flex-wrap: nowrap;
 }
 
 .swiper-initialized {
@@ -35,8 +39,11 @@
 
 .swiper-pagination {
 	display: flex;
-	flex-wrap: nowrap;
+
 	gap: to-rem(5);
+
+	flex-wrap: nowrap;
+
 	justify-content: center;
 }
 
@@ -44,10 +51,14 @@
 	$size: 15;
 
 	cursor: pointer;
+
 	border-radius: to-rem(30);
+
 	block-size: to-rem($size);
 	inline-size: to-rem($size);
+
 	background-color: var(--color-gray, #{$color-gray});
+
 	transition-property: background-color, box-shadow, inline-size;
 	transition-duration: var(
 		--transition-duration-default,
@@ -57,6 +68,7 @@
 
 .swiper-pagination-bullet-active {
 	inline-size: to-rem(30);
+
 	background-color: var(--color-accent, #{$color-accent});
 
 	@extend %box-shadow-accent;

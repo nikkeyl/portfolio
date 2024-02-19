@@ -3,9 +3,11 @@
 
 body {
 	line-height: 1;
+
 	font-family: var(--font-family-default, var(--font-system-ui, system-ui));
 	font-size: var(--font-size-default, #{to-rem($font-size-default)});
 	font-weight: var(--font-weight-default, #{$font-weight-default});
+
 	color: var(--color-text-primary, #{$color-secondary});
 }
 
@@ -22,7 +24,9 @@ a {
 	$line-height: 60;
 
 	line-height: decimal-round($line-height, $font-size-title);
+
 	text-align: center;
+
 	font-size: var(--font-size-title, #{to-rem($font-size-title)});
 	font-weight: var(--font-weight-700, #{$font-weight-700});
 
@@ -47,6 +51,7 @@ a {
 
 	line-height: decimal-round($line-height, $font-size-default);
 	hyphens: auto;
+
 	font-family: var(--font-family-roboto, #{$font-family-roboto});
 	font-weight: var(--font-weight-400, #{$font-weight-400});
 
@@ -66,6 +71,7 @@ a {
 
 .link {
 	color: var(--color-secondary, #{$color-primary});
+
 	transition: color
 		var(--transition-duration-default, #{$transition-duration-default});
 
@@ -91,6 +97,7 @@ a {
 	$line-height: 40;
 
 	line-height: decimal-round($line-height, $font-size-subtitle);
+
 	font-size: var(--font-size-subtitle, #{to-rem($font-size-subtitle)});
 }
 
@@ -99,6 +106,7 @@ a {
 	$line-height: 30;
 
 	line-height: decimal-round($line-height, $font-size);
+
 	font-size: to-rem($font-size);
 }
 

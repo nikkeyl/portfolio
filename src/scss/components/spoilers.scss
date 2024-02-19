@@ -2,8 +2,10 @@
 @use "@scss/utilities/placeholders" as *;
 
 .spoiler {
-	align-self: flex-start;
 	overflow: hidden;
+
+	align-self: flex-start;
+
 	background-color: var(--color-pale, #{$color-pale});
 
 	&__trigger {
@@ -14,13 +16,24 @@
 		}
 
 		.spoiler-init & {
+			&.spoiler-active {
+				span {
+					&::before {
+						rotate: 0deg;
+					}
+				}
+			}
+
 			span {
 				$size: 30;
 
 				display: block;
+
 				position: relative;
-				flex: 0 0 to-rem($size);
+
 				block-size: to-rem($size);
+
+				flex: 0 0 to-rem($size);
 
 				&::before,
 				&::after {
@@ -28,9 +41,12 @@
 
 					inset-block-start: 50%;
 					inset-inline-start: 20%;
+
 					border-radius: to-rem(2);
+
 					block-size: to-rem(2);
 					inline-size: to-rem(20);
+
 					transition: rotate
 						var(--transition-duration-default, #{$transition-duration-default});
 
@@ -39,14 +55,6 @@
 
 				&::before {
 					rotate: 90deg;
-				}
-			}
-
-			&.spoiler-active {
-				span {
-					&::before {
-						rotate: 0deg;
-					}
 				}
 			}
 

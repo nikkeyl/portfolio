@@ -5,7 +5,9 @@
 
 	&__body {
 		padding-block: to-rem(10);
+
 		text-align: center;
+
 		background-color: var(--color-pale, #{$color-pale});
 
 		.logo {

@@ -4,19 +4,24 @@
 .button {
 	$line-height: 20;
 	$color-dark-theme: var(--color-primary, #{$color-secondary});
+	user-select: none;
 
 	display: inline-flex;
-	flex-wrap: nowrap;
-	justify-content: center;
+
 	padding-block: to-rem(10);
 	padding-inline: to-rem(15);
+
+	flex-wrap: nowrap;
+
+	justify-content: center;
+
 	line-height: decimal-round($line-height, $font-size-default);
+
 	transition-property: background-color, box-shadow, transform, color;
 	transition-duration: var(
 		--transition-duration-default,
 		#{$transition-duration-default}
 	);
-	user-select: none;
 
 	&:focus-visible {
 		color: var(--color-secondary, #{$color-secondary});
@@ -45,8 +50,10 @@
 				var(--color-inverse-rgb, #{$color-inverse-rgb}) /
 					var(--alpha-default, #{$alpha-default})
 			);
-		background-color: var(--color-inverse, #{$color-inverse});
+
 		color: var(--color-secondary, #{$color-secondary});
+
+		background-color: var(--color-inverse, #{$color-inverse});
 
 		.dark & {
 			color: $color-dark-theme;

@@ -12,8 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Set Up PNPM
+        uses: pnpm/action-setup@v3
         with:
+          version: 8
+
+      - name: Set Up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
           node-version: lts/*
-      - run: npm ci
-      - run: npm run eslint:fix
+
+      - name: Install Dependencies
+        run: pnpm install
+      - run: pnpm run eslint:fix

@@ -7,16 +7,15 @@
 		$size: 70;
 
 		display: flex;
-		flex: 0 0 to-rem($size);
-		flex-wrap: nowrap;
-		align-items: center;
-		justify-content: center;
+
 		block-size: to-rem($size);
 		inline-size: to-rem($size);
 
-		img {
-			block-size: auto;
-		}
+		flex: 0 0 to-rem($size);
+		flex-wrap: nowrap;
+
+		align-items: center;
+		justify-content: center;
 
 		&:not(.not-studied) {
 			transition-property: padding, border-radius, background-color;
@@ -27,13 +26,19 @@
 
 			@include media-hover {
 				border-radius: to-rem($border-radius-10);
+
 				padding: to-rem($padding);
+
 				background-color: var(--color-pale, #{$color-pale});
 			}
 		}
 
 		&.not-studied {
 			filter: grayscale(1);
+		}
+
+		img {
+			block-size: auto;
 		}
 	}
 }

@@ -5,23 +5,29 @@
 *::before,
 *::after {
 	margin: 0;
+
 	border: 0;
+
 	box-sizing: border-box;
+
 	padding: 0;
+
 	font: inherit;
 
 	@include media-motion(reduce) {
 		transition: none;
+
 		animation: none;
 	}
 }
 
 html {
-	color-scheme: dark light;
 	scroll-padding-block-start: var(
 		--header-min-block-size,
 		#{to-rem($header-min-block-size)}
 	);
+
+	color-scheme: dark light;
 
 	@include media-motion(no-preference) {
 		scroll-behavior: smooth;
@@ -30,13 +36,16 @@ html {
 
 body {
 	min-inline-size: $min-inline-size + px;
-	background-color: var(--color-background-primary, #{$color-primary});
+
 	overscroll-behavior: none;
+
+	background-color: var(--color-background-primary, #{$color-primary});
 }
 
 ::selection {
-	background-color: rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 50%);
 	color: var(--color-secondary, #{$color-secondary});
+
+	background-color: rgb(var(--color-inverse-rgb, #{$color-inverse-rgb}) / 50%);
 }
 
 :focus-visible {
@@ -60,17 +69,20 @@ ul {
 picture,
 img {
 	$size: 100%;
-
-	vertical-align: middle;
-	block-size: $size;
-	inline-size: $size;
-	font-style: italic;
 	object-fit: cover;
 	object-position: top;
+
+	block-size: $size;
+	inline-size: $size;
+
+	vertical-align: middle;
+
+	font-style: italic;
 }
 
 svg {
 	display: block;
+
 	inline-size: 100%;
 }
 

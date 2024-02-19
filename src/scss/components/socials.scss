@@ -5,22 +5,24 @@
 	flex-wrap: wrap;
 
 	&__item {
+		&:focus-within {
+			scale: var(--scale-default, #{$scale-default});
+		}
+
 		svg {
 			$size: 40;
 
 			block-size: to-rem($size);
 			inline-size: to-rem($size);
+
 			fill: var(--color-secondary, #{$color-secondary});
+
 			transition: fill
 				var(--transition-duration-default, #{$transition-duration-default});
 
 			@include media-hover {
 				fill: var(--color-accent, #{$color-accent});
 			}
-		}
-
-		&:focus-within {
-			scale: var(--scale-default, #{$scale-default});
 		}
 
 		@include media-hover {
