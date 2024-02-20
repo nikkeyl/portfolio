@@ -16,16 +16,16 @@
 
 		align-items: center;
 		justify-content: center;
+		border-radius: to-rem($border-radius-10);
 
 		&:not(.not-studied) {
-			transition-property: padding, border-radius, background-color;
+			transition-property: padding, background-color;
 			transition-duration: var(
 				--transition-duration-default,
 				#{$transition-duration-default}
 			);
 
 			@include media-hover {
-				border-radius: to-rem($border-radius-10);
 
 				padding: to-rem($padding);
 

@@ -77,8 +77,8 @@
       "studied": true
     },
     {
-      "icon": "assets/img/svg/tools/esbuild.svg",
-      "name": "ESBuild"
+      "icon": "assets/img/svg/tools/vitejs.svg",
+      "name": "Vite"
     },
     {
       "icon": "assets/img/svg/tools/babel.svg",
@@ -102,6 +102,11 @@
     {
       "icon": "assets/img/svg/tools/git.svg",
       "name": "Git",
+      "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/commitlint.svg",
+      "name": "Commitlint",
       "studied": true
     },
     {
@@ -190,10 +195,6 @@
       "studied": true
     },
     {
-      "icon": "assets/img/svg/tools/docker.svg",
-      "name": "Docker"
-    },
-    {
       "icon": "assets/img/svg/tools/lighthouse.svg",
       "name": "Lighthouse",
       "studied": true
@@ -209,8 +210,8 @@
       "studied": true
     },
     {
-      "icon": "assets/img/svg/tools/netlify.svg",
-      "name": "Netlify"
+      "icon": "assets/img/svg/tools/vercel.svg",
+      "name": "Vercel"
     },
     {
       "icon": "assets/img/svg/tools/chatgpt.svg",
