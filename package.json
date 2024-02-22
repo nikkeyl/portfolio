@@ -3,8 +3,7 @@
   "scripts": {
     "init": "pnpm install && husky",
     "dev": "gulp && webpack serve -c config/webpack/webpack.dev.js",
-    "build": "gulp build",
-    "deploy:gh-pages": "gulp deploy -d dist",
+    "build:deploy": "gulp build && rm dist/assets/css/style.css && rm dist/assets/js/main.js && gulp deploy -d dist",
     "build:webp": "gulp build --webp",
     "stylelint:fix": "stylelint src/scss --fix",
     "eslint:fix": "eslint src/js --fix",
