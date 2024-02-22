@@ -86,6 +86,11 @@
       "studied": true
     },
     {
+      "icon": "assets/img/svg/tools/nyc.svg",
+      "name": "NYC",
+      "studied": true
+    },
+    {
       "icon": "assets/img/svg/tools/mocha.svg",
       "name": "Mocha",
       "studied": true
