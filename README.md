@@ -1,7 +1,5 @@
 # **Hello, I'm Nikkeyl**
 
-**Let's get straight to the point**
-
 ## Tools
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" width="40" height="40" title="HTML5">&nbsp;
@@ -22,15 +20,6 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" title="Git">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="40" height="40" title="Figma">&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40" title="VSCode">&nbsp;
-
-## Projects
-
--   [**Archoleat Organization**](https://github.com/Archoleat)
--   [**Other Projects**](https://github.com/nikkeyl?tab=repositories)
-
-## Contacts
-
-- 📱 You can write to me here [![](https://img.shields.io/badge/nikkeyl-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/nikkeyl) or here [![](https://img.shields.io/badge/nikkeyl-red?style=flat&logo=Gmail&logoColor=white)](mailto:nikkeyl.dev@gmail.com)
 
 ## Stats
 
