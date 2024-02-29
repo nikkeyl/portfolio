@@ -18,7 +18,7 @@ import output from './modules/webPackOutputFile.js';
 import cssLoaderConfig from './loaders/cssLoaderConfig.js';
 import replaceLoaderConfig from './loaders/replaceLoaderConfig.js';
 
-import LINTERS from './plugins/linters.js';
+// import LINTERS from './plugins/linters.js';
 import pugPages from './plugins/pugPages.js';
 
 const {
@@ -39,7 +39,7 @@ const {
 	}
 } = PATHS;
 const { CopyPlugin, HtmlWebpackPlugin, join, TerserPlugin } = PLUGINS;
-const { esLint, styleLint } = LINTERS;
+// const { esLint, styleLint } = LINTERS;
 
 export default {
 	mode: 'production',
