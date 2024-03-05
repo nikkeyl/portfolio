@@ -62,6 +62,10 @@
       "name": "Redux"
     },
     {
+      "icon": "assets/img/svg/tools/nextjs.svg",
+      "name": "NextJS"
+    },
+    {
       "icon": "assets/img/svg/tools/gulp.svg",
       "name": "Gulp",
       "studied": true
