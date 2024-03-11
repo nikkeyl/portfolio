@@ -63,7 +63,8 @@
     },
     {
       "icon": "assets/img/svg/tools/nextjs.svg",
-      "name": "NextJS"
+      "name": "NextJS",
+      "studied": true
     },
     {
       "icon": "assets/img/svg/tools/gulp.svg",
