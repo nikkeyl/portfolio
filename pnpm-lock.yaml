@@ -7,7 +7,7 @@ settings:
 devDependencies:
   '@archoleat/stylelint-config-extended-scss':
     specifier: ^1.5.1
-    version: 1.5.1(postcss@8.4.35)(prettier@3.2.5)(stylelint@16.2.1)
+    version: 1.5.1(postcss@8.4.38)(prettier@3.2.5)(stylelint@16.2.1)
   chai:
     specifier: ^5.1.0
     version: 5.1.0
@@ -247,14 +247,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@archoleat/stylelint-config-extended-scss@1.5.1(postcss@8.4.35)(prettier@3.2.5)(stylelint@16.2.1):
+  /@archoleat/stylelint-config-extended-scss@1.5.1(postcss@8.4.38)(prettier@3.2.5)(stylelint@16.2.1):
     resolution: {integrity: sha512-VA8Zln8k8H5ALstO00kv+hYV9hfCraKkUPInqFUgI1pljYiN7cDodibhWUNbbPrY/P1a0Ktp2IQQ5ol71Ivlzw==}
     engines: {node: '>=20.11.0', pnpm: '>=8.15.3'}
     peerDependencies:
       stylelint: '*'
     dependencies:
       stylelint: 16.2.1
-      stylelint-config-standard-scss: 13.0.0(postcss@8.4.35)(stylelint@16.2.1)
+      stylelint-config-standard-scss: 13.0.0(postcss@8.4.38)(stylelint@16.2.1)
       stylelint-declaration-block-no-ignored-properties: 2.8.0(stylelint@16.2.1)
       stylelint-gamut: 1.3.4(stylelint@16.2.1)
       stylelint-group-selectors: 1.0.10(stylelint@16.2.1)
@@ -1978,8 +1978,8 @@ packages:
     resolution: {integrity: sha512-1ugUSr8BHXRnK23KfuYS+gVMC3LB8QGH9W1iGtDPsNWoQbgtXSExkBu2aDR4epiGWZOjZsj6lDl/N/AqqTC3UA==}
     dev: true
 
-  /bare-events@2.2.1:
-    resolution: {integrity: sha512-9GYPpsPFvrWBkelIhOhTWtkeZxVxZOdb3VnFTCzlOo3OjvmTvzLoZFUT8kNFACx0vJej6QPney1Cf9BvzCNE/A==}
+  /bare-events@2.2.2:
+    resolution: {integrity: sha512-h7z00dWdG0PYOQEvChhOSWvOfkIKsdZGkWr083FgN/HyoQuebSew/cgirYqh9SCuy/hRvxc5Vy6Fw8xAmYHLkQ==}
     requiresBuild: true
     dev: true
     optional: true
@@ -9849,13 +9849,13 @@ packages:
       postcss: 8.4.35
     dev: true
 
-  /postcss-scss@4.0.9(postcss@8.4.35):
+  /postcss-scss@4.0.9(postcss@8.4.38):
     resolution: {integrity: sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.4.29
     dependencies:
-      postcss: 8.4.35
+      postcss: 8.4.38
     dev: true
 
   /postcss-selector-parser@6.0.15:
@@ -9895,6 +9895,15 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /postcss@8.4.38:
+    resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.0
+      source-map-js: 1.2.0
     dev: true
 
   /prebuild-install@7.1.1:
@@ -11891,6 +11900,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /source-map-js@1.2.0:
+    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /source-map-resolve@0.5.3:
     resolution: {integrity: sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==}
     deprecated: See https://github.com/lydell/source-map-resolve#deprecated
@@ -12076,7 +12090,7 @@ packages:
       fast-fifo: 1.3.2
       queue-tick: 1.0.1
     optionalDependencies:
-      bare-events: 2.2.1
+      bare-events: 2.2.2
     dev: true
 
   /strict-uri-encode@1.1.0:
@@ -12282,7 +12296,7 @@ packages:
       webpack: 5.90.2(webpack-cli@5.1.4)
     dev: true
 
-  /stylelint-config-recommended-scss@14.0.0(postcss@8.4.35)(stylelint@16.2.1):
+  /stylelint-config-recommended-scss@14.0.0(postcss@8.4.38)(stylelint@16.2.1):
     resolution: {integrity: sha512-HDvpoOAQ1RpF+sPbDOT2Q2/YrBDEJDnUymmVmZ7mMCeNiFSdhRdyGEimBkz06wsN+HaFwUh249gDR+I9JR7Onw==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
@@ -12292,8 +12306,8 @@ packages:
       postcss:
         optional: true
     dependencies:
-      postcss: 8.4.35
-      postcss-scss: 4.0.9(postcss@8.4.35)
+      postcss: 8.4.38
+      postcss-scss: 4.0.9(postcss@8.4.38)
       stylelint: 16.2.1
       stylelint-config-recommended: 14.0.0(stylelint@16.2.1)
       stylelint-scss: 6.1.0(stylelint@16.2.1)
@@ -12308,7 +12322,7 @@ packages:
       stylelint: 16.2.1
     dev: true
 
-  /stylelint-config-standard-scss@13.0.0(postcss@8.4.35)(stylelint@16.2.1):
+  /stylelint-config-standard-scss@13.0.0(postcss@8.4.38)(stylelint@16.2.1):
     resolution: {integrity: sha512-WaLvkP689qSYUpJQPCo30TFJSSc3VzvvoWnrgp+7PpVby5o8fRUY1cZcP0sePZfjrFl9T8caGhcKg0GO34VDiQ==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
@@ -12318,9 +12332,9 @@ packages:
       postcss:
         optional: true
     dependencies:
-      postcss: 8.4.35
+      postcss: 8.4.38
       stylelint: 16.2.1
-      stylelint-config-recommended-scss: 14.0.0(postcss@8.4.35)(stylelint@16.2.1)
+      stylelint-config-recommended-scss: 14.0.0(postcss@8.4.38)(stylelint@16.2.1)
       stylelint-config-standard: 36.0.0(stylelint@16.2.1)
     dev: true
 
@@ -13821,8 +13835,8 @@ packages:
       webpack-merge: 5.10.0
     dev: true
 
-  /webpack-dev-middleware@7.0.0(webpack@5.90.2):
-    resolution: {integrity: sha512-tZ5hqsWwww/8DislmrzXE3x+4f+v10H1z57mA2dWFrILb4i3xX+dPhTkcdR0DLyQztrhF2AUmO5nN085UYjd/Q==}
+  /webpack-dev-middleware@7.1.1(webpack@5.90.2):
+    resolution: {integrity: sha512-NmRVq4AvRQs66dFWyDR4GsFDJggtSi2Yn38MXLk0nffgF9n/AIP4TFBg2TQKYaRAN4sHuKOTiz9BnNCENDLEVA==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -13833,6 +13847,7 @@ packages:
       colorette: 2.0.20
       memfs: 4.7.6
       mime-types: 2.1.35
+      on-finished: 2.4.1
       range-parser: 1.2.1
       schema-utils: 4.2.0
       webpack: 5.90.2(webpack-cli@5.1.4)
@@ -13881,7 +13896,7 @@ packages:
       spdy: 4.0.2
       webpack: 5.90.2(webpack-cli@5.1.4)
       webpack-cli: 5.1.4(webpack-dev-server@5.0.2)(webpack@5.90.2)
-      webpack-dev-middleware: 7.0.0(webpack@5.90.2)
+      webpack-dev-middleware: 7.1.1(webpack@5.90.2)
       ws: 8.16.0
     transitivePeerDependencies:
       - bufferutil
