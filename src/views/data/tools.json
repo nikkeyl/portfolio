@@ -232,6 +232,11 @@
       "icon": "assets/img/svg/tools/github.svg",
       "name": "GitHub",
       "studied": true
+    },
+    {
+      "icon": "assets/img/svg/tools/gitlab.svg",
+      "name": "GitLab",
+      "studied": true
     }
   ]
 }
