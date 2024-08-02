@@ -1,6 +1,18 @@
 {
   "cards": [
     {
+      "img": "assets/img/projects/flow-ai.jpg",
+      "name": "Flow AI",
+      "linkSite": "https://flowai.ru",
+      "linkCode": "#"
+    },
+    {
+      "img": "assets/img/projects/neurontechnet.jpg",
+      "name": "Neurontechnet",
+      "linkSite": "https://neurontechnet.by/",
+      "linkCode": "#"
+    },
+    {
       "img": "assets/img/projects/brainarti.jpg",
       "name": "Brainarti",
       "linkSite": "https://brainbms.ru",
