@@ -27,3 +27,7 @@
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nikkeyl&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=nikkeyl&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=nikkeyl&theme=2077)
+
+## License
+
+This project is licensed under the [**GPL-3.0 license**](LICENSE).
