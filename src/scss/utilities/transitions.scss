@@ -1,6 +1,0 @@
-@use "@scss/abstracts" as *;
-
-.tr-scale {
-	transition: scale
-		var(--transition-duration-default, #{$transition-duration-default});
-}

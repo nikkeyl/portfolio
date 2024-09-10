@@ -1,9 +1,0 @@
-@use "@scss/abstracts" as *;
-
-.border-radius-10 {
-	border-radius: to-rem($border-radius-10);
-}
-
-.border-radius-50 {
-	border-radius: $border-radius-50;
-}

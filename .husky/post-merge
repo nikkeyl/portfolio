@@ -1,0 +1,1 @@
+bun git-pull-run --pattern 'package.json' --command 'bun i'

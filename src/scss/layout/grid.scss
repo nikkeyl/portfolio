@@ -1,5 +1,0 @@
-@use "@scss/abstracts" as *;
-
-.grid {
-	@include grid(fill, to-rem(290), 1fr, $phone);
-}

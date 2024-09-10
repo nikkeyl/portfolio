@@ -1,0 +1,33 @@
+name: Remark
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+
+jobs:
+  remark:
+    name: Remark
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install Dependencies
+        run: bun i
+
+      - name: Lint
+        run: bun remark . --quiet --frail

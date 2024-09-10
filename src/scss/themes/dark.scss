@@ -1,9 +1,0 @@
-@use "@scss/abstracts" as *;
-
-.dark {
-	--color-primary: #{$color-secondary};
-	--color-pale: #444;
-	--color-secondary: #{$color-pale};
-
-	color-scheme: dark;
-}
