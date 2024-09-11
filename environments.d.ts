@@ -1,4 +1,3 @@
-export namespace NodeJS {
-  export interface ProcessEnv {
-  }
+declare namespace NodeJS {
+  export interface ProcessEnv {}
 }
