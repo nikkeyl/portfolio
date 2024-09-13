@@ -4,6 +4,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
 
+import '@styles/global.scss';
+
 const metadata: Metadata = {};
 
 const viewport: Viewport = {};

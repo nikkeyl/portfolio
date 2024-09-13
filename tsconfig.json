@@ -19,7 +19,10 @@
     "allowImportingTsExtensions": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "paths": {},
+    "paths": {
+      // Styles
+      "@styles/*": ["./src/shared/styles/*"]
+    },
     "resolveJsonModule": true,
     // Projects
     "disableReferencedProjectLoad": true,

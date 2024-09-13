@@ -6,11 +6,13 @@ on:
       - main
     paths:
       - 'src/**/*.tsx'
+      - 'src/**/*.ts'
   push:
     branches:
       - main
     paths:
       - 'src/**/*.tsx'
+      - 'src/**/*.ts'
 
 permissions:
   actions: read

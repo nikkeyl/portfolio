@@ -5,13 +5,8 @@ export default defineConfig({
     formats: ['image/webp'],
     remotePatterns: [
       {
-        hostname: '',
-        pathname: '',
-        protocol: 'https',
-      },
-      {
-        hostname: '',
-        pathname: '',
+        hostname: 'nikkeyl.vercel.app',
+        pathname: '/images/**',
         protocol: 'https',
       },
     ],

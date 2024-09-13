@@ -1,6 +1,7 @@
 # Directories
 .next
 node_modules
+!icon
 
 # Files
 bun.lockb
