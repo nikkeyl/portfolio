@@ -5,6 +5,5 @@ export default defineConfig({
   rules: {
     'declaration-empty-line-before': null,
     'selector-class-pattern': null,
-    'scss/no-global-function-names': null,
   },
 });

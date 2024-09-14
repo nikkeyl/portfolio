@@ -12,6 +12,7 @@ export default defineConfig({
       files: ['*.tsx'],
       options: {
         jsxSingleQuote: true,
+        singleQuote: true,
       },
     },
     {
