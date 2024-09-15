@@ -15,11 +15,5 @@ export default defineConfig({
         singleQuote: true,
       },
     },
-    {
-      files: ['*.json'],
-      options: {
-        trailingComma: 'none',
-      },
-    },
   ],
 });
