@@ -58,6 +58,7 @@ export default defineFlatConfig([
           unnamedComponents: 'arrow-function',
         },
       ],
+      'unicorn/no-null': 'off',
       'unicorn/no-unused-properties': 'error',
       'unicorn/string-content': 'error',
     },
