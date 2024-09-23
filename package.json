@@ -2,8 +2,7 @@
   "type": "module",
   "scripts": {
     "init": "bun i && husky",
-    "dev": "next dev --turbo",
-    "build": "next build"
+    "dev": "next dev --turbo"
   },
   "dependencies": {
     "@vercel/analytics": "^1.3.1",
