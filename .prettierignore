@@ -1,0 +1,18 @@
+# Directories
+.husky
+public
+
+# Files
+*.md
+bun.lockb
+
+# *rc
+.ecrc
+
+# Configs
+.editorconfig
+.gitattributes
+
+# Ignores
+.gitignore
+.prettierignore
