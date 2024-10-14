@@ -7,6 +7,7 @@ public
 bun.lockb
 
 # *rc
+.browserslistrc
 .ecrc
 
 # Configs
