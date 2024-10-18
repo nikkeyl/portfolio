@@ -1,0 +1,38 @@
+name: Commit Lint
+
+on:
+  push:
+
+jobs:
+  commit-lint:
+    name: Commit Lint
+
+    if: ${{ github.actor != 'dependabot[bot]' }}
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install Dependencies
+        run: bun i
+
+      - name: Extract Commit Message (Push)
+        if: ${{ github.event_name }} == 'push'
+        run: |
+          git log -1 --pretty=%B > commit_message.txt
+
+      - name: Extract Commit Message (Pull Request)
+        if: ${{ github.event_name }} == 'pull_request'
+        run: |
+          git show -s --format=%B > commit_message.txt
+
+      - name: Lint
+        run: |
+          COMMIT_MESSAGE=$(cat commit_message.txt)
+          echo "$COMMIT_MESSAGE" | bun commitlint
