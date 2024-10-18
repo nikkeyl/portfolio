@@ -40,7 +40,7 @@ export default defineFlatConfig([
     },
     rules: {
       'func-style': ['error', 'expression'],
-      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
       'import/exports-last': 'error',
       'import/extensions': ['error', { ts: 'never', tsx: 'never' }],
