@@ -1,10 +1,9 @@
+import '@styles/global.scss';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
 import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
-
-import '@styles/global.scss';
 
 const metadata: Metadata = {};
 
