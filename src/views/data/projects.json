@@ -13,12 +13,6 @@
       "linkCode": "#"
     },
     {
-      "img": "assets/img/projects/brainarti.jpg",
-      "name": "Brainarti",
-      "linkSite": "https://brainbms.ru",
-      "linkCode": "#"
-    },
-    {
       "img": "assets/img/projects/aqua-profi.jpg",
       "name": "Aqua Profi",
       "linkSite": "https://aquaprofi.by",
@@ -61,34 +55,10 @@
       "linkCode": "https://github.com/nikkeyl/saimon"
     },
     {
-      "img": "assets/img/projects/pense.jpg",
-      "name": "Pense",
-      "linkSite": "https://nikkeyl.github.io/pense",
-      "linkCode": "https://github.com/nikkeyl/pense"
-    },
-    {
       "img": "assets/img/projects/noiceland.jpg",
       "name": "Noiceland",
       "linkSite": "https://nikkeyl.github.io/noiceland",
       "linkCode": "https://github.com/nikkeyl/noiceland"
-    },
-    {
-      "img": "assets/img/projects/aster.jpg",
-      "name": "Aster",
-      "linkSite": "https://nikkeyl.github.io/aster",
-      "linkCode": "https://github.com/nikkeyl/aster"
-    },
-    {
-      "img": "assets/img/projects/cleaning-services.jpg",
-      "name": "Cleaning",
-      "linkSite": "https://nikkeyl.github.io/cleaning",
-      "linkCode": "https://github.com/nikkeyl/cleaning"
-    },
-    {
-      "img": "assets/img/projects/euroflex.jpg",
-      "name": "Euroflex",
-      "linkSite": "https://nikkeyl.github.io/euroflex",
-      "linkCode": "https://github.com/nikkeyl/euroflex"
     }
   ]
 }
