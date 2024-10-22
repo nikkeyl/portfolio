@@ -1,28 +1,28 @@
-[日本語](README_JP.md) | [Deutsch](README_DE.md) | [Русский](README_RU.md)
+[English](README.md) | [Deutsch](README_DE.md) | [Русский](README_RU.md)
 
 [![Telegram](https://img.shields.io/badge/telegram-1e2830?style=for-the-badge&logo=telegram)](https://t.me/nikkeyl)
 [![Portfolio](https://img.shields.io/badge/portfolio-1e2830?style=for-the-badge&logo=vercel)](https://nikkeyl.vercel.app)
 
-🖖 I'm a Front-End developer who loves css,
-automates everything and is business savvy.
+🖖 私は css が大好きなフロントエンド開発者です、
+ビジネスにも精通しています。.
 
-## Current Work
+## 現在の仕事
 
-🏢 [**Batumi Estate**](https://batumi.estate) - Marketplace of new buildings in Batumi.
+🏢 [**Batumi Estate**](https://batumi.estate) - バトゥーミの新しい建物の市場.
 
-## Organizations
+## 組織
 
 <a href="https://github.com/archoleat">
   <img src="./label.jpg" alt="Archoleat Science" />
 </a>
 
-## Tools
+## ツール
 
-### Programming Languages
+### プログラミング・ランゲージ
 
 ![TypeScript](https://img.shields.io/badge/typescript-1e2830?style=for-the-badge&logo=typescript)
 
-### Markup & Stylization Languages
+### マークアップ＆スタイライズ言語
 
 ![HTML5](https://img.shields.io/badge/html5-1e2830?style=for-the-badge&logo=html5)
 ![Pug](https://img.shields.io/badge/pug-1e2830?style=for-the-badge&logo=pug)
@@ -32,7 +32,7 @@ automates everything and is business savvy.
 ![YAML](https://img.shields.io/badge/yaml-1e2830?style=for-the-badge&logo=yaml)
 ![JSON](https://img.shields.io/badge/json-1e2830?style=for-the-badge&logo=json)
 
-### Environments, Bundlers & Package Managers
+### エンバイロメント、バンドラー、パッケージマネージャー
 
 ![Bun](https://img.shields.io/badge/bun-1e2830?style=for-the-badge&logo=bun)
 ![Node.JS](https://img.shields.io/badge/node.js-1e2830?style=for-the-badge&logo=node.js)
@@ -45,7 +45,7 @@ automates everything and is business savvy.
 ![Webpack](https://img.shields.io/badge/webpack-1e2830?style=for-the-badge&logo=webpack)
 ![Gulp](https://img.shields.io/badge/gulp-1e2830?style=for-the-badge&logo=gulp)
 
-### Frameworks & Libs
+### フレームワーク＆ライブラリ
 
 ![Next.JS](https://img.shields.io/badge/next.js-1e2830?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/react-1e2830?style=for-the-badge&logo=react)
@@ -53,14 +53,14 @@ automates everything and is business savvy.
 ![Redux](https://img.shields.io/badge/redux-1e2830?style=for-the-badge&logo=redux)
 ![Tailwind](https://img.shields.io/badge/tailwind-1e2830?style=for-the-badge&logo=tailwindcss)
 
-### Testing
+### テスト
 
 ![Lighthouse](https://img.shields.io/badge/lighthouse-1e2830?style=for-the-badge&logo=lighthouse)
 ![Mocha](https://img.shields.io/badge/mocha-1e2830?style=for-the-badge&logo=mocha)
 ![Vitest](https://img.shields.io/badge/vitest-1e2830?style=for-the-badge&logo=vitest)
 ![Cypress](https://img.shields.io/badge/cypress-1e2830?style=for-the-badge&logo=cypress)
 
-### Code Quality
+### コード・クオリティ
 
 ![Editor Config](https://img.shields.io/badge/editor_config-1e2830?style=for-the-badge&logo=editorconfig)
 ![Prettier](https://img.shields.io/badge/prettier-1e2830?style=for-the-badge&logo=prettier)
@@ -70,7 +70,7 @@ automates everything and is business savvy.
 ![Pre Commit](https://img.shields.io/badge/pre_commit-1e2830?style=for-the-badge&logo=precommit)
 ![Commitlint](https://img.shields.io/badge/commitlint-1e2830?style=for-the-badge&logo=commitlint)
 
-### Programs
+### プログラム
 
 ![FIgma](https://img.shields.io/badge/figma-1e2830?style=for-the-badge&logo=figma)
 
@@ -80,13 +80,13 @@ automates everything and is business savvy.
 ![GitHub](https://img.shields.io/badge/github-1e2830?style=for-the-badge&logo=github)
 ![GitLab](https://img.shields.io/badge/gitlab-1e2830?style=for-the-badge&logo=gitlab)
 
-### CI/CD & Deployment
+### CI/CD & デプロイメント
 
 ![GitHub Actions](https://img.shields.io/badge/github_actions-1e2830?style=for-the-badge&logo=githubactions)
 ![GitHub Pages](https://img.shields.io/badge/github_pages-1e2830?style=for-the-badge&logo=githubpages)
 ![Vercel](https://img.shields.io/badge/vercel-1e2830?style=for-the-badge&logo=vercel)
 
-### Other
+### 他
 
 ![Semantic Release](https://img.shields.io/badge/semantic_release-1e2830?style=for-the-badge&logo=semanticrelease)
 ![SemVer](https://img.shields.io/badge/semver-1e2830?style=for-the-badge&logo=semver)
@@ -94,7 +94,7 @@ automates everything and is business savvy.
 ![SVGO](https://img.shields.io/badge/svgo-1e2830?style=for-the-badge&logo=svgo)
 ![Babel](https://img.shields.io/badge/babel-1e2830?style=for-the-badge&logo=babel)
 
-## Stats
+## スタッツ
 
 <p align="center">
   <img width="1200" height="220" src="https://streak-stats.demolab.com?user=nikkeyl&theme=github-dark-dimmed&hide_border=true&border_radius=10&date_format=n%2Fj%5B%2FY%5D&exclude_days=Sun%2CSat&width=800" />
